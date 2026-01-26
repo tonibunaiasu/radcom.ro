@@ -1,6 +1,27 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { 
+  InsertUser, 
+  users,
+  services,
+  solutions,
+  teamMembers,
+  blogPosts,
+  caseStudies,
+  partners,
+  pages,
+  settings,
+  jobListings,
+  type Service,
+  type Solution,
+  type TeamMember,
+  type BlogPost,
+  type CaseStudy,
+  type Partner,
+  type Page,
+  type Setting,
+  type JobListing
+} from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +110,113 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// Services queries
+export async function getAllServices(): Promise<Service[]> {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(services);
+}
+
+export async function getServicesByCategory(category: "dezvoltare" | "infrastructura" | "programe_europene"): Promise<Service[]> {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(services).where(eq(services.category, category));
+}
+
+export async function getServiceBySlug(slug: string): Promise<Service | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(services).where(eq(services.slug, slug)).limit(1);
+  return result[0];
+}
+
+// Solutions queries
+export async function getAllSolutions(): Promise<Solution[]> {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(solutions);
+}
+
+export async function getSolutionBySlug(slug: string): Promise<Solution | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(solutions).where(eq(solutions.slug, slug)).limit(1);
+  return result[0];
+}
+
+// Team Members queries
+export async function getAllTeamMembers(): Promise<TeamMember[]> {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(teamMembers).orderBy(teamMembers.order);
+}
+
+// Blog Posts queries
+export async function getPublishedBlogPosts(): Promise<BlogPost[]> {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(blogPosts).where(eq(blogPosts.status, "published")).orderBy(blogPosts.publishedAt);
+}
+
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(blogPosts).where(eq(blogPosts.slug, slug)).limit(1);
+  return result[0];
+}
+
+// Case Studies queries
+export async function getAllCaseStudies(): Promise<CaseStudy[]> {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(caseStudies);
+}
+
+// Partners queries
+export async function getAllPartners(): Promise<Partner[]> {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(partners).orderBy(partners.order);
+}
+
+// Pages queries
+export async function getPublishedPages(): Promise<Page[]> {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(pages).where(eq(pages.status, "published"));
+}
+
+export async function getPageBySlug(slug: string): Promise<Page | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(pages).where(eq(pages.slug, slug)).limit(1);
+  return result[0];
+}
+
+// Settings queries
+export async function getSettingByKey(key: string): Promise<Setting | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(settings).where(eq(settings.key, key)).limit(1);
+  return result[0];
+}
+
+export async function getAllSettings(): Promise<Setting[]> {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(settings);
+}
+
+// Job Listings queries
+export async function getActiveJobListings(): Promise<JobListing[]> {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(jobListings).where(eq(jobListings.status, "active"));
+}
+
+export async function getJobListingBySlug(slug: string): Promise<JobListing | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(jobListings).where(eq(jobListings.slug, slug)).limit(1);
+  return result[0];
+}
