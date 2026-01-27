@@ -83,12 +83,13 @@ export default function Exact() {
         <section className="bg-gradient-radcom text-primary-foreground py-20">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <MapPin className="w-16 h-16" />
-                <div className="text-left">
-                  <h1 className="text-4xl md:text-5xl font-bold">RADCOM eXact</h1>
-                  <p className="text-xl text-primary-foreground/90">Real Time Route Planning</p>
-                </div>
+              <div className="flex flex-col items-center gap-6 mb-6">
+                <img 
+                  src="/products/eXact.svg" 
+                  alt="RADCOM eXact - Real Time Route Planning" 
+                  className="h-24 md:h-32 w-auto"
+                />
+                <p className="text-xl text-primary-foreground/90">Real Time Route Planning</p>
               </div>
               <p className="text-lg md:text-xl text-primary-foreground/90 mb-6">
                 Sistem inteligent de informații pentru pasageri cu planificator de rute în timp real

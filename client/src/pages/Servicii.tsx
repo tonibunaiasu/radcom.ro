@@ -10,6 +10,7 @@ export default function Servicii() {
       id: "ifleet",
       title: "iFleet",
       subtitle: "Extended Fleet Management",
+      logo: "/products/iFleet.svg",
       icon: Bus,
       description: "Sistem complet de management al flotei pentru transportul public. Soluție integrată care include numărarea automată a pasagerilor, monitorizare video în timp real, tracking GPS și raportare avansată pentru optimizarea operațiunilor de transport.",
       features: [
@@ -28,6 +29,7 @@ export default function Servicii() {
       id: "optifare",
       title: "OptiFare",
       subtitle: "E-Ticketing System",
+      logo: "/products/OptiFare.svg",
       icon: CreditCard,
       description: "Sistem avansat de e-ticketing pentru transportul public. Validare carduri inteligente Mifare, plată contactless cu Visa și MasterCard, suport NFC și interfață interactivă pentru pasageri. Soluție completă pentru modernizarea sistemului de taxare.",
       features: [
@@ -46,6 +48,7 @@ export default function Servicii() {
       id: "exact",
       title: "eXact",
       subtitle: "Real Time Route Planning",
+      logo: "/products/eXact.svg",
       icon: MapPin,
       description: "Sistem inteligent de informații pentru pasageri cu planificator de rute în timp real. Afișaje LED interioare și exterioare, anunțuri vocale, timp estimat de ajungere și conexiuni de linie. Experiență completă pentru călători informați.",
       features: [
@@ -105,15 +108,16 @@ export default function Servicii() {
                     key={product.id}
                     className="bg-card rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group"
                   >
-                    {/* Icon Header */}
+                    {/* Logo Header */}
                     <div className={`${product.color} p-8 flex flex-col items-center justify-center text-center`}>
-                      <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
-                        <IconComponent className={`w-12 h-12 ${product.iconColor}`} />
+                      <div className="mb-4 group-hover:scale-105 transition-transform duration-300">
+                        <img 
+                          src={product.logo} 
+                          alt={`RADCOM ${product.title} - ${product.subtitle}`}
+                          className="h-32 w-auto"
+                        />
                       </div>
-                      <h2 className="text-2xl font-bold text-primary-foreground mb-1">
-                        RADCOM {product.title}
-                      </h2>
-                      <p className="text-sm text-primary-foreground/80">
+                      <p className="text-sm text-primary-foreground/90 font-medium">
                         {product.subtitle}
                       </p>
                     </div>

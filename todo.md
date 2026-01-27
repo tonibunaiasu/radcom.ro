@@ -1,43 +1,20 @@
-# RADCOM Website TODO - Modernizare și Multilingvism
+# RADCOM Website TODO - Integrare Logo-uri Produse
 
-## Integrare Logo-uri Noi
-- [x] Copiere logo-uri noi în client/public/
-  - logo-blue.png (pentru header pe fundal deschis)
-  - logo-white.png (pentru footer pe fundal întunecat)
-- [x] Actualizare Header.tsx cu noul logo albastru
-- [x] Actualizare Footer.tsx cu noul logo alb
-- [ ] Testare afișare logo-uri pe toate paginile
+## Extragere Logo-uri de pe radcom.ro/new/
+- [x] Accesare website radcom.ro/new/ pentru identificare logo-uri
+- [x] Extragere logo iFleet (iFleet.svg)
+- [x] Extragere logo OptiFare (OptiFare.svg)
+- [x] Extragere logo eXact (eXact.svg)
+- [x] Salvare logo-uri în client/public/products/
 
-## Sistem Multilingv (i18n)
-- [x] Instalare dependențe i18n (react-i18next)
-- [x] Configurare sistem multilingv cu EN ca limbă principală
-- [x] Creare fișiere de traduceri (en.json, ro.json)
-- [x] Implementare Language Switcher în header (EN/RO)
-- [x] Traducere Header.tsx cu meniu complet
-- [x] Traducere Home.tsx (hero, stats, advantages)
-- [ ] Traducere Footer.tsx
-- [ ] Traducere pagini produse (iFleet, OptiFare, eXact)
-- [ ] Traducere pagini soluții și alte pagini
-- [x] Salvare preferință limbă în localStorage (auto prin i18next-browser-languagedetector)
-- [ ] Testare switch între EN și RO
-
-## Fonturi Moderne
-- [x] Cercetare și selectare fonturi moderne - ales Inter pentru claritate și modernitate
-- [x] Integrare Google Fonts în client/index.html
-- [x] Actualizare index.css cu noile fonturi (Inter cu font-feature-settings)
-- [ ] Testare lizibilitate și consistență
-
-## Optimizare Structură și Design
-- [x] Îmbunătățire spacing și padding pentru fluiditate (hero section, buttons)
-- [x] Optimizare tranziții și animații (smooth hover effects)
-- [x] Îmbunătățire contrast și accesibilitate (font-weight, spacing)
-- [x] Simplificare navigare cu LanguageSwitcher integrat
-- [x] Optimizare responsive design (lg:text-7xl pentru hero)
-- [x] Îmbunătățire micro-interacțiuni (hover states pe butoane)
+## Integrare Logo-uri în Pagini
+- [x] Actualizare IFleet.tsx cu logo oficial (/products/iFleet.svg)
+- [x] Actualizare OptiFare.tsx cu logo oficial (/products/OptiFare.svg)
+- [x] Actualizare Exact.tsx cu logo oficial (/products/eXact.svg)
+- [x] Actualizare Servicii.tsx cu logo-uri pentru toate produsele (iFleet, OptiFare, eXact)
 
 ## Testare și Finalizare
-- [x] Testare multilingvism pe homepage - EN/RO switch funcționează
-- [x] Testare logo-uri pe diferite rezoluții - logo-blue.png în header, logo-white.png în footer
-- [x] Testare accesibilitate - font Inter cu font-smoothing, spacing îmbunătățit
+- [x] Testare afișare logo-uri pe toate paginile - logo-uri SVG oficiale integrate
+- [x] Verificare responsive design - h-24 md:h-32 pentru hero, h-32 pentru cards
 - [x] Rulare teste unit - 10/10 passed
 - [ ] Salvare checkpoint final

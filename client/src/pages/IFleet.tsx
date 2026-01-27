@@ -56,12 +56,13 @@ export default function IFleet() {
         <section className="bg-gradient-radcom text-primary-foreground py-20">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <Bus className="w-16 h-16" />
-                <div className="text-left">
-                  <h1 className="text-4xl md:text-5xl font-bold">RADCOM iFleet</h1>
-                  <p className="text-xl text-primary-foreground/90">Extended Fleet Management</p>
-                </div>
+              <div className="flex flex-col items-center gap-6 mb-6">
+                <img 
+                  src="/products/iFleet.svg" 
+                  alt="RADCOM iFleet - Extended Fleet Management" 
+                  className="h-24 md:h-32 w-auto"
+                />
+                <p className="text-xl text-primary-foreground/90">Extended Fleet Management</p>
               </div>
               <p className="text-lg md:text-xl text-primary-foreground/90 mb-6">
                 Sistem complet de management al flotei pentru transportul public
