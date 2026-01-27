@@ -72,7 +72,7 @@ export function Header() {
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
               <img 
-                src="/logo-blue.png" 
+                src="/logo-white.png" 
                 alt="RADCOM Logo" 
                 className="h-10 w-auto"
               />

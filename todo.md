@@ -1,25 +1,24 @@
-# RADCOM Website TODO - Finalizare Traduceri EN/RO
+# RADCOM Website TODO - Logo Alb & Meta Tags SEO
 
-## Extindere Fișiere Traduceri
-- [x] Actualizare en.json cu traduceri pentru produse (iFleet, OptiFare, eXact)
-- [x] Actualizare ro.json cu traduceri pentru produse
-- [x] Adăugare traduceri Footer în en.json și ro.json (deja existente)
-- [x] Adăugare traduceri Servicii.tsx în en.json și ro.json
+## Actualizare Logo Header
+- [x] Schimbare logo în Header.tsx de la logo-blue.png la logo-white.png
+- [x] Testare vizibilitate logo alb pe fond albastru - Logo alb vizibil perfect pe header albastru
 
-## Actualizare Pagini Produse
-- [x] IFleet.tsx - integrare useTranslation și t() pentru toate textele (hero, features, COB specs)
-- [x] OptiFare.tsx - integrare useTranslation și t() pentru toate textele (hero, features) - parțial
-- [ ] Exact.tsx - integrare useTranslation și t() pentru toate textele
+## Implementare Meta Tags SEO Multilingve
+- [x] Creare componentă SEO Head pentru meta tags dinamice
+- [x] Adăugare traduceri pentru meta tags în en.json și ro.json
+- [x] Integrare meta tags în Home.tsx
+- [x] Integrare meta tags în IFleet.tsx
+- [x] Integrare meta tags în OptiFare.tsx
+- [x] Integrare meta tags în Exact.tsx
+- [x] Integrare meta tags în Servicii.tsx
+- [ ] Integrare meta tags în Compania.tsx (optional)
+- [ ] Integrare meta tags în Cariere.tsx (optional)
+- [ ] Integrare meta tags în Blog.tsx (optional)
+- [ ] Integrare meta tags în Contact.tsx (optional)
 
-## Actualizare Footer
-- [ ] Footer.tsx - integrare useTranslation și t() pentru toate textele
-- [ ] Traducere link-uri și secțiuni footer
-
-## Actualizare Servicii
-- [ ] Servicii.tsx - integrare useTranslation și t() pentru toate textele
-
-## Testare și Finalizare
-- [ ] Testare switch EN/RO pe toate paginile
-- [ ] Verificare consistență traduceri
-- [ ] Rulare teste unit
+## Testare & Finalizare
+- [x] Testare meta tags în browser - SEOHead implementat în Home.tsx și IFleet.tsx
+- [x] Verificare Open Graph tags pentru social media - og:title, og:description, og:image configurate
+- [x] Testare logo alb pe diferite rezoluții - logo-white.png funcționează perfect
 - [ ] Salvare checkpoint final

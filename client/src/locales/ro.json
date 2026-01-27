@@ -230,5 +230,43 @@
     "loading": "Se încarcă...",
     "error": "Eroare",
     "success": "Succes"
+  },
+  "seo": {
+    "home": {
+      "title": "RADCOM - Soluții Integrate Hardware + Software pentru Transportul Public",
+      "description": "Soluții IT&C complete pentru industrii românești. iFleet management flotă, OptiFare e-ticketing și eXact sisteme informații pasageri."
+    },
+    "services": {
+      "title": "Sistemul Integrat RADCOM - STI pentru Transportul Public | iFleet, OptiFare, eXact",
+      "description": "Trei produse integrate care transformă transportul public: iFleet management flotă, OptiFare sistem e-ticketing și eXact planificator rute timp real."
+    },
+    "ifleet": {
+      "title": "iFleet - Sistem Complet de Management Flotă | RADCOM",
+      "description": "Sistem complet de management al flotei pentru transportul public. Tracking GPS, monitorizare video, numărare automată pasageri și raportare avansată."
+    },
+    "optifare": {
+      "title": "OptiFare - Sistem E-Ticketing pentru Transportul Public | RADCOM",
+      "description": "Sistem avansat de e-ticketing cu plăți contactless, carduri inteligente Mifare, suport NFC și raportare în timp real pentru transportul public modern."
+    },
+    "exact": {
+      "title": "eXact - Planificare Rute Timp Real & Informații Pasageri | RADCOM",
+      "description": "Sistem inteligent de informații pentru pasageri cu afișaje LED, anunțuri vocale, timp estimat de ajungere și planificare rute în timp real."
+    },
+    "company": {
+      "title": "Despre RADCOM - Lider în Soluții IT&C din România",
+      "description": "Top 3 companii de tehnologie din România. Servicii IT&C complete pentru multiple industrii cu peste 20 de ani de experiență."
+    },
+    "careers": {
+      "title": "Cariere la RADCOM - Alătură-te Echipei Noastre",
+      "description": "Explorează oportunitățile de carieră la RADCOM. Alătură-te unei companii de tehnologie de varf și lucrează la proiecte inovatoare pentru transport public și soluții IT&C."
+    },
+    "contact": {
+      "title": "Contact RADCOM - Ia Legătura cu Noi",
+      "description": "Contactează RADCOM pentru soluții integrate hardware și software. Birou: Str. Constantinescu nr. 2C, București. Telefon: 021 232 1039."
+    },
+    "blog": {
+      "title": "Blog RADCOM - Stiri & Insights despre Soluții IT&C",
+      "description": "Ultimele stiri, insights și actualizări de la RADCOM despre tehnologia de transport public, management flotă, e-ticketing și soluții IT&C."
+    }
   }
 }

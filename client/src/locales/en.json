@@ -230,5 +230,43 @@
     "loading": "Loading...",
     "error": "Error",
     "success": "Success"
+  },
+  "seo": {
+    "home": {
+      "title": "RADCOM - Integrated Hardware + Software Solutions for Public Transport",
+      "description": "Complete IT&C solutions for Romanian industries. iFleet fleet management, OptiFare e-ticketing, and eXact passenger information systems."
+    },
+    "services": {
+      "title": "RADCOM Integrated System - ITS for Public Transport | iFleet, OptiFare, eXact",
+      "description": "Three integrated products that transform public transport: iFleet fleet management, OptiFare e-ticketing system, and eXact real-time route planner."
+    },
+    "ifleet": {
+      "title": "iFleet - Extended Fleet Management System | RADCOM",
+      "description": "Complete fleet management system for public transport. GPS tracking, video monitoring, automatic passenger counting, and advanced reporting."
+    },
+    "optifare": {
+      "title": "OptiFare - E-Ticketing System for Public Transport | RADCOM",
+      "description": "Advanced e-ticketing system with contactless payments, Mifare smart cards, NFC support, and real-time reporting for modern public transport."
+    },
+    "exact": {
+      "title": "eXact - Real Time Route Planning & Passenger Information | RADCOM",
+      "description": "Intelligent passenger information system with LED displays, voice announcements, estimated arrival time, and real-time route planning."
+    },
+    "company": {
+      "title": "About RADCOM - Leading IT&C Solutions Provider in Romania",
+      "description": "Top 3 technology companies in Romania. Complete IT&C services for multiple industries with over 20 years of experience."
+    },
+    "careers": {
+      "title": "Careers at RADCOM - Join Our Team",
+      "description": "Explore career opportunities at RADCOM. Join a leading technology company and work on innovative projects for public transport and IT&C solutions."
+    },
+    "contact": {
+      "title": "Contact RADCOM - Get in Touch",
+      "description": "Contact RADCOM for integrated hardware and software solutions. Office: Str. Constantinescu nr. 2C, Bucharest. Phone: 021 232 1039."
+    },
+    "blog": {
+      "title": "RADCOM Blog - News & Insights on IT&C Solutions",
+      "description": "Latest news, insights, and updates from RADCOM about public transport technology, fleet management, e-ticketing, and IT&C solutions."
+    }
   }
 }

@@ -4,6 +4,7 @@ import { Bus, Video, MapPin, BarChart3, Clock, Shield, ArrowRight } from "lucide
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function IFleet() {
   const { t } = useTranslation();
@@ -51,6 +52,7 @@ export default function IFleet() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEOHead titleKey="seo.ifleet.title" descriptionKey="seo.ifleet.description" path="/servicii/ifleet" />
       <Header />
       
       <main className="flex-1">

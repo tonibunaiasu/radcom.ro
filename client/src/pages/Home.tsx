@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { useTranslation } from 'react-i18next';
+import { SEOHead } from "@/components/SEOHead";
 import { 
   TrendingUp, 
   Users, 
@@ -68,6 +69,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEOHead titleKey="seo.home.title" descriptionKey="seo.home.description" path="/" />
       <Header />
 
       <main className="flex-1">
