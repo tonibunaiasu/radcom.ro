@@ -27,23 +27,23 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Link-uri Rapide</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/compania/despre">
-                  <span className="hover:text-accent transition-colors cursor-pointer">Despre Noi</span>
+                <Link href="/compania/despre" className="hover:text-accent transition-colors">
+                  Despre Noi
                 </Link>
               </li>
               <li>
-                <Link href="/servicii/dezvoltare">
-                  <span className="hover:text-accent transition-colors cursor-pointer">Servicii</span>
+                <Link href="/servicii/dezvoltare" className="hover:text-accent transition-colors">
+                  Servicii
                 </Link>
               </li>
               <li>
-                <Link href="/solutii/transport">
-                  <span className="hover:text-accent transition-colors cursor-pointer">Soluții</span>
+                <Link href="/solutii/transport" className="hover:text-accent transition-colors">
+                  Soluții
                 </Link>
               </li>
               <li>
-                <Link href="/cariere">
-                  <span className="hover:text-accent transition-colors cursor-pointer">Cariere</span>
+                <Link href="/cariere" className="hover:text-accent transition-colors">
+                  Cariere
                 </Link>
               </li>
             </ul>
@@ -54,23 +54,23 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Resurse</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/blog">
-                  <span className="hover:text-accent transition-colors cursor-pointer">Blog</span>
+                <Link href="/blog" className="hover:text-accent transition-colors">
+                  Blog
                 </Link>
               </li>
               <li>
-                <Link href="/stiri">
-                  <span className="hover:text-accent transition-colors cursor-pointer">Știri</span>
+                <Link href="/stiri" className="hover:text-accent transition-colors">
+                  Știri
                 </Link>
               </li>
               <li>
-                <Link href="/compania/certificari">
-                  <span className="hover:text-accent transition-colors cursor-pointer">Certificări</span>
+                <Link href="/compania/certificari" className="hover:text-accent transition-colors">
+                  Certificări
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <span className="hover:text-accent transition-colors cursor-pointer">Contact</span>
+                <Link href="/contact" className="hover:text-accent transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
