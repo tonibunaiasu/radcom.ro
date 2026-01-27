@@ -3,38 +3,41 @@ import { Footer } from "@/components/Footer";
 import { MapPin, Monitor, Volume2, Clock, Route, Info, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function Exact() {
+  const { t } = useTranslation();
   const features = [
     {
       icon: Route,
-      title: "Planificator Rute Timp Real",
-      description: "Algoritmi avansați pentru calcularea celor mai rapide rute, luând în considerare traficul actual și conexiunile disponibile.",
+      title: t('products.exactPage.features.routePlanning'),
+      description: t('products.exactPage.features.routePlanningDesc'),
     },
     {
       icon: Monitor,
-      title: "Afișaje LED Interioare",
-      description: "Panouri informative în interiorul vehiculului care arată stația curentă, următoarele stații și timp estimat de ajungere.",
+      title: t('products.exactPage.features.ledDisplays'),
+      description: t('products.exactPage.features.ledDisplaysDesc'),
     },
     {
       icon: Monitor,
-      title: "Afișaje LED Exterioare",
-      description: "Panouri de destinație vizibile din exterior pentru informarea pasagerilor înainte de îmbarcare.",
+      title: t('products.exactPage.displayTypes.exterior'),
+      description: t('products.exactPage.displayTypes.exteriorDesc'),
     },
     {
       icon: Volume2,
-      title: "Anunțuri Vocale Automate",
-      description: "Sistem audio pentru anunțuri clare despre stații, conexiuni și informații importante, cu volum programabil.",
+      title: t('products.exactPage.features.voiceAnnouncements'),
+      description: t('products.exactPage.features.voiceAnnouncementsDesc'),
     },
     {
       icon: Clock,
-      title: "Timp Estimat Ajungere",
-      description: "Calcul precis al timpului până la următoarea stație bazat pe trafic real, istoric și condiții curente.",
+      title: t('products.exactPage.features.eta'),
+      description: t('products.exactPage.features.etaDesc'),
     },
     {
       icon: Info,
-      title: "Informații Conexiuni",
-      description: "Afișare linii de transfer disponibile la fiecare stație pentru planificare optimă a călătoriei.",
+      title: t('products.exactPage.features.passengerFeed'),
+      description: t('products.exactPage.features.passengerFeedDesc'),
     },
   ];
 

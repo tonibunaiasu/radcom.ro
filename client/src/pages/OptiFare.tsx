@@ -50,12 +50,12 @@ export default function OptiFare() {
   ];
 
   const paymentMethods = [
-    { title: "Carduri Bancare", description: "Visa, MasterCard contactless" },
-    { title: "Mobile Wallets", description: "Apple Pay, Google Pay" },
-    { title: "Carduri Mifare", description: "Abonamente și bilete electronice" },
-    { title: "Coduri QR", description: "Bilete 1D și 2D pe hârtie sau mobile" },
-    { title: "Telefoane NFC", description: "Plată direct din smartphone" },
-    { title: "Bilete Hârtie", description: "Validare bilete tradiționale" },
+    { title: t('products.optifarePage.paymentMethods.bankCards'), description: t('products.optifarePage.paymentMethods.bankCardsDesc') },
+    { title: t('products.optifarePage.paymentMethods.mobileWallets'), description: t('products.optifarePage.paymentMethods.mobileWalletsDesc') },
+    { title: t('products.optifarePage.paymentMethods.mifareCards'), description: t('products.optifarePage.paymentMethods.mifareCardsDesc') },
+    { title: t('products.optifarePage.paymentMethods.qrCodes'), description: t('products.optifarePage.paymentMethods.qrCodesDesc') },
+    { title: t('products.optifarePage.paymentMethods.nfcPhones'), description: t('products.optifarePage.paymentMethods.nfcPhonesDesc') },
+    { title: t('products.optifarePage.paymentMethods.paperTickets'), description: t('products.optifarePage.paymentMethods.paperTicketsDesc') },
   ];
 
   return (
@@ -93,7 +93,7 @@ export default function OptiFare() {
                 {t('products.keyFeatures')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Toate metodele de plată moderne într-un singur dispozitiv robust
+                {t('products.optifarePage.allPaymentMethods')}
               </p>
             </div>
 

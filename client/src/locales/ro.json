@@ -114,6 +114,7 @@
         "passengerInterface": "Interfață Interactivă",
         "passengerInterfaceDesc": "Feedback vizual și audio clar pentru validare reușită și confirmare plată."
       },
+      "allPaymentMethods": "Toate metodele de plată moderne într-un singur dispozitiv robust",
       "paymentMethods": {
         "title": "Metode de Plată Suportate",
         "bankCards": "Carduri Bancare",

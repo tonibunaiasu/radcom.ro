@@ -111,10 +111,11 @@
         "realTimeReportingDesc": "Instant transaction data and revenue analytics for operators.",
         "robustHardware": "Anti-Vandalism Hardware",
         "robustHardwareDesc": "Industrial-grade E-Check validators designed for harsh public transport environments.",
-        "passengerInterface": "Interactive Interface",
-        "passengerInterfaceDesc": "Clear visual and audio feedback for successful validation and payment confirmation."
-      },
-      "paymentMethods": {
+      "passengerInterface": "Interactive Interface",
+      "passengerInterfaceDesc": "Clear visual and audio feedback for successful validation and payment confirmation."
+    },
+    "allPaymentMethods": "All modern payment methods in one robust device",
+    "paymentMethods": {
         "title": "Supported Payment Methods",
         "bankCards": "Bank Cards",
         "bankCardsDesc": "Visa, MasterCard contactless",
