@@ -66,10 +66,11 @@ export function Header() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary-foreground">
-                <span className="text-primary font-bold text-xl">R</span>
-              </div>
-              <span className="text-xl font-bold tracking-tight">RADCOM</span>
+              <img 
+                src="/logo.svg" 
+                alt="RADCOM Logo" 
+                className="h-12 w-auto"
+              />
             </div>
           </Link>
 

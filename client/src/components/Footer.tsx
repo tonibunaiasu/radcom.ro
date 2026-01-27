@@ -11,10 +11,11 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary-foreground">
-                <span className="text-primary font-bold text-xl">R</span>
-              </div>
-              <span className="text-xl font-bold">RADCOM</span>
+              <img 
+                src="/logo-footer.png" 
+                alt="RADCOM Logo" 
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-sm text-primary-foreground/80">
               Soluții integrate hardware + software pentru industria IT&C din România
@@ -79,13 +80,14 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-sm mb-4">
-              <li>Email: contact@radcom.ro</li>
-              <li>Telefon: +40 123 456 789</li>
-              <li>Adresă: București, România</li>
+              <li>Email: office@radcom.ro</li>
+              <li>Telefon: 021 232 1039</li>
+              <li>Str. Constantinescu nr. 2C, Etaj 5 & 6</li>
+              <li>Sector 2, București</li>
             </ul>
             <div className="flex gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/RadcomRomania"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"
@@ -94,7 +96,7 @@ export function Footer() {
                 <Facebook size={20} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/RadcomRomania"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"
@@ -103,7 +105,7 @@ export function Footer() {
                 <Twitter size={20} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/radcom.ro/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"
@@ -112,7 +114,7 @@ export function Footer() {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/radcom-romania/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"

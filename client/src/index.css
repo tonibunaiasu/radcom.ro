@@ -41,54 +41,55 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   
-  /* RADCOM Brand Colors */
-  --color-radcom-blue: oklch(0.32 0.15 257); /* #003DA5 */
-  --color-radcom-yellow: oklch(0.88 0.18 95); /* #FFD700 */
-  --color-radcom-green: oklch(0.95 0.25 145); /* #00FF00 */
-  --color-radcom-turquoise: oklch(0.78 0.12 195); /* #00D4AA */
-  --color-radcom-red: oklch(0.55 0.22 25); /* #FF0000 */
+  /* RADCOM Brand Colors - Exact palette */
+  --color-radcom-primary: oklch(0.35 0.12 260); /* #1C3F95 - Primary Blue */
+  --color-radcom-secondary: oklch(0.82 0.02 230); /* #BFD0D9 - Light Blue/Gray */
+  --color-radcom-dark: oklch(0.3 0.02 260); /* #434850 - Dark Gray */
+  --color-radcom-yellow: oklch(0.82 0.12 95); /* #D1CD4D - Yellow */
+  --color-radcom-green: oklch(0.75 0.15 165); /* #49D49D - Green */
+  --color-radcom-red: oklch(0.65 0.20 25); /* #EF6461 - Red */
 }
 
 :root {
-  --primary: oklch(0.32 0.15 257); /* RADCOM Blue #003DA5 */
+  --primary: oklch(0.35 0.12 260); /* RADCOM Primary Blue #1C3F95 */
   --primary-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.32 0.15 257); /* RADCOM Blue */
+  --sidebar-primary: oklch(0.35 0.12 260); /* RADCOM Primary Blue */
   --sidebar-primary-foreground: oklch(1 0 0);
-  --chart-1: oklch(0.88 0.18 95); /* Yellow */
-  --chart-2: oklch(0.32 0.15 257); /* Blue */
-  --chart-3: oklch(0.95 0.25 145); /* Green */
-  --chart-4: oklch(0.78 0.12 195); /* Turquoise */
-  --chart-5: oklch(0.55 0.22 25); /* Red */
+  --chart-1: oklch(0.82 0.12 95); /* Yellow #D1CD4D */
+  --chart-2: oklch(0.35 0.12 260); /* Primary Blue #1C3F95 */
+  --chart-3: oklch(0.75 0.15 165); /* Green #49D49D */
+  --chart-4: oklch(0.82 0.02 230); /* Light Blue/Gray #BFD0D9 */
+  --chart-5: oklch(0.65 0.20 25); /* Red #EF6461 */
   --radius: 0.5rem;
   --background: oklch(1 0 0); /* White */
-  --foreground: oklch(0.2 0 0); /* Dark Gray #333333 */
+  --foreground: oklch(0.3 0.02 260); /* Dark Gray #434850 */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0 0);
+  --card-foreground: oklch(0.3 0.02 260);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0 0);
-  --secondary: oklch(0.96 0 0); /* Light Gray #F5F5F5 */
-  --secondary-foreground: oklch(0.2 0 0);
-  --muted: oklch(0.96 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: oklch(0.88 0.18 95); /* RADCOM Yellow/Gold #FFD700 */
-  --accent-foreground: oklch(0.2 0 0);
-  --destructive: oklch(0.55 0.22 25); /* Red */
+  --popover-foreground: oklch(0.3 0.02 260);
+  --secondary: oklch(0.82 0.02 230); /* Light Blue/Gray #BFD0D9 */
+  --secondary-foreground: oklch(0.3 0.02 260);
+  --muted: oklch(0.95 0.01 260);
+  --muted-foreground: oklch(0.5 0.02 260);
+  --accent: oklch(0.82 0.12 95); /* RADCOM Yellow #D1CD4D */
+  --accent-foreground: oklch(0.2 0.05 260);
+  --destructive: oklch(0.65 0.20 25); /* Red #EF6461 */
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0 0);
-  --input: oklch(0.92 0 0);
-  --ring: oklch(0.32 0.15 257); /* RADCOM Blue */
+  --border: oklch(0.9 0.01 260);
+  --input: oklch(0.9 0.01 260);
+  --ring: oklch(0.35 0.12 260); /* RADCOM Primary Blue */
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.2 0 0);
-  --sidebar-accent: oklch(0.96 0 0);
-  --sidebar-accent-foreground: oklch(0.2 0 0);
-  --sidebar-border: oklch(0.92 0 0);
-  --sidebar-ring: oklch(0.32 0.15 257);
+  --sidebar-foreground: oklch(0.3 0.02 260);
+  --sidebar-accent: oklch(0.95 0.01 260);
+  --sidebar-accent-foreground: oklch(0.3 0.02 260);
+  --sidebar-border: oklch(0.9 0.01 260);
+  --sidebar-ring: oklch(0.35 0.12 260);
 }
 
 .dark {
-  --primary: oklch(0.32 0.15 257); /* RADCOM Blue */
+  --primary: oklch(0.35 0.12 260); /* RADCOM Primary Blue */
   --primary-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.32 0.15 257);
+  --sidebar-primary: oklch(0.35 0.12 260);
   --sidebar-primary-foreground: oklch(1 0 0);
   --background: oklch(0.15 0 0);
   --foreground: oklch(0.95 0 0);
@@ -100,24 +101,24 @@
   --secondary-foreground: oklch(0.95 0 0);
   --muted: oklch(0.3 0 0);
   --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.88 0.18 95); /* RADCOM Yellow */
+  --accent: oklch(0.82 0.12 95); /* RADCOM Yellow */
   --accent-foreground: oklch(0.2 0 0);
-  --destructive: oklch(0.55 0.22 25);
+  --destructive: oklch(0.65 0.20 25);
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.32 0.15 257);
-  --chart-1: oklch(0.88 0.18 95);
-  --chart-2: oklch(0.32 0.15 257);
-  --chart-3: oklch(0.95 0.25 145);
-  --chart-4: oklch(0.78 0.12 195);
-  --chart-5: oklch(0.55 0.22 25);
+  --ring: oklch(0.35 0.12 260);
+  --chart-1: oklch(0.82 0.12 95);
+  --chart-2: oklch(0.35 0.12 260);
+  --chart-3: oklch(0.75 0.15 165);
+  --chart-4: oklch(0.82 0.02 230);
+  --chart-5: oklch(0.65 0.20 25);
   --sidebar: oklch(0.2 0 0);
   --sidebar-foreground: oklch(0.95 0 0);
   --sidebar-accent: oklch(0.3 0 0);
   --sidebar-accent-foreground: oklch(1 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.32 0.15 257);
+  --sidebar-ring: oklch(0.35 0.12 260);
 }
 
 @layer base {
