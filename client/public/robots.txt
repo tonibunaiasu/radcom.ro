@@ -1,0 +1,12 @@
+# robots.txt for RADCOM website
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://radcom-website.manus.space/sitemap.xml
+
+# Disallow admin and API endpoints
+Disallow: /api/
+Disallow: /_core/

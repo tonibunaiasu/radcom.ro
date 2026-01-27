@@ -1,24 +1,27 @@
-# RADCOM Website TODO - Logo Alb & Meta Tags SEO
+# RADCOM Website TODO - Sitemap.xml Dinamic
 
-## Actualizare Logo Header
-- [x] Schimbare logo în Header.tsx de la logo-blue.png la logo-white.png
-- [x] Testare vizibilitate logo alb pe fond albastru - Logo alb vizibil perfect pe header albastru
+## Implementare Endpoint Sitemap.xml
+- [x] Creare fișier server/sitemap.ts cu funcție de generare XML
+- [x] Configurare listă completă de pagini (home, servicii, produse, soluții, compania, cariere, blog, contact)
+- [x] Adăugare frecvențe de actualizare (daily, weekly, monthly)
+- [x] Adăugare priorități SEO (0.0-1.0) pentru fiecare pagină
+- [x] Integrare în server/_core/index.ts ca endpoint GET /sitemap.xml
 
-## Implementare Meta Tags SEO Multilingve
-- [x] Creare componentă SEO Head pentru meta tags dinamice
-- [x] Adăugare traduceri pentru meta tags în en.json și ro.json
-- [x] Integrare meta tags în Home.tsx
-- [x] Integrare meta tags în IFleet.tsx
-- [x] Integrare meta tags în OptiFare.tsx
-- [x] Integrare meta tags în Exact.tsx
-- [x] Integrare meta tags în Servicii.tsx
-- [ ] Integrare meta tags în Compania.tsx (optional)
-- [ ] Integrare meta tags în Cariere.tsx (optional)
-- [ ] Integrare meta tags în Blog.tsx (optional)
-- [ ] Integrare meta tags în Contact.tsx (optional)
+## Configurare Rute și Priorități
+- [x] Homepage: priority 1.0, changefreq daily
+- [x] Pagini produse (iFleet, OptiFare, eXact): priority 0.9, changefreq weekly
+- [x] Pagina servicii: priority 0.9, changefreq weekly
+- [x] Pagini soluții: priority 0.7, changefreq monthly
+- [x] Compania, Cariere, Contact: priority 0.6-0.8, changefreq monthly/weekly
+- [x] Blog/Stiri: priority 0.7, changefreq weekly
 
-## Testare & Finalizare
-- [x] Testare meta tags în browser - SEOHead implementat în Home.tsx și IFleet.tsx
-- [x] Verificare Open Graph tags pentru social media - og:title, og:description, og:image configurate
-- [x] Testare logo alb pe diferite rezoluții - logo-white.png funcționează perfect
+## Testare & Validare
+- [x] Testare accesare /sitemap.xml în browser - funcționează perfect
+- [x] Validare XML cu validator - format corect conform sitemap.org
+- [x] Verificare toate URL-urile sunt absolute și corecte - 14 pagini incluse
+- [x] Testare format XML conform standard sitemap.org - valid
+
+## Finalizare
+- [x] Adăugare link către sitemap în robots.txt - creat client/public/robots.txt
+- [ ] Documentare în README
 - [ ] Salvare checkpoint final
