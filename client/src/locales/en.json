@@ -63,8 +63,113 @@
         "eta": "Estimated arrival time at stations",
         "announcements": "Automatic voice announcements",
         "connections": "Line connections and transfers"
+      },
+      "learnMore": "Learn More",
+      "keyFeatures": "Key Features",
+      "technicalSpecs": "Technical Specifications",
+      "benefits": "Benefits",
+      "requestInfo": "Request Information"
+    },
+    "ifleetPage": {
+      "description": "Complete fleet management system for public transport",
+      "detailedDescription": "Integrated solution including automatic passenger counting, real-time video monitoring, GPS tracking, and advanced reporting for transport operations optimization.",
+      "features": {
+        "gpsTracking": "Real-Time GPS Tracking",
+        "gpsTrackingDesc": "Precise tracking of each vehicle's position with real-time updates and complete route history.",
+        "videoMonitoring": "Video Monitoring",
+        "videoMonitoringDesc": "Integrated video surveillance system for passenger safety and driver protection, with cloud storage and remote access.",
+        "passengerCounting": "Automatic Passenger Counting",
+        "passengerCountingDesc": "Advanced sensors for precise passenger counting at each station, with automatic reporting and statistical analysis.",
+        "scheduleCompliance": "Schedule Compliance",
+        "scheduleComplianceDesc": "Real-time monitoring of schedule adherence, automatic alerts for delays, and route optimization for maximum efficiency.",
+        "robustCob": "Robust Computer On-Board",
+        "robustCobDesc": "Latest-generation industrial hardware, resistant to vibrations and extreme temperatures, with 4G/WiFi/Bluetooth connectivity.",
+        "reporting": "Reporting and Analysis",
+        "reportingDesc": "Complete dashboard with detailed reports, operational KPIs, and predictive analytics for fleet optimization."
+      },
+      "cobSpecs": {
+        "title": "Computer On-Board Technical Specifications",
+        "processor": "Processor",
+        "memory": "Memory",
+        "storage": "Storage",
+        "communication": "Communication",
+        "os": "Operating System",
+        "upgrade": "Upgrade"
+      }
+    },
+    "optifarePage": {
+      "description": "Advanced e-ticketing system for modern public transport",
+      "detailedDescription": "Comprehensive solution for contactless payments, smart cards, and passenger validation with real-time reporting.",
+      "features": {
+        "contactlessPayment": "Contactless Payment",
+        "contactlessPaymentDesc": "Accept Visa, MasterCard, Apple Pay, and Google Pay for seamless passenger experience.",
+        "smartCards": "Mifare Smart Cards",
+        "smartCardsDesc": "Support for electronic subscriptions and tickets with secure validation.",
+        "qrCodes": "QR Code Validation",
+        "qrCodesDesc": "1D and 2D barcode scanning for paper and mobile tickets.",
+        "realTimeReporting": "Real-Time Reporting",
+        "realTimeReportingDesc": "Instant transaction data and revenue analytics for operators.",
+        "robustHardware": "Anti-Vandalism Hardware",
+        "robustHardwareDesc": "Industrial-grade E-Check validators designed for harsh public transport environments.",
+        "passengerInterface": "Interactive Interface",
+        "passengerInterfaceDesc": "Clear visual and audio feedback for successful validation and payment confirmation."
+      },
+      "paymentMethods": {
+        "title": "Supported Payment Methods",
+        "bankCards": "Bank Cards",
+        "bankCardsDesc": "Visa, MasterCard contactless",
+        "mobileWallets": "Mobile Wallets",
+        "mobileWalletsDesc": "Apple Pay, Google Pay",
+        "mifareCards": "Mifare Cards",
+        "mifareCardsDesc": "Electronic subscriptions and tickets",
+        "qrCodes": "QR Codes",
+        "qrCodesDesc": "1D and 2D paper or mobile tickets",
+        "nfcPhones": "NFC Phones",
+        "nfcPhonesDesc": "Direct payment from smartphone",
+        "paperTickets": "Paper Tickets",
+        "paperTicketsDesc": "Traditional ticket validation"
+      }
+    },
+    "exactPage": {
+      "description": "Intelligent passenger information system with real-time route planner",
+      "detailedDescription": "Interior and exterior LED displays, voice announcements, estimated arrival time, and line connections. Complete experience for informed travelers.",
+      "features": {
+        "routePlanning": "Real-Time Route Planning",
+        "routePlanningDesc": "Dynamic route calculation based on current traffic and service disruptions.",
+        "ledDisplays": "LED Displays",
+        "ledDisplaysDesc": "High-visibility interior and exterior displays showing next stops, connections, and service information.",
+        "voiceAnnouncements": "Voice Announcements",
+        "voiceAnnouncementsDesc": "Automatic multilingual announcements for stops, connections, and service updates.",
+        "eta": "Estimated Arrival Time",
+        "etaDesc": "Real-time arrival predictions at each station based on current traffic conditions.",
+        "stationDisplays": "Station Displays",
+        "stationDisplaysDesc": "Real-time information displays at stops showing arrivals, departures, and delays.",
+        "passengerFeed": "Passenger Information Feed",
+        "passengerFeedDesc": "Continuous transmission of useful information: routes, schedules, connections, and special announcements."
+      },
+      "displayTypes": {
+        "title": "Display Types",
+        "interior": "Interior LED Displays",
+        "interiorDesc": "Next stop, route information, and connection details for passengers inside the vehicle.",
+        "exterior": "Exterior LED Displays",
+        "exteriorDesc": "Route number, destination, and service information visible from outside the vehicle.",
+        "stations": "Station Displays",
+        "stationsDesc": "Real-time arrival and departure information at public transport stops.",
+        "feed": "Passenger Information Feed",
+        "feedDesc": "Continuous transmission of useful information: routes, schedules, connections, and special announcements.",
+        "publicInfo": "Public Information Systems",
+        "publicInfoDesc": "Integration with emergency alert systems for special situations or events.",
+        "advertising": "Dynamic Advertising",
+        "advertisingDesc": "Ability to display advertising messages between travel information."
       }
     }
+  },
+  "services": {
+    "title": "Integrated RADCOM System",
+    "subtitle": "ITS for public transport - Complete hardware + software solutions",
+    "description": "Three integrated products that completely transform the public transport experience",
+    "ourSolutions": "Our Proposed Solutions",
+    "solutionsDescription": "Three integrated products that completely transform the public transport experience"
   },
   "solutions": {
     "title": "Solutions by Industry",

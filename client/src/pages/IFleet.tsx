@@ -3,48 +3,50 @@ import { Footer } from "@/components/Footer";
 import { Bus, Video, MapPin, BarChart3, Clock, Shield, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
 
 export default function IFleet() {
+  const { t } = useTranslation();
   const features = [
     {
       icon: MapPin,
-      title: "Tracking GPS în Timp Real",
-      description: "Urmărire precisă a poziției fiecărui vehicul din flotă cu actualizare în timp real și istoric complet al traseelor parcurse.",
+      title: t('products.ifleetPage.features.gpsTracking'),
+      description: t('products.ifleetPage.features.gpsTrackingDesc'),
     },
     {
       icon: Video,
-      title: "Monitorizare Video",
-      description: "Sistem integrat de supraveghere video pentru siguranța pasagerilor și protecția șoferilor, cu stocare cloud și acces remote.",
+      title: t('products.ifleetPage.features.videoMonitoring'),
+      description: t('products.ifleetPage.features.videoMonitoringDesc'),
     },
     {
       icon: BarChart3,
-      title: "Numărare Automată Pasageri",
-      description: "Senzori avansați pentru numărare precisă a pasagerilor la fiecare stație, cu raportare automată și analiză statistică.",
+      title: t('products.ifleetPage.features.passengerCounting'),
+      description: t('products.ifleetPage.features.passengerCountingDesc'),
     },
     {
       icon: Clock,
-      title: "Respectarea Programului",
-      description: "Monitorizare în timp real a respectării orarului, alertare automată pentru întârzieri și optimizare rute pentru eficiență maximă.",
+      title: t('products.ifleetPage.features.scheduleCompliance'),
+      description: t('products.ifleetPage.features.scheduleComplianceDesc'),
     },
     {
       icon: Shield,
-      title: "Computer On-Board Robust",
-      description: "Hardware industrial de ultimă generație, rezistent la vibrații și temperaturi extreme, cu conectivitate 4G/WiFi/Bluetooth.",
+      title: t('products.ifleetPage.features.robustCob'),
+      description: t('products.ifleetPage.features.robustCobDesc'),
     },
     {
       icon: BarChart3,
-      title: "Raportare și Analiză",
-      description: "Dashboard complet cu rapoarte detaliate, KPI-uri operaționale și analize predictive pentru optimizarea flotei.",
+      title: t('products.ifleetPage.features.reporting'),
+      description: t('products.ifleetPage.features.reportingDesc'),
     },
   ];
 
   const cobSpecs = [
-    { label: "Procesor", value: "Intel® Atom™ QC x7 /E3950 (1.6~2.0GHz)" },
-    { label: "Memorie", value: "DDR3L SO-DIMM până la 16 GB" },
-    { label: "Stocare", value: "mSATA SSD" },
-    { label: "Comunicare", value: "GPRS / 2G / 3G / 4G, WiFi 802.11ac, Bluetooth 4.2" },
-    { label: "Sistem Operare", value: "Linux" },
-    { label: "Upgrade", value: "Local / Remote" },
+    { label: t('products.ifleetPage.cobSpecs.processor'), value: "Intel® Atom™ QC x7 /E3950 (1.6~2.0GHz)" },
+    { label: t('products.ifleetPage.cobSpecs.memory'), value: "DDR3L SO-DIMM până la 16 GB" },
+    { label: t('products.ifleetPage.cobSpecs.storage'), value: "mSATA SSD" },
+    { label: t('products.ifleetPage.cobSpecs.communication'), value: "GPRS / 2G / 3G / 4G, WiFi 802.11ac, Bluetooth 4.2" },
+    { label: t('products.ifleetPage.cobSpecs.os'), value: "Linux" },
+    { label: t('products.ifleetPage.cobSpecs.upgrade'), value: "Local / Remote" },
   ];
 
   return (
@@ -62,14 +64,13 @@ export default function IFleet() {
                   alt="RADCOM iFleet - Extended Fleet Management" 
                   className="h-24 md:h-32 w-auto"
                 />
-                <p className="text-xl text-primary-foreground/90">Extended Fleet Management</p>
+                <p className="text-xl text-primary-foreground/90">{t('products.ifleet.subtitle')}</p>
               </div>
               <p className="text-lg md:text-xl text-primary-foreground/90 mb-6">
-                Sistem complet de management al flotei pentru transportul public
+                {t('products.ifleetPage.description')}
               </p>
               <p className="text-base text-primary-foreground/80">
-                Soluție integrată care include numărarea automată a pasagerilor, monitorizare video în timp real, 
-                tracking GPS și raportare avansată pentru optimizarea operațiunilor de transport.
+                {t('products.ifleetPage.detailedDescription')}
               </p>
             </div>
           </div>
@@ -80,10 +81,10 @@ export default function IFleet() {
           <div className="container">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Funcționalități Principale
+                {t('products.keyFeatures')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Totul de care ai nevoie pentru managementul eficient al flotei de transport public
+                {t('products.ifleetPage.description')}
               </p>
             </div>
 
@@ -113,10 +114,10 @@ export default function IFleet() {
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Computer On-Board (COB)
+                  {t('products.ifleetPage.cobSpecs.title')}
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Inima sistemului iFleet - hardware industrial de ultimă generație
+                  {t('products.ifleetPage.features.robustCobDesc')}
                 </p>
               </div>
 

@@ -3,38 +3,40 @@ import { Footer } from "@/components/Footer";
 import { CreditCard, Smartphone, Ticket, Shield, Zap, Users, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
 
 export default function OptiFare() {
+  const { t } = useTranslation();
   const features = [
     {
       icon: CreditCard,
-      title: "Plată Contactless",
-      description: "Acceptă plăți cu carduri Visa, MasterCard, Apple Pay și Google Pay pentru o experiență modernă și rapidă.",
+      title: t('products.optifarePage.features.contactlessPayment'),
+      description: t('products.optifarePage.features.contactlessPaymentDesc'),
     },
     {
       icon: Ticket,
-      title: "Carduri Mifare",
-      description: "Validare carduri inteligente Mifare pentru abonamente și bilete electronice cu securitate avansată.",
+      title: t('products.optifarePage.features.smartCards'),
+      description: t('products.optifarePage.features.smartCardsDesc'),
     },
     {
       icon: Smartphone,
-      title: "Suport NFC",
-      description: "Compatibilitate completă cu telefoane NFC pentru plată direct din smartphone, fără card fizic.",
+      title: t('products.optifarePage.features.qrCodes'),
+      description: t('products.optifarePage.features.qrCodesDesc'),
     },
     {
       icon: Shield,
-      title: "Securitate EMV",
-      description: "Conformitate completă cu standardele EMV pentru tranzacții sigure și protecție împotriva fraudelor.",
+      title: t('products.optifarePage.features.robustHardware'),
+      description: t('products.optifarePage.features.robustHardwareDesc'),
     },
     {
       icon: Zap,
-      title: "Validare Rapidă",
-      description: "Timp de răspuns sub 300ms pentru validare instantanee și fluidizare îmbarcării pasagerilor.",
+      title: t('products.optifarePage.features.realTimeReporting'),
+      description: t('products.optifarePage.features.realTimeReportingDesc'),
     },
     {
       icon: Users,
-      title: "Interfață Intuitivă",
-      description: "Ecran tactil 7\" cu interfață grafică prietenoasă, multilingvă și accesibilă pentru toți pasagerii.",
+      title: t('products.optifarePage.features.passengerInterface'),
+      description: t('products.optifarePage.features.passengerInterfaceDesc'),
     },
   ];
 
@@ -71,14 +73,13 @@ export default function OptiFare() {
                   alt="RADCOM OptiFare - E-Ticketing System" 
                   className="h-24 md:h-32 w-auto"
                 />
-                <p className="text-xl text-primary-foreground/90">E-Ticketing System</p>
+                <p className="text-xl text-primary-foreground/90">{t('products.optifare.subtitle')}</p>
               </div>
               <p className="text-lg md:text-xl text-primary-foreground/90 mb-6">
-                Sistem avansat de e-ticketing pentru transportul public modern
+                {t('products.optifarePage.description')}
               </p>
               <p className="text-base text-primary-foreground/80">
-                Validare carduri inteligente, plată contactless, suport NFC și interfață interactivă. 
-                Soluție completă pentru modernizarea sistemului de taxare în transportul public.
+                {t('products.optifarePage.detailedDescription')}
               </p>
             </div>
           </div>
@@ -89,7 +90,7 @@ export default function OptiFare() {
           <div className="container">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Funcționalități Principale
+                {t('products.keyFeatures')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Toate metodele de plată moderne într-un singur dispozitiv robust

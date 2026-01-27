@@ -1,20 +1,25 @@
-# RADCOM Website TODO - Integrare Logo-uri Produse
+# RADCOM Website TODO - Finalizare Traduceri EN/RO
 
-## Extragere Logo-uri de pe radcom.ro/new/
-- [x] Accesare website radcom.ro/new/ pentru identificare logo-uri
-- [x] Extragere logo iFleet (iFleet.svg)
-- [x] Extragere logo OptiFare (OptiFare.svg)
-- [x] Extragere logo eXact (eXact.svg)
-- [x] Salvare logo-uri în client/public/products/
+## Extindere Fișiere Traduceri
+- [x] Actualizare en.json cu traduceri pentru produse (iFleet, OptiFare, eXact)
+- [x] Actualizare ro.json cu traduceri pentru produse
+- [x] Adăugare traduceri Footer în en.json și ro.json (deja existente)
+- [x] Adăugare traduceri Servicii.tsx în en.json și ro.json
 
-## Integrare Logo-uri în Pagini
-- [x] Actualizare IFleet.tsx cu logo oficial (/products/iFleet.svg)
-- [x] Actualizare OptiFare.tsx cu logo oficial (/products/OptiFare.svg)
-- [x] Actualizare Exact.tsx cu logo oficial (/products/eXact.svg)
-- [x] Actualizare Servicii.tsx cu logo-uri pentru toate produsele (iFleet, OptiFare, eXact)
+## Actualizare Pagini Produse
+- [x] IFleet.tsx - integrare useTranslation și t() pentru toate textele (hero, features, COB specs)
+- [x] OptiFare.tsx - integrare useTranslation și t() pentru toate textele (hero, features) - parțial
+- [ ] Exact.tsx - integrare useTranslation și t() pentru toate textele
+
+## Actualizare Footer
+- [ ] Footer.tsx - integrare useTranslation și t() pentru toate textele
+- [ ] Traducere link-uri și secțiuni footer
+
+## Actualizare Servicii
+- [ ] Servicii.tsx - integrare useTranslation și t() pentru toate textele
 
 ## Testare și Finalizare
-- [x] Testare afișare logo-uri pe toate paginile - logo-uri SVG oficiale integrate
-- [x] Verificare responsive design - h-24 md:h-32 pentru hero, h-32 pentru cards
-- [x] Rulare teste unit - 10/10 passed
+- [ ] Testare switch EN/RO pe toate paginile
+- [ ] Verificare consistență traduceri
+- [ ] Rulare teste unit
 - [ ] Salvare checkpoint final

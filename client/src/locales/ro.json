@@ -63,8 +63,113 @@
         "eta": "Timp estimat de ajungere la stații",
         "announcements": "Anunțuri vocale automate",
         "connections": "Conexiuni de linie și transfer"
+      },
+      "learnMore": "Află Mai Multe",
+      "keyFeatures": "Funcționalități Principale",
+      "technicalSpecs": "Specificații Tehnice",
+      "benefits": "Beneficii",
+      "requestInfo": "Solicită Informații"
+    },
+    "ifleetPage": {
+      "description": "Sistem complet de management al flotei pentru transportul public",
+      "detailedDescription": "Soluție integrată care include numărarea automată a pasagerilor, monitorizare video în timp real, tracking GPS și raportare avansată pentru optimizarea operațiunilor de transport.",
+      "features": {
+        "gpsTracking": "Tracking GPS în Timp Real",
+        "gpsTrackingDesc": "Urmărire precisă a poziției fiecărui vehicul din flotă cu actualizare în timp real și istoric complet al traseelor parcurse.",
+        "videoMonitoring": "Monitorizare Video",
+        "videoMonitoringDesc": "Sistem integrat de supraveghere video pentru siguranța pasagerilor și protecția șoferilor, cu stocare cloud și acces remote.",
+        "passengerCounting": "Numărare Automată Pasageri",
+        "passengerCountingDesc": "Senzori avansați pentru numărare precisă a pasagerilor la fiecare stație, cu raportare automată și analiză statistică.",
+        "scheduleCompliance": "Respectarea Programului",
+        "scheduleComplianceDesc": "Monitorizare în timp real a respectării orarului, alertare automată pentru întârzieri și optimizare rute pentru eficiență maximă.",
+        "robustCob": "Computer On-Board Robust",
+        "robustCobDesc": "Hardware industrial de ultimă generație, rezistent la vibrații și temperaturi extreme, cu conectivitate 4G/WiFi/Bluetooth.",
+        "reporting": "Raportare și Analiză",
+        "reportingDesc": "Dashboard complet cu rapoarte detaliate, KPI-uri operaționale și analize predictive pentru optimizarea flotei."
+      },
+      "cobSpecs": {
+        "title": "Specificații Tehnice Computer On-Board",
+        "processor": "Procesor",
+        "memory": "Memorie",
+        "storage": "Stocare",
+        "communication": "Comunicare",
+        "os": "Sistem Operare",
+        "upgrade": "Upgrade"
+      }
+    },
+    "optifarePage": {
+      "description": "Sistem avansat de e-ticketing pentru transportul public modern",
+      "detailedDescription": "Soluție completă pentru plăți contactless, carduri inteligente și validare pasageri cu raportare în timp real.",
+      "features": {
+        "contactlessPayment": "Plată Contactless",
+        "contactlessPaymentDesc": "Acceptă Visa, MasterCard, Apple Pay și Google Pay pentru o experiență fluidă a pasagerilor.",
+        "smartCards": "Carduri Inteligente Mifare",
+        "smartCardsDesc": "Suport pentru abonamente și bilete electronice cu validare securizată.",
+        "qrCodes": "Validare Coduri QR",
+        "qrCodesDesc": "Scanare coduri de bare 1D și 2D pentru bilete pe hârtie și mobile.",
+        "realTimeReporting": "Raportare în Timp Real",
+        "realTimeReportingDesc": "Date instant despre tranzacții și analize de venit pentru operatori.",
+        "robustHardware": "Hardware Anti-Vandalism",
+        "robustHardwareDesc": "Validatoare E-Check de nivel industrial proiectate pentru medii dure de transport public.",
+        "passengerInterface": "Interfață Interactivă",
+        "passengerInterfaceDesc": "Feedback vizual și audio clar pentru validare reușită și confirmare plată."
+      },
+      "paymentMethods": {
+        "title": "Metode de Plată Suportate",
+        "bankCards": "Carduri Bancare",
+        "bankCardsDesc": "Visa, MasterCard contactless",
+        "mobileWallets": "Mobile Wallets",
+        "mobileWalletsDesc": "Apple Pay, Google Pay",
+        "mifareCards": "Carduri Mifare",
+        "mifareCardsDesc": "Abonamente și bilete electronice",
+        "qrCodes": "Coduri QR",
+        "qrCodesDesc": "Bilete 1D și 2D pe hârtie sau mobile",
+        "nfcPhones": "Telefoane NFC",
+        "nfcPhonesDesc": "Plată direct din smartphone",
+        "paperTickets": "Bilete Hârtie",
+        "paperTicketsDesc": "Validare bilete tradiționale"
+      }
+    },
+    "exactPage": {
+      "description": "Sistem inteligent de informații pentru pasageri cu planificator de rute în timp real",
+      "detailedDescription": "Afișaje LED interioare și exterioare, anunțuri vocale, timp estimat de ajungere și conexiuni de linie. Experiență completă pentru călători informați.",
+      "features": {
+        "routePlanning": "Planificare Rute în Timp Real",
+        "routePlanningDesc": "Calcul dinamic al rutelor bazat pe traficul curent și întreruperile de serviciu.",
+        "ledDisplays": "Afișaje LED",
+        "ledDisplaysDesc": "Afișaje interioare și exterioare de înaltă vizibilitate care arată următoarele opriri, conexiuni și informații de serviciu.",
+        "voiceAnnouncements": "Anunțuri Vocale",
+        "voiceAnnouncementsDesc": "Anunțuri automate multilingve pentru opriri, conexiuni și actualizări de serviciu.",
+        "eta": "Timp Estimat de Ajungere",
+        "etaDesc": "Predicții în timp real ale sosirii la fiecare stație bazate pe condițiile actuale de trafic.",
+        "stationDisplays": "Afișaje în Stații",
+        "stationDisplaysDesc": "Afișaje de informații în timp real la opriri care arată sosiri, plecări și întârzieri.",
+        "passengerFeed": "Feed Informații Pasageri",
+        "passengerFeedDesc": "Transmitere continuă de informații utile: rute, orare, conexiuni și anunțuri speciale."
+      },
+      "displayTypes": {
+        "title": "Tipuri de Afișaje",
+        "interior": "Afișaje LED Interioare",
+        "interiorDesc": "Următoarea oprire, informații despre rută și detalii conexiuni pentru pasagerii din vehicul.",
+        "exterior": "Afișaje LED Exterioare",
+        "exteriorDesc": "Număr rută, destinație și informații serviciu vizibile din exteriorul vehiculului.",
+        "stations": "Afișaje în Stații",
+        "stationsDesc": "Informații în timp real despre sosiri și plecări la stațiile de transport public.",
+        "feed": "Feed Informații Pasageri",
+        "feedDesc": "Transmitere continuă de informații utile: rute, orare, conexiuni și anunțuri speciale.",
+        "publicInfo": "Sisteme Informare Publică",
+        "publicInfoDesc": "Integrare cu sisteme de alertare pentru situații de urgență sau evenimente speciale.",
+        "advertising": "Publicitate Dinamică",
+        "advertisingDesc": "Posibilitate afișare mesaje publicitare între informațiile de călătorie."
       }
     }
+  },
+  "services": {
+    "title": "Sistemul Integrat RADCOM",
+    "subtitle": "STI pentru transportul public - Soluții complete hardware + software",
+    "description": "Trei produse integrate care transformă complet experiența de transport public",
+    "ourSolutions": "Soluțiile propuse de noi",
+    "solutionsDescription": "Trei produse integrate care transformă complet experiența de transport public"
   },
   "solutions": {
     "title": "Soluții pe Industrii",
