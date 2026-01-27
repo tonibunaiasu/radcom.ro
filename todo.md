@@ -1,5 +1,12 @@
-# RADCOM Website TODO - Fix Nested Anchor Tags
+# RADCOM Website TODO - Pagina Servicii
 
-## Bug Fixes
-- [x] Corectare nested anchor tags în Footer.tsx (eroare React: `<a>` cannot contain nested `<a>`)
-- [x] Verificare și testare eliminare eroare - Nu mai apar erori în browserConsole.log
+## Pagina /servicii
+- [x] Creare pagină /servicii cu cele 3 categorii principale
+- [x] Adăugare logo-uri/iconițe pentru fiecare categorie:
+  - Dezvoltare Software (icon: Code)
+  - Infrastructură (icon: Network)
+  - Programe Europene (icon: Globe)
+- [x] Design consistent cu website-ul de referință radcom.ro/new/
+- [x] Actualizare rute în App.tsx
+- [x] Testare navigare și funcționalitate
+- [x] Toate testele passed (10/10)
