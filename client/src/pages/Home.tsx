@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
+import { useTranslation } from 'react-i18next';
 import { 
   TrendingUp, 
   Users, 
@@ -22,6 +23,7 @@ import {
 import { trpc } from "@/lib/trpc";
 
 export default function Home() {
+  const { t } = useTranslation();
   const { data: services } = trpc.services.getAll.useQuery();
   const { data: solutions } = trpc.solutions.getAll.useQuery();
   const { data: partners } = trpc.partners.getAll.useQuery();
@@ -44,23 +46,23 @@ export default function Home() {
   const advantages = [
     {
       key: "responsivitate",
-      title: "Responsivitate",
-      description: "Construim produse digitale și fizice care se autoadaptează pentru toate tipurile de dispozitive. Cu produsele responsive poți fi sigur că ești pregătit pentru tehnologia viitoare.",
+      title: t('advantages.responsiveness.title'),
+      description: t('advantages.responsiveness.description'),
     },
     {
       key: "customizare",
-      title: "Customizare",
-      description: "Dincolo de configurare și de optimizare, ne concentrăm întotdeauna și pe particularizarea soluțiilor noastre de comunicații pentru nevoile specifice ale fiecărui client.",
+      title: t('advantages.customization.title'),
+      description: t('advantages.customization.description'),
     },
     {
       key: "elemente-ui",
-      title: "Elemente UI",
-      description: "Elementele UI sunt partea cea mai integrantă a unei aplicații software. Ne concentrăm toată atenția și experiența pe toate cele trei elemente UI esențiale: intrare, ieșire și ajutor.",
+      title: t('advantages.uiElements.title'),
+      description: t('advantages.uiElements.description'),
     },
     {
       key: "cod-curat",
-      title: "Linii de cod curate",
-      description: "Codul curat este esențial în industria software. Îmbunătățim lizibilitatea codului pe care îl creăm, documentația pe care o scriem și alegem instrumente care respectă aceleași principii.",
+      title: t('advantages.cleanCode.title'),
+      description: t('advantages.cleanCode.description'),
     },
   ];
 
@@ -73,22 +75,22 @@ export default function Home() {
         <section className="bg-primary text-primary-foreground py-20 md:py-32">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Soluții integrate{" "}
-                <span className="text-accent">hardware + software</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                {t('hero.title')}{" "}
+                <span className="text-accent">{t('hero.titleHighlight')}</span>
               </h1>
-              <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
-                Oferim servicii IT&C complete pentru mai multe industrii românești
+              <p className="text-lg md:text-xl text-primary-foreground/90 mb-10 max-w-3xl mx-auto">
+                {t('hero.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">
-                  <Button size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                    Contactează-ne
+                  <Button size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
+                    {t('cta.contactUs')}
                   </Button>
                 </Link>
-                <Link href="/servicii/dezvoltare">
-                  <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-                    Descoperă Serviciile
+                <Link href="/servicii">
+                  <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 font-semibold">
+                    {t('cta.discoverMore')}
                   </Button>
                 </Link>
               </div>
@@ -107,9 +109,9 @@ export default function Home() {
                       <TrendingUp className="w-8 h-8 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-primary mb-2">Top 3</h3>
+                      <h3 className="text-2xl font-bold text-primary mb-2">{t('stats.top3')}</h3>
                       <p className="text-muted-foreground">
-                        Suntem în <strong>Top 3 cele mai mari companii</strong> de tehnologie din România
+                        {t('stats.top3Description')}
                       </p>
                     </div>
                   </div>
@@ -123,9 +125,9 @@ export default function Home() {
                       <Users className="w-8 h-8 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-primary mb-2">Servicii IT&C Complete</h3>
+                      <h3 className="text-2xl font-bold text-primary mb-2">{t('stats.completeServices')}</h3>
                       <p className="text-muted-foreground">
-                        Oferim servicii IT&C complete pentru mai multe industrii românești
+                        {t('stats.completeServicesDescription')}
                       </p>
                     </div>
                   </div>
@@ -139,9 +141,9 @@ export default function Home() {
                       <CheckCircle2 className="w-8 h-8 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-primary mb-2">Soluții Perfect Integrate</h3>
+                      <h3 className="text-2xl font-bold text-primary mb-2">{t('stats.perfectSolutions')}</h3>
                       <p className="text-muted-foreground">
-                        Răspundem cu soluții perfect integrate la nevoile de business ale clienților noștri
+                        {t('stats.perfectSolutionsDescription')}
                       </p>
                     </div>
                   </div>

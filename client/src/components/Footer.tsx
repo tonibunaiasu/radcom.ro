@@ -12,9 +12,9 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img 
-                src="/logo-footer.png" 
+                src="/logo-white.png" 
                 alt="RADCOM Logo" 
-                className="h-10 w-auto"
+                className="h-8 w-auto"
               />
             </div>
             <p className="text-sm text-primary-foreground/80">

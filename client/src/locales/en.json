@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "company": "COMPANY",
+    "services": "SERVICES",
+    "solutions": "SOLUTIONS",
+    "careers": "CAREERS",
+    "resources": "RESOURCES",
+    "contact": "CONTACT",
+    "about": "About",
+    "team": "Team",
+    "certifications": "Certifications",
+    "news": "News",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Integrated solutions",
+    "titleHighlight": "hardware + software",
+    "subtitle": "We offer complete IT&C services for multiple Romanian industries"
+  },
+  "stats": {
+    "top3": "Top 3",
+    "top3Description": "largest technology companies in Romania",
+    "completeServices": "Complete IT&C Services",
+    "completeServicesDescription": "for multiple Romanian industries",
+    "perfectSolutions": "Perfect Integrated Solutions",
+    "perfectSolutionsDescription": "meeting our clients' business needs"
+  },
+  "products": {
+    "ifleet": {
+      "title": "iFleet",
+      "subtitle": "Extended Fleet Management",
+      "description": "Complete fleet management system for public transport. Integrated solution including automatic passenger counting, real-time video monitoring, GPS tracking, and advanced reporting for transport operations optimization.",
+      "features": {
+        "management": "Complete vehicle fleet management",
+        "counting": "Automatic passenger counting",
+        "monitoring": "Real-time video monitoring",
+        "tracking": "GPS tracking and vehicle monitoring",
+        "reporting": "Complete data reporting and analysis",
+        "cob": "Integrated Computer On-Board"
+      }
+    },
+    "optifare": {
+      "title": "OptiFare",
+      "subtitle": "E-Ticketing System",
+      "description": "Advanced e-ticketing system for public transport. Mifare smart card validation, contactless payment with Visa and MasterCard, NFC support, and interactive passenger interface. Complete solution for fare system modernization.",
+      "features": {
+        "mifare": "Mifare smart card validation",
+        "payment": "Visa and MasterCard travel payment",
+        "nfc": "NFC phone support (Apple Pay, Google Pay)",
+        "receipts": "Payment confirmation receipts",
+        "interface": "Interactive passenger interface",
+        "validators": "Robust anti-vandalism E-Check validators"
+      }
+    },
+    "exact": {
+      "title": "eXact",
+      "subtitle": "Real Time Route Planning",
+      "description": "Intelligent passenger information system with real-time route planner. Interior and exterior LED displays, voice announcements, estimated arrival time, and line connections. Complete experience for informed travelers.",
+      "features": {
+        "planner": "Real-time route planner",
+        "displays": "Visual and audio passenger information",
+        "led": "Interior and exterior LED displays",
+        "eta": "Estimated arrival time at stations",
+        "announcements": "Automatic voice announcements",
+        "connections": "Line connections and transfers"
+      }
+    }
+  },
+  "solutions": {
+    "title": "Solutions by Industry",
+    "transport": "Transport",
+    "medical": "Medical",
+    "telecom": "Telecom",
+    "mediaMobile": "Media & Mobile",
+    "internet": "Internet"
+  },
+  "advantages": {
+    "title": "Our Solutions' Advantages",
+    "responsiveness": {
+      "title": "Responsiveness",
+      "description": "We build digital and physical products that auto-adapt for all device types. With responsive products, you can be sure you're ready for future technology."
+    },
+    "customization": {
+      "title": "Customization",
+      "description": "Beyond configuration and optimization, we always focus on customization - tailoring our communications solutions to specific needs."
+    },
+    "uiElements": {
+      "title": "UI Elements",
+      "description": "UI elements are the most integral part of any software application. We focus all our attention and experience on all three essential UI elements."
+    },
+    "cleanCode": {
+      "title": "Clean Code",
+      "description": "Clean code is essential in the software industry. We believe in improving code readability, documentation quality, and choosing tools that respect these principles."
+    }
+  },
+  "cta": {
+    "modernize": "Modernize your public transport system",
+    "description": "Our team of experts is ready to help you implement the most advanced solutions for transport operators in Romania.",
+    "requestDemo": "Request a Demo",
+    "viewAll": "View All Products",
+    "contactUs": "Contact Us",
+    "discoverMore": "Discover More"
+  },
+  "footer": {
+    "description": "Integrated hardware + software solutions for the IT&C industry in Romania",
+    "quickLinks": "Quick Links",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "solutions": "Solutions",
+    "careers": "Careers",
+    "contact": "Contact",
+    "contactInfo": "Contact Information",
+    "address": "Address",
+    "addressValue": "Str. Constantinescu no. 2C, Bucharest",
+    "phone": "Phone",
+    "email": "Email",
+    "followUs": "Follow Us",
+    "allRightsReserved": "All rights reserved"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "viewDetails": "View Details",
+    "backToHome": "Back to Home",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  }
+}

@@ -1,29 +1,43 @@
-# RADCOM Website TODO - Restructurare Servicii (iFleet, OptiFare, Exact)
+# RADCOM Website TODO - Modernizare și Multilingvism
 
-## Cercetare Produse
-- [x] Cercetare iFleet pe radcom.ro/new/ - Extended Fleet Management
-- [x] Cercetare OptiFare pe radcom.ro/new/ - E-Ticketing System
-- [x] Cercetare eXact pe radcom.ro/new/ - Real Time Route Planning
-- [x] Extragere descrieri, features și imagini pentru fiecare produs
+## Integrare Logo-uri Noi
+- [x] Copiere logo-uri noi în client/public/
+  - logo-blue.png (pentru header pe fundal deschis)
+  - logo-white.png (pentru footer pe fundal întunecat)
+- [x] Actualizare Header.tsx cu noul logo albastru
+- [x] Actualizare Footer.tsx cu noul logo alb
+- [ ] Testare afișare logo-uri pe toate paginile
 
-## Actualizare Header
-- [x] Modificare submeniu SERVICII în Header.tsx
-- [x] Adăugare link-uri pentru iFleet, OptiFare, eXact
-- [x] Eliminare link-uri vechi (Dezvoltare, Infrastructură, Programe Europene)
+## Sistem Multilingv (i18n)
+- [x] Instalare dependențe i18n (react-i18next)
+- [x] Configurare sistem multilingv cu EN ca limbă principală
+- [x] Creare fișiere de traduceri (en.json, ro.json)
+- [x] Implementare Language Switcher în header (EN/RO)
+- [x] Traducere Header.tsx cu meniu complet
+- [x] Traducere Home.tsx (hero, stats, advantages)
+- [ ] Traducere Footer.tsx
+- [ ] Traducere pagini produse (iFleet, OptiFare, eXact)
+- [ ] Traducere pagini soluții și alte pagini
+- [x] Salvare preferință limbă în localStorage (auto prin i18next-browser-languagedetector)
+- [ ] Testare switch între EN și RO
 
-## Actualizare Pagină /servicii
-- [x] Modificare pagina Servicii.tsx pentru a prezenta cele 3 produse
-- [x] Adăugare iconițe pentru fiecare produs (Bus, CreditCard, MapPin)
-- [x] Actualizare descrieri și features pentru iFleet, OptiFare, eXact
+## Fonturi Moderne
+- [x] Cercetare și selectare fonturi moderne - ales Inter pentru claritate și modernitate
+- [x] Integrare Google Fonts în client/index.html
+- [x] Actualizare index.css cu noile fonturi (Inter cu font-feature-settings)
+- [ ] Testare lizibilitate și consistență
 
-## Pagini Dedicate Produse
-- [x] Creare pagină /servicii/ifleet - Extended Fleet Management
-- [x] Creare pagină /servicii/optifare - E-Ticketing System
-- [x] Creare pagină /servicii/exact - Real Time Route Planning
-- [x] Actualizare rute în App.tsx
+## Optimizare Structură și Design
+- [x] Îmbunătățire spacing și padding pentru fluiditate (hero section, buttons)
+- [x] Optimizare tranziții și animații (smooth hover effects)
+- [x] Îmbunătățire contrast și accesibilitate (font-weight, spacing)
+- [x] Simplificare navigare cu LanguageSwitcher integrat
+- [x] Optimizare responsive design (lg:text-7xl pentru hero)
+- [x] Îmbunătățire micro-interacțiuni (hover states pe butoane)
 
-## Testare & Finalizare
-- [x] Testare navigare în header - SERVICII cu iFleet, OptiFare, eXact
-- [x] Testare pagini produse - toate funcționează corect
+## Testare și Finalizare
+- [x] Testare multilingvism pe homepage - EN/RO switch funcționează
+- [x] Testare logo-uri pe diferite rezoluții - logo-blue.png în header, logo-white.png în footer
+- [x] Testare accesibilitate - font Inter cu font-smoothing, spacing îmbunătățit
 - [x] Rulare teste unit - 10/10 passed
-- [ ] Salvare checkpoint
+- [ ] Salvare checkpoint final

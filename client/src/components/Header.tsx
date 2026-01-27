@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,53 +13,56 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
-const menuItems = [
-  {
-    title: "COMPANIA",
-    items: [
-      { title: "Despre", href: "/compania/despre" },
-      { title: "Echipă", href: "/compania/echipa" },
-      { title: "Certificări", href: "/compania/certificari" },
-    ],
-  },
-  {
-    title: "SERVICII",
-    items: [
-      { title: "iFleet", href: "/servicii/ifleet" },
-      { title: "OptiFare", href: "/servicii/optifare" },
-      { title: "eXact", href: "/servicii/exact" },
-    ],
-  },
-  {
-    title: "SOLUȚII",
-    items: [
-      { title: "Transport", href: "/solutii/transport" },
-      { title: "Medical", href: "/solutii/medical" },
-      { title: "Telecom", href: "/solutii/telecom" },
-      { title: "Media & Mobile", href: "/solutii/media-mobile" },
-      { title: "Internet", href: "/solutii/internet" },
-    ],
-  },
-  {
-    title: "CARIERE",
-    href: "/cariere",
-  },
-  {
-    title: "RESURSE",
-    items: [
-      { title: "Stiri", href: "/stiri" },
-      { title: "Blog", href: "/blog" },
-    ],
-  },
-  {
-    title: "CONTACT",
-    href: "/contact",
-  },
-];
+
 
 export function Header() {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
+
+  const menuItems = [
+    {
+      title: t('nav.company'),
+      items: [
+        { title: t('nav.about'), href: "/compania/despre" },
+        { title: t('nav.team'), href: "/compania/echipa" },
+        { title: t('nav.certifications'), href: "/compania/certificari" },
+      ],
+    },
+    {
+      title: t('nav.services'),
+      items: [
+        { title: "iFleet", href: "/servicii/ifleet" },
+        { title: "OptiFare", href: "/servicii/optifare" },
+        { title: "eXact", href: "/servicii/exact" },
+      ],
+    },
+    {
+      title: t('nav.solutions'),
+      items: [
+        { title: t('solutions.transport'), href: "/solutii/transport" },
+        { title: t('solutions.medical'), href: "/solutii/medical" },
+        { title: t('solutions.telecom'), href: "/solutii/telecom" },
+        { title: t('solutions.mediaMobile'), href: "/solutii/media-mobile" },
+        { title: t('solutions.internet'), href: "/solutii/internet" },
+      ],
+    },
+    {
+      title: t('nav.careers'),
+      href: "/cariere",
+    },
+    {
+      title: t('nav.resources'),
+      items: [
+        { title: t('nav.news'), href: "/stiri" },
+        { title: t('nav.blog'), href: "/blog" },
+      ],
+    },
+    {
+      title: t('nav.contact'),
+      href: "/contact",
+    },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-primary text-primary-foreground shadow-sm">
@@ -67,9 +72,9 @@ export function Header() {
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
               <img 
-                src="/logo.svg" 
+                src="/logo-blue.png" 
                 alt="RADCOM Logo" 
-                className="h-12 w-auto"
+                className="h-10 w-auto"
               />
             </div>
           </Link>
@@ -113,6 +118,7 @@ export function Header() {
                 ))}
               </NavigationMenuList>
             </NavigationMenu>
+            <LanguageSwitcher />
           </nav>
 
           {/* Mobile Menu Button */}

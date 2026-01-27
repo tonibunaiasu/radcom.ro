@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "company": "COMPANIA",
+    "services": "SERVICII",
+    "solutions": "SOLUȚII",
+    "careers": "CARIERE",
+    "resources": "RESURSE",
+    "contact": "CONTACT",
+    "about": "Despre",
+    "team": "Echipă",
+    "certifications": "Certificări",
+    "news": "Stiri",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Soluții integrate",
+    "titleHighlight": "hardware + software",
+    "subtitle": "Oferim servicii IT&C complete pentru mai multe industrii românești"
+  },
+  "stats": {
+    "top3": "Top 3",
+    "top3Description": "cele mai mari companii de tehnologie din România",
+    "completeServices": "Servicii IT&C Complete",
+    "completeServicesDescription": "pentru mai multe industrii românești",
+    "perfectSolutions": "Soluții Perfect Integrate",
+    "perfectSolutionsDescription": "la nevoile de business ale clienților noștri"
+  },
+  "products": {
+    "ifleet": {
+      "title": "iFleet",
+      "subtitle": "Extended Fleet Management",
+      "description": "Sistem complet de management al flotei pentru transportul public. Soluție integrată care include numărarea automată a pasagerilor, monitorizare video în timp real, tracking GPS și raportare avansată pentru optimizarea operațiunilor de transport.",
+      "features": {
+        "management": "Management complet al flotei de vehicule",
+        "counting": "Numărare automată pasageri",
+        "monitoring": "Monitorizare video în timp real",
+        "tracking": "Tracking GPS și urmărire vehicule",
+        "reporting": "Raportare și analiză date complete",
+        "cob": "Computer On-Board integrat"
+      }
+    },
+    "optifare": {
+      "title": "OptiFare",
+      "subtitle": "E-Ticketing System",
+      "description": "Sistem avansat de e-ticketing pentru transportul public. Validare carduri inteligente Mifare, plată contactless cu Visa și MasterCard, suport NFC și interfață interactivă pentru pasageri. Soluție completă pentru modernizarea sistemului de taxare.",
+      "features": {
+        "mifare": "Validare carduri inteligente Mifare",
+        "payment": "Plată călătorie Visa și MasterCard",
+        "nfc": "Suport telefoane NFC (Apple Pay, Google Pay)",
+        "receipts": "Chitanțe confirmare plată",
+        "interface": "Interfață interactivă pentru pasageri",
+        "validators": "Validatoare E-Check robuste anti-vandalism"
+      }
+    },
+    "exact": {
+      "title": "eXact",
+      "subtitle": "Real Time Route Planning",
+      "description": "Sistem inteligent de informații pentru pasageri cu planificator de rute în timp real. Afișaje LED interioare și exterioare, anunțuri vocale, timp estimat de ajungere și conexiuni de linie. Experiență completă pentru călători informați.",
+      "features": {
+        "planner": "Planificator de rute în timp real",
+        "displays": "Informații vizuale și audio pentru pasageri",
+        "led": "Afișaje LED interioare și exterioare",
+        "eta": "Timp estimat de ajungere la stații",
+        "announcements": "Anunțuri vocale automate",
+        "connections": "Conexiuni de linie și transfer"
+      }
+    }
+  },
+  "solutions": {
+    "title": "Soluții pe Industrii",
+    "transport": "Transport",
+    "medical": "Medical",
+    "telecom": "Telecom",
+    "mediaMobile": "Media & Mobile",
+    "internet": "Internet"
+  },
+  "advantages": {
+    "title": "Avantajele soluțiilor noastre",
+    "responsiveness": {
+      "title": "Responsivitate",
+      "description": "Construim produse digitale și fizice care se autoadaptează pentru toate tipurile de dispozitive. Cu produsele responsive poți fi sigur că ești pregătit pentru tehnologia viitoare."
+    },
+    "customization": {
+      "title": "Customizare",
+      "description": "Dincolo de configurare și optimizare, ne concentrăm întotdeauna pe customizare - particularizarea soluțiilor noastre de comunicații."
+    },
+    "uiElements": {
+      "title": "Elemente UI",
+      "description": "Elementele UI sunt partea cea mai integrantă a unei aplicații software. Ne concentrăm toată atenția și experiența pe toate cele trei elemente UI esențiale."
+    },
+    "cleanCode": {
+      "title": "Cod curat",
+      "description": "Codul curat este esențial în industria software. Credem în îmbunătățirea lizibilității codului, calității documentației și alegerea instrumentelor care respectă aceste principii."
+    }
+  },
+  "cta": {
+    "modernize": "Modernizează sistemul tău de transport public",
+    "description": "Echipa noastră de experți este gata să te ajute să implementezi cele mai avansate soluții pentru operatorii de transport din România.",
+    "requestDemo": "Solicită o Demonstrație",
+    "viewAll": "Vezi Toate Produsele",
+    "contactUs": "Contactează-ne",
+    "discoverMore": "Descoperă Mai Mult"
+  },
+  "footer": {
+    "description": "Soluții integrate hardware + software pentru industria IT&C din România",
+    "quickLinks": "Link-uri Rapide",
+    "aboutUs": "Despre Noi",
+    "services": "Servicii",
+    "solutions": "Soluții",
+    "careers": "Cariere",
+    "contact": "Contact",
+    "contactInfo": "Informații Contact",
+    "address": "Adresă",
+    "addressValue": "Str. Constantinescu nr. 2C, București",
+    "phone": "Telefon",
+    "email": "Email",
+    "followUs": "Urmărește-ne",
+    "allRightsReserved": "Toate drepturile rezervate"
+  },
+  "common": {
+    "learnMore": "Află Mai Multe",
+    "readMore": "Citește Mai Mult",
+    "viewDetails": "Vezi Detalii",
+    "backToHome": "Înapoi la Acasă",
+    "loading": "Se încarcă...",
+    "error": "Eroare",
+    "success": "Succes"
+  }
+}
