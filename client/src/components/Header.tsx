@@ -23,9 +23,9 @@ const menuItems = [
   {
     title: "SERVICII",
     items: [
-      { title: "Dezvoltare Software", href: "/servicii/dezvoltare" },
-      { title: "Infrastructură", href: "/servicii/infrastructura" },
-      { title: "Programe Europene", href: "/servicii/programe-europene" },
+      { title: "iFleet", href: "/servicii/ifleet" },
+      { title: "OptiFare", href: "/servicii/optifare" },
+      { title: "eXact", href: "/servicii/exact" },
     ],
   },
   {

@@ -6,7 +6,9 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Servicii from "./pages/Servicii";
-import ServicesCategory from "./pages/ServicesCategory";
+import IFleet from "./pages/IFleet";
+import OptiFare from "./pages/OptiFare";
+import Exact from "./pages/Exact";
 import SolutionDetail from "./pages/SolutionDetail";
 import Compania from "./pages/Compania";
 import Cariere from "./pages/Cariere";
@@ -18,7 +20,9 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path="/servicii" component={Servicii} />
-      <Route path="/servicii/:category" component={ServicesCategory} />
+      <Route path="/servicii/ifleet" component={IFleet} />
+      <Route path="/servicii/optifare" component={OptiFare} />
+      <Route path="/servicii/exact" component={Exact} />
       <Route path="/solutii/:slug" component={SolutionDetail} />
       <Route path="/compania/:section?" component={Compania} />
       <Route path="/cariere" component={Cariere} />
