@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PartnersCarousel } from "@/components/PartnersCarousel";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -298,32 +299,10 @@ export default function Home() {
                 Colaborăm cu lideri din industrie pentru a oferi cele mai bune soluții
               </p>
             </div>
-
-            {/* Bandă logo-uri parteneri */}
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 lg:gap-20">
-              <div className="flex items-center justify-center h-20">
-                <img
-                  src="/partners/2k-telecom.jpg"
-                  alt="2K Telecom"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-              <div className="flex items-center justify-center h-20">
-                <img
-                  src="/partners/imi-mobile.jpg"
-                  alt="IMI Mobile"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-              <div className="flex items-center justify-center h-20">
-                <img
-                  src="/partners/telemedia.jpg"
-                  alt="Telemedia România"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-            </div>
           </div>
+
+          {/* Bandă dinamică scroll logo-uri parteneri */}
+          <PartnersCarousel />
         </section>
 
         {/* CTA Section */}
