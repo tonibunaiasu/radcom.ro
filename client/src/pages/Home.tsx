@@ -290,39 +290,41 @@ export default function Home() {
         </section>
 
         {/* Partners Section */}
-        {partners && partners.length > 0 && (
-          <section className="py-16 bg-secondary">
-            <div className="container">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Parteneri</h2>
-                <p className="text-lg text-muted-foreground">
-                  Colaborăm cu lideri din industrie pentru a oferi cele mai bune soluții
-                </p>
-              </div>
+        <section className="py-16 bg-secondary">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Parteneri</h2>
+              <p className="text-lg text-muted-foreground">
+                Colaborăm cu lideri din industrie pentru a oferi cele mai bune soluții
+              </p>
+            </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
-                {partners.map((partner) => (
-                  <div
-                    key={partner.id}
-                    className="flex items-center justify-center p-4 bg-background rounded-lg hover:shadow-md transition-shadow"
-                  >
-                    {partner.logo ? (
-                      <img
-                        src={partner.logo}
-                        alt={partner.name}
-                        className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all"
-                      />
-                    ) : (
-                      <span className="text-sm font-medium text-muted-foreground">
-                        {partner.name}
-                      </span>
-                    )}
-                  </div>
-                ))}
+            {/* Bandă logo-uri parteneri */}
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 lg:gap-20">
+              <div className="flex items-center justify-center h-20">
+                <img
+                  src="/partners/2k-telecom.jpg"
+                  alt="2K Telecom"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center h-20">
+                <img
+                  src="/partners/imi-mobile.jpg"
+                  alt="IMI Mobile"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center h-20">
+                <img
+                  src="/partners/telemedia.jpg"
+                  alt="Telemedia România"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
               </div>
             </div>
-          </section>
-        )}
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="py-20 bg-primary text-primary-foreground">
