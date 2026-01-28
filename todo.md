@@ -1,35 +1,31 @@
-# RADCOM Website TODO - Finalizare Traduceri Multilingve EN/RO
+# RADCOM Website TODO - Integrare Secțiuni Suplimentare Footer
 
-## Extindere Fișiere Traduceri
-- [x] Completare en.json cu traduceri pentru OptiFare (toate secțiunile) - DEJA COMPLETAT
-- [x] Completare ro.json cu traduceri pentru OptiFare - DEJA COMPLETAT
-- [x] Completare en.json cu traduceri pentru Exact (toate secțiunile) - DEJA COMPLETAT
-- [x] Completare ro.json cu traduceri pentru Exact - DEJA COMPLETAT
-- [x] Completare en.json cu traduceri pentru Servicii (hero, integration, CTA) - DEJA COMPLETAT
-- [x] Completare ro.json cu traduceri pentru Servicii - DEJA COMPLETAT
-- [x] Completare en.json cu traduceri pentru Footer (toate linkurile și secțiunile) - DEJA COMPLETAT
-- [x] Completare ro.json cu traduceri pentru Footer - DEJA COMPLETAT
-- [ ] Completare en.json cu traduceri pentru Compania, Cariere, Blog, Contact (dacă lipsesc)
-- [ ] Completare ro.json cu traduceri pentru Compania, Cariere, Blog, Contact (dacă lipsesc)
+## Analiză Structură Secțiuni
+- [x] Analiză imagine furnizată pentru identificare secțiuni
+- [x] Planificare structură HTML pentru:
+  - Secțiune stânga: Logo RADCOM + descriere companie (ISO 9001, distribuitor național)
+  - Secțiune mijloc: Facebook page embed pentru Radcom
+  - Secțiune dreapta: Contact rapid (adresă, telefon, email)
+  - Bottom bar: Politici (cookie, confidențialitate) + logo-uri UE
 
-## Integrare Traduceri în Pagini Produse
-- [x] OptiFare.tsx - integrare useTranslation și t() pentru hero, features, payment methods, CTA
-- [x] Exact.tsx - integrare useTranslation și t() pentru features array (parțial)
+## Actualizare Footer.tsx
+- [x] Adăugare secțiune superioară cu 3 coloane (descriere, Facebook, contact)
+- [x] Adăugare bottom bar cu politici și logo-uri UE
+- [x] Styling consistent cu imaginea (fundal albastru închis #1a3d7a și #0f2d5e, text alb)
+- [x] Integrare Facebook Page Plugin (iframe embed pentru RadcomRomania)
+- [x] Adăugare link-uri către politica de cookie și confidențialitate
 
-## Integrare Traduceri în Servicii și Footer
-- [ ] Servicii.tsx - integrare useTranslation pentru toate secțiunile
-- [ ] Footer.tsx - integrare useTranslation pentru toate linkurile și texte
+## Traduceri EN/RO
+- [x] Adăugare traduceri pentru descrierea companiei (en.json, ro.json)
+- [x] Adăugare traduceri pentru "Contact Rapid" (en.json, ro.json)
+- [x] Adăugare traduceri pentru politici (cookie, confidențialitate)
+- [x] Adăugare traduceri pentru copyright și text UE
+- [x] Integrare useTranslation în Footer.tsx (complet multilingv EN/RO)
 
-## Integrare Traduceri în Pagini Secundare
-- [ ] Compania.tsx - integrare useTranslation
-- [ ] Cariere.tsx - integrare useTranslation
-- [ ] Blog.tsx - integrare useTranslation
-- [ ] Contact.tsx - integrare useTranslation
-
-## Testare și Validare
-- [ ] Testare switch EN/RO pe toate paginile
-- [ ] Verificare consistență terminologie (iFleet, OptiFare, eXact)
-- [ ] Verificare formatare și diacritice în RO
-- [ ] Testare persistență limbă între pagini
-- [ ] Rulare teste unit
+## Testare & Finalizare
+- [x] Testare responsive design (mobile, tablet, desktop) - layout adaptat corect
+- [x] Verificare link-uri funcționale - toate link-urile hover corect
+- [x] Testare Facebook embed - iframe se încarcă corect (340x180px)
+- [x] Rulare vitest - toate testele passed (10/10)
+- [x] Verificare visuală - footer afișat corect cu toate secțiunile
 - [ ] Salvare checkpoint final

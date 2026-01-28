@@ -221,7 +221,18 @@
     "phone": "Phone",
     "email": "Email",
     "followUs": "Follow Us",
-    "allRightsReserved": "All rights reserved"
+    "allRightsReserved": "All rights reserved",
+    "companyDescription": "Radcom is a private telecommunications company established in 1993. In 1998, Radcom adopted the ISO 9001 quality standard. Radcom is a national distributor of fixed and mobile telephony products and services.",
+    "quickContact": "QUICK CONTACT",
+    "addressFull": "Str. George Constantinescu no. 2C, Floor 5 & 6, Sector 2, Bucharest",
+    "cookiePolicy": "Cookie Policy",
+    "privacyPolicy": "Privacy Policy",
+    "euDisclaimer": "The content of this material does not necessarily represent the official position of the European Union or the Government of Romania.",
+    "euInfo": "For detailed information about other programs co-financed by the European Union, please visit",
+    "resources": "Resources",
+    "blog": "Blog",
+    "news": "News",
+    "certifications": "Certifications"
   },
   "common": {
     "learnMore": "Learn More",

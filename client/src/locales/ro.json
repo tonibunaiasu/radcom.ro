@@ -221,7 +221,18 @@
     "phone": "Telefon",
     "email": "Email",
     "followUs": "Urmărește-ne",
-    "allRightsReserved": "Toate drepturile rezervate"
+    "allRightsReserved": "Toate drepturile rezervate",
+    "companyDescription": "Radcom este o societate privată de telecomunicații înființată în anul 1993. În 1998, Radcom a aderat la standardul de calitate ISO 9001. Radcom este distribuitor național de produse și servicii de telefonie fixă și mobilă.",
+    "quickContact": "CONTACT RAPID",
+    "addressFull": "Str. George Constantinescu nr. 2C, Etaj 5 & 6, Sector 2, București",
+    "cookiePolicy": "Politică de cookie",
+    "privacyPolicy": "Politică de confidențialitate",
+    "euDisclaimer": "Conținutul acestui material nu reprezintă în mod obligatoriu poziția oficială a Uniunii Europene sau a Guvernului României.",
+    "euInfo": "Pentru informații detaliate despre celelalte programe cofinanțate de Uniunea Europeană, vă informăm să vizitați",
+    "resources": "Resurse",
+    "blog": "Blog",
+    "news": "Știri",
+    "certifications": "Certificări"
   },
   "common": {
     "learnMore": "Află Mai Multe",
