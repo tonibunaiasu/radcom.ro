@@ -214,10 +214,20 @@
 - [ ] Implementare varianta aleasă:
   - [x] Pregătire: Google Fonts (Playfair Display, Inter, Montserrat) - adăugat în index.html
   - [x] Actualizare index.css cu typography (Playfair Display pentru h1-h6, Montserrat pentru numbers)
-  - [ ] Redesign Home.tsx: Hero split 50/50 (NEXT SESSION)
+  - [x] Redesign Home.tsx: Hero split 50/50 (COMPLETAT)
+    - [x] Layout asimetric text stânga (60%) + visual dreapta (40%) cu grid lg:grid-cols-2
+    - [x] Playfair Display pentru titlu principal (text-5xl md:text-6xl lg:text-7xl)
+    - [x] Pattern geometric subtil background (SVG data URL opacity-5)
+    - [x] Dual CTA buttons (galben primary shadow-xl + alb outline hover invert)
+    - [x] Spacing py-28 pentru breathing room (112px top/bottom)
+    - [x] Glassmorphism card dreapta cu 3 stats (ISO 9001, 500+, Top 3)
+    - [x] Badge "30+ ani experiență" cu Montserrat numbers
+    - [x] Decorative gradient orbs pentru depth
+    - [x] Testare responsive (desktop, tablet, mobile) - funcționează perfect
+    - [x] Rulare vitest - toate testele passed (10/10)
   - [ ] Features Grid: Asymmetric bento grid cu glassmorphism (NEXT SESSION)
   - [ ] Trust Section: Stats + logos carousel (NEXT SESSION)
   - [ ] Services Showcase: Tabs verticale + content cards (NEXT SESSION)
   - [ ] CTA Final: Gradient galben → orange (NEXT SESSION)
   - [ ] Testare responsive (mobile, tablet, desktop) (NEXT SESSION)
-- [ ] Salvare checkpoint (foundation ready)
+- [x] Salvare checkpoint (foundation ready - version: e663768c)

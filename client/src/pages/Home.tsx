@@ -74,28 +74,85 @@ export default function Home() {
       <Header />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground py-20 md:py-32">
-          <div className="container">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                {t('hero.title')}{" "}
-                <span className="text-accent">{t('hero.titleHighlight')}</span>
-              </h1>
-              <p className="text-lg md:text-xl text-primary-foreground/90 mb-10 max-w-3xl mx-auto">
-                {t('hero.subtitle')}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
-                  <Button size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
-                    {t('cta.contactUs')}
-                  </Button>
-                </Link>
-                <Link href="/servicii">
-                  <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 font-semibold">
-                    {t('cta.discoverMore')}
-                  </Button>
-                </Link>
+        {/* Hero Section - Corporate Modern */}
+        <section className="relative bg-primary text-primary-foreground py-28 overflow-hidden">
+          {/* Geometric pattern background */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: '60px 60px'
+            }}></div>
+          </div>
+
+          <div className="container relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+              {/* Text Content - 60% */}
+              <div className="lg:pr-12">
+                <div className="inline-block px-4 py-2 bg-accent/20 rounded-full mb-6">
+                  <span className="text-accent font-mono-numbers font-semibold">30+ ani experiență</span>
+                </div>
+                <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                  {t('hero.title')}
+                </h1>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold mb-6 text-accent">
+                  {t('hero.titleHighlight')}
+                </h2>
+                <p className="text-lg md:text-xl text-primary-foreground/90 mb-10 leading-relaxed">
+                  {t('hero.subtitle')}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link href="/contact">
+                    <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-xl hover:shadow-2xl transition-all">
+                      {t('cta.contactUs')}
+                    </Button>
+                  </Link>
+                  <Link href="/servicii">
+                    <Button size="lg" variant="outline" className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold transition-all">
+                      {t('cta.discoverMore')}
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Visual Content - 40% */}
+              <div className="hidden lg:block">
+                <div className="relative">
+                  {/* Glassmorphism card with stats */}
+                  <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 shadow-2xl">
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-4 p-4 bg-accent/10 rounded-xl border border-accent/20">
+                        <div className="p-3 bg-accent rounded-lg">
+                          <CheckCircle2 className="w-8 h-8 text-accent-foreground" />
+                        </div>
+                        <div>
+                          <div className="font-mono-numbers text-3xl font-bold text-accent">ISO 9001</div>
+                          <div className="text-sm text-primary-foreground/80">Certificație Calitate</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                        <div className="p-3 bg-white/10 rounded-lg">
+                          <Users className="w-8 h-8 text-primary-foreground" />
+                        </div>
+                        <div>
+                          <div className="font-mono-numbers text-3xl font-bold">500+</div>
+                          <div className="text-sm text-primary-foreground/80">Clienți Mulțumiți</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                        <div className="p-3 bg-white/10 rounded-lg">
+                          <TrendingUp className="w-8 h-8 text-primary-foreground" />
+                        </div>
+                        <div>
+                          <div className="font-mono-numbers text-3xl font-bold">Top 3</div>
+                          <div className="text-sm text-primary-foreground/80">Companii Tech România</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decorative gradient orb */}
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/20 rounded-full blur-3xl"></div>
+                  <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+                </div>
               </div>
             </div>
           </div>
