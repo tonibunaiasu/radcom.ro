@@ -28,4 +28,30 @@
 - [x] Testare Facebook embed - iframe se încarcă corect (340x180px)
 - [x] Rulare vitest - toate testele passed (10/10)
 - [x] Verificare visuală - footer afișat corect cu toate secțiunile
+- [x] Salvare checkpoint final (version: 48599a82)
+
+# Implementare Pagini Politici GDPR
+
+## Planificare Structură
+- [x] Definire structură pagină Politică Cookie (introducere, ce sunt cookies, tipuri folosite, gestionare)
+- [x] Definire structură pagină Politică Confidențialitate (colectare date, utilizare, drepturi utilizatori, contact DPO)
+- [x] Adaptare conținut pentru RADCOM (contact, adresă, email office@radcom.ro)
+
+## Creare Componente
+- [x] Creare PoliticaCookie.tsx cu conținut GDPR standard (6 secțiuni: intro, what are cookies, types, managing, third-party, contact)
+- [x] Creare PoliticaConfidentialitate.tsx cu conținut GDPR standard (12 secțiuni: intro, data controller, collection, usage, legal basis, sharing, retention, rights, security, children, changes, contact)
+- [x] Design consistent cu restul site-ului (hero section cu bg-primary, typography, spacing)
+- [x] SEO meta tags pentru ambele pagini (SEOHead component cu titleKey și descriptionKey)
+
+## Traduceri EN/RO
+- [x] Adăugare traduceri cookie policy în en.json și ro.json (toate secțiunile complet traduse)
+- [x] Adăugare traduceri privacy policy în en.json și ro.json (toate secțiunile complet traduse)
+- [x] Integrare useTranslation în ambele componente (complet multilingv EN/RO)
+
+## Routing și Testare
+- [x] Adăugare rute /politica-cookie în App.tsx
+- [x] Adăugare rute /politica-confidentialitate în App.tsx
+- [x] Testare navigare din footer către pagini (link-uri funcționale)
+- [x] Verificare responsive design (layout adaptat corect)
+- [x] Rulare vitest - toate testele passed (10/10)
 - [ ] Salvare checkpoint final

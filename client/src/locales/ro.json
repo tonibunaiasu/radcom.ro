@@ -279,6 +279,132 @@
     "blog": {
       "title": "Blog RADCOM - Stiri & Insights despre Soluții IT&C",
       "description": "Ultimele stiri, insights și actualizări de la RADCOM despre tehnologia de transport public, management flotă, e-ticketing și soluții IT&C."
+    },
+    "cookiePolicy": {
+      "title": "Politică de Cookie | RADCOM",
+      "description": "Aflați cum utilizează RADCOM cookie-urile pe site-ul nostru și cum puteți gestiona preferințele dvs. de cookie-uri."
+    },
+    "privacyPolicy": {
+      "title": "Politică de Confidențialitate | RADCOM",
+      "description": "Politica de confidențialitate RADCOM explică cum colectăm, utilizăm și protejăm datele dvs. personale conform GDPR."
+    }
+  },
+  "cookiePolicy": {
+    "title": "Politică de Cookie",
+    "lastUpdated": "Ultima actualizare",
+    "intro": {
+      "title": "Introducere",
+      "content": "Această Politică de Cookie explică cum utilizează RADCOM cookie-urile și tehnologii similare pe site-ul nostru. Prin utilizarea site-ului nostru, sunteți de acord cu utilizarea cookie-urilor conform acestei politici."
+    },
+    "whatAreCookies": {
+      "title": "Ce Sunt Cookie-urile?",
+      "content": "Cookie-urile sunt fișiere text mici care sunt plasate pe dispozitivul dvs. atunci când vizitați un site web. Acestea sunt utilizate pe scară largă pentru a face site-urile web să funcționeze mai eficient și pentru a furniza informații proprietarilor de site-uri. Cookie-urile ne ajută să înțelegem cum utilizați site-ul nostru și să îmbunătățim experiența dvs. de navigare."
+    },
+    "typesOfCookies": {
+      "title": "Tipuri de Cookie-uri pe Care le Utilizăm",
+      "essential": {
+        "title": "Cookie-uri Esențiale",
+        "description": "Aceste cookie-uri sunt necesare pentru ca site-ul să funcționeze corect. Ele permit funcționalități de bază precum securitatea, gestionarea rețelei și accesibilitatea. Nu puteți refuza aceste cookie-uri deoarece sunt esențiale pentru funcționarea site-ului."
+      },
+      "analytics": {
+        "title": "Cookie-uri de Analiză",
+        "description": "Utilizăm cookie-uri de analiză pentru a înțelege cum interacționează vizitatorii cu site-ul nostru. Aceste cookie-uri colectează informații despre paginile cele mai vizitate, cum navighează utilizatorii prin site și eventualele mesaje de eroare întâlnite. Acest lucru ne ajută să îmbunătățim performanța și experiența utilizatorului pe site-ul nostru."
+      },
+      "functional": {
+        "title": "Cookie-uri Funcționale",
+        "description": "Aceste cookie-uri permit site-ului să rețină alegerile pe care le faceți (cum ar fi preferința de limbă) și să ofere funcționalități îmbunătățite și mai personalizate. Ele pot fi, de asemenea, utilizate pentru a furniza servicii pe care le-ați solicitat, cum ar fi vizionarea unui videoclip sau comentarea pe un blog."
+      }
+    },
+    "managingCookies": {
+      "title": "Gestionarea Cookie-urilor",
+      "content": "Majoritatea browserelor web vă permit să controlați cookie-urile prin setările lor. Puteți seta browserul să refuze cookie-urile sau să șteargă anumite cookie-uri. Vă rugăm să rețineți că, dacă alegeți să blocați sau să ștergeți cookie-urile, unele funcționalități ale site-ului nostru ar putea să nu funcționeze corect. Iată cum să gestionați cookie-urile în browserele populare:"
+    },
+    "thirdParty": {
+      "title": "Cookie-uri de la Terți",
+      "content": "Este posibil să utilizăm servicii de la terți, cum ar fi Google Analytics, Facebook și alte platforme de social media care pot seta cookie-uri pe dispozitivul dvs. Acești terți au propriile lor politici de confidențialitate și vă recomandăm să le examinați pentru a înțelege cum utilizează cookie-urile și datele dvs."
+    },
+    "contact": {
+      "title": "Contactați-ne",
+      "content": "Dacă aveți întrebări despre utilizarea cookie-urilor de către noi, vă rugăm să ne contactați:"
+    }
+  },
+  "privacyPolicy": {
+    "title": "Politică de Confidențialitate",
+    "lastUpdated": "Ultima actualizare",
+    "intro": {
+      "title": "Introducere",
+      "content": "RADCOM este angajată să vă protejeze confidențialitatea și datele personale. Această Politică de Confidențialitate explică cum colectăm, utilizăm, stocăm și protejăm informațiile dvs. conform Regulamentului General privind Protecția Datelor (GDPR) și altor legi aplicabile privind protecția datelor."
+    },
+    "dataController": {
+      "title": "Operator de Date"
+    },
+    "dataCollection": {
+      "title": "Ce Date Colectăm",
+      "content": "Este posibil să colectăm următoarele tipuri de date personale:",
+      "personal": {
+        "title": "Informații Personale",
+        "description": "Nume, adresă de email, număr de telefon, numele companiei și funcția atunci când ne contactați sau solicitați informații despre serviciile noastre."
+      },
+      "technical": {
+        "title": "Date Tehnice",
+        "description": "Adresa IP, tipul de browser, informații despre dispozitiv, sistemul de operare și URL-urile de referință colectate automat atunci când vizitați site-ul nostru."
+      },
+      "usage": {
+        "title": "Date de Utilizare",
+        "description": "Informații despre modul în care interacționați cu site-ul nostru, inclusiv paginile vizitate, timpul petrecut pe pagini și modelele de navigare."
+      }
+    },
+    "howWeUse": {
+      "title": "Cum Utilizăm Datele Dvs.",
+      "content": "Utilizăm datele dvs. personale în următoarele scopuri:",
+      "purposes": {
+        "service": "Pentru a furniza și menține serviciile noastre",
+        "communication": "Pentru a răspunde la întrebările dvs. și a comunica cu dvs.",
+        "improvement": "Pentru a îmbunătăți site-ul și serviciile noastre",
+        "legal": "Pentru a respecta obligațiile legale",
+        "marketing": "Pentru a vă trimite comunicări de marketing (cu consimțământul dvs.)"
+      }
+    },
+    "legalBasis": {
+      "title": "Baza Legală pentru Prelucrare",
+      "content": "Prelucrăm datele dvs. personale pe baza: (1) Consimțământului dvs., (2) Executării unui contract, (3) Respectării obligațiilor legale, sau (4) Intereselor noastre legitime în operarea și îmbunătățirea afacerii noastre."
+    },
+    "dataSharing": {
+      "title": "Partajarea Datelor",
+      "content": "Nu vindem datele dvs. personale. Este posibil să partajăm informațiile dvs. cu furnizori de servicii de încredere care ne asistă în operarea site-ului și desfășurarea afacerii noastre, sub rezerva obligațiilor de confidențialitate. De asemenea, este posibil să divulgăm datele dvs. dacă este cerut de lege sau pentru a ne proteja drepturile."
+    },
+    "dataRetention": {
+      "title": "Păstrarea Datelor",
+      "content": "Păstrăm datele dvs. personale doar atât timp cât este necesar pentru a îndeplini scopurile pentru care au fost colectate, pentru a respecta obligațiile legale, pentru a rezolva disputele și pentru a aplica acordurile noastre. Când datele nu mai sunt necesare, le ștergem sau le anonimizăm în siguranță."
+    },
+    "yourRights": {
+      "title": "Drepturile Dvs.",
+      "content": "Conform GDPR, aveți următoarele drepturi cu privire la datele dvs. personale:",
+      "rights": {
+        "access": "Dreptul de acces la datele dvs. personale",
+        "rectification": "Dreptul de rectificare a datelor inexacte",
+        "erasure": "Dreptul la ștergere (\"dreptul de a fi uitat\")",
+        "restriction": "Dreptul de restricționare a prelucrării",
+        "portability": "Dreptul la portabilitatea datelor",
+        "objection": "Dreptul de a obiecta la prelucrare",
+        "complaint": "Dreptul de a depune o plângere la o autoritate de supraveghere"
+      }
+    },
+    "security": {
+      "title": "Securitatea Datelor",
+      "content": "Implementăm măsuri tehnice și organizaționale adecvate pentru a proteja datele dvs. personale împotriva accesului neautorizat, modificării, divulgării sau distrugerii. Cu toate acestea, nicio metodă de transmitere prin internet nu este 100% sigură și nu putem garanta securitatea absolută."
+    },
+    "children": {
+      "title": "Confidențialitatea Copiilor",
+      "content": "Site-ul nostru nu este destinat copiilor sub 16 ani. Nu colectăm cu bună știință date personale de la copii. Dacă credeți că am colectat date de la un copil, vă rugăm să ne contactați imediat."
+    },
+    "changes": {
+      "title": "Modificări ale Acestei Politici",
+      "content": "Este posibil să actualizăm această Politică de Confidențialitate din când în când. Vă vom notifica despre orice modificări semnificative prin publicarea noii politici pe această pagină cu o dată actualizată \"Ultima actualizare\". Vă încurajăm să examinați periodic această politică."
+    },
+    "contact": {
+      "title": "Contactați-ne",
+      "content": "Dacă aveți întrebări despre această Politică de Confidențialitate sau doriți să vă exercitați drepturile, vă rugăm să contactați Responsabilul cu Protecția Datelor:"
     }
   }
 }

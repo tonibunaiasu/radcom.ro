@@ -279,6 +279,132 @@
     "blog": {
       "title": "RADCOM Blog - News & Insights on IT&C Solutions",
       "description": "Latest news, insights, and updates from RADCOM about public transport technology, fleet management, e-ticketing, and IT&C solutions."
+    },
+    "cookiePolicy": {
+      "title": "Cookie Policy | RADCOM",
+      "description": "Learn about how RADCOM uses cookies on our website and how you can manage your cookie preferences."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy | RADCOM",
+      "description": "RADCOM's privacy policy explains how we collect, use, and protect your personal data in accordance with GDPR."
+    }
+  },
+  "cookiePolicy": {
+    "title": "Cookie Policy",
+    "lastUpdated": "Last updated",
+    "intro": {
+      "title": "Introduction",
+      "content": "This Cookie Policy explains how RADCOM uses cookies and similar technologies on our website. By using our website, you consent to the use of cookies in accordance with this policy."
+    },
+    "whatAreCookies": {
+      "title": "What Are Cookies?",
+      "content": "Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners. Cookies help us understand how you use our site and improve your browsing experience."
+    },
+    "typesOfCookies": {
+      "title": "Types of Cookies We Use",
+      "essential": {
+        "title": "Essential Cookies",
+        "description": "These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and accessibility. You cannot opt-out of these cookies as they are essential for the website to work."
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "description": "We use analytics cookies to understand how visitors interact with our website. These cookies collect information about which pages are visited most often, how users navigate through the site, and any error messages encountered. This helps us improve the performance and user experience of our website."
+      },
+      "functional": {
+        "title": "Functional Cookies",
+        "description": "These cookies enable the website to remember choices you make (such as your language preference) and provide enhanced, more personalized features. They may also be used to provide services you have requested, such as watching a video or commenting on a blog."
+      }
+    },
+    "managingCookies": {
+      "title": "Managing Cookies",
+      "content": "Most web browsers allow you to control cookies through their settings. You can set your browser to refuse cookies or delete certain cookies. Please note that if you choose to block or delete cookies, some features of our website may not function properly. Here's how to manage cookies in popular browsers:"
+    },
+    "thirdParty": {
+      "title": "Third-Party Cookies",
+      "content": "We may use third-party services such as Google Analytics, Facebook, and other social media platforms that may set cookies on your device. These third parties have their own privacy policies, and we recommend reviewing them to understand how they use cookies and your data."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have any questions about our use of cookies, please contact us:"
+    }
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "intro": {
+      "title": "Introduction",
+      "content": "RADCOM is committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, store, and protect your information in accordance with the General Data Protection Regulation (GDPR) and other applicable data protection laws."
+    },
+    "dataController": {
+      "title": "Data Controller"
+    },
+    "dataCollection": {
+      "title": "What Data We Collect",
+      "content": "We may collect the following types of personal data:",
+      "personal": {
+        "title": "Personal Information",
+        "description": "Name, email address, phone number, company name, and job title when you contact us or request information about our services."
+      },
+      "technical": {
+        "title": "Technical Data",
+        "description": "IP address, browser type, device information, operating system, and referring URLs collected automatically when you visit our website."
+      },
+      "usage": {
+        "title": "Usage Data",
+        "description": "Information about how you interact with our website, including pages visited, time spent on pages, and navigation patterns."
+      }
+    },
+    "howWeUse": {
+      "title": "How We Use Your Data",
+      "content": "We use your personal data for the following purposes:",
+      "purposes": {
+        "service": "To provide and maintain our services",
+        "communication": "To respond to your inquiries and communicate with you",
+        "improvement": "To improve our website and services",
+        "legal": "To comply with legal obligations",
+        "marketing": "To send you marketing communications (with your consent)"
+      }
+    },
+    "legalBasis": {
+      "title": "Legal Basis for Processing",
+      "content": "We process your personal data based on: (1) Your consent, (2) Performance of a contract, (3) Compliance with legal obligations, or (4) Our legitimate interests in operating and improving our business."
+    },
+    "dataSharing": {
+      "title": "Data Sharing",
+      "content": "We do not sell your personal data. We may share your information with trusted service providers who assist us in operating our website and conducting our business, subject to confidentiality obligations. We may also disclose your data if required by law or to protect our rights."
+    },
+    "dataRetention": {
+      "title": "Data Retention",
+      "content": "We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected, comply with legal obligations, resolve disputes, and enforce our agreements. When data is no longer needed, we securely delete or anonymize it."
+    },
+    "yourRights": {
+      "title": "Your Rights",
+      "content": "Under GDPR, you have the following rights regarding your personal data:",
+      "rights": {
+        "access": "Right to access your personal data",
+        "rectification": "Right to rectify inaccurate data",
+        "erasure": "Right to erasure (\"right to be forgotten\")",
+        "restriction": "Right to restrict processing",
+        "portability": "Right to data portability",
+        "objection": "Right to object to processing",
+        "complaint": "Right to lodge a complaint with a supervisory authority"
+      }
+    },
+    "security": {
+      "title": "Data Security",
+      "content": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security."
+    },
+    "children": {
+      "title": "Children's Privacy",
+      "content": "Our website is not intended for children under 16 years of age. We do not knowingly collect personal data from children. If you believe we have collected data from a child, please contact us immediately."
+    },
+    "changes": {
+      "title": "Changes to This Policy",
+      "content": "We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy on this page with an updated \"Last Updated\" date. We encourage you to review this policy periodically."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have any questions about this Privacy Policy or wish to exercise your rights, please contact our Data Protection Officer:"
     }
   }
 }

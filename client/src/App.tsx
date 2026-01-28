@@ -14,6 +14,8 @@ import Compania from "./pages/Compania";
 import Cariere from "./pages/Cariere";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import PoliticaCookie from "./pages/PoliticaCookie";
+import PoliticaConfidentialitate from "./pages/PoliticaConfidentialitate";
 
 function Router() {
   return (
@@ -29,6 +31,8 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/stiri" component={Blog} />
       <Route path="/contact" component={Contact} />
+      <Route path="/politica-cookie" component={PoliticaCookie} />
+      <Route path="/politica-confidentialitate" component={PoliticaConfidentialitate} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
