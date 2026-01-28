@@ -312,35 +312,55 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Advantages Section */}
-        <section className="py-16">
+        {/* Advantages Section - Bento Grid */}
+        <section className="py-20 bg-gradient-to-br from-background via-secondary/30 to-background">
           <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Avantajele Soluțiilor Noastre</h2>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Avantajele Soluțiilor Noastre</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Cele 4 pilari care ne definesc abordarea în dezvoltarea de soluții IT
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {advantages.map((advantage) => {
+            {/* Bento Grid Layout: 2 mari + 4 mici */}
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {advantages.map((advantage, index) => {
                 const IconComponent = advantageIcons[advantage.key as keyof typeof advantageIcons];
+                // First 2 cards are large (span 2 rows on desktop)
+                const isLarge = index < 2;
+                
                 return (
-                  <Card key={advantage.key} className="border-2 hover:border-primary transition-colors">
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-accent/20">
-                          <IconComponent className="w-8 h-8 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold mb-3">{advantage.title}</h3>
-                          <p className="text-muted-foreground leading-relaxed">
-                            {advantage.description}
-                          </p>
-                        </div>
+                  <div
+                    key={advantage.key}
+                    className={`group relative ${
+                      isLarge ? 'lg:row-span-2' : ''
+                    }`}
+                  >
+                    {/* Glassmorphism card */}
+                    <div className="h-full bg-white/60 dark:bg-white/5 backdrop-blur-xl border-2 border-transparent rounded-2xl p-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{
+                      borderImage: 'linear-gradient(135deg, oklch(0.75 0.15 165), oklch(0.82 0.12 95)) 1',
+                      borderImageSlice: 1
+                    }}>
+                      {/* Icon with gradient background */}
+                      <div className="inline-flex p-4 rounded-xl mb-6 bg-gradient-to-br from-[oklch(0.75_0.15_165)] to-[oklch(0.82_0.12_95)] shadow-lg">
+                        <IconComponent className="w-10 h-10 text-white" />
                       </div>
-                    </CardContent>
-                  </Card>
+                      
+                      <h3 className="text-2xl font-display font-bold mb-4 text-foreground">
+                        {advantage.title}
+                      </h3>
+                      <p className={`text-muted-foreground leading-relaxed ${
+                        isLarge ? 'text-base' : 'text-sm'
+                      }`}>
+                        {advantage.description}
+                      </p>
+                    </div>
+
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" style={{
+                      background: 'radial-gradient(circle at center, oklch(0.75 0.15 165 / 0.3), oklch(0.82 0.12 95 / 0.3))'
+                    }}></div>
+                  </div>
                 );
               })}
             </div>

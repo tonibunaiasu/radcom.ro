@@ -225,9 +225,19 @@
     - [x] Decorative gradient orbs pentru depth
     - [x] Testare responsive (desktop, tablet, mobile) - funcționează perfect
     - [x] Rulare vitest - toate testele passed (10/10)
-  - [ ] Features Grid: Asymmetric bento grid cu glassmorphism (NEXT SESSION)
+  - [x] Features Grid: Asymmetric bento grid cu glassmorphism (COMPLETAT)
+    - [x] Layout bento asimetric (2 cards mari lg:row-span-2 + 2 mici)
+    - [x] Glassmorphism effects cu backdrop-blur-xl (bg-white/60 dark:bg-white/5)
+    - [x] Border gradient verde → galben (borderImage linear-gradient oklch)
+    - [x] Hover glow effects cu radial-gradient blur-xl (opacity 0 → 100)
+    - [x] Spacing generos între cards (gap-6, py-20, p-8)
+    - [x] Icon gradient backgrounds (from-verde to-galben)
+    - [x] Scale hover effect (1.02) + shadow-2xl
+    - [x] Testare responsive (desktop/tablet/mobile) - funcționează perfect
+    - [x] Rulare vitest - toate testele passed (10/10)
   - [ ] Trust Section: Stats + logos carousel (NEXT SESSION)
   - [ ] Services Showcase: Tabs verticale + content cards (NEXT SESSION)
   - [ ] CTA Final: Gradient galben → orange (NEXT SESSION)
   - [ ] Testare responsive (mobile, tablet, desktop) (NEXT SESSION)
 - [x] Salvare checkpoint (foundation ready - version: e663768c)
+- [x] Salvare checkpoint (Hero section Corporate Modern - version: b8f2125b)
