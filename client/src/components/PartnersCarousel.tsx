@@ -6,6 +6,10 @@ export function PartnersCarousel() {
     { name: "Orange România", logo: "/partners/orange.png" },
     { name: "Vodafone România", logo: "/partners/vodafone.jpg" },
     { name: "STB București", logo: "/partners/stb.jpeg" },
+    { name: "Metrorex", logo: "/partners/metrorex.png" },
+    { name: "Microsoft", logo: "/partners/microsoft.jpg" },
+    { name: "Oracle", logo: "/partners/oracle.jpg" },
+    { name: "Cisco", logo: "/partners/cisco.png" },
   ];
 
   return (
