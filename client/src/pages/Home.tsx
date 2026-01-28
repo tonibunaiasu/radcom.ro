@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { useState } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -31,6 +32,7 @@ export default function Home() {
   const { data: solutions } = trpc.solutions.getAll.useQuery();
   const [activeServiceTab, setActiveServiceTab] = useState(0);
   const { data: partners } = trpc.partners.getAll.useQuery();
+  const containerRef = useScrollAnimation(0.1);
 
   const industryIcons = {
     transport: Truck,
@@ -75,7 +77,7 @@ export default function Home() {
       <SEOHead titleKey="seo.home.title" descriptionKey="seo.home.description" path="/" />
       <Header />
 
-      <main className="flex-1">
+      <main className="flex-1" ref={containerRef as React.RefObject<HTMLElement>}>
         {/* Hero Section - Corporate Modern */}
         <section className="relative bg-primary text-primary-foreground py-28 overflow-hidden">
           {/* Geometric pattern background */}
@@ -90,19 +92,19 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
               {/* Text Content - 60% */}
               <div className="lg:pr-12">
-                <div className="inline-block px-4 py-2 bg-accent/20 rounded-full mb-6">
+                <div className="inline-block px-4 py-2 bg-accent/20 rounded-full mb-6 scroll-animate" data-delay="1">
                   <span className="text-accent font-mono-numbers font-semibold">30+ ani experiență</span>
                 </div>
-                <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight scroll-animate" data-delay="2">
                   {t('hero.title')}
                 </h1>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold mb-6 text-accent">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold mb-6 text-accent scroll-animate" data-delay="3">
                   {t('hero.titleHighlight')}
                 </h2>
-                <p className="text-lg md:text-xl text-primary-foreground/90 mb-10 leading-relaxed">
+                <p className="text-lg md:text-xl text-primary-foreground/90 mb-10 leading-relaxed scroll-animate" data-delay="4">
                   {t('hero.subtitle')}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 scroll-animate" data-delay="5">
                   <Link href="/contact">
                     <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold shadow-xl hover:shadow-2xl transition-all">
                       {t('cta.contactUs')}
@@ -120,7 +122,7 @@ export default function Home() {
               <div className="hidden lg:block">
                 <div className="relative">
                   {/* Glassmorphism card with stats */}
-                  <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 shadow-2xl">
+                  <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 shadow-2xl scroll-animate" data-delay="6">
                     <div className="space-y-6">
                       <div className="flex items-center gap-4 p-4 bg-accent/10 rounded-xl border border-accent/20">
                         <div className="p-3 bg-accent rounded-lg">
@@ -278,7 +280,7 @@ export default function Home() {
                       <div
                         key={service.id}
                         className={`${
-                          activeServiceTab === index ? 'block' : 'hidden'
+                          activeServiceTab === index ? 'block animate-fade-in-up' : 'hidden'
                         }`}
                       >
                         <Card className="bg-white dark:bg-card shadow-xl border-0">
@@ -401,9 +403,10 @@ export default function Home() {
                 return (
                   <div
                     key={advantage.key}
-                    className={`group relative ${
+                    className={`group relative scroll-animate ${
                       isLarge ? 'lg:row-span-2' : ''
                     }`}
+                    data-delay={String(index + 1)}
                   >
                     {/* Glassmorphism card */}
                     <div className="h-full bg-white/60 dark:bg-white/5 backdrop-blur-xl border-2 border-transparent rounded-2xl p-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" style={{
