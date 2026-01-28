@@ -133,4 +133,63 @@
 - [x] Testare navigare meniu RESOURCES → ARTICOLE (dropdown funcțional)
 - [x] Verificare traduceri EN/RO (Articles/Articole corect)
 - [x] Rulare vitest - toate testele passed (10/10)
+- [x] Salvare checkpoint final (version: 2e0e96cd)
+
+# Redesign Header Navigation (PRIORITATE)
+
+## Analiză și Design
+- [x] Analiză best practices pentru navigare modernă corporate (Apple, Microsoft, Adobe)
+- [x] Propunere design: mega-menu cu grid layout (RECOMANDAT)
+- [x] Definire structură navigare: link-uri directe pentru simple pages, mega-menu pentru categorii
+
+## Implementare
+- [x] Redesign Header.tsx - eliminare dropdown-uri clasice (NavigationMenu)
+- [x] Implementare mega-menu cu grid layout 3 coloane
+- [x] Adăugare hover effects și tranziții elegante (bg-accent/10, border-accent/20)
+- [x] Optimizare pentru mobile (hamburger menu cu acordeon)
+- [x] Descrieri scurte pentru fiecare serviciu/soluție
+
+## Testare și Finalizare
+- [x] Testare desktop navigation (mega-menu funcțional la hover)
+- [x] Testare mobile navigation (hamburger menu cu acordeon)
+- [x] Rulare vitest - toate testele passed (10/10)
+- [ ] Salvare checkpoint
+
+# Sistem Management Articole (SUSPENDAT - după header)
+
+## Schema Bază de Date
+- [ ] Design tabele: articles, categories, tags, article_tags
+- [ ] Definire relații many-to-many între articles și tags
+- [ ] Adăugare câmpuri: title, slug, excerpt, content, featured_image, author, status, published_at
+- [ ] Push schema cu pnpm db:push
+
+## Proceduri tRPC Backend
+- [ ] Creare article.create (cu categorii și taguri)
+- [ ] Creare article.update (actualizare categorii și taguri)
+- [ ] Creare article.delete (ștergere relații)
+- [ ] Creare article.getAll (cu paginare, filtre, căutare)
+- [ ] Creare article.getBySlug (pentru afișare articol individual)
+- [ ] Creare category.getAll și tag.getAll
+- [ ] Implementare funcționalitate căutare full-text
+
+## Interfață Administrare
+- [ ] Creare pagină ArticleAdmin.tsx cu listă articole
+- [ ] Creare formular ArticleEditor.tsx pentru create/edit
+- [ ] Integrare editor rich text (Tiptap sau similar)
+- [ ] Implementare upload imagine featured
+- [ ] Adăugare selector categorii și taguri
+- [ ] Implementare draft/publish workflow
+
+## Frontend Public
+- [ ] Actualizare Articole.tsx cu căutare și filtre
+- [ ] Implementare filtrare după categorie
+- [ ] Implementare filtrare după tag
+- [ ] Creare pagină ArticleDetail.tsx pentru afișare articol complet
+- [ ] Adăugare breadcrumbs și navigare între articole
+
+## Testare și Finalizare
+- [ ] Scriere teste vitest pentru proceduri tRPC
+- [ ] Testare CRUD complet (create, read, update, delete)
+- [ ] Testare căutare și filtrare
+- [ ] Verificare responsive design
 - [ ] Salvare checkpoint final
