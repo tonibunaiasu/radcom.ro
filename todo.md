@@ -153,7 +153,7 @@
 - [x] Testare desktop navigation (mega-menu funcțional la hover)
 - [x] Testare mobile navigation (hamburger menu cu acordeon)
 - [x] Rulare vitest - toate testele passed (10/10)
-- [ ] Salvare checkpoint
+- [x] Salvare checkpoint (version: 1b005107)
 
 # Sistem Management Articole (SUSPENDAT - după header)
 
@@ -193,3 +193,31 @@
 - [ ] Testare căutare și filtrare
 - [ ] Verificare responsive design
 - [ ] Salvare checkpoint final
+
+
+# Redesign Layout Website - 3 Variante Moderne (PRIORITATE MAXIMĂ)
+
+## Analiză Design Actual
+- [x] Identificare probleme design actual (spațiere insuficientă, typography neimpresionantă, layout predictibil)
+- [x] Analiza culorilor de brand RADCOM (albastru #1e3a8a, verde #10b981, galben #fbbf24)
+- [x] Benchmark companii tech moderne (Spotify, Microsoft, Vercel, Linear)
+
+## Creare Propuneri Layout
+- [x] VARIANTA 1: Minimalist Tech (spații mari py-32, Inter Display Bold, accent verde neon)
+- [x] VARIANTA 2: Corporate Modern (bento grid asimetric, glassmorphism, Playfair Display, accent galben)
+- [x] VARIANTA 3: Tech Startup (gradients radial, floating cards 3D, Poppins Bold, verde+galben echilibrat)
+- [x] Documentare completă cu typography, spacing, effects pentru fiecare variantă
+
+## Prezentare și Implementare
+- [x] Creare document detaliat cu cele 3 variante + comparație + recomandare
+- [x] Prezentare utilizator pentru feedback (ales VARIANTA 2: Corporate Modern)
+- [ ] Implementare varianta aleasă:
+  - [x] Pregătire: Google Fonts (Playfair Display, Inter, Montserrat) - adăugat în index.html
+  - [x] Actualizare index.css cu typography (Playfair Display pentru h1-h6, Montserrat pentru numbers)
+  - [ ] Redesign Home.tsx: Hero split 50/50 (NEXT SESSION)
+  - [ ] Features Grid: Asymmetric bento grid cu glassmorphism (NEXT SESSION)
+  - [ ] Trust Section: Stats + logos carousel (NEXT SESSION)
+  - [ ] Services Showcase: Tabs verticale + content cards (NEXT SESSION)
+  - [ ] CTA Final: Gradient galben → orange (NEXT SESSION)
+  - [ ] Testare responsive (mobile, tablet, desktop) (NEXT SESSION)
+- [ ] Salvare checkpoint (foundation ready)
