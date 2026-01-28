@@ -12,7 +12,7 @@ import Exact from "./pages/Exact";
 import SolutionDetail from "./pages/SolutionDetail";
 import Compania from "./pages/Compania";
 import Cariere from "./pages/Cariere";
-import Blog from "./pages/Blog";
+import Articole from "./pages/Articole";
 import Contact from "./pages/Contact";
 import PoliticaCookie from "./pages/PoliticaCookie";
 import PoliticaConfidentialitate from "./pages/PoliticaConfidentialitate";
@@ -28,8 +28,9 @@ function Router() {
       <Route path="/solutii/:slug" component={SolutionDetail} />
       <Route path="/compania/:section?" component={Compania} />
       <Route path="/cariere" component={Cariere} />
-      <Route path="/blog" component={Blog} />
-      <Route path="/stiri" component={Blog} />
+      <Route path="/articole" component={Articole} />
+      <Route path="/blog" component={Articole} />
+      <Route path="/stiri" component={Articole} />
       <Route path="/contact" component={Contact} />
       <Route path="/politica-cookie" component={PoliticaCookie} />
       <Route path="/politica-confidentialitate" component={PoliticaConfidentialitate} />

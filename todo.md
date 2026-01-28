@@ -110,4 +110,27 @@
 - [x] Testare animație scroll cu 10 logo-uri total (scroll smooth, seamless loop)
 - [x] Verificare responsive design și smooth scroll (animație fluidă, spacing corect)
 - [x] Rulare vitest - toate testele passed (10/10)
+- [x] Salvare checkpoint final (version: 910f5a62)
+
+# Rezolvare Imagini Lipsă Footer + Restructurare Meniu RESOURCES
+
+## Adăugare Logo-uri Oficiale Footer
+- [x] Căutare și descărcare logo Uniunea Europeană (eu-flag.jpg - 89K)
+- [x] Căutare și descărcare logo Guvernul României (guvernul-romaniei.jpg - 126K)
+- [x] Căutare și descărcare logo Fonduri Europene (fonduri-europene.png - 19K)
+- [x] Copiere logo-uri în /client/public/official-logos/ (total 234K)
+- [x] Actualizare Footer.tsx cu cele 3 logo-uri oficiale (path-uri locale)
+
+## Restructurare Meniu RESOURCES
+- [x] Redenumire pagini Știri + Blog → ARTICOLE (Blog.tsx → Articole.tsx)
+- [x] Actualizare routing în App.tsx (/articole, /blog, /stiri redirect)
+- [x] Actualizare meniu dropdown RESOURCES în Header (doar Articles)
+- [x] Actualizare traduceri EN/RO pentru ARTICOLE (nav.articles)
+- [x] Migrare conținut existent către pagina unificată (funcție redenumită)
+
+## Testare și Finalizare
+- [x] Testare vizuală footer cu logo-uri oficiale (3 logo-uri vizibile bottom bar)
+- [x] Testare navigare meniu RESOURCES → ARTICOLE (dropdown funcțional)
+- [x] Verificare traduceri EN/RO (Articles/Articole corect)
+- [x] Rulare vitest - toate testele passed (10/10)
 - [ ] Salvare checkpoint final

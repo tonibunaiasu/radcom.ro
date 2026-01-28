@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import { Calendar, User, Tag } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 
-export default function Blog() {
+export default function Articole() {
   const { data: posts, isLoading } = trpc.blog.getPublished.useQuery();
 
   return (
@@ -19,9 +19,9 @@ export default function Blog() {
         <section className="bg-primary text-primary-foreground py-16">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog & Știri</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">Articole</h1>
               <p className="text-xl text-primary-foreground/90">
-                Ultimele noutăți, articole și insights din lumea tehnologiei
+                Ultimele noutați, articole și insights din lumea tehnologiei
               </p>
             </div>
           </div>

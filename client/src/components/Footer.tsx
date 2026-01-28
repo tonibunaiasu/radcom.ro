@@ -218,17 +218,17 @@ export function Footer() {
             {/* Right: EU Logos */}
             <div className="flex items-center gap-6">
               <img 
-                src="https://www.radcom.ro/new/wp-content/uploads/2020/08/logo-UE.png" 
+                src="/official-logos/eu-flag.jpg" 
                 alt="Uniunea Europeană" 
                 className="h-12 w-auto opacity-90"
               />
               <img 
-                src="https://www.radcom.ro/new/wp-content/uploads/2020/08/logo-guvernul-romaniei.png" 
+                src="/official-logos/guvernul-romaniei.jpg" 
                 alt="Guvernul României" 
                 className="h-12 w-auto opacity-90"
               />
               <img 
-                src="https://www.radcom.ro/new/wp-content/uploads/2020/08/logo-fonduri-europene.png" 
+                src="/official-logos/fonduri-europene.png" 
                 alt="Fonduri Europene" 
                 className="h-12 w-auto opacity-90"
               />

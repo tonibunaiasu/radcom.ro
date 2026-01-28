@@ -54,8 +54,7 @@ export function Header() {
     {
       title: t('nav.resources'),
       items: [
-        { title: t('nav.news'), href: "/stiri" },
-        { title: t('nav.blog'), href: "/blog" },
+        { title: t('nav.articles'), href: "/articole" },
       ],
     },
     {
