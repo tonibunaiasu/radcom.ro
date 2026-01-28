@@ -259,4 +259,22 @@
 ## Finalizare
 - [x] Testare responsive (desktop/tablet/mobile) - funcționează perfect
 - [x] Rulare vitest - toate testele passed (10/10)
+- [x] Salvare checkpoint (version: fd477d21 - Barlow Condensed + meniu simplificat + bento grid)
+
+
+# Redesign Services Section cu Tabs Verticale
+
+## Implementare Layout
+- [x] Redesign Services Section în Home.tsx (tabs verticale complete)
+- [x] Layout: tabs navigation verticale stânga (lg:w-1/3) + content cards dreapta (lg:w-2/3)
+- [x] Tabs active state: border-l-4 galben (border-accent) + bg-accent/10 + shadow-md
+- [x] Content cards: bg-white dark:bg-card shadow-xl border-0 p-8
+- [x] Hover effects pe tabs: hover:bg-accent/5 pentru feedback vizual
+- [x] Icon gradient: from-accent to-accent/80 pe tab activ, bg-primary/10 pe inactive
+- [x] useState(0) pentru activeServiceTab management
+
+## Testare
+- [x] Testare click tabs pentru schimbare conținut (Medical switch funcționează perfect)
+- [x] Testare responsive (mobile: flex-col stacked vertical)
+- [x] Rulare vitest - toate testele passed (10/10)
 - [ ] Salvare checkpoint

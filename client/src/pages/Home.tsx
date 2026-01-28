@@ -23,11 +23,13 @@ import {
   FileCode
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
+import { useState } from "react";
 
 export default function Home() {
   const { t } = useTranslation();
   const { data: services } = trpc.services.getAll.useQuery();
   const { data: solutions } = trpc.solutions.getAll.useQuery();
+  const [activeServiceTab, setActiveServiceTab] = useState(0);
   const { data: partners } = trpc.partners.getAll.useQuery();
 
   const industryIcons = {
@@ -213,53 +215,120 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section className="py-16">
+        {/* Services Section - Tabs Verticale */}
+        <section className="py-20 bg-background">
           <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Serviciile Noastre</h2>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Serviciile Noastre</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Oferim o gamă completă de servicii de dezvoltare software și infrastructură IT
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services && services.length > 0 ? (
-                services.slice(0, 6).map((service) => {
-                  const IconComponent = service.category === "dezvoltare" ? Code : Network;
-                  return (
-                    <Card key={service.id} className="hover:shadow-lg transition-shadow">
-                      <CardContent className="pt-6">
-                        <div className="flex items-start gap-4">
-                          <div className="p-3 rounded-lg bg-primary/10">
-                            <IconComponent className="w-6 h-6 text-primary" />
+            {services && services.length > 0 ? (
+              <div className="flex flex-col lg:flex-row gap-8">
+                {/* Tabs Navigation Verticale - Stânga */}
+                <div className="lg:w-1/3">
+                  <div className="flex flex-col gap-2">
+                    {services.slice(0, 6).map((service, index) => {
+                      const IconComponent = service.category === "dezvoltare" ? Code : Network;
+                      const isActive = activeServiceTab === index;
+                      return (
+                        <button
+                          key={service.id}
+                          onClick={() => setActiveServiceTab(index)}
+                          className={`
+                            flex items-start gap-4 p-4 rounded-lg text-left transition-all
+                            border-l-4 hover:bg-accent/5
+                            ${
+                              isActive
+                                ? 'border-accent bg-accent/10 shadow-md'
+                                : 'border-transparent bg-secondary/50'
+                            }
+                          `}
+                        >
+                          <div className={`p-2 rounded-lg ${
+                            isActive ? 'bg-gradient-to-br from-accent to-accent/80' : 'bg-primary/10'
+                          }`}>
+                            <IconComponent className={`w-5 h-5 ${
+                              isActive ? 'text-white' : 'text-primary'
+                            }`} />
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
-                            <p className="text-sm text-muted-foreground mb-4">
+                            <h3 className={`font-semibold text-base mb-1 ${
+                              isActive ? 'text-accent' : 'text-foreground'
+                            }`}>
+                              {service.title}
+                            </h3>
+                            <p className="text-xs text-muted-foreground line-clamp-1">
                               {service.shortDescription}
                             </p>
-                            <Link href={`/servicii/${service.slug}`}>
-                              <Button variant="link" className="p-0 h-auto text-primary">
-                                Află mai multe →
-                              </Button>
-                            </Link>
                           </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })
-              ) : (
-                <div className="col-span-full text-center py-8 text-muted-foreground">
-                  Serviciile vor fi disponibile în curând
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-              )}
-            </div>
 
-            <div className="text-center mt-8">
+                {/* Content Cards - Dreapta */}
+                <div className="lg:w-2/3">
+                  {services.slice(0, 6).map((service, index) => {
+                    const IconComponent = service.category === "dezvoltare" ? Code : Network;
+                    return (
+                      <div
+                        key={service.id}
+                        className={`${
+                          activeServiceTab === index ? 'block' : 'hidden'
+                        }`}
+                      >
+                        <Card className="bg-white dark:bg-card shadow-xl border-0">
+                          <CardContent className="p-8">
+                            <div className="flex items-start gap-6 mb-6">
+                              <div className="p-4 rounded-xl bg-gradient-to-br from-accent to-accent/80">
+                                <IconComponent className="w-8 h-8 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <h3 className="text-3xl font-bold mb-2">{service.title}</h3>
+                                <p className="text-muted-foreground">
+                                  {service.shortDescription}
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="prose prose-sm max-w-none mb-6">
+                              <p className="text-foreground/80 leading-relaxed">
+                                {service.description || service.shortDescription}
+                              </p>
+                            </div>
+
+                            <div className="flex gap-4">
+                              <Link href={`/servicii/${service.slug}`}>
+                                <Button size="lg" className="bg-accent hover:bg-accent/90">
+                                  Află mai multe
+                                </Button>
+                              </Link>
+                              <Link href="/contact">
+                                <Button size="lg" variant="outline">
+                                  Contactează-ne
+                                </Button>
+                              </Link>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : (
+              <div className="text-center py-12 text-muted-foreground">
+                Serviciile vor fi disponibile în curând
+              </div>
+            )}
+
+            <div className="text-center mt-12">
               <Link href="/servicii/dezvoltare">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="border-2">
                   Vezi Toate Serviciile
                 </Button>
               </Link>
