@@ -241,3 +241,22 @@
   - [ ] Testare responsive (mobile, tablet, desktop) (NEXT SESSION)
 - [x] Salvare checkpoint (foundation ready - version: e663768c)
 - [x] Salvare checkpoint (Hero section Corporate Modern - version: b8f2125b)
+
+
+# Înlocuire Font + Simplificare Meniu
+
+## Înlocuire Font Playfair Display → Barlow Condensed Bold
+- [x] Adăugare Barlow Condensed în Google Fonts (index.html)
+- [x] Actualizare font-display în index.css (Playfair → Barlow Condensed)
+- [x] Testare vizuală headings pe toate paginile (Barlow Condensed Bold vizibil)
+
+## Simplificare Meniu Header
+- [x] Înlocuire dropdown RESOURCES cu link direct ARTICLES
+- [x] Actualizare Header.tsx - id 'resources' → 'articles', nav.resources → nav.articles
+- [x] Traduceri nav.articles deja existente (en.json, ro.json)
+- [x] Testare navigare meniu (link direct /articole funcționează)
+
+## Finalizare
+- [x] Testare responsive (desktop/tablet/mobile) - funcționează perfect
+- [x] Rulare vitest - toate testele passed (10/10)
+- [ ] Salvare checkpoint

@@ -46,8 +46,8 @@ export function Header() {
       href: "/cariere",
     },
     {
-      id: 'resources',
-      title: t('nav.resources'),
+      id: 'articles',
+      title: t('nav.articles'),
       href: "/articole",
     },
     {

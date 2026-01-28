@@ -133,11 +133,11 @@
     -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', 'Helvetica Condensed', sans-serif;
     font-weight: 700;
   }
   .font-display {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Barlow Condensed', 'Arial Narrow', 'Helvetica Condensed', sans-serif;
   }
   .font-mono-numbers {
     font-family: 'Montserrat', sans-serif;
