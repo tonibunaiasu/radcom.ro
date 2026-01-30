@@ -90,7 +90,7 @@ export default function Exact() {
                 <img 
                   src="/products/eXact.svg" 
                   alt="RADCOM eXact - Real Time Route Planning" 
-                  className="h-24 md:h-32 w-auto"
+                  className="h-24 md:h-32 w-auto product-logo"
                 />
                 <p className="text-xl text-primary-foreground/90">Real Time Route Planning</p>
               </div>

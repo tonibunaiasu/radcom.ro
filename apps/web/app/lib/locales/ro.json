@@ -1,0 +1,411 @@
+{
+  "nav": {
+    "company": "COMPANIA",
+    "services": "SERVICII",
+    "solutions": "SOLUȚII",
+    "careers": "CARIERE",
+    "resources": "RESURSE",
+    "contact": "CONTACT",
+    "about": "Despre",
+    "team": "Echipă",
+    "certifications": "Certificări",
+    "news": "Stiri",
+    "blog": "Blog",
+    "articles": "Articole"
+  },
+  "hero": {
+    "title": "Soluții integrate",
+    "titleHighlight": "hardware + software",
+    "subtitle": "Oferim servicii IT&C complete pentru mai multe industrii românești"
+  },
+  "stats": {
+    "top3": "Top 3",
+    "top3Description": "cele mai mari companii de tehnologie din România",
+    "completeServices": "Servicii IT&C Complete",
+    "completeServicesDescription": "pentru mai multe industrii românești",
+    "perfectSolutions": "Soluții Perfect Integrate",
+    "perfectSolutionsDescription": "la nevoile de business ale clienților noștri"
+  },
+  "products": {
+    "ifleet": {
+      "title": "iFleet",
+      "subtitle": "Extended Fleet Management",
+      "description": "Sistem complet de management al flotei pentru transportul public. Soluție integrată care include numărarea automată a pasagerilor, monitorizare video în timp real, tracking GPS și raportare avansată pentru optimizarea operațiunilor de transport.",
+      "features": {
+        "management": "Management complet al flotei de vehicule",
+        "counting": "Numărare automată pasageri",
+        "monitoring": "Monitorizare video în timp real",
+        "tracking": "Tracking GPS și urmărire vehicule",
+        "reporting": "Raportare și analiză date complete",
+        "cob": "Computer On-Board integrat"
+      }
+    },
+    "optifare": {
+      "title": "OptiFare",
+      "subtitle": "E-Ticketing System",
+      "description": "Sistem avansat de e-ticketing pentru transportul public. Validare carduri inteligente Mifare, plată contactless cu Visa și MasterCard, suport NFC și interfață interactivă pentru pasageri. Soluție completă pentru modernizarea sistemului de taxare.",
+      "features": {
+        "mifare": "Validare carduri inteligente Mifare",
+        "payment": "Plată călătorie Visa și MasterCard",
+        "nfc": "Suport telefoane NFC (Apple Pay, Google Pay)",
+        "receipts": "Chitanțe confirmare plată",
+        "interface": "Interfață interactivă pentru pasageri",
+        "validators": "Validatoare E-Check robuste anti-vandalism"
+      }
+    },
+    "exact": {
+      "title": "eXact",
+      "subtitle": "Real Time Route Planning",
+      "description": "Sistem inteligent de informații pentru pasageri cu planificator de rute în timp real. Afișaje LED interioare și exterioare, anunțuri vocale, timp estimat de ajungere și conexiuni de linie. Experiență completă pentru călători informați.",
+      "features": {
+        "planner": "Planificator de rute în timp real",
+        "displays": "Informații vizuale și audio pentru pasageri",
+        "led": "Afișaje LED interioare și exterioare",
+        "eta": "Timp estimat de ajungere la stații",
+        "announcements": "Anunțuri vocale automate",
+        "connections": "Conexiuni de linie și transfer"
+      },
+      "learnMore": "Află Mai Multe",
+      "keyFeatures": "Funcționalități Principale",
+      "technicalSpecs": "Specificații Tehnice",
+      "benefits": "Beneficii",
+      "requestInfo": "Solicită Informații"
+    },
+    "ifleetPage": {
+      "description": "Sistem complet de management al flotei pentru transportul public",
+      "detailedDescription": "Soluție integrată care include numărarea automată a pasagerilor, monitorizare video în timp real, tracking GPS și raportare avansată pentru optimizarea operațiunilor de transport.",
+      "features": {
+        "gpsTracking": "Tracking GPS în Timp Real",
+        "gpsTrackingDesc": "Urmărire precisă a poziției fiecărui vehicul din flotă cu actualizare în timp real și istoric complet al traseelor parcurse.",
+        "videoMonitoring": "Monitorizare Video",
+        "videoMonitoringDesc": "Sistem integrat de supraveghere video pentru siguranța pasagerilor și protecția șoferilor, cu stocare cloud și acces remote.",
+        "passengerCounting": "Numărare Automată Pasageri",
+        "passengerCountingDesc": "Senzori avansați pentru numărare precisă a pasagerilor la fiecare stație, cu raportare automată și analiză statistică.",
+        "scheduleCompliance": "Respectarea Programului",
+        "scheduleComplianceDesc": "Monitorizare în timp real a respectării orarului, alertare automată pentru întârzieri și optimizare rute pentru eficiență maximă.",
+        "robustCob": "Computer On-Board Robust",
+        "robustCobDesc": "Hardware industrial de ultimă generație, rezistent la vibrații și temperaturi extreme, cu conectivitate 4G/WiFi/Bluetooth.",
+        "reporting": "Raportare și Analiză",
+        "reportingDesc": "Dashboard complet cu rapoarte detaliate, KPI-uri operaționale și analize predictive pentru optimizarea flotei."
+      },
+      "cobSpecs": {
+        "title": "Specificații Tehnice Computer On-Board",
+        "processor": "Procesor",
+        "memory": "Memorie",
+        "storage": "Stocare",
+        "communication": "Comunicare",
+        "os": "Sistem Operare",
+        "upgrade": "Upgrade"
+      }
+    },
+    "optifarePage": {
+      "description": "Sistem avansat de e-ticketing pentru transportul public modern",
+      "detailedDescription": "Soluție completă pentru plăți contactless, carduri inteligente și validare pasageri cu raportare în timp real.",
+      "features": {
+        "contactlessPayment": "Plată Contactless",
+        "contactlessPaymentDesc": "Acceptă Visa, MasterCard, Apple Pay și Google Pay pentru o experiență fluidă a pasagerilor.",
+        "smartCards": "Carduri Inteligente Mifare",
+        "smartCardsDesc": "Suport pentru abonamente și bilete electronice cu validare securizată.",
+        "qrCodes": "Validare Coduri QR",
+        "qrCodesDesc": "Scanare coduri de bare 1D și 2D pentru bilete pe hârtie și mobile.",
+        "realTimeReporting": "Raportare în Timp Real",
+        "realTimeReportingDesc": "Date instant despre tranzacții și analize de venit pentru operatori.",
+        "robustHardware": "Hardware Anti-Vandalism",
+        "robustHardwareDesc": "Validatoare E-Check de nivel industrial proiectate pentru medii dure de transport public.",
+        "passengerInterface": "Interfață Interactivă",
+        "passengerInterfaceDesc": "Feedback vizual și audio clar pentru validare reușită și confirmare plată."
+      },
+      "allPaymentMethods": "Toate metodele de plată moderne într-un singur dispozitiv robust",
+      "paymentMethods": {
+        "title": "Metode de Plată Suportate",
+        "bankCards": "Carduri Bancare",
+        "bankCardsDesc": "Visa, MasterCard contactless",
+        "mobileWallets": "Mobile Wallets",
+        "mobileWalletsDesc": "Apple Pay, Google Pay",
+        "mifareCards": "Carduri Mifare",
+        "mifareCardsDesc": "Abonamente și bilete electronice",
+        "qrCodes": "Coduri QR",
+        "qrCodesDesc": "Bilete 1D și 2D pe hârtie sau mobile",
+        "nfcPhones": "Telefoane NFC",
+        "nfcPhonesDesc": "Plată direct din smartphone",
+        "paperTickets": "Bilete Hârtie",
+        "paperTicketsDesc": "Validare bilete tradiționale"
+      }
+    },
+    "exactPage": {
+      "description": "Sistem inteligent de informații pentru pasageri cu planificator de rute în timp real",
+      "detailedDescription": "Afișaje LED interioare și exterioare, anunțuri vocale, timp estimat de ajungere și conexiuni de linie. Experiență completă pentru călători informați.",
+      "features": {
+        "routePlanning": "Planificare Rute în Timp Real",
+        "routePlanningDesc": "Calcul dinamic al rutelor bazat pe traficul curent și întreruperile de serviciu.",
+        "ledDisplays": "Afișaje LED",
+        "ledDisplaysDesc": "Afișaje interioare și exterioare de înaltă vizibilitate care arată următoarele opriri, conexiuni și informații de serviciu.",
+        "voiceAnnouncements": "Anunțuri Vocale",
+        "voiceAnnouncementsDesc": "Anunțuri automate multilingve pentru opriri, conexiuni și actualizări de serviciu.",
+        "eta": "Timp Estimat de Ajungere",
+        "etaDesc": "Predicții în timp real ale sosirii la fiecare stație bazate pe condițiile actuale de trafic.",
+        "stationDisplays": "Afișaje în Stații",
+        "stationDisplaysDesc": "Afișaje de informații în timp real la opriri care arată sosiri, plecări și întârzieri.",
+        "passengerFeed": "Feed Informații Pasageri",
+        "passengerFeedDesc": "Transmitere continuă de informații utile: rute, orare, conexiuni și anunțuri speciale."
+      },
+      "displayTypes": {
+        "title": "Tipuri de Afișaje",
+        "interior": "Afișaje LED Interioare",
+        "interiorDesc": "Următoarea oprire, informații despre rută și detalii conexiuni pentru pasagerii din vehicul.",
+        "exterior": "Afișaje LED Exterioare",
+        "exteriorDesc": "Număr rută, destinație și informații serviciu vizibile din exteriorul vehiculului.",
+        "stations": "Afișaje în Stații",
+        "stationsDesc": "Informații în timp real despre sosiri și plecări la stațiile de transport public.",
+        "feed": "Feed Informații Pasageri",
+        "feedDesc": "Transmitere continuă de informații utile: rute, orare, conexiuni și anunțuri speciale.",
+        "publicInfo": "Sisteme Informare Publică",
+        "publicInfoDesc": "Integrare cu sisteme de alertare pentru situații de urgență sau evenimente speciale.",
+        "advertising": "Publicitate Dinamică",
+        "advertisingDesc": "Posibilitate afișare mesaje publicitare între informațiile de călătorie."
+      }
+    }
+  },
+  "services": {
+    "title": "Sistemul Integrat RADCOM",
+    "subtitle": "STI pentru transportul public - Soluții complete hardware + software",
+    "description": "Trei produse integrate care transformă complet experiența de transport public",
+    "ourSolutions": "Soluțiile propuse de noi",
+    "solutionsDescription": "Trei produse integrate care transformă complet experiența de transport public"
+  },
+  "solutions": {
+    "title": "Soluții pe Industrii",
+    "transport": "Transport",
+    "medical": "Medical",
+    "telecom": "Telecom",
+    "mediaMobile": "Media & Mobile",
+    "internet": "Internet"
+  },
+  "advantages": {
+    "title": "Avantajele soluțiilor noastre",
+    "responsiveness": {
+      "title": "Responsivitate",
+      "description": "Construim produse digitale și fizice care se autoadaptează pentru toate tipurile de dispozitive. Cu produsele responsive poți fi sigur că ești pregătit pentru tehnologia viitoare."
+    },
+    "customization": {
+      "title": "Customizare",
+      "description": "Dincolo de configurare și optimizare, ne concentrăm întotdeauna pe customizare - particularizarea soluțiilor noastre de comunicații."
+    },
+    "uiElements": {
+      "title": "Elemente UI",
+      "description": "Elementele UI sunt partea cea mai integrantă a unei aplicații software. Ne concentrăm toată atenția și experiența pe toate cele trei elemente UI esențiale."
+    },
+    "cleanCode": {
+      "title": "Cod curat",
+      "description": "Codul curat este esențial în industria software. Credem în îmbunătățirea lizibilității codului, calității documentației și alegerea instrumentelor care respectă aceste principii."
+    }
+  },
+  "cta": {
+    "modernize": "Modernizează sistemul tău de transport public",
+    "description": "Echipa noastră de experți este gata să te ajute să implementezi cele mai avansate soluții pentru operatorii de transport din România.",
+    "requestDemo": "Solicită o Demonstrație",
+    "viewAll": "Vezi Toate Produsele",
+    "contactUs": "Contactează-ne",
+    "discoverMore": "Descoperă Mai Mult"
+  },
+  "footer": {
+    "description": "Soluții integrate hardware + software pentru industria IT&C din România",
+    "quickLinks": "Link-uri Rapide",
+    "aboutUs": "Despre Noi",
+    "services": "Servicii",
+    "solutions": "Soluții",
+    "careers": "Cariere",
+    "contact": "Contact",
+    "contactInfo": "Informații Contact",
+    "address": "Adresă",
+    "addressValue": "Str. Constantinescu nr. 2C, București",
+    "phone": "Telefon",
+    "email": "Email",
+    "followUs": "Urmărește-ne",
+    "allRightsReserved": "Toate drepturile rezervate",
+    "companyDescription": "Radcom este o societate privată de telecomunicații înființată în anul 1993. În 1998, Radcom a aderat la standardul de calitate ISO 9001. Radcom este distribuitor național de produse și servicii de telefonie fixă și mobilă.",
+    "quickContact": "CONTACT RAPID",
+    "addressFull": "Str. George Constantinescu nr. 2C, Etaj 5 & 6, Sector 2, București",
+    "cookiePolicy": "Politică de cookie",
+    "privacyPolicy": "Politică de confidențialitate",
+    "euDisclaimer": "Conținutul acestui material nu reprezintă în mod obligatoriu poziția oficială a Uniunii Europene sau a Guvernului României.",
+    "euInfo": "Pentru informații detaliate despre celelalte programe cofinanțate de Uniunea Europeană, vă informăm să vizitați",
+    "resources": "Resurse",
+    "blog": "Blog",
+    "news": "Știri",
+    "certifications": "Certificări"
+  },
+  "common": {
+    "learnMore": "Află Mai Multe",
+    "readMore": "Citește Mai Mult",
+    "viewDetails": "Vezi Detalii",
+    "backToHome": "Înapoi la Acasă",
+    "loading": "Se încarcă...",
+    "error": "Eroare",
+    "success": "Succes"
+  },
+  "seo": {
+    "home": {
+      "title": "RADCOM - Soluții Integrate Hardware + Software pentru Transportul Public",
+      "description": "Soluții IT&C complete pentru industrii românești. iFleet management flotă, OptiFare e-ticketing și eXact sisteme informații pasageri."
+    },
+    "services": {
+      "title": "Sistemul Integrat RADCOM - STI pentru Transportul Public | iFleet, OptiFare, eXact",
+      "description": "Trei produse integrate care transformă transportul public: iFleet management flotă, OptiFare sistem e-ticketing și eXact planificator rute timp real."
+    },
+    "ifleet": {
+      "title": "iFleet - Sistem Complet de Management Flotă | RADCOM",
+      "description": "Sistem complet de management al flotei pentru transportul public. Tracking GPS, monitorizare video, numărare automată pasageri și raportare avansată."
+    },
+    "optifare": {
+      "title": "OptiFare - Sistem E-Ticketing pentru Transportul Public | RADCOM",
+      "description": "Sistem avansat de e-ticketing cu plăți contactless, carduri inteligente Mifare, suport NFC și raportare în timp real pentru transportul public modern."
+    },
+    "exact": {
+      "title": "eXact - Planificare Rute Timp Real & Informații Pasageri | RADCOM",
+      "description": "Sistem inteligent de informații pentru pasageri cu afișaje LED, anunțuri vocale, timp estimat de ajungere și planificare rute în timp real."
+    },
+    "company": {
+      "title": "Despre RADCOM - Lider în Soluții IT&C din România",
+      "description": "Top 3 companii de tehnologie din România. Servicii IT&C complete pentru multiple industrii cu peste 20 de ani de experiență."
+    },
+    "careers": {
+      "title": "Cariere la RADCOM - Alătură-te Echipei Noastre",
+      "description": "Explorează oportunitățile de carieră la RADCOM. Alătură-te unei companii de tehnologie de varf și lucrează la proiecte inovatoare pentru transport public și soluții IT&C."
+    },
+    "contact": {
+      "title": "Contact RADCOM - Ia Legătura cu Noi",
+      "description": "Contactează RADCOM pentru soluții integrate hardware și software. Birou: Str. Constantinescu nr. 2C, București. Telefon: 021 232 1039."
+    },
+    "blog": {
+      "title": "Blog RADCOM - Stiri & Insights despre Soluții IT&C",
+      "description": "Ultimele stiri, insights și actualizări de la RADCOM despre tehnologia de transport public, management flotă, e-ticketing și soluții IT&C."
+    },
+    "cookiePolicy": {
+      "title": "Politică de Cookie | RADCOM",
+      "description": "Aflați cum utilizează RADCOM cookie-urile pe site-ul nostru și cum puteți gestiona preferințele dvs. de cookie-uri."
+    },
+    "privacyPolicy": {
+      "title": "Politică de Confidențialitate | RADCOM",
+      "description": "Politica de confidențialitate RADCOM explică cum colectăm, utilizăm și protejăm datele dvs. personale conform GDPR."
+    }
+  },
+  "cookiePolicy": {
+    "title": "Politică de Cookie",
+    "lastUpdated": "Ultima actualizare",
+    "intro": {
+      "title": "Introducere",
+      "content": "Această Politică de Cookie explică cum utilizează RADCOM cookie-urile și tehnologii similare pe site-ul nostru. Prin utilizarea site-ului nostru, sunteți de acord cu utilizarea cookie-urilor conform acestei politici."
+    },
+    "whatAreCookies": {
+      "title": "Ce Sunt Cookie-urile?",
+      "content": "Cookie-urile sunt fișiere text mici care sunt plasate pe dispozitivul dvs. atunci când vizitați un site web. Acestea sunt utilizate pe scară largă pentru a face site-urile web să funcționeze mai eficient și pentru a furniza informații proprietarilor de site-uri. Cookie-urile ne ajută să înțelegem cum utilizați site-ul nostru și să îmbunătățim experiența dvs. de navigare."
+    },
+    "typesOfCookies": {
+      "title": "Tipuri de Cookie-uri pe Care le Utilizăm",
+      "essential": {
+        "title": "Cookie-uri Esențiale",
+        "description": "Aceste cookie-uri sunt necesare pentru ca site-ul să funcționeze corect. Ele permit funcționalități de bază precum securitatea, gestionarea rețelei și accesibilitatea. Nu puteți refuza aceste cookie-uri deoarece sunt esențiale pentru funcționarea site-ului."
+      },
+      "analytics": {
+        "title": "Cookie-uri de Analiză",
+        "description": "Utilizăm cookie-uri de analiză pentru a înțelege cum interacționează vizitatorii cu site-ul nostru. Aceste cookie-uri colectează informații despre paginile cele mai vizitate, cum navighează utilizatorii prin site și eventualele mesaje de eroare întâlnite. Acest lucru ne ajută să îmbunătățim performanța și experiența utilizatorului pe site-ul nostru."
+      },
+      "functional": {
+        "title": "Cookie-uri Funcționale",
+        "description": "Aceste cookie-uri permit site-ului să rețină alegerile pe care le faceți (cum ar fi preferința de limbă) și să ofere funcționalități îmbunătățite și mai personalizate. Ele pot fi, de asemenea, utilizate pentru a furniza servicii pe care le-ați solicitat, cum ar fi vizionarea unui videoclip sau comentarea pe un blog."
+      }
+    },
+    "managingCookies": {
+      "title": "Gestionarea Cookie-urilor",
+      "content": "Majoritatea browserelor web vă permit să controlați cookie-urile prin setările lor. Puteți seta browserul să refuze cookie-urile sau să șteargă anumite cookie-uri. Vă rugăm să rețineți că, dacă alegeți să blocați sau să ștergeți cookie-urile, unele funcționalități ale site-ului nostru ar putea să nu funcționeze corect. Iată cum să gestionați cookie-urile în browserele populare:"
+    },
+    "thirdParty": {
+      "title": "Cookie-uri de la Terți",
+      "content": "Este posibil să utilizăm servicii de la terți, cum ar fi Google Analytics, Facebook și alte platforme de social media care pot seta cookie-uri pe dispozitivul dvs. Acești terți au propriile lor politici de confidențialitate și vă recomandăm să le examinați pentru a înțelege cum utilizează cookie-urile și datele dvs."
+    },
+    "contact": {
+      "title": "Contactați-ne",
+      "content": "Dacă aveți întrebări despre utilizarea cookie-urilor de către noi, vă rugăm să ne contactați:"
+    }
+  },
+  "privacyPolicy": {
+    "title": "Politică de Confidențialitate",
+    "lastUpdated": "Ultima actualizare",
+    "intro": {
+      "title": "Introducere",
+      "content": "RADCOM este angajată să vă protejeze confidențialitatea și datele personale. Această Politică de Confidențialitate explică cum colectăm, utilizăm, stocăm și protejăm informațiile dvs. conform Regulamentului General privind Protecția Datelor (GDPR) și altor legi aplicabile privind protecția datelor."
+    },
+    "dataController": {
+      "title": "Operator de Date"
+    },
+    "dataCollection": {
+      "title": "Ce Date Colectăm",
+      "content": "Este posibil să colectăm următoarele tipuri de date personale:",
+      "personal": {
+        "title": "Informații Personale",
+        "description": "Nume, adresă de email, număr de telefon, numele companiei și funcția atunci când ne contactați sau solicitați informații despre serviciile noastre."
+      },
+      "technical": {
+        "title": "Date Tehnice",
+        "description": "Adresa IP, tipul de browser, informații despre dispozitiv, sistemul de operare și URL-urile de referință colectate automat atunci când vizitați site-ul nostru."
+      },
+      "usage": {
+        "title": "Date de Utilizare",
+        "description": "Informații despre modul în care interacționați cu site-ul nostru, inclusiv paginile vizitate, timpul petrecut pe pagini și modelele de navigare."
+      }
+    },
+    "howWeUse": {
+      "title": "Cum Utilizăm Datele Dvs.",
+      "content": "Utilizăm datele dvs. personale în următoarele scopuri:",
+      "purposes": {
+        "service": "Pentru a furniza și menține serviciile noastre",
+        "communication": "Pentru a răspunde la întrebările dvs. și a comunica cu dvs.",
+        "improvement": "Pentru a îmbunătăți site-ul și serviciile noastre",
+        "legal": "Pentru a respecta obligațiile legale",
+        "marketing": "Pentru a vă trimite comunicări de marketing (cu consimțământul dvs.)"
+      }
+    },
+    "legalBasis": {
+      "title": "Baza Legală pentru Prelucrare",
+      "content": "Prelucrăm datele dvs. personale pe baza: (1) Consimțământului dvs., (2) Executării unui contract, (3) Respectării obligațiilor legale, sau (4) Intereselor noastre legitime în operarea și îmbunătățirea afacerii noastre."
+    },
+    "dataSharing": {
+      "title": "Partajarea Datelor",
+      "content": "Nu vindem datele dvs. personale. Este posibil să partajăm informațiile dvs. cu furnizori de servicii de încredere care ne asistă în operarea site-ului și desfășurarea afacerii noastre, sub rezerva obligațiilor de confidențialitate. De asemenea, este posibil să divulgăm datele dvs. dacă este cerut de lege sau pentru a ne proteja drepturile."
+    },
+    "dataRetention": {
+      "title": "Păstrarea Datelor",
+      "content": "Păstrăm datele dvs. personale doar atât timp cât este necesar pentru a îndeplini scopurile pentru care au fost colectate, pentru a respecta obligațiile legale, pentru a rezolva disputele și pentru a aplica acordurile noastre. Când datele nu mai sunt necesare, le ștergem sau le anonimizăm în siguranță."
+    },
+    "yourRights": {
+      "title": "Drepturile Dvs.",
+      "content": "Conform GDPR, aveți următoarele drepturi cu privire la datele dvs. personale:",
+      "rights": {
+        "access": "Dreptul de acces la datele dvs. personale",
+        "rectification": "Dreptul de rectificare a datelor inexacte",
+        "erasure": "Dreptul la ștergere (\"dreptul de a fi uitat\")",
+        "restriction": "Dreptul de restricționare a prelucrării",
+        "portability": "Dreptul la portabilitatea datelor",
+        "objection": "Dreptul de a obiecta la prelucrare",
+        "complaint": "Dreptul de a depune o plângere la o autoritate de supraveghere"
+      }
+    },
+    "security": {
+      "title": "Securitatea Datelor",
+      "content": "Implementăm măsuri tehnice și organizaționale adecvate pentru a proteja datele dvs. personale împotriva accesului neautorizat, modificării, divulgării sau distrugerii. Cu toate acestea, nicio metodă de transmitere prin internet nu este 100% sigură și nu putem garanta securitatea absolută."
+    },
+    "children": {
+      "title": "Confidențialitatea Copiilor",
+      "content": "Site-ul nostru nu este destinat copiilor sub 16 ani. Nu colectăm cu bună știință date personale de la copii. Dacă credeți că am colectat date de la un copil, vă rugăm să ne contactați imediat."
+    },
+    "changes": {
+      "title": "Modificări ale Acestei Politici",
+      "content": "Este posibil să actualizăm această Politică de Confidențialitate din când în când. Vă vom notifica despre orice modificări semnificative prin publicarea noii politici pe această pagină cu o dată actualizată \"Ultima actualizare\". Vă încurajăm să examinați periodic această politică."
+    },
+    "contact": {
+      "title": "Contactați-ne",
+      "content": "Dacă aveți întrebări despre această Politică de Confidențialitate sau doriți să vă exercitați drepturile, vă rugăm să contactați Responsabilul cu Protecția Datelor:"
+    }
+  }
+}

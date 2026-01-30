@@ -64,7 +64,7 @@ export default function IFleet() {
                 <img 
                   src="/products/iFleet.svg" 
                   alt="RADCOM iFleet - Extended Fleet Management" 
-                  className="h-24 md:h-32 w-auto"
+                  className="h-24 md:h-32 w-auto product-logo"
                 />
                 <p className="text-xl text-primary-foreground/90">{t('products.ifleet.subtitle')}</p>
               </div>

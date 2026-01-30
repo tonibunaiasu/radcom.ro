@@ -1,0 +1,174 @@
+import { getLocale } from "../../../lib/locale";
+import { getCopy } from "../../../lib/site-copy";
+
+const cobSpecs = [
+  { key: "processor", value: "Intel Atom QC x7 / E3950 (1.6~2.0GHz)" },
+  { key: "memory", value: "DDR3L SO-DIMM până la 16 GB" },
+  { key: "storage", value: "mSATA SSD" },
+  { key: "communication", value: "2G/3G/4G, WiFi 802.11ac, Bluetooth 4.2" },
+  { key: "os", value: "Linux" },
+  { key: "upgrade", value: "Local / Remote" }
+];
+
+const cobResponsibilities = {
+  en: [
+    "Data logging: GPS, speed, mileage, CAN bus, validations",
+    "Real-time tracking and stop detection aligned with routes",
+    "Driver support: authentication, route selection, dispatcher communication",
+    "Passenger information on interior/exterior displays",
+    "Integration with passenger counting and e-ticketing"
+  ],
+  ro: [
+    "Înregistrare date: GPS, viteză, kilometraj, CAN autobuz, validări",
+    "Urmărire în timp real și detectare opriri corelate cu ruta",
+    "Suport șofer: autentificare, selectare traseu, comunicare dispecerat",
+    "Informații pasageri prin afișaje interioare/exterioare",
+    "Integrare cu numărare pasageri și e-ticketing"
+  ]
+};
+
+const benefits = {
+  en: [
+    {
+      title: "Operational efficiency",
+      desc: "Route optimization, reduced fuel costs, and schedule compliance."
+    },
+    {
+      title: "Increased safety",
+      desc: "24/7 monitoring, incident alerts, and video evidence."
+    },
+    {
+      title: "Data-driven decisions",
+      desc: "Real-time KPIs, detailed reports, and predictive analytics."
+    },
+    {
+      title: "Better passenger experience",
+      desc: "Accurate information, punctuality, and improved experience."
+    }
+  ],
+  ro: [
+    {
+      title: "Eficiență operațională",
+      desc: "Optimizare rute, reducere cost combustibil, respectare program."
+    },
+    {
+      title: "Siguranță sporită",
+      desc: "Monitorizare 24/7, alertare incidente și dovezi video."
+    },
+    {
+      title: "Decizii bazate pe date",
+      desc: "KPI în timp real, rapoarte detaliate și analize predictive."
+    },
+    {
+      title: "Satisfacție pasageri",
+      desc: "Informații precise, punctualitate și experiență îmbunătățită."
+    }
+  ]
+};
+
+export default async function IFleetPage({ params }: {
+  params: { lang: string };
+}) {
+  const locale = getLocale({ lang: params.lang });
+  const copy = getCopy(locale);
+  const product = copy.products.ifleet;
+  const productPage = copy.products.ifleetPage;
+
+  return (
+    <main>
+      <section className="section-block primary">
+        <div className="container">
+          <div className="service-hero-logo">
+            <img src="/products/iFleet.svg" alt="RADCOM iFleet logo" />
+          </div>
+          <h1 className="section-title">{product.title}</h1>
+          <p className="section-lead">{productPage.description}</p>
+          <p className="section-lead">{productPage.detailedDescription}</p>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Funcționalități cheie" : "Key features"}
+          </h2>
+          <div className="feature-grid">
+            {Object.values(productPage.features).map((feature) => (
+              <article className="feature-card" key={feature.title}>
+                <div className="badge">{feature.title}</div>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">
+            {productPage.cobSpecs.title}
+          </h2>
+          <div className="two-col">
+            <div className="card">
+              <h3>{locale === "ro" ? "Ce gestionează COB?" : "What does the COB handle?"}</h3>
+              <ul className="bullets">
+                {cobResponsibilities[locale].map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="card">
+              <h3>{locale === "ro" ? "Specificații tehnice" : "Technical specifications"}</h3>
+              <div className="specs">
+                {cobSpecs.map((spec) => (
+                  <div key={spec.key}>
+                    <span>{productPage.cobSpecs[spec.key]}</span>
+                    <span>{spec.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Beneficii pentru operatori" : "Benefits for operators"}
+          </h2>
+          <div className="feature-grid">
+            {benefits[locale].map((benefit) => (
+              <article className="feature-card" key={benefit.title}>
+                <h3>{benefit.title}</h3>
+                <p>{benefit.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block primary">
+        <div className="container cta">
+          <h2 className="section-title">
+            {locale === "ro" ? "Gata să optimizezi flota?" : "Ready to optimize your fleet?"}
+          </h2>
+          <p className="section-lead">
+            {locale === "ro"
+              ? "Contactează-ne pentru o demonstrație live a sistemului RADCOM iFleet."
+              : "Contact us for a live demo of the RADCOM iFleet system."}
+          </p>
+          <div className="hero-actions">
+            <a className="primary" href={`/${locale}/contact`}>
+              {locale === "ro" ? "Solicită demonstrație" : "Request a demo"}
+            </a>
+            <a className="secondary" href={`/${locale}/servicii`}>
+              {locale === "ro" ? "Vezi toate produsele" : "View all products"}
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

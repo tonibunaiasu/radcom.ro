@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "title": "Soluții integrate",
+    "titleHighlight": "hardware + software",
+    "subtitle": "Oferim servicii IT&C complete pentru mai multe industrii românești"
+  },
+  "stats": {
+    "top3": "Top 3",
+    "top3Description": "cele mai mari companii de tehnologie din România",
+    "completeServices": "Servicii IT&C Complete",
+    "completeServicesDescription": "pentru mai multe industrii românești",
+    "perfectSolutions": "Soluții Perfect Integrate",
+    "perfectSolutionsDescription": "la nevoile de business ale clienților noștri"
+  },
+  "cta": {
+    "contactUs": "Contactează-ne",
+    "discoverMore": "Descoperă mai mult"
+  },
+  "footer": {
+    "company": "RADCOM oferă soluții integrate hardware + software pentru transport public, telecom și infrastructură critică.",
+    "contact": "Contact rapid",
+    "privacy": "Politica de confidențialitate",
+    "cookie": "Politica de cookie"
+  },
+  "nav": {
+    "company": "COMPANIA",
+    "services": "SERVICII",
+    "solutions": "SOLUȚII",
+    "careers": "CARIERE",
+    "articles": "ARTICOLE",
+    "contact": "CONTACT",
+    "about": "Despre",
+    "team": "Echipă",
+    "certifications": "Certificări"
+  }
+}

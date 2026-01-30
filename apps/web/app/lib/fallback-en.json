@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "title": "Integrated solutions",
+    "titleHighlight": "hardware + software",
+    "subtitle": "We offer complete IT&C services for multiple Romanian industries"
+  },
+  "stats": {
+    "top3": "Top 3",
+    "top3Description": "largest technology companies in Romania",
+    "completeServices": "Complete IT&C Services",
+    "completeServicesDescription": "for multiple Romanian industries",
+    "perfectSolutions": "Perfect Integrated Solutions",
+    "perfectSolutionsDescription": "meeting our clients' business needs"
+  },
+  "cta": {
+    "contactUs": "Contact us",
+    "discoverMore": "Discover more"
+  },
+  "footer": {
+    "company": "RADCOM offers integrated hardware + software solutions for public transport, telecom and critical infrastructure.",
+    "contact": "Quick contact",
+    "privacy": "Privacy policy",
+    "cookie": "Cookie policy"
+  },
+  "nav": {
+    "company": "COMPANY",
+    "services": "SERVICES",
+    "solutions": "SOLUTIONS",
+    "careers": "CAREERS",
+    "articles": "ARTICLES",
+    "contact": "CONTACT",
+    "about": "About",
+    "team": "Team",
+    "certifications": "Certifications"
+  }
+}

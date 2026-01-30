@@ -71,7 +71,7 @@ export default function OptiFare() {
                 <img 
                   src="/products/OptiFare.svg" 
                   alt="RADCOM OptiFare - E-Ticketing System" 
-                  className="h-24 md:h-32 w-auto"
+                  className="h-24 md:h-32 w-auto product-logo"
                 />
                 <p className="text-xl text-primary-foreground/90">{t('products.optifare.subtitle')}</p>
               </div>
