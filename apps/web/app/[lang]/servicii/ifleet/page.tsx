@@ -1,5 +1,7 @@
 import { getLocale } from "../../../lib/locale";
 import { getCopy } from "../../../lib/site-copy";
+import { SubNav } from "../../../components/SubNav";
+import { BarChart3, Cpu, Gauge, MapPin, ShieldCheck, Video } from "lucide-react";
 
 const cobSpecs = [
   { key: "processor", value: "Intel Atom QC x7 / E3950 (1.6~2.0GHz)" },
@@ -66,17 +68,41 @@ const benefits = {
   ]
 };
 
-export default async function IFleetPage({ params }: {
-  params: { lang: string };
-}) {
-  const locale = getLocale({ lang: params.lang });
+export default async function IFleetPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+
+  const locale = getLocale({ lang: lang });
   const copy = getCopy(locale);
   const product = copy.products.ifleet;
   const productPage = copy.products.ifleetPage;
+  const features = Object.entries(productPage.features)
+    .filter(([key]) => !key.endsWith("Desc"))
+    .map(([key, title]) => ({
+      title: String(title),
+      description: String(productPage.features[`${key}Desc` as keyof typeof productPage.features] || "")
+    }));
+  const featureIcons = [
+    <MapPin key="map" size={22} strokeWidth={1.6} />,
+    <Video key="video" size={22} strokeWidth={1.6} />,
+    <Gauge key="gps" size={22} strokeWidth={1.6} />,
+    <BarChart3 key="report" size={22} strokeWidth={1.6} />,
+    <Cpu key="cob" size={22} strokeWidth={1.6} />,
+    <ShieldCheck key="secure" size={22} strokeWidth={1.6} />
+  ];
+  const benefitIcons = [
+    <BarChart3 key="eff" size={22} strokeWidth={1.6} />,
+    <ShieldCheck key="safe" size={22} strokeWidth={1.6} />,
+    <MapPin key="route" size={22} strokeWidth={1.6} />
+  ];
+  const subnavItems = [
+    { label: "iFleet", href: "/servicii/ifleet" },
+    { label: "OptiFare", href: "/servicii/optifare" },
+    { label: "eXact", href: "/servicii/exact" }
+  ];
 
   return (
     <main>
-      <section className="section-block primary">
+      <section className="section-block neutral">
         <div className="container">
           <div className="service-hero-logo">
             <img src="/products/iFleet.svg" alt="RADCOM iFleet logo" />
@@ -86,6 +112,23 @@ export default async function IFleetPage({ params }: {
           <p className="section-lead">{productPage.detailedDescription}</p>
         </div>
       </section>
+      <SubNav items={subnavItems} />
+
+      <section
+        className="visual-strip"
+        style={{
+          backgroundImage:
+            "linear-gradient(120deg, rgba(28,63,149,0.8), rgba(15,33,58,0.4)), url(https://images.unsplash.com/photo-T32G9zARSr4?auto=format&fit=crop&w=1600&q=80)"
+        }}
+      >
+        <div className="container">
+          <p>
+            {locale === "ro"
+              ? "Monitorizare inteligentă și optimizare în timp real pentru flote urbane."
+              : "Smart monitoring and real-time optimization for urban fleets."}
+          </p>
+        </div>
+      </section>
 
       <section className="section-block alt">
         <div className="container">
@@ -93,9 +136,11 @@ export default async function IFleetPage({ params }: {
             {locale === "ro" ? "Funcționalități cheie" : "Key features"}
           </h2>
           <div className="feature-grid">
-            {Object.values(productPage.features).map((feature) => (
-              <article className="feature-card" key={feature.title}>
-                <div className="badge">{feature.title}</div>
+            {features.map((feature, index) => (
+              <article className="feature-card has-icon" key={`${feature.title}-${index}`}>
+                <span className="feature-icon" aria-hidden="true">
+                  {featureIcons[index % featureIcons.length]}
+                </span>
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
               </article>
@@ -113,8 +158,8 @@ export default async function IFleetPage({ params }: {
             <div className="card">
               <h3>{locale === "ro" ? "Ce gestionează COB?" : "What does the COB handle?"}</h3>
               <ul className="bullets">
-                {cobResponsibilities[locale].map((item) => (
-                  <li key={item}>{item}</li>
+                {cobResponsibilities[locale].map((item, index) => (
+                  <li key={`${item}-${index}`}>{item}</li>
                 ))}
               </ul>
             </div>
@@ -139,8 +184,11 @@ export default async function IFleetPage({ params }: {
             {locale === "ro" ? "Beneficii pentru operatori" : "Benefits for operators"}
           </h2>
           <div className="feature-grid">
-            {benefits[locale].map((benefit) => (
-              <article className="feature-card" key={benefit.title}>
+            {benefits[locale].map((benefit, index) => (
+              <article className="feature-card has-icon" key={`${benefit.title}-${index}`}>
+                <span className="feature-icon" aria-hidden="true">
+                  {benefitIcons[index % benefitIcons.length]}
+                </span>
                 <h3>{benefit.title}</h3>
                 <p>{benefit.desc}</p>
               </article>

@@ -1,5 +1,7 @@
 import { getLocale } from "../../../lib/locale";
 import { getCopy } from "../../../lib/site-copy";
+import { SubNav } from "../../../components/SubNav";
+import { CreditCard, Nfc, QrCode, ShieldCheck, Smartphone, Ticket } from "lucide-react";
 
 const validatorSpecs = [
   { labelRo: "Ecran", labelEn: "Display", value: "7\" TFT LCD tactil capacitiv" },
@@ -76,39 +78,36 @@ const benefits = {
   ]
 };
 
-export default async function OptiFarePage({ params }: {
-  params: { lang: string };
-}) {
-  const locale = getLocale({ lang: params.lang });
+export default async function OptiFarePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+
+  const locale = getLocale({ lang: lang });
   const copy = getCopy(locale);
   const product = copy.products.optifare;
   const productPage = copy.products.optifarePage;
-
-  const features = [
-    {
-      title: productPage.features.contactlessPayment,
-      desc: productPage.features.contactlessPaymentDesc
-    },
-    {
-      title: productPage.features.smartCards,
-      desc: productPage.features.smartCardsDesc
-    },
-    {
-      title: productPage.features.qrCodes,
-      desc: productPage.features.qrCodesDesc
-    },
-    {
-      title: productPage.features.realTimeReporting,
-      desc: productPage.features.realTimeReportingDesc
-    },
-    {
-      title: productPage.features.robustHardware,
-      desc: productPage.features.robustHardwareDesc
-    },
-    {
-      title: productPage.features.passengerInterface,
-      desc: productPage.features.passengerInterfaceDesc
-    }
+  const features = Object.entries(productPage.features)
+    .filter(([key]) => !key.endsWith("Desc"))
+    .map(([key, title]) => ({
+      title: String(title),
+      desc: String(productPage.features[`${key}Desc` as keyof typeof productPage.features] || "")
+    }));
+  const featureIcons = [
+    <CreditCard key="card" size={22} strokeWidth={1.6} />,
+    <Nfc key="nfc" size={22} strokeWidth={1.6} />,
+    <Smartphone key="wallet" size={22} strokeWidth={1.6} />,
+    <Ticket key="ticket" size={22} strokeWidth={1.6} />,
+    <QrCode key="qr" size={22} strokeWidth={1.6} />,
+    <ShieldCheck key="secure" size={22} strokeWidth={1.6} />
+  ];
+  const benefitIcons = [
+    <ShieldCheck key="secure2" size={22} strokeWidth={1.6} />,
+    <CreditCard key="fast" size={22} strokeWidth={1.6} />,
+    <Smartphone key="mobile" size={22} strokeWidth={1.6} />
+  ];
+  const subnavItems = [
+    { label: "iFleet", href: "/servicii/ifleet" },
+    { label: "OptiFare", href: "/servicii/optifare" },
+    { label: "eXact", href: "/servicii/exact" }
   ];
 
   const paymentMethods = [
@@ -140,16 +139,31 @@ export default async function OptiFarePage({ params }: {
 
   return (
     <main>
-      <section className="section-block primary">
+      <section className="section-block accent">
         <div className="container">
-          <img
-            className="service-hero-logo"
-            src="/products/OptiFare.svg"
-            alt="RADCOM OptiFare logo"
-          />
+          <div className="service-hero-logo service-hero-logo--optifare">
+            <img src="/products/OptiFare.svg" alt="RADCOM OptiFare logo" />
+          </div>
           <h1 className="section-title">{product.title}</h1>
           <p className="section-lead">{productPage.description}</p>
           <p className="section-lead">{productPage.detailedDescription}</p>
+        </div>
+      </section>
+      <SubNav items={subnavItems} />
+
+      <section
+        className="visual-strip"
+        style={{
+          backgroundImage:
+            "linear-gradient(120deg, rgba(28,63,149,0.8), rgba(15,33,58,0.4)), url(https://images.unsplash.com/photo-wRnpdmGrg0c?auto=format&fit=crop&w=1600&q=80)"
+        }}
+      >
+        <div className="container">
+          <p>
+            {locale === "ro"
+              ? "Plăți contactless și validare rapidă pentru pasageri."
+              : "Contactless payments and fast validation for passengers."}
+          </p>
         </div>
       </section>
 
@@ -159,9 +173,11 @@ export default async function OptiFarePage({ params }: {
             {locale === "ro" ? "Funcționalități cheie" : "Key features"}
           </h2>
           <div className="feature-grid">
-            {features.map((feature) => (
-              <article className="feature-card" key={feature.title}>
-                <div className="badge">{feature.title}</div>
+            {features.map((feature, index) => (
+              <article className="feature-card has-icon" key={`${feature.title}-${index}`}>
+                <span className="feature-icon" aria-hidden="true">
+                  {featureIcons[index % featureIcons.length]}
+                </span>
                 <h3>{feature.title}</h3>
                 <p>{feature.desc}</p>
               </article>
@@ -177,8 +193,8 @@ export default async function OptiFarePage({ params }: {
             <div className="card">
               <h3>{locale === "ro" ? "Caracteristici validatoare" : "Validator features"}</h3>
               <ul className="bullets">
-                {validatorFeatures[locale].map((item) => (
-                  <li key={item}>{item}</li>
+                {validatorFeatures[locale].map((item, index) => (
+                  <li key={`${item}-${index}`}>{item}</li>
                 ))}
               </ul>
             </div>
@@ -198,8 +214,8 @@ export default async function OptiFarePage({ params }: {
           <h3>{productPage.paymentMethods.title}</h3>
           <p className="section-lead">{productPage.allPaymentMethods}</p>
           <div className="grid">
-            {paymentMethods.map((method) => (
-              <div className="card" key={method.title}>
+            {paymentMethods.map((method, index) => (
+              <div className="card" key={`${method.title}-${index}`}>
                 <strong>{method.title}</strong>
                 <p>{method.desc}</p>
               </div>
@@ -214,8 +230,11 @@ export default async function OptiFarePage({ params }: {
             {locale === "ro" ? "Beneficii pentru operatori și pasageri" : "Benefits for operators and passengers"}
           </h2>
           <div className="feature-grid">
-            {benefits[locale].map((benefit) => (
-              <article className="feature-card" key={benefit.title}>
+            {benefits[locale].map((benefit, index) => (
+              <article className="feature-card has-icon" key={`${benefit.title}-${index}`}>
+                <span className="feature-icon" aria-hidden="true">
+                  {benefitIcons[index % benefitIcons.length]}
+                </span>
                 <h3>{benefit.title}</h3>
                 <p>{benefit.desc}</p>
               </article>

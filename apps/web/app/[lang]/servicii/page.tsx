@@ -1,6 +1,8 @@
 import { getServices } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getServicesLabels } from "../../lib/site-copy";
+import { FeatureList } from "../../components/FeatureList";
+import { SubNav } from "../../components/SubNav";
 
 const productLogos: Record<string, string> = {
   ifleet: "/products/iFleet.svg",
@@ -8,12 +10,17 @@ const productLogos: Record<string, string> = {
   exact: "/products/eXact.svg"
 };
 
-export default async function ServiciiPage({ params }: {
-  params: { lang: string };
-}) {
-  const locale = getLocale({ lang: params.lang });
+export default async function ServiciiPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+
+  const locale = getLocale({ lang: lang });
   const products = await getServices(locale);
   const labels = getServicesLabels(locale);
+  const subnavItems = [
+    { label: "iFleet", href: "/servicii/ifleet" },
+    { label: "OptiFare", href: "/servicii/optifare" },
+    { label: "eXact", href: "/servicii/exact" }
+  ];
 
   return (
     <main>
@@ -24,6 +31,7 @@ export default async function ServiciiPage({ params }: {
           <p className="section-lead">{labels.heroDescription}</p>
         </div>
       </section>
+      <SubNav items={subnavItems} />
 
       <section className="section-block alt">
         <div className="container">
@@ -37,17 +45,15 @@ export default async function ServiciiPage({ params }: {
                     className="product-logo"
                     src={productLogos[product.id] || "/logo-blue.png"}
                     alt={`${product.title} logo`}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <h3>{product.title}</h3>
                   <p>{product.subtitle}</p>
                 </div>
                 <div className="product-content">
                   <p>{product.description}</p>
-                  <ul className="product-features">
-                    {product.features.map((feature: string) => (
-                      <li key={feature}>{feature}</li>
-                    ))}
-                  </ul>
+                  <FeatureList items={product.features} />
                   <a className="product-cta" href={`/${locale}${product.link}`}>
                     {locale === "ro" ? "Descoperă" : "Discover"} {product.title}
                   </a>
