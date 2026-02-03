@@ -1,8 +1,25 @@
 import { getHomeContent, getPartners, getServices } from "../lib/sanity-queries";
 import { SectionIcon } from "../components/SectionIcon";
+import { FeatureList } from "../components/FeatureList";
+import { Reveal } from "../components/Reveal";
 import { getLocale } from "../lib/locale";
 import { getHomeLabels } from "../lib/site-copy";
-import { urlFor } from "../lib/sanity";
+import { getMediaURL } from "../lib/media";
+import {
+  BarChart3,
+  Bus,
+  Cable,
+  Code2,
+  Cog,
+  Globe2,
+  HeartPulse,
+  Landmark,
+  Layout,
+  RadioTower,
+  ShieldCheck,
+  Smartphone,
+  Zap
+} from "lucide-react";
 
 const productLogos: Record<string, string> = {
   ifleet: "/products/iFleet.svg",
@@ -10,19 +27,64 @@ const productLogos: Record<string, string> = {
   exact: "/products/eXact.svg"
 };
 
-export default async function HomePage({ params }: {
-  params: { lang: string };
-}) {
-  const locale = getLocale({ lang: params.lang });
+export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+
+  const locale = getLocale({ lang: lang });
   const content = await getHomeContent(locale);
   const services = await getServices(locale);
   const partners = await getPartners();
   const labels = getHomeLabels(locale);
+  const industryIcons = [
+    <Bus key="bus" size={22} strokeWidth={1.6} />,
+    <HeartPulse key="medical" size={22} strokeWidth={1.6} />,
+    <RadioTower key="telecom" size={22} strokeWidth={1.6} />,
+    <Smartphone key="media" size={22} strokeWidth={1.6} />,
+    <Globe2 key="internet" size={22} strokeWidth={1.6} />,
+    <Landmark key="eu" size={22} strokeWidth={1.6} />
+  ];
+  const infrastructureIcons = [
+    <RadioTower key="net" size={22} strokeWidth={1.6} />,
+    <Zap key="power" size={22} strokeWidth={1.6} />,
+    <Cable key="fiber" size={22} strokeWidth={1.6} />,
+    <Landmark key="civil" size={22} strokeWidth={1.6} />,
+    <Cog key="scada" size={22} strokeWidth={1.6} />,
+    <Globe2 key="eu" size={22} strokeWidth={1.6} />
+  ];
+  const advantageIcons = [
+    <BarChart3 key="responsive" size={22} strokeWidth={1.6} />,
+    <Cog key="custom" size={22} strokeWidth={1.6} />,
+    <Layout key="ui" size={22} strokeWidth={1.6} />,
+    <Code2 key="code" size={22} strokeWidth={1.6} />
+  ];
 
   return (
     <main>
       <section className="hero">
-        <div className="container hero-inner">
+        <div className="hero-media hero-media-full">
+          <video
+            className="hero-video"
+            src="/hero-transport.mp4"
+            poster="/hero-transport.webp"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          <div className="hero-media-overlay" />
+          <div className="hero-card hero-card-overlay">
+            <h3>{labels.keyMetrics}</h3>
+            <div className="stat-grid">
+              {content.stats.map((stat, index) => (
+                <div className="stat-card" key={`${stat.label}-${stat.value}-${index}`}>
+                  <strong>{stat.value}</strong>
+                  <span>{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="container hero-inner hero-inner-stacked">
           <div>
             <p className="eyebrow">RADCOM</p>
             <h1>{content.hero.title}</h1>
@@ -36,17 +98,6 @@ export default async function HomePage({ params }: {
               </a>
             </div>
           </div>
-          <div className="hero-card">
-            <h3>{labels.keyMetrics}</h3>
-            <div className="stat-grid">
-              {content.stats.map((stat) => (
-                <div className="stat-card" key={stat.label}>
-                  <strong>{stat.value}</strong>
-                  <span>{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -58,29 +109,29 @@ export default async function HomePage({ params }: {
           </div>
           <div className="product-grid">
             {services.map((service) => (
-              <article className="product-card" key={service.id}>
-                <div className={`product-header ${service.tone}`}>
-                  <h3>{service.title}</h3>
-                  <p>{service.subtitle}</p>
-                </div>
-                <div className="product-content">
-                  <div className="product-icon">
-                    <img
-                      src={productLogos[service.id] || "/logo-blue.png"}
-                      alt={`${service.title} logo`}
-                    />
+              <Reveal key={service.id}>
+                <article className="product-card">
+                  <div className={`product-header ${service.tone}`}>
+                    <h3>{service.title}</h3>
+                    <p>{service.subtitle}</p>
                   </div>
-                  <p>{service.description}</p>
-                  <ul className="product-features">
-                    {service.features.map((feature: string) => (
-                      <li key={feature}>{feature}</li>
-                    ))}
-                  </ul>
-                  <a className="product-cta" href={`/${locale}${service.link}`}>
-                    Descoperă {service.title}
-                  </a>
-                </div>
-              </article>
+                  <div className="product-content">
+                    <div className="product-icon">
+                      <img
+                        src={productLogos[service.id] || "/logo-blue.png"}
+                        alt={`${service.title} logo`}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <p>{service.description}</p>
+                    <FeatureList items={service.features} />
+                    <a className="product-cta" href={`/${locale}${service.link}`}>
+                      Descoperă {service.title}
+                    </a>
+                  </div>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -92,14 +143,16 @@ export default async function HomePage({ params }: {
             <SectionIcon name="transport" /> {labels.developmentTitle}
           </h2>
           <div className="feature-grid">
-            {content.industries.map((industry) => (
-              <article className="feature-card" key={industry.title}>
-                <div className="feature-icon">
-                  <SectionIcon name={industry.title.toLowerCase()} />
-                </div>
-                <h3>{industry.title}</h3>
-                <p>{industry.desc}</p>
-              </article>
+            {content.industries.map((industry, index) => (
+              <Reveal key={`${industry.title}-${index}`}>
+                <article className="feature-card has-icon">
+                  <span className="feature-icon" aria-hidden="true">
+                    {industryIcons[index % industryIcons.length]}
+                  </span>
+                  <h3>{industry.title}</h3>
+                  <p>{industry.desc}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -111,14 +164,16 @@ export default async function HomePage({ params }: {
             <SectionIcon name="infrastructure" /> {labels.infrastructureTitle}
           </h2>
           <div className="feature-grid">
-            {content.infrastructure.map((item) => (
-              <article className="feature-card" key={item.title}>
-                <div className="feature-icon">
-                  <SectionIcon name={item.title.toLowerCase()} />
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </article>
+            {content.infrastructure.map((item, index) => (
+              <Reveal key={`${item.title}-${index}`}>
+                <article className="feature-card has-icon">
+                  <span className="feature-icon" aria-hidden="true">
+                    {infrastructureIcons[index % infrastructureIcons.length]}
+                  </span>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -130,14 +185,16 @@ export default async function HomePage({ params }: {
             <SectionIcon name="advantages" /> {labels.advantagesTitle}
           </h2>
           <div className="feature-grid">
-            {content.advantages.map((advantage) => (
-              <article className="feature-card" key={advantage.title}>
-                <div className="feature-icon">
-                  <SectionIcon name={advantage.title.toLowerCase()} />
-                </div>
-                <h3>{advantage.title}</h3>
-                <p>{advantage.desc}</p>
-              </article>
+            {content.advantages.map((advantage, index) => (
+              <Reveal key={`${advantage.title}-${index}`}>
+                <article className="feature-card has-icon">
+                  <span className="feature-icon" aria-hidden="true">
+                    {advantageIcons[index % advantageIcons.length]}
+                  </span>
+                  <h3>{advantage.title}</h3>
+                  <p>{advantage.desc}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -147,22 +204,29 @@ export default async function HomePage({ params }: {
         <div className="container">
           <h2 className="section-title">{labels.partnersTitle}</h2>
           <p className="section-lead">{labels.partnersSubtitle}</p>
-          <div className="partners-strip">
-            {partners.map((partner) => {
-              const logo =
-                typeof partner.logo === "string"
-                  ? partner.logo
-                  : partner.logo
-                  ? urlFor(partner.logo).width(160).url()
-                  : "/logo-blue.png";
+          <Reveal>
+            <div className="partners-marquee">
+              <div className="partners-track">
+                {[...partners, ...partners].map((partner, index) => {
+                const logo = getMediaURL(partner.logo, "/logo-blue.png");
 
-              return (
-                <div className="partner-logo" key={partner.id || partner.name}>
-                  <img src={logo} alt={partner.name || "Partner logo"} />
-                </div>
-              );
-            })}
-          </div>
+                  return (
+                    <div
+                      className="partner-logo"
+                      key={`${partner.id || partner.name}-${index}`}
+                    >
+                      <img
+                        src={logo}
+                        alt={partner.name || "Partner logo"}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

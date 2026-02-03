@@ -56,46 +56,63 @@ export function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-row">
           <div className="footer-bottom-left">
-            <div className="footer-links">
+            <nav className="footer-menu">
+              <a href={withLocalePath("/", lang)}>
+                {lang === "ro" ? "Acasă" : "Home"}
+              </a>
+              <a href={withLocalePath("/compania", lang)}>
+                {lang === "ro" ? "Despre noi" : "About us"}
+              </a>
+              <a href={withLocalePath("/servicii", lang)}>
+                {lang === "ro" ? "Servicii" : "Services"}
+              </a>
+              <a href={withLocalePath("/industries", lang)}>
+                {lang === "ro" ? "Industrii" : "Industries"}
+              </a>
+              <a href={withLocalePath("/articole", lang)}>
+                {lang === "ro" ? "Articole" : "Articles"}
+              </a>
+              <a href={withLocalePath("/contact", lang)}>
+                {lang === "ro" ? "Contact" : "Contact"}
+              </a>
               <a href={withLocalePath("/politica-cookie", lang)}>
                 {footer.cookiePolicy}
               </a>
-              <span>|</span>
-              <a
-                href={withLocalePath("/politica-confidentialitate", lang)}
-              >
+              <a href={withLocalePath("/politica-confidentialitate", lang)}>
                 {footer.privacyPolicy}
               </a>
-            </div>
+            </nav>
+          </div>
+          <div className="footer-bottom-center">
             <p className="footer-note">{footer.euDisclaimer}</p>
-            <p className="footer-copyright">©2026 RADCOM</p>
+            <p className="footer-eu-info">
+              {footer.euInfo}{" "}
+              <a
+                href="https://www.fonduri-ue.ro"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                www.fonduri-ue.ro
+              </a>
+            </p>
           </div>
           <div className="footer-bottom-right">
-            <img
-              src="/official-logos/eu-flag.jpg"
-              alt="Uniunea Europeană"
-            />
-            <img
-              src="/official-logos/guvernul-romaniei.jpg"
-              alt="Guvernul României"
-            />
-            <img
-              src="/official-logos/fonduri-europene.png"
-              alt="Fonduri Europene"
-            />
+            <div className="footer-bottom-logos">
+              <img
+                src="/official-logos/eu-flag.jpg?v=ref2"
+                alt="Uniunea Europeană"
+              />
+              <img
+                src="/official-logos/guvernul-romaniei.jpg?v=ref2"
+                alt="Guvernul României"
+              />
+              <img
+                src="/official-logos/fonduri-europene.png?v=ref2"
+                alt="Fonduri Europene"
+              />
+            </div>
+            <p className="footer-copyright">©2026 RADCOM</p>
           </div>
-        </div>
-        <div className="container footer-info">
-          <p>
-            {footer.euInfo}{" "}
-            <a
-              href="https://www.fonduri-ue.ro"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              www.fonduri-ue.ro
-            </a>
-          </p>
         </div>
       </div>
     </footer>
