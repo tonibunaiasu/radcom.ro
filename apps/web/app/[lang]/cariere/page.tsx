@@ -1,6 +1,7 @@
 import { getJobs, getPage } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
+import { Award, Briefcase, Sparkles, GraduationCap, Users } from "lucide-react";
 
 const benefits = {
   en: [
@@ -56,18 +57,30 @@ const labels = {
   }
 };
 
-export default async function CarierePage({ params }: {
-  params: { lang: string };
-}) {
-  const locale = getLocale({ lang: params.lang });
+export default async function CarierePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+
+  const locale = getLocale({ lang: lang });
   const fallback = getPageFallback("cariere", locale);
   const page = (await getPage("cariere", locale)) || fallback;
   const jobs = await getJobs(locale);
   const t = labels[locale];
+  const benefitIcons = [
+    <Sparkles key="sparkles" size={22} strokeWidth={1.6} />,
+    <GraduationCap key="grad" size={22} strokeWidth={1.6} />,
+    <Users key="users" size={22} strokeWidth={1.6} />,
+    <Award key="award" size={22} strokeWidth={1.6} />
+  ];
 
   return (
     <main>
-      <section className="section-block primary">
+      <section
+        className="section-block primary hero-banner"
+        style={{
+          backgroundImage:
+            "linear-gradient(120deg, rgba(28,63,149,0.85), rgba(15,33,58,0.45)), url(/hero/careers.webp)"
+        }}
+      >
         <div className="container">
           <h1 className="section-title">{page.title}</h1>
           <p className="section-lead">{page.summary}</p>
@@ -79,8 +92,11 @@ export default async function CarierePage({ params }: {
           <h2 className="section-title">{t.why}</h2>
           <p className="section-lead">{page.body}</p>
           <div className="feature-grid">
-            {benefits[locale].map((benefit) => (
-              <article className="feature-card" key={benefit.title}>
+            {benefits[locale].map((benefit, index) => (
+              <article className="feature-card has-icon" key={`${benefit.title}-${index}`}>
+                <span className="feature-icon" aria-hidden="true">
+                  {benefitIcons[index % benefitIcons.length]}
+                </span>
                 <h3>{benefit.title}</h3>
                 <p>{benefit.desc}</p>
               </article>
@@ -95,7 +111,10 @@ export default async function CarierePage({ params }: {
           {jobs.length ? (
             <div className="feature-grid">
               {jobs.map((job) => (
-                <article className="feature-card" key={job.id}>
+                <article className="feature-card has-icon" key={job.id}>
+                  <span className="feature-icon" aria-hidden="true">
+                    <Briefcase size={22} strokeWidth={1.6} />
+                  </span>
                   <h3>{job.title}</h3>
                   <p>{job.description}</p>
                   <p>

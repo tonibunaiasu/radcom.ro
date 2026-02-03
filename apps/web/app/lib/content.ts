@@ -220,6 +220,48 @@ export const solutionsContent = [
   }
 ];
 
+export const articlesContent = [
+  {
+    id: "transport-vision-2025",
+    slug: "transport-vision-2025",
+    title: "Public Transport 2025: Data-driven Operations",
+    excerpt:
+      "How integrated ITS platforms help operators improve punctuality, reduce costs, and deliver a better passenger experience.",
+    publishedAt: "2025-12-15T00:00:00.000Z",
+    author: "RADCOM Team",
+    tags: ["Public Transport", "ITS"],
+    image: "/blog/blog-1.jpg",
+    content:
+      "## Connected fleets, smarter cities\n\nModern public transport relies on real-time data, predictive analytics, and unified systems. RADCOM integrates fleet management, e-ticketing, and passenger information into a single operational view.\n\n### What operators gain\n\n- Better service regularity and punctuality\n- Faster incident response\n- Accurate ridership and revenue insights\n\n## Passenger-first experience\n\nWhen operational data is connected, the passenger experience becomes measurable and optimizable. Clear information, reliable schedules, and frictionless payments build trust.\n\n## The next step\n\nRADCOM works with operators to design scalable ITS architectures that fit local requirements."
+  },
+  {
+    id: "fare-collection-future",
+    slug: "fare-collection-future",
+    title: "E-ticketing Trends: From Cards to Cloud",
+    excerpt:
+      "A short guide to modern fare collection, contactless payments, and why flexible back-office systems matter.",
+    publishedAt: "2025-11-28T00:00:00.000Z",
+    author: "RADCOM Team",
+    tags: ["E-ticketing", "Payments"],
+    image: "/blog/blog-2.jpg",
+    content:
+      "## Contactless as default\n\nPassengers expect quick, secure, and transparent payments. Contactless adoption keeps growing across public transport.\n\n### Core pillars\n\n- Secure validation hardware\n- Reliable transaction processing\n- Transparent reporting for operators\n\n## Why the back office matters\n\nA modern back-office platform makes it easy to introduce new tariffs, manage partnerships, and offer flexible travel products."
+  },
+  {
+    id: "passenger-info-realtime",
+    slug: "passenger-info-realtime",
+    title: "Real-time Passenger Information at Scale",
+    excerpt:
+      "Delivering reliable arrival times and in-station updates across an urban transport network.",
+    publishedAt: "2025-11-12T00:00:00.000Z",
+    author: "RADCOM Team",
+    tags: ["Passenger Info", "Operations"],
+    image: "/blog/blog-3.jpg",
+    content:
+      "## Clarity builds confidence\n\nPassengers make better decisions when they see accurate arrival times and service updates.\n\n### Key components\n\n- LED displays and digital signage\n- Audio announcements\n- Mobile and web journey planning\n\n## Operational impact\n\nAccurate passenger information reduces delays, improves satisfaction, and reinforces brand trust."
+  }
+];
+
 export const partnersContent = [
   { id: "2k-telecom", name: "2K Telecom", website: "https://2ktelecom.ro", logo: "/partners/2k-telecom.jpg" },
   { id: "imi-mobile", name: "IMI Mobile", website: "https://imimobile.com", logo: "/partners/imi-mobile.jpg" },

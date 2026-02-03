@@ -2,7 +2,7 @@
   "nav": {
     "company": "COMPANIA",
     "services": "SERVICII",
-    "solutions": "SOLUȚII",
+    "solutions": "INDUSTRII",
     "careers": "CARIERE",
     "resources": "RESURSE",
     "contact": "CONTACT",
@@ -174,7 +174,7 @@
     "solutionsDescription": "Trei produse integrate care transformă complet experiența de transport public"
   },
   "solutions": {
-    "title": "Soluții pe Industrii",
+    "title": "Industrii",
     "transport": "Transport",
     "medical": "Medical",
     "telecom": "Telecom",

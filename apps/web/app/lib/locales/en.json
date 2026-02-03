@@ -2,7 +2,7 @@
   "nav": {
     "company": "COMPANY",
     "services": "SERVICES",
-    "solutions": "SOLUTIONS",
+    "solutions": "INDUSTRIES",
     "careers": "CAREERS",
     "resources": "RESOURCES",
     "contact": "CONTACT",
@@ -174,7 +174,7 @@
     "solutionsDescription": "Three integrated products that completely transform the public transport experience"
   },
   "solutions": {
-    "title": "Solutions by Industry",
+    "title": "Industries",
     "transport": "Transport",
     "medical": "Medical",
     "telecom": "Telecom",

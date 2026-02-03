@@ -3,10 +3,10 @@ import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
 import { renderBody } from "../../lib/render-body";
 
-export default async function PoliticaCookiePage({ params }: {
-  params: { lang: string };
-}) {
-  const locale = getLocale({ lang: params.lang });
+export default async function PoliticaCookiePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+
+  const locale = getLocale({ lang: lang });
   const fallback = getPageFallback("politica-cookie", locale);
   const page = (await getPage("politica-cookie", locale)) || fallback;
 
