@@ -2,16 +2,22 @@ import { getPage, getSettings } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
 import { getContactLabels } from "../../lib/site-copy";
-import { Mail, MapPin, Phone } from "lucide-react";
 
 const fallbackSettings = {
-  companyName: "RADCOM",
+  companyName: "Radcom S.A.",
   email: "office@radcom.ro",
-  phone: "021 232 1039",
-  address: "Str. George Constantinescu nr. 2C, Etaj 5 & 6, Sector 2, București"
+  phone: "+40-21-232.10.39 / +40-31-824.40.00",
+  address:
+    "Strada George Constantinescu, nr. 2C, Etaj 5 & 6, Cod: 20339, Sector 2, București, România"
 };
 
-export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
+export default async function ContactPage({
+  params,
+  searchParams
+}: {
+  params: Promise<{ lang: string }>;
+  searchParams?: { sent?: string; error?: string };
+}) {
   const { lang } = await params;
 
   const locale = getLocale({ lang: lang });
@@ -19,6 +25,8 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
   const page = (await getPage("contact", locale)) || fallbackPage;
   const settings = (await getSettings()) || fallbackSettings;
   const t = getContactLabels(locale);
+  const sent = searchParams?.sent === "1";
+  const error = searchParams?.error === "1";
 
   return (
     <main>
@@ -40,7 +48,22 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
           <div>
             <h2 className="section-title">{t.formTitle}</h2>
             <p className="section-lead">{t.formLead}</p>
-            <form className="card">
+            {sent && (
+              <p className="contact-alert success">
+                {locale === "ro"
+                  ? "Mesajul a fost trimis. Îți răspundem cât mai curând."
+                  : "Your message was sent. We will get back to you soon."}
+              </p>
+            )}
+            {error && (
+              <p className="contact-alert error">
+                {locale === "ro"
+                  ? "Nu am putut trimite mesajul. Te rugăm să încerci din nou."
+                  : "We could not send your message. Please try again."}
+              </p>
+            )}
+            <form className="card" method="post" action="/api/contact">
+              <input type="hidden" name="locale" value={locale} />
               <label>
                 {t.fields.name} *
                 <input type="text" name="name" required />
@@ -64,32 +87,31 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
           </div>
           <div>
             <h2 className="section-title">{t.infoTitle}</h2>
-            <div className="feature-grid">
-              <article className="feature-card has-icon">
-                <span className="feature-icon" aria-hidden="true">
-                  <Mail size={22} strokeWidth={1.6} />
-                </span>
-                <h3>Email</h3>
-                <p>
-                  <a href={`mailto:${settings.email}`}>{settings.email}</a>
-                </p>
-              </article>
-              <article className="feature-card has-icon">
-                <span className="feature-icon" aria-hidden="true">
-                  <Phone size={22} strokeWidth={1.6} />
-                </span>
-                <h3>Telefon</h3>
-                <p>
-                  <a href={`tel:${settings.phone}`}>{settings.phone}</a>
-                </p>
-              </article>
-              <article className="feature-card has-icon">
-                <span className="feature-icon" aria-hidden="true">
-                  <MapPin size={22} strokeWidth={1.6} />
-                </span>
-                <h3>{locale === "ro" ? "Adresă" : "Address"}</h3>
-                <p>{settings.address}</p>
-              </article>
+            <div className="card">
+              <h3 style={{ marginTop: 0 }}>Radcom S.A.</h3>
+              <p>{settings.address}</p>
+              <p>
+                {locale === "ro" ? "CIF: RO3939511" : "VAT: RO3939511"}
+                <br />
+                {locale === "ro"
+                  ? "Nr. Registrul Comerțului: J40/10148/1993"
+                  : "Trade Register No.: J40/10148/1993"}
+                <br />
+                {locale === "ro"
+                  ? "Capital social: 205.000 RON"
+                  : "Share capital: 205,000 RON"}
+              </p>
+              <p>
+                {locale === "ro" ? "Telefon" : "Phone"}:{" "}
+                <a href="tel:+40212321039">+40-21-232.10.39</a>{" "}
+                {locale === "ro" ? "sau" : "or"}{" "}
+                <a href="tel:+40318244000">+40-31-824.40.00</a>
+                <br />
+                {locale === "ro" ? "Fax" : "Fax"}: +40-21-232.10.68
+                <br />
+                {locale === "ro" ? "E-mail" : "Email"}:{" "}
+                <a href={`mailto:${settings.email}`}>{settings.email}</a>
+              </p>
             </div>
           </div>
         </div>

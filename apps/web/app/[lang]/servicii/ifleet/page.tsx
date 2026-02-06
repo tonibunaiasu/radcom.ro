@@ -102,7 +102,7 @@ export default async function IFleetPage({ params }: { params: Promise<{ lang: s
 
   return (
     <main>
-      <section className="section-block neutral">
+      <section className="section-block accent">
         <div className="container">
           <div className="service-hero-logo">
             <img src="/products/iFleet.svg" alt="RADCOM iFleet logo" />
@@ -197,19 +197,19 @@ export default async function IFleetPage({ params }: { params: Promise<{ lang: s
         </div>
       </section>
 
-      <section className="section-block primary">
+      <section className="section-block accent">
         <div className="container cta">
           <h2 className="section-title">
             {locale === "ro" ? "Gata să optimizezi flota?" : "Ready to optimize your fleet?"}
           </h2>
           <p className="section-lead">
             {locale === "ro"
-              ? "Contactează-ne pentru o demonstrație live a sistemului RADCOM iFleet."
-              : "Contact us for a live demo of the RADCOM iFleet system."}
+              ? "Contactează-ne pentru o discuție despre sistemul RADCOM iFleet."
+              : "Contact us for a discussion about the RADCOM iFleet system."}
           </p>
           <div className="hero-actions">
             <a className="primary" href={`/${locale}/contact`}>
-              {locale === "ro" ? "Solicită demonstrație" : "Request a demo"}
+              {locale === "ro" ? "Solicită o discuție" : "Request a discussion"}
             </a>
             <a className="secondary" href={`/${locale}/servicii`}>
               {locale === "ro" ? "Vezi toate produsele" : "View all products"}

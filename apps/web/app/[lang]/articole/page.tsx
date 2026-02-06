@@ -7,9 +7,9 @@ import { ArrowRight, Calendar, User2 } from "lucide-react";
 const labels = {
   en: {
     noArticles: "No articles available yet.",
-    ctaTitle: "Request a tailored demo",
+    ctaTitle: "Request a tailored discussion",
     ctaBody: "Tell us about your project and we’ll come back with a clear proposal.",
-    ctaPrimary: "Request a demo",
+    ctaPrimary: "Request a discussion",
     ctaSecondary: "Book 45 min consult"
   },
   ro: {

@@ -57,6 +57,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <Layout key="ui" size={22} strokeWidth={1.6} />,
     <Code2 key="code" size={22} strokeWidth={1.6} />
   ];
+  const linkedInCopy = {
+    title: locale === "ro" ? "Noutăți LinkedIn" : "LinkedIn updates",
+    lead:
+      locale === "ro"
+        ? "Ultimele postări RADCOM, direct din LinkedIn."
+        : "Latest RADCOM posts, straight from LinkedIn."
+  };
 
   return (
     <main>
@@ -72,30 +79,39 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             playsInline
           />
           <div className="hero-media-overlay" />
-          <div className="hero-card hero-card-overlay">
-            <h3>{labels.keyMetrics}</h3>
-            <div className="stat-grid">
-              {content.stats.map((stat, index) => (
-                <div className="stat-card" key={`${stat.label}-${stat.value}-${index}`}>
-                  <strong>{stat.value}</strong>
-                  <span>{stat.label}</span>
-                </div>
-              ))}
+          <div className="hero-title-overlay">
+            <div className="container hero-inner hero-title-inner">
+              <div>
+                <h1>{content.hero.title}</h1>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="container hero-inner hero-inner-stacked">
-          <div>
-            <p className="eyebrow">RADCOM</p>
-            <h1>{content.hero.title}</h1>
-            <p>{content.hero.subtitle}</p>
-            <div className="hero-actions">
-              <a className="primary" href={`/${locale}/contact`}>
-                {content.hero.ctaPrimary}
-              </a>
-              <a className="secondary" href={`/${locale}/servicii`}>
-                {content.hero.ctaSecondary}
-              </a>
+          <div className="hero-content-overlay">
+            <div className="container hero-inner">
+              <div>
+                <p>{content.hero.subtitle}</p>
+                <div className="hero-actions">
+                  <a className="primary" href={`/${locale}/servicii`}>
+                    {content.hero.ctaPrimary}
+                  </a>
+                  <a className="secondary" href={`/${locale}/contact`}>
+                    {content.hero.ctaSecondary}
+                  </a>
+                </div>
+              </div>
+              <div className="hero-metrics">
+                <div className="hero-metrics-header">
+                  <p className="eyebrow small">{labels.keyMetrics}</p>
+                </div>
+                <div className="hero-metrics-track">
+                  {content.stats.map((stat, index) => (
+                    <div className="metric-chip" key={`${stat.label}-${stat.value}-${index}`}>
+                      <span className="metric-value">{stat.value}</span>
+                      <span className="metric-label">{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -127,7 +143,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     <p>{service.description}</p>
                     <FeatureList items={service.features} />
                     <a className="product-cta" href={`/${locale}${service.link}`}>
-                      Descoperă {service.title}
+                      {labels.serviceCta} {service.title}
                     </a>
                   </div>
                 </article>
@@ -241,6 +257,23 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <a className="secondary" href={`/${locale}/servicii`}>
               {labels.ctaSecondary}
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">{linkedInCopy.title}</h2>
+          <p className="section-lead">{linkedInCopy.lead}</p>
+          <div className="linkedin-feed">
+            <iframe
+              src="https://www.juicer.io/api/feeds/radcom-romania/iframe"
+              title="RADCOM LinkedIn feed"
+              width="100%"
+              height="420"
+              style={{ border: "0", display: "block" }}
+              scrolling="no"
+            />
           </div>
         </div>
       </section>

@@ -1,10 +1,17 @@
 import payload from 'payload'
 import config from '../src/payload.config'
 
-const email = 'admin@radcom.ro'
-const password = 'Radcom!2026'
+const email = process.env.ADMIN_EMAIL
+const password = process.env.ADMIN_PASSWORD
+const roles = process.env.ADMIN_ROLES?.split(',').map((role) => role.trim()).filter(Boolean) || [
+  'admin',
+]
 
 async function run() {
+  if (!email || !password) {
+    throw new Error('ADMIN_EMAIL and ADMIN_PASSWORD are required')
+  }
+
   await payload.init({ config })
 
   const existing = await payload.find({
@@ -20,7 +27,7 @@ async function run() {
 
   await payload.create({
     collection: 'users',
-    data: { email, password },
+    data: { email, password, roles },
   })
 
   console.log(`Admin user created: ${email}`)

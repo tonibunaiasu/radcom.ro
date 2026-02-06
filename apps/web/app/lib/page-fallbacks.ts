@@ -3,14 +3,14 @@ import { buildCookieBody, buildPrivacyBody, getCopy } from "./site-copy";
 
 const common = {
   companyBodyRo: [
-    "RADCOM este una dintre cele mai mari companii de tehnologie din România, specializată în furnizarea de soluții integrate hardware și software pentru diverse industrii.",
-    "Cu o experiență vastă în domeniul IT&C, oferim servicii complete de dezvoltare software, infrastructură și consultanță pentru programe europene.",
-    "Misiunea noastră este să răspundem cu soluții perfect integrate la nevoile de business ale clienților noștri, asigurând calitate superioară și inovație continuă."
+    "RADCOM este o societate privată de telecomunicații înființată în anul 1993.",
+    "În 1998, RADCOM a aderat la standardul de calitate ISO 9001.",
+    "RADCOM este distribuitor național de produse și servicii de telefonie fixă și mobilă."
   ].join("\n\n"),
   companyBodyEn: [
-    "RADCOM is one of Romania’s leading technology companies, specializing in integrated hardware and software solutions for multiple industries.",
-    "With extensive IT&C experience, we deliver complete software development, infrastructure, and European program consulting services.",
-    "Our mission is to provide fully integrated solutions that meet our clients’ business needs, ensuring high quality and continuous innovation."
+    "RADCOM este o societate privată de telecomunicații înființată în anul 1993.",
+    "În 1998, RADCOM a aderat la standardul de calitate ISO 9001.",
+    "RADCOM este distribuitor național de produse și servicii de telefonie fixă și mobilă."
   ].join("\n\n"),
   certificationsRo: [
     "ISO 9001:2015 — Certificare pentru Sistemul de Management al Calității.",
@@ -19,10 +19,11 @@ const common = {
     "Microsoft Gold Partner — Parteneriat de nivel superior."
   ].join("\n\n"),
   certificationsEn: [
-    "ISO 9001:2015 — Quality Management System certification.",
-    "ISO 27001:2013 — Information Security Management certification.",
-    "Top 3 IT Companies in Romania — Recognition for excellence.",
-    "Microsoft Gold Partner — Top-tier partnership."
+    "SR EN ISO 9001:2015",
+    "SR EN ISO 14001:2015",
+    "SR OHSAS 18001:2008",
+    "SR EN ISO/IEC 27001:2018",
+    "ISO/IEC 20000-1:2011"
   ].join("\n\n")
 };
 
@@ -30,12 +31,12 @@ const fallbacks = {
   en: {
     compania: {
       title: "RADCOM Company",
-      summary: "Top 3 technology companies in Romania.",
+      summary: "Istoric, profil și certificări RADCOM.",
       body: common.companyBodyEn
     },
     "compania-despre": {
       title: "About RADCOM",
-      summary: "IT&C expertise and continuous innovation.",
+      summary: "Profilul companiei și repere esențiale.",
       body: common.companyBodyEn
     },
     "compania-echipa": {
@@ -87,12 +88,12 @@ const fallbacks = {
   ro: {
     compania: {
       title: "Compania RADCOM",
-      summary: "Suntem în Top 3 cele mai mari companii de tehnologie din România.",
+      summary: "Istoric, profil și certificări RADCOM.",
       body: common.companyBodyRo
     },
     "compania-despre": {
       title: "Despre RADCOM",
-      summary: "Expertiză IT&C și inovație continuă.",
+      summary: "Profilul companiei și repere esențiale.",
       body: common.companyBodyRo
     },
     "compania-echipa": {

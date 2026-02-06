@@ -10,13 +10,16 @@ const translations = {
       home: "Home",
       company: "About us",
       services: "Services",
-      solutions: "Industries",
       careers: "Careers",
       articles: "Articles",
       contact: "Contact",
       about: "About",
       team: "Team",
       certifications: "Certifications"
+    },
+    menu: {
+      open: "Menu",
+      close: "Close"
     }
   },
   ro: {
@@ -24,13 +27,16 @@ const translations = {
       home: "Acasă",
       company: "Despre noi",
       services: "Servicii",
-      solutions: "Industrii",
       careers: "Cariere",
       articles: "Articole",
       contact: "Contact",
       about: "Despre",
       team: "Echipă",
       certifications: "Certificări"
+    },
+    menu: {
+      open: "Meniu",
+      close: "Închide"
     }
   }
 } as const;
@@ -40,6 +46,11 @@ export function Header() {
   const pathname = usePathname();
   const lang = getLocaleFromPath(pathname);
   const t = translations[lang];
+  const nextLang = lang === "en" ? "ro" : "en";
+
+  const setLangCookie = (value: string) => {
+    document.cookie = `radcom_lang=${value};path=/;max-age=31536000`;
+  };
 
   const menu = [
     { title: t.nav.home, href: "/" },
@@ -48,7 +59,6 @@ export function Header() {
       href: "/compania"
     },
     { title: t.nav.services, href: "/servicii" },
-    { title: t.nav.solutions, href: "/industries" },
     { title: t.nav.careers, href: "/cariere" },
     { title: t.nav.articles, href: "/articole" },
     { title: t.nav.contact, href: "/contact" }
@@ -68,7 +78,8 @@ export function Header() {
           ))}
           <a
             className="lang-toggle"
-            href={withLocalePath(pathname, lang === "en" ? "ro" : "en")}
+            href={withLocalePath(pathname, nextLang)}
+            onClick={() => setLangCookie(nextLang)}
           >
             {lang === "en" ? "RO" : "EN"}
           </a>
@@ -80,7 +91,7 @@ export function Header() {
           aria-expanded={mobileOpen}
           aria-label="Toggle navigation"
         >
-          {mobileOpen ? "Închide" : "Meniu"}
+          {mobileOpen ? t.menu.close : t.menu.open}
         </button>
       </div>
       {mobileOpen && (
@@ -95,7 +106,8 @@ export function Header() {
             ))}
             <a
               className="lang-toggle mobile-lang"
-              href={withLocalePath(pathname, lang === "en" ? "ro" : "en")}
+              href={withLocalePath(pathname, nextLang)}
+              onClick={() => setLangCookie(nextLang)}
             >
               {lang === "en" ? "RO" : "EN"}
             </a>

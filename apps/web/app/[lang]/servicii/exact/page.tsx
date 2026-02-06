@@ -100,7 +100,7 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
 
   return (
     <main>
-      <section className="section-block success">
+      <section className="section-block neutral">
         <div className="container">
           <img
             className="service-hero-logo"
@@ -185,7 +185,7 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
         </div>
       </section>
 
-      <section className="section-block success">
+      <section className="section-block neutral">
         <div className="container cta">
           <h2 className="section-title">
             {locale === "ro" ? "Îmbunătățește experiența pasagerilor" : "Improve the passenger experience"}
@@ -197,7 +197,7 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
           </p>
           <div className="hero-actions">
             <a className="primary" href={`/${locale}/contact`}>
-              {locale === "ro" ? "Solicită demonstrație" : "Request a demo"}
+              {locale === "ro" ? "Solicită o discuție" : "Request a discussion"}
             </a>
             <a className="secondary" href={`/${locale}/servicii`}>
               {locale === "ro" ? "Vezi toate produsele" : "View all products"}

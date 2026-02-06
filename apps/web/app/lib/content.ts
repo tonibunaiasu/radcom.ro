@@ -119,7 +119,7 @@ export const servicesContent = [
       "Computer On-Board integrat"
     ],
     link: "/servicii/ifleet",
-    tone: "primary"
+    tone: "accent"
   },
   {
     id: "optifare",
@@ -136,7 +136,7 @@ export const servicesContent = [
       "Validatoare robuste anti-vandalism"
     ],
     link: "/servicii/optifare",
-    tone: "accent"
+    tone: "success"
   },
   {
     id: "exact",
@@ -153,7 +153,7 @@ export const servicesContent = [
       "Conexiuni de linie și transfer"
     ],
     link: "/servicii/exact",
-    tone: "success"
+    tone: "primary"
   }
 ];
 

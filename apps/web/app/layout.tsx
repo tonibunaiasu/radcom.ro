@@ -4,7 +4,11 @@ import { Footer } from "./components/Footer";
 
 export const metadata = {
   title: "RADCOM",
-  description: "Soluții integrate pentru transport public"
+  description: "Soluții integrate pentru transport public",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png"
+  }
 };
 
 export default function RootLayout({

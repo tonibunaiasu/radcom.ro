@@ -139,7 +139,7 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
 
   return (
     <main>
-      <section className="section-block accent">
+      <section className="section-block success">
         <div className="container">
           <div className="service-hero-logo service-hero-logo--optifare">
             <img src="/products/OptiFare.svg" alt="RADCOM OptiFare logo" />
@@ -243,7 +243,7 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
         </div>
       </section>
 
-      <section className="section-block accent">
+      <section className="section-block success">
         <div className="container cta">
           <h2 className="section-title">
             {locale === "ro" ? "Modernizează sistemul de taxare" : "Modernize the fare system"}
@@ -255,7 +255,7 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
           </p>
           <div className="hero-actions">
             <a className="primary" href={`/${locale}/contact`}>
-              {locale === "ro" ? "Solicită demonstrație" : "Request a demo"}
+              {locale === "ro" ? "Solicită o discuție" : "Request a discussion"}
             </a>
             <a className="secondary" href={`/${locale}/servicii`}>
               {locale === "ro" ? "Vezi toate produsele" : "View all products"}

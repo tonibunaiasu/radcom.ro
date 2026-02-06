@@ -20,5 +20,6 @@ export function getLocaleFromPath(pathname?: string | null): Locale {
 export function withLocalePath(pathname: string, locale: Locale) {
   const clean = pathname.replace(/^\/(en|ro)(?=\/|$)/, "");
   const normalized = clean === "" ? "/" : clean;
-  return normalized === "/" ? `/${locale}` : `/${locale}${normalized}`;
+  if (normalized === "/") return `/${locale}`;
+  return `/${locale}${normalized}`;
 }

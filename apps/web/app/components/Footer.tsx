@@ -9,31 +9,68 @@ export function Footer() {
   const lang = getLocaleFromPath(pathname);
   const copy = getCopy(lang);
   const footer = copy.footer;
+  const adminLoginURL = `${process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001"}/admin/login`;
+  const disclaimerMarker = "obligatoriu";
+  const disclaimerParts =
+    lang === "ro" && footer.euDisclaimer.includes(disclaimerMarker)
+      ? footer.euDisclaimer.split(disclaimerMarker)
+      : null;
+  const socialLinks = [
+    { label: "Twitter", href: "https://twitter.com/RadcomRomania" },
+    { label: "Facebook", href: "https://www.facebook.com/RadcomRomania" },
+    { label: "Instagram", href: "https://www.instagram.com/radcom.ro/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/radcom-romania/" }
+  ];
 
   return (
     <footer className="radcom-footer">
       <div className="footer-top">
         <div className="container footer-top-grid">
           <div className="footer-brand">
-            <img src="/logo-white.png" alt="RADCOM Logo" className="footer-logo" />
-            <p>{footer.companyDescription}</p>
-          </div>
-
-          <div className="footer-social">
-            <div className="footer-facebook">
-              <iframe
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRadcomRomania&tabs&width=360&height=190&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                width="360"
-                height="190"
-                style={{ border: "none", overflow: "hidden" }}
-                scrolling="no"
-                frameBorder="0"
-                allowFullScreen={true}
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                title="Facebook Page"
-              ></iframe>
+            <div className="footer-logo-wrap">
+              <img src="/logo-white.png" alt="RADCOM Logo" className="footer-logo" />
+            </div>
+            <div className="footer-social-links footer-social-top">
+              <p className="footer-social-title">{footer.followUs}</p>
+              <div className="footer-social-buttons">
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.href}
+                    className="footer-social-link"
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
+
+          <nav className="footer-menu footer-menu-top">
+            <a href={withLocalePath("/", lang)}>
+              {lang === "ro" ? "Acasă" : "Home"}
+            </a>
+            <a href={withLocalePath("/compania", lang)}>
+              {lang === "ro" ? "Despre noi" : "About us"}
+            </a>
+            <a href={withLocalePath("/servicii", lang)}>
+              {lang === "ro" ? "Servicii" : "Services"}
+            </a>
+            <a href={withLocalePath("/articole", lang)}>
+              {lang === "ro" ? "Articole" : "Articles"}
+            </a>
+            <a href={withLocalePath("/contact", lang)}>
+              {lang === "ro" ? "Contact" : "Contact"}
+            </a>
+            <a href={withLocalePath("/politica-cookie", lang)}>
+              {footer.cookiePolicy}
+            </a>
+            <a href={withLocalePath("/politica-confidentialitate", lang)}>
+              {footer.privacyPolicy}
+            </a>
+          </nav>
 
           <div className="footer-contact">
             <h4>{footer.quickContact}</h4>
@@ -56,35 +93,19 @@ export function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-row">
           <div className="footer-bottom-left">
-            <nav className="footer-menu">
-              <a href={withLocalePath("/", lang)}>
-                {lang === "ro" ? "Acasă" : "Home"}
-              </a>
-              <a href={withLocalePath("/compania", lang)}>
-                {lang === "ro" ? "Despre noi" : "About us"}
-              </a>
-              <a href={withLocalePath("/servicii", lang)}>
-                {lang === "ro" ? "Servicii" : "Services"}
-              </a>
-              <a href={withLocalePath("/industries", lang)}>
-                {lang === "ro" ? "Industrii" : "Industries"}
-              </a>
-              <a href={withLocalePath("/articole", lang)}>
-                {lang === "ro" ? "Articole" : "Articles"}
-              </a>
-              <a href={withLocalePath("/contact", lang)}>
-                {lang === "ro" ? "Contact" : "Contact"}
-              </a>
-              <a href={withLocalePath("/politica-cookie", lang)}>
-                {footer.cookiePolicy}
-              </a>
-              <a href={withLocalePath("/politica-confidentialitate", lang)}>
-                {footer.privacyPolicy}
-              </a>
-            </nav>
-          </div>
-          <div className="footer-bottom-center">
-            <p className="footer-note">{footer.euDisclaimer}</p>
+            <p className="footer-note">
+              {disclaimerParts ? (
+                <>
+                  {disclaimerParts[0]}
+                  <a className="footer-cms-link-inline" href={adminLoginURL}>
+                    {disclaimerMarker}
+                  </a>
+                  {disclaimerParts[1]}
+                </>
+              ) : (
+                footer.euDisclaimer
+              )}
+            </p>
             <p className="footer-eu-info">
               {footer.euInfo}{" "}
               <a
@@ -95,23 +116,26 @@ export function Footer() {
                 www.fonduri-ue.ro
               </a>
             </p>
+            <p className="footer-copyright">©2026 RADCOM</p>
           </div>
-          <div className="footer-bottom-right">
+          <div className="footer-bottom-center">
             <div className="footer-bottom-logos">
               <img
                 src="/official-logos/eu-flag.jpg?v=ref2"
-                alt="Uniunea Europeană"
+                alt={lang === "ro" ? "Uniunea Europeană" : "European Union"}
               />
               <img
                 src="/official-logos/guvernul-romaniei.jpg?v=ref2"
-                alt="Guvernul României"
+                alt={lang === "ro" ? "Guvernul României" : "Government of Romania"}
               />
               <img
                 src="/official-logos/fonduri-europene.png?v=ref2"
-                alt="Fonduri Europene"
+                alt={lang === "ro" ? "Fonduri Europene" : "European Funds"}
               />
             </div>
-            <p className="footer-copyright">©2026 RADCOM</p>
+          </div>
+          <div className="footer-bottom-right">
+            <p className="footer-brand-description">{footer.companyDescription}</p>
           </div>
         </div>
       </div>

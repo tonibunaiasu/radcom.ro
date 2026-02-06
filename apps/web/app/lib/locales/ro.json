@@ -9,7 +9,7 @@
     "about": "Despre",
     "team": "Echipă",
     "certifications": "Certificări",
-    "news": "Stiri",
+    "news": "Știri",
     "blog": "Blog",
     "articles": "Articole"
   },
@@ -203,7 +203,7 @@
   "cta": {
     "modernize": "Modernizează sistemul tău de transport public",
     "description": "Echipa noastră de experți este gata să te ajute să implementezi cele mai avansate soluții pentru operatorii de transport din România.",
-    "requestDemo": "Solicită o Demonstrație",
+    "requestDemo": "Solicită o Discuție",
     "viewAll": "Vezi Toate Produsele",
     "contactUs": "Contactează-ne",
     "discoverMore": "Descoperă Mai Mult"
@@ -213,7 +213,7 @@
     "quickLinks": "Link-uri Rapide",
     "aboutUs": "Despre Noi",
     "services": "Servicii",
-    "solutions": "Soluții",
+    "solutions": "Industrii",
     "careers": "Cariere",
     "contact": "Contact",
     "contactInfo": "Informații Contact",
@@ -224,7 +224,7 @@
     "followUs": "Urmărește-ne",
     "allRightsReserved": "Toate drepturile rezervate",
     "companyDescription": "Radcom este o societate privată de telecomunicații înființată în anul 1993. În 1998, Radcom a aderat la standardul de calitate ISO 9001. Radcom este distribuitor național de produse și servicii de telefonie fixă și mobilă.",
-    "quickContact": "CONTACT RAPID",
+  "quickContact": "Contact",
     "addressFull": "Str. George Constantinescu nr. 2C, Etaj 5 & 6, Sector 2, București",
     "cookiePolicy": "Politică de cookie",
     "privacyPolicy": "Politică de confidențialitate",

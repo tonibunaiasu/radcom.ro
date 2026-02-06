@@ -1,4 +1,5 @@
 import { getArticleBySlug, getArticles } from "../../../lib/sanity-queries";
+import { articlesContent } from "../../../lib/content";
 import { getLocale } from "../../../lib/locale";
 import { renderBody } from "../../../lib/render-body";
 import { getMediaURL } from "../../../lib/media";
@@ -7,11 +8,14 @@ import { ArrowRight, Calendar, Mail, Share2, User2 } from "lucide-react";
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const articles = await getArticles("ro");
-  const slugs = articles.map((article) => article.slug).filter(Boolean);
-  return ["en", "ro"].flatMap((lang) =>
-    slugs.map((slug) => ({ lang, slug }))
-  );
+  try {
+    const articles = await getArticles("ro");
+    const slugs = articles.map((article) => article.slug).filter(Boolean);
+    return ["en", "ro"].flatMap((lang) => slugs.map((slug) => ({ lang, slug })));
+  } catch {
+    const slugs = articlesContent.map((article) => article.slug).filter(Boolean);
+    return ["en", "ro"].flatMap((lang) => slugs.map((slug) => ({ lang, slug })));
+  }
 }
 
 const formatDate = (value?: string, locale?: string) => {
@@ -64,8 +68,16 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
   const { lang, slug } = await params;
 
   const locale = getLocale({ lang: lang });
-  const article = await getArticleBySlug(slug, locale);
-  const allArticles = await getArticles(locale);
+  let article = null;
+  let allArticles = [];
+
+  try {
+    article = await getArticleBySlug(slug, locale);
+    allArticles = await getArticles(locale);
+  } catch {
+    article = articlesContent.find((entry) => entry.slug === slug) || null;
+    allArticles = articlesContent;
+  }
 
   if (!article) {
     return (
@@ -134,7 +146,9 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
               </div>
             ) : null}
             <div className="article-card">
-              <h3>{locale === "ro" ? "Cere o ofertă personalizată" : "Request a tailored demo"}</h3>
+              <h3>
+                {locale === "ro" ? "Cere o ofertă personalizată" : "Request a tailored discussion"}
+              </h3>
               <p>
                 {locale === "ro"
                   ? "Spune-ne despre proiectul tău și revenim cu o propunere clară."

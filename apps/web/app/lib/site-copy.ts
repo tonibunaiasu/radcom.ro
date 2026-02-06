@@ -82,10 +82,11 @@ export function getHomeLabels(locale: Locale) {
   const data = getCopy(locale);
   return {
     keyMetrics: locale === "ro" ? "Indicatori cheie" : "Key metrics",
-    servicesTitle: locale === "ro" ? "Serviciile noastre" : "Our services",
+    servicesTitle: locale === "ro" ? "Tehnologie pentru transporturi" : "Transport technology",
     servicesLead: locale === "ro"
       ? "Soluții complete pentru transport public, integrare hardware + software și infrastructură critică."
       : "Complete solutions for public transport, hardware + software integration, and critical infrastructure.",
+    serviceCta: locale === "ro" ? "Descoperă" : "Discover",
     developmentTitle: locale === "ro" ? "Dezvoltare" : "Development",
     infrastructureTitle: locale === "ro" ? "Infrastructură" : "Infrastructure",
     advantagesTitle:
@@ -97,12 +98,13 @@ export function getHomeLabels(locale: Locale) {
         ? "Colaborăm cu organizații publice și private pentru soluții tehnologice scalabile în România."
         : "We partner with public and private organizations for scalable technology solutions."),
     ctaTitle:
-      locale === "ro" ? "Hai să discutăm proiectul tău" : "Let’s discuss your project",
+      locale === "ro" ? "Hai să discutăm despre proiectul tău" : "Let’s discuss your project",
     ctaLead:
       locale === "ro"
-        ? "Contactează-ne pentru o demonstrație live sau pentru a construi o soluție personalizată."
-        : "Contact us for a live demo or to build a tailored solution.",
-    ctaPrimary: data.cta?.requestDemo || (locale === "ro" ? "Solicită o demonstrație" : "Request a demo"),
+        ? "Contactează-ne pentru o discuție sau pentru a construi o soluție personalizată."
+        : "Contact us for a discussion or to build a tailored solution.",
+    ctaPrimary:
+      data.cta?.requestDemo || (locale === "ro" ? "Solicită o discuție" : "Request a discussion"),
     ctaSecondary: locale === "ro" ? "Vezi toate serviciile" : "View all services"
   };
 }
@@ -129,7 +131,7 @@ export function getServicesLabels(locale: Locale) {
         : "RADCOM’s integrated system combines the three core products into a single platform, providing a complete solution for management, fare collection, and passenger information.",
     ctaTitle: getCopy(locale).cta.modernize,
     ctaLead: getCopy(locale).cta.description,
-    ctaButton: locale === "ro" ? "Solicită o demonstrație" : "Request a demo"
+    ctaButton: locale === "ro" ? "Solicită o discuție" : "Request a discussion"
   };
 }
 

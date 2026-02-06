@@ -113,6 +113,9 @@
       "wouter@3.7.1": "patches/wouter@3.7.1.patch"
     },
     "overrides": {
+      "@payloadcms/ui": "3.74.0",
+      "@payloadcms/next": "3.74.0",
+      "payload": "3.74.0",
       "tailwindcss>nanoid": "3.3.7"
     },
     "onlyBuiltDependencies": [

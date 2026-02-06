@@ -10,19 +10,23 @@ import {
 const baseURL =
   process.env.NEXT_PUBLIC_PAYLOAD_URL ||
   process.env.PAYLOAD_URL ||
-  "http://localhost:3006";
+  "http://localhost:3001";
 
 const fetchJSON = async (path: string, init?: RequestInit) => {
-  const res = await fetch(`${baseURL}${path}`, {
-    ...init,
-    next: { revalidate: 60 },
-    headers: {
-      "Content-Type": "application/json",
-      ...(init?.headers || {})
-    }
-  });
-  if (!res.ok) return null;
-  return res.json();
+  try {
+    const res = await fetch(`${baseURL}${path}`, {
+      ...init,
+      next: { revalidate: 60 },
+      headers: {
+        "Content-Type": "application/json",
+        ...(init?.headers || {})
+      }
+    });
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
 };
 
 const pick = (
@@ -37,33 +41,46 @@ const pick = (
 export async function getHomeContent(locale = defaultLocale) {
   const data = await fetchJSON(`/api/globals/home?locale=${locale}`);
   if (!data) return homeContent;
+  const fallback = homeContent;
 
   return {
     hero: {
-      title: pick(data.hero?.title, locale),
-      subtitle: pick(data.hero?.subtitle, locale),
-      ctaPrimary: pick(data.hero?.ctaPrimary, locale),
-      ctaSecondary: pick(data.hero?.ctaSecondary, locale)
+      title: pick(data.hero?.title, locale) || fallback.hero.title,
+      subtitle: pick(data.hero?.subtitle, locale) || fallback.hero.subtitle,
+      ctaPrimary: pick(data.hero?.ctaPrimary, locale) || fallback.hero.ctaPrimary,
+      ctaSecondary: pick(data.hero?.ctaSecondary, locale) || fallback.hero.ctaSecondary
     },
-    stats: (data.stats || []).map((item: any) => ({
+    stats: (data.stats && data.stats.length
+      ? data.stats
+      : fallback.stats
+    ).map((item: any) => ({
       value: item.value,
-      label: pick(item.label, locale)
+      label: pick(item.label, locale) || item.label
     })),
-    industries: (data.industries || []).map((item: any) => ({
-      title: pick(item.title, locale),
-      desc: pick(item.desc, locale)
+    industries: (data.industries && data.industries.length
+      ? data.industries
+      : fallback.industries
+    ).map((item: any) => ({
+      title: pick(item.title, locale) || item.title,
+      desc: pick(item.desc, locale) || item.desc
     })),
-    infrastructure: (data.infrastructure || []).map((item: any) => ({
-      title: pick(item.title, locale),
-      desc: pick(item.desc, locale)
+    infrastructure: (data.infrastructure && data.infrastructure.length
+      ? data.infrastructure
+      : fallback.infrastructure
+    ).map((item: any) => ({
+      title: pick(item.title, locale) || item.title,
+      desc: pick(item.desc, locale) || item.desc
     })),
-    advantages: (data.advantages || []).map((item: any) => ({
-      title: pick(item.title, locale),
-      desc: pick(item.desc, locale)
+    advantages: (data.advantages && data.advantages.length
+      ? data.advantages
+      : fallback.advantages
+    ).map((item: any) => ({
+      title: pick(item.title, locale) || item.title,
+      desc: pick(item.desc, locale) || item.desc
     })),
     partners: {
-      title: pick(data.partners?.title, locale),
-      subtitle: pick(data.partners?.subtitle, locale)
+      title: pick(data.partners?.title, locale) || fallback.partners.title,
+      subtitle: pick(data.partners?.subtitle, locale) || fallback.partners.subtitle
     }
   };
 }
@@ -83,11 +100,11 @@ export async function getServices(locale = defaultLocale) {
     ),
     link: `/servicii/${item.slug || item.id}`,
     tone:
-      item.slug === "optifare"
+      item.slug === "ifleet"
         ? "accent"
-        : item.slug === "ifleet"
-        ? "primary"
-        : "success"
+        : item.slug === "optifare"
+        ? "success"
+        : "primary"
   }));
 }
 
