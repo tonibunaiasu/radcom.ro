@@ -82,33 +82,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className="section-block">
-        <div className="container">
-          <div className="quick-steps">
-            <div>
-              <p className="eyebrow">{locale === "ro" ? "Primii pași" : "First steps"}</p>
-              <h3>{locale === "ro" ? "Spune-ne despre proiectul tău" : "Tell us about your project"}</h3>
-              <p>
-                {locale === "ro"
-                  ? "Stabilim rapid obiectivele, bugetul și pașii următori."
-                  : "We align on goals, budget, and next steps quickly."}
-              </p>
-            </div>
-            <div className="quick-steps-actions">
-              <a className="primary" href={`/${locale}/contact`}>
-                {locale === "ro" ? "Contactează-ne" : "Contact us"}
-              </a>
-              <a className="secondary" href={`/${locale}/servicii`}>
-                {locale === "ro" ? "Vezi serviciile" : "See services"}
-              </a>
-              <a className="ghost" href={`/${locale}/compania`}>
-                {locale === "ro" ? "Despre RADCOM" : "About RADCOM"}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="section-block alt">
         <div className="container">
           <div className="section-header">
@@ -217,6 +190,33 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 </article>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <div className="quick-steps">
+            <div>
+              <p className="eyebrow">{locale === "ro" ? "Primii pași" : "First steps"}</p>
+              <h3>{locale === "ro" ? "Spune-ne despre proiectul tău" : "Tell us about your project"}</h3>
+              <p>
+                {locale === "ro"
+                  ? "Stabilim rapid obiectivele, bugetul și pașii următori."
+                  : "We align on goals, budget, and next steps quickly."}
+              </p>
+            </div>
+            <div className="quick-steps-actions">
+              <a className="primary" href={`/${locale}/contact`}>
+                {locale === "ro" ? "Contactează-ne" : "Contact us"}
+              </a>
+              <a className="secondary" href={`/${locale}/servicii`}>
+                {locale === "ro" ? "Vezi serviciile" : "See services"}
+              </a>
+              <a className="ghost" href={`/${locale}/compania`}>
+                {locale === "ro" ? "Despre RADCOM" : "About RADCOM"}
+              </a>
+            </div>
           </div>
         </div>
       </section>
