@@ -64,6 +64,47 @@ const extractHeadings = (blocks: any[]) =>
     )
     .filter(Boolean);
 
+const editorialCopy = {
+  en: {
+    meta: "Article",
+    lead: "A focused take on urban mobility.",
+    highlights: [
+      {
+        title: "Operational lens",
+        desc: "What this means for day-to-day operations."
+      },
+      {
+        title: "Passenger impact",
+        desc: "How decisions affect the rider experience."
+      },
+      {
+        title: "Strategic value",
+        desc: "Why the insight matters for city planning."
+      }
+    ],
+    sideTitle: "Quick takeaways"
+  },
+  ro: {
+    meta: "Articol",
+    lead: "O perspectivă concentrată asupra mobilității urbane.",
+    highlights: [
+      {
+        title: "Lentilă operațională",
+        desc: "Ce înseamnă asta pentru activitatea zilnică."
+      },
+      {
+        title: "Impact asupra pasagerilor",
+        desc: "Cum se schimbă experiența la nivel de călător."
+      },
+      {
+        title: "Valoare strategică",
+        desc: "De ce contează pentru planificarea orașului."
+      }
+    ],
+    sideTitle: "Idei cheie"
+  }
+};
+
 export default async function ArticleDetailPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params;
 
@@ -100,6 +141,8 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
   const tags = article.tags?.length ? article.tags : ["Public Transport", "ITS"];
   const blocks = Array.isArray(article.content) ? article.content : [];
   const headings = extractHeadings(blocks);
+  const t = editorialCopy[locale];
+  const excerpt = article.excerpt || (locale === "ro" ? "Perspective din proiectele RADCOM." : "Insights from RADCOM projects.");
 
   return (
     <main>
@@ -128,6 +171,37 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
       </section>
 
       <section className="section-block">
+        <div className="container editorial-grid" style={{ marginBottom: 32 }}>
+          <div>
+            <div className="editorial-meta">
+              {t.meta}
+              <span />
+              {t.lead}
+            </div>
+            <h2 className="section-title" style={{ marginTop: 16 }}>
+              {excerpt}
+            </h2>
+            <div className="editorial-highlights">
+              {t.highlights.map((item) => (
+                <div className="editorial-highlight" key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <aside className="editorial-side">
+            <div className="editorial-card">
+              <h4>{t.sideTitle}</h4>
+              <ul>
+                {tags.map((tag: string, index: number) => (
+                  <li key={`${tag}-${index}`}>{tag}</li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
+
         <div className="container article-layout">
           <article className="article-content">
             {Array.isArray(article.content)
