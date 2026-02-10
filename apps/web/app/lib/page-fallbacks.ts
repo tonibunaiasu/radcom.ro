@@ -8,9 +8,9 @@ const common = {
     "RADCOM este distribuitor național de produse și servicii de telefonie fixă și mobilă."
   ].join("\n\n"),
   companyBodyEn: [
-    "RADCOM este o societate privată de telecomunicații înființată în anul 1993.",
-    "În 1998, RADCOM a aderat la standardul de calitate ISO 9001.",
-    "RADCOM este distribuitor național de produse și servicii de telefonie fixă și mobilă."
+    "RADCOM is a private telecommunications company founded in 1993.",
+    "In 1998, RADCOM adopted the ISO 9001 quality standard.",
+    "RADCOM is a national distributor of fixed and mobile telephony products and services."
   ].join("\n\n"),
   certificationsRo: [
     "ISO 9001:2015 — Certificare pentru Sistemul de Management al Calității.",
@@ -31,12 +31,12 @@ const fallbacks = {
   en: {
     compania: {
       title: "RADCOM Company",
-      summary: "Istoric, profil și certificări RADCOM.",
+      summary: "RADCOM history, profile, and certifications.",
       body: common.companyBodyEn
     },
     "compania-despre": {
       title: "About RADCOM",
-      summary: "Profilul companiei și repere esențiale.",
+      summary: "Company profile and key milestones.",
       body: common.companyBodyEn
     },
     "compania-echipa": {
