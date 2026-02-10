@@ -69,14 +69,6 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
           <p className="section-lead">{labels.heroDescription}</p>
         </div>
       </section>
-      <div className="anchor-nav">
-        <div className="container">
-          <a href="#solutions">{locale === "ro" ? "Soluții" : "Solutions"}</a>
-          <a href="#integration">{locale === "ro" ? "Integrare" : "Integration"}</a>
-          <a href="#cta">{locale === "ro" ? "Contact" : "Contact"}</a>
-        </div>
-      </div>
-
       <section className="section-block alt" id="solutions">
         <div className="container editorial-grid">
           <div>
