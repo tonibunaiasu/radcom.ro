@@ -4,12 +4,71 @@ import { getPageFallback } from "../../../lib/page-fallbacks";
 import { renderBody } from "../../../lib/render-body";
 import { SubNav } from "../../../components/SubNav";
 
+const copy = {
+  en: {
+    meta: "Vision",
+    lead: "Where we are heading next.",
+    highlights: [
+      {
+        title: "Connected cities",
+        desc: "Mobility systems that share data, not silos."
+      },
+      {
+        title: "Reliable by design",
+        desc: "Predictable transport that earns daily trust."
+      },
+      {
+        title: "Human scale",
+        desc: "Technology that feels intuitive for passengers."
+      }
+    ],
+    sideTitle: "Focus areas",
+    sideItems: ["Integration", "Predictability", "Safety", "Scalability"]
+  },
+  ro: {
+    meta: "Viziune",
+    lead: "Unde ne îndreptăm mai departe.",
+    highlights: [
+      {
+        title: "Orașe conectate",
+        desc: "Sisteme de mobilitate care schimbă date, nu rămân în silozuri."
+      },
+      {
+        title: "Fiabilitate by design",
+        desc: "Transport predictibil, care câștigă încredere zilnic."
+      },
+      {
+        title: "Dimensiune umană",
+        desc: "Tehnologie intuitivă pentru pasageri."
+      }
+    ],
+    sideTitle: "Direcții cheie",
+    sideItems: ["Integrare", "Predictibilitate", "Siguranță", "Scalare"]
+  }
+};
+
+const splitBlocks = (text?: string) =>
+  (text || "")
+    .split("\n\n")
+    .map((block) => block.trim())
+    .filter(Boolean);
+
+const extractQuote = (blocks: string[]) => {
+  const index = blocks.findIndex((block) => block.startsWith(">"));
+  if (index === -1) return { quote: "", blocks };
+  const [quoteBlock] = blocks.splice(index, 1);
+  return { quote: quoteBlock.replace(/^>\s*/, ""), blocks };
+};
+
 export default async function ViziunePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
   const locale = getLocale({ lang: lang });
   const fallback = getPageFallback("compania-viziune", locale);
   const page = (await getPage("compania-viziune", locale)) || fallback;
+  const t = copy[locale];
+  const bodyBlocks = splitBlocks(page.body);
+  const { quote, blocks } = extractQuote(bodyBlocks);
   const subnavItems = [
     { label: locale === "ro" ? "Viziune" : "Vision", href: "/compania/viziune" },
     { label: locale === "ro" ? "Misiune" : "Mission", href: "/compania/misiune" },
@@ -36,7 +95,38 @@ export default async function ViziunePage({ params }: { params: Promise<{ lang: 
       <SubNav items={subnavItems} />
 
       <section className="section-block">
-        <div className="container">{renderBody(page.body)}</div>
+        <div className="container editorial-grid">
+          <div>
+            <div className="editorial-meta">
+              {t.meta}
+              <span />
+              {t.lead}
+            </div>
+            <h2 className="section-title" style={{ marginTop: 16 }}>
+              {page.summary}
+            </h2>
+            {quote ? <blockquote className="editorial-quote">{quote}</blockquote> : null}
+            <div className="editorial-highlights">
+              {t.highlights.map((item) => (
+                <div className="editorial-highlight" key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: 24 }}>{renderBody(blocks.join("\n\n"))}</div>
+          </div>
+          <aside className="editorial-side">
+            <div className="editorial-card">
+              <h4>{t.sideTitle}</h4>
+              <ul>
+                {t.sideItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
       </section>
     </main>
   );
