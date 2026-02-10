@@ -18,6 +18,23 @@ const labels = {
     storyTitle: "Why we exist",
     storyLead:
       "RADCOM partners with cities and operators to make mobility dependable, connected, and human.",
+    clientTitle: "What this means for operators",
+    clientLead:
+      "Faster deployments, clearer operations, and predictable passenger journeys.",
+    clientPoints: [
+      {
+        title: "One partner, one stack",
+        desc: "Hardware, software, integration, and support in a single delivery."
+      },
+      {
+        title: "Operational clarity",
+        desc: "Real-time insight that reduces delays and improves punctuality."
+      },
+      {
+        title: "Passenger trust",
+        desc: "Accurate information and seamless fare experiences."
+      }
+    ],
     highlights: [
       {
         title: "Integrated systems",
@@ -53,6 +70,23 @@ const labels = {
     storyTitle: "De ce existăm",
     storyLead:
       "RADCOM colaborează cu orașe și operatori pentru o mobilitate sigură, conectată și umană.",
+    clientTitle: "Ce înseamnă asta pentru operatori",
+    clientLead:
+      "Implementări rapide, operațiuni clare și călătorii previzibile.",
+    clientPoints: [
+      {
+        title: "Un singur partener, un singur stack",
+        desc: "Hardware, software, integrare și suport livrate unitar."
+      },
+      {
+        title: "Claritate operațională",
+        desc: "Vizibilitate în timp real care reduce întârzierile."
+      },
+      {
+        title: "Încredere pentru pasageri",
+        desc: "Informații corecte și taxare fără fricțiuni."
+      }
+    ],
     highlights: [
       {
         title: "Sisteme integrate",
@@ -176,6 +210,21 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
             {t.highlights.map((item, index) => (
               <div className="card company-highlight" key={`${item.title}-${index}`}>
                 <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <p className="eyebrow">{t.clientTitle}</p>
+          <h2 className="section-title">{t.clientLead}</h2>
+          <div className="feature-grid" style={{ marginTop: 24 }}>
+            {t.clientPoints.map((item) => (
+              <div className="feature-card" key={item.title}>
+                <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
             ))}
