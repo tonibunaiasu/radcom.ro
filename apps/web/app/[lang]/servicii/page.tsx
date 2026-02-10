@@ -10,12 +10,56 @@ const productLogos: Record<string, string> = {
   exact: "/products/eXact.svg"
 };
 
+const copy = {
+  en: {
+    meta: "Services",
+    lead: "Integrated systems for urban mobility.",
+    highlights: [
+      {
+        title: "Unified platform",
+        desc: "Fare collection, fleet, and passenger info in one ecosystem."
+      },
+      {
+        title: "Operational focus",
+        desc: "Designed for dispatchers, drivers, and city operators."
+      },
+      {
+        title: "Scalable delivery",
+        desc: "From single depots to city-wide deployments."
+      }
+    ],
+    sideTitle: "Core pillars",
+    sideItems: ["Integration", "Reliability", "Security", "Support"]
+  },
+  ro: {
+    meta: "Servicii",
+    lead: "Sisteme integrate pentru mobilitate urbană.",
+    highlights: [
+      {
+        title: "Platformă unificată",
+        desc: "Taxare, flotă și informare pasageri în același ecosistem."
+      },
+      {
+        title: "Focus operațional",
+        desc: "Gândite pentru dispeceri, șoferi și operatori urbani."
+      },
+      {
+        title: "Livrare scalabilă",
+        desc: "De la depouri izolate la orașe întregi."
+      }
+    ],
+    sideTitle: "Pilonii noștri",
+    sideItems: ["Integrare", "Fiabilitate", "Securitate", "Suport"]
+  }
+};
+
 export default async function ServiciiPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
   const locale = getLocale({ lang: lang });
   const products = await getServices(locale);
   const labels = getServicesLabels(locale);
+  const t = copy[locale];
   const subnavItems = [
     { label: "iFleet", href: "/servicii/ifleet" },
     { label: "OptiFare", href: "/servicii/optifare" },
@@ -34,9 +78,38 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
       <SubNav items={subnavItems} />
 
       <section className="section-block alt">
-        <div className="container">
-          <h2 className="section-title">{labels.solutionsTitle}</h2>
-          <p className="section-lead">{labels.solutionsDescription}</p>
+        <div className="container editorial-grid">
+          <div>
+            <div className="editorial-meta">
+              {t.meta}
+              <span />
+              {t.lead}
+            </div>
+            <h2 className="section-title" style={{ marginTop: 16 }}>
+              {labels.solutionsTitle}
+            </h2>
+            <p className="section-lead">{labels.solutionsDescription}</p>
+            <div className="editorial-highlights">
+              {t.highlights.map((item) => (
+                <div className="editorial-highlight" key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <aside className="editorial-side">
+            <div className="editorial-card">
+              <h4>{t.sideTitle}</h4>
+              <ul>
+                {t.sideItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div className="container" style={{ marginTop: 32 }}>
           <div className="product-grid">
             {products.map((product) => (
               <article className="product-card" key={product.id}>
