@@ -471,14 +471,14 @@ export const articlesContentByLocale = {
 };
 
 export const partnersContent = [
-  { id: "2k-telecom", name: "2K Telecom", website: "https://2ktelecom.ro", logo: "/partners/2k-telecom.jpg" },
-  { id: "imi-mobile", name: "IMI Mobile", website: "https://imimobile.com", logo: "/partners/imi-mobile.jpg" },
-  { id: "telemedia", name: "Telemedia România", website: "https://telemedia.ro", logo: "/partners/telemedia.jpg" },
-  { id: "cisco", name: "Cisco", website: "https://cisco.com", logo: "/partners/cisco.png" },
-  { id: "microsoft", name: "Microsoft", website: "https://microsoft.com", logo: "/partners/microsoft.jpg" },
-  { id: "oracle", name: "Oracle", website: "https://oracle.com", logo: "/partners/oracle.jpg" },
-  { id: "orange", name: "Orange", website: "https://orange.ro", logo: "/partners/orange.png" },
-  { id: "vodafone", name: "Vodafone", website: "https://vodafone.ro", logo: "/partners/vodafone.jpg" },
-  { id: "metrorex", name: "Metrorex", website: "https://metrorex.ro", logo: "/partners/metrorex.png" },
-  { id: "stb", name: "STB", website: "https://stb.ro", logo: "/partners/stb.jpeg" }
+  { id: "2k-telecom", name: "2K Telecom", website: "https://2ktelecom.ro", logo: "/partners/2k-telecom.webp" },
+  { id: "imi-mobile", name: "IMI Mobile", website: "https://imimobile.com", logo: "/partners/imi-mobile.webp" },
+  { id: "telemedia", name: "Telemedia România", website: "https://telemedia.ro", logo: "/partners/telemedia.webp" },
+  { id: "cisco", name: "Cisco", website: "https://cisco.com", logo: "/partners/cisco.webp" },
+  { id: "microsoft", name: "Microsoft", website: "https://microsoft.com", logo: "/partners/microsoft.webp" },
+  { id: "oracle", name: "Oracle", website: "https://oracle.com", logo: "/partners/oracle.webp" },
+  { id: "orange", name: "Orange", website: "https://orange.ro", logo: "/partners/orange.webp" },
+  { id: "vodafone", name: "Vodafone", website: "https://vodafone.ro", logo: "/partners/vodafone.webp" },
+  { id: "metrorex", name: "Metrorex", website: "https://metrorex.ro", logo: "/partners/metrorex.webp" },
+  { id: "stb", name: "STB", website: "https://stb.ro", logo: "/partners/stb.webp" }
 ];

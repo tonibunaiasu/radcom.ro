@@ -140,19 +140,19 @@ export function Footer() {
           <div className="footer-bottom-center">
             <div className="footer-bottom-logos">
               <img
-                src="/official-logos/eu-flag.jpg?v=ref2"
+                src="/official-logos/eu-flag.webp"
                 alt={lang === "ro" ? "Uniunea Europeană" : "European Union"}
                 loading="lazy"
                 decoding="async"
               />
               <img
-                src="/official-logos/guvernul-romaniei.jpg?v=ref2"
+                src="/official-logos/guvernul-romaniei.webp"
                 alt={lang === "ro" ? "Guvernul României" : "Government of Romania"}
                 loading="lazy"
                 decoding="async"
               />
               <img
-                src="/official-logos/fonduri-europene.png?v=ref2"
+                src="/official-logos/fonduri-europene.webp"
                 alt={lang === "ro" ? "Fonduri Europene" : "European Funds"}
                 loading="lazy"
                 decoding="async"
