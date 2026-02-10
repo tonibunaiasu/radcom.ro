@@ -30,7 +30,8 @@ export function Footer() {
   ];
 
   return (
-    <footer className="radcom-footer">
+    <>
+      <footer className="radcom-footer">
       <div className="footer-top">
         <div className="container footer-top-grid">
           <div className="footer-brand">
@@ -152,5 +153,14 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    <div className="mobile-cta">
+      <a className="mobile-cta-button" href={withLocalePath("/contact", lang)}>
+        {lang === "ro" ? "Solicită o discuție" : "Request a discussion"}
+      </a>
+      <a className="mobile-cta-link" href="tel:+40212321039">
+        {lang === "ro" ? "Sună acum" : "Call now"}
+      </a>
+    </div>
+    </>
   );
 }
