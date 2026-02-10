@@ -393,7 +393,7 @@ export const articlesContent = [
     publishedAt: "2025-12-15T00:00:00.000Z",
     author: "RADCOM Team",
     tags: ["Public Transport", "ITS"],
-    image: "/blog/blog-1.jpg",
+    image: "/blog/blog-1.webp",
     content:
       "## Connected fleets, smarter cities\n\nModern public transport relies on real-time data, predictive analytics, and unified systems. RADCOM integrates fleet management, e-ticketing, and passenger information into a single operational view.\n\n### What operators gain\n\n- Better service regularity and punctuality\n- Faster incident response\n- Accurate ridership and revenue insights\n\n## Passenger-first experience\n\nWhen operational data is connected, the passenger experience becomes measurable and optimizable. Clear information, reliable schedules, and frictionless payments build trust.\n\n## The next step\n\nRADCOM works with operators to design scalable ITS architectures that fit local requirements."
   },
@@ -406,7 +406,7 @@ export const articlesContent = [
     publishedAt: "2025-11-28T00:00:00.000Z",
     author: "RADCOM Team",
     tags: ["E-ticketing", "Payments"],
-    image: "/blog/blog-2.jpg",
+    image: "/blog/blog-2.webp",
     content:
       "## Contactless as default\n\nPassengers expect quick, secure, and transparent payments. Contactless adoption keeps growing across public transport.\n\n### Core pillars\n\n- Secure validation hardware\n- Reliable transaction processing\n- Transparent reporting for operators\n\n## Why the back office matters\n\nA modern back-office platform makes it easy to introduce new tariffs, manage partnerships, and offer flexible travel products."
   },
@@ -419,7 +419,7 @@ export const articlesContent = [
     publishedAt: "2025-11-12T00:00:00.000Z",
     author: "RADCOM Team",
     tags: ["Passenger Info", "Operations"],
-    image: "/blog/blog-3.jpg",
+    image: "/blog/blog-3.webp",
     content:
       "## Clarity builds confidence\n\nPassengers make better decisions when they see accurate arrival times and service updates.\n\n### Key components\n\n- LED displays and digital signage\n- Audio announcements\n- Mobile and web journey planning\n\n## Operational impact\n\nAccurate passenger information reduces delays, improves satisfaction, and reinforces brand trust."
   }
@@ -437,7 +437,7 @@ export const articlesContentByLocale = {
       publishedAt: "2025-12-15T00:00:00.000Z",
       author: "Echipa RADCOM",
       tags: ["Transport Public", "ITS"],
-      image: "/blog/blog-1.jpg",
+      image: "/blog/blog-1.webp",
       content:
         "## Flote conectate, orașe mai inteligente\n\nTransportul public modern se bazează pe date în timp real, analiză predictivă și sisteme unificate. RADCOM integrează managementul flotei, e-ticketing și informarea pasagerilor într-o singură vedere operațională.\n\n### Ce câștigă operatorii\n\n- Regularitate și punctualitate mai bune\n- Răspuns mai rapid la incidente\n- Date precise despre fluxuri și venituri\n\n## Experiență centrată pe pasager\n\nCând datele operaționale sunt conectate, experiența pasagerilor devine măsurabilă și optimizabilă. Informații clare, orare fiabile și plăți fără fricțiune construiesc încredere.\n\n## Următorul pas\n\nRADCOM lucrează cu operatorii pentru a proiecta arhitecturi ITS scalabile, adaptate cerințelor locale."
     },
@@ -450,7 +450,7 @@ export const articlesContentByLocale = {
       publishedAt: "2025-11-28T00:00:00.000Z",
       author: "Echipa RADCOM",
       tags: ["E-ticketing", "Plăți"],
-      image: "/blog/blog-2.jpg",
+      image: "/blog/blog-2.webp",
       content:
         "## Contactless ca standard\n\nPasagerii se așteaptă la plăți rapide, sigure și transparente. Adopția contactless continuă să crească în transportul public.\n\n### Pilonii de bază\n\n- Echipamente de validare sigure\n- Procesare fiabilă a tranzacțiilor\n- Raportare transparentă pentru operatori\n\n## De ce contează back-office-ul\n\nUn back-office modern face ușoară introducerea de tarife noi, gestionarea parteneriatelor și oferirea de produse de călătorie flexibile."
     },
@@ -463,7 +463,7 @@ export const articlesContentByLocale = {
       publishedAt: "2025-11-12T00:00:00.000Z",
       author: "Echipa RADCOM",
       tags: ["Informare Pasageri", "Operațiuni"],
-      image: "/blog/blog-3.jpg",
+      image: "/blog/blog-3.webp",
       content:
         "## Încredere prin date în timp real\n\nAfișajele și anunțurile în stații sunt utile doar atunci când datele sunt corecte și actualizate. Informația în timp real reduce incertitudinea și îmbunătățește experiența de călătorie.\n\n### Ce asigură acuratețea\n\n- Integrare directă cu vehiculele și dispeceratul\n- Actualizări automate la schimbări de traseu\n- Monitorizare continuă a calității datelor\n\n## De la infrastructură la experiență\n\nUn sistem de informare bine integrat transformă infrastructura în servicii predictibile, ușor de folosit, atât pentru pasageri, cât și pentru operatori."
     }
