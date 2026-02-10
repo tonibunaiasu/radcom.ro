@@ -120,6 +120,49 @@ const benefits = {
   ]
 };
 
+const nextSteps = {
+  en: {
+    title: "Next steps",
+    items: [
+      {
+        title: "Explore all RADCOM solutions",
+        description: "Compare iFleet with our complementary mobility platforms.",
+        href: "/servicii"
+      },
+      {
+        title: "See real-world outcomes",
+        description: "Review case studies from modern transit operators.",
+        href: "/studii-de-caz"
+      },
+      {
+        title: "Plan a technical discussion",
+        description: "Tell us about your fleet and deployment timeline.",
+        href: "/contact"
+      }
+    ]
+  },
+  ro: {
+    title: "Următorii pași",
+    items: [
+      {
+        title: "Vezi toate soluțiile RADCOM",
+        description: "Compară iFleet cu platformele noastre complementare.",
+        href: "/servicii"
+      },
+      {
+        title: "Descoperă rezultate reale",
+        description: "Studii de caz din transport public modern.",
+        href: "/studii-de-caz"
+      },
+      {
+        title: "Programează o discuție",
+        description: "Spune-ne despre flota ta și planul de implementare.",
+        href: "/contact"
+      }
+    ]
+  }
+};
+
 export default async function IFleetPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -275,6 +318,20 @@ export default async function IFleetPage({ params }: { params: Promise<{ lang: s
                 <h3>{benefit.title}</h3>
                 <p>{benefit.desc}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">{nextSteps[locale].title}</h2>
+          <div className="feature-grid">
+            {nextSteps[locale].items.map((item) => (
+              <a className="feature-card" key={item.title} href={`/${locale}${item.href}`}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </a>
             ))}
           </div>
         </div>

@@ -86,6 +86,49 @@ const benefits = {
   ]
 };
 
+const nextSteps = {
+  en: {
+    title: "Next steps",
+    items: [
+      {
+        title: "Explore all RADCOM solutions",
+        description: "See how eXact connects with our broader mobility stack.",
+        href: "/servicii"
+      },
+      {
+        title: "See real-world outcomes",
+        description: "Review case studies from modern transit operators.",
+        href: "/studii-de-caz"
+      },
+      {
+        title: "Plan a technical discussion",
+        description: "Tell us about your passenger info goals and timelines.",
+        href: "/contact"
+      }
+    ]
+  },
+  ro: {
+    title: "Următorii pași",
+    items: [
+      {
+        title: "Vezi toate soluțiile RADCOM",
+        description: "Descoperă cum eXact se conectează la platformele noastre.",
+        href: "/servicii"
+      },
+      {
+        title: "Descoperă rezultate reale",
+        description: "Studii de caz din transport public modern.",
+        href: "/studii-de-caz"
+      },
+      {
+        title: "Programează o discuție",
+        description: "Spune-ne despre obiectivele de informare și termene.",
+        href: "/contact"
+      }
+    ]
+  }
+};
+
 export default async function ExactPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -265,6 +308,20 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
                 <h3>{benefit.title}</h3>
                 <p>{benefit.desc}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">{nextSteps[locale].title}</h2>
+          <div className="feature-grid">
+            {nextSteps[locale].items.map((item) => (
+              <a className="feature-card" key={item.title} href={`/${locale}${item.href}`}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </a>
             ))}
           </div>
         </div>

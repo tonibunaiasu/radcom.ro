@@ -72,7 +72,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   return (
     <main>
       <section className="hero">
-        <div className="hero-media hero-media-full">
+          <div className="hero-media hero-media-full" fetchPriority="high">
           <HeroVideo
             className="hero-video"
             src="/modern-nightscape.mp4"

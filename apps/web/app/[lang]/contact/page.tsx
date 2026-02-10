@@ -103,6 +103,52 @@ export default async function ContactPage({
   const e = editorialCopy[locale];
   const sent = searchParams?.sent === "1";
   const error = searchParams?.error === "1";
+  const nextSteps = {
+    en: {
+      eyebrow: "Next steps",
+      title: "Keep exploring",
+      lead: "Learn about RADCOM or review our services.",
+      cards: [
+        {
+          title: "Services",
+          desc: "Explore the integrated RADCOM stack.",
+          href: "/servicii"
+        },
+        {
+          title: "About RADCOM",
+          desc: "Mission, team, and certifications.",
+          href: "/compania"
+        },
+        {
+          title: "Articles",
+          desc: "Insights on mobility and ITS.",
+          href: "/articole"
+        }
+      ]
+    },
+    ro: {
+      eyebrow: "Pașii următori",
+      title: "Continuă explorarea",
+      lead: "Află despre RADCOM sau revizuiește serviciile.",
+      cards: [
+        {
+          title: "Servicii",
+          desc: "Explorează stack‑ul RADCOM.",
+          href: "/servicii"
+        },
+        {
+          title: "Despre RADCOM",
+          desc: "Misiune, echipă și certificări.",
+          href: "/compania"
+        },
+        {
+          title: "Articole",
+          desc: "Perspective despre mobilitate și ITS.",
+          href: "/articole"
+        }
+      ]
+    }
+  }[locale];
 
   return (
     <main>
@@ -223,6 +269,22 @@ export default async function ContactPage({
                 <a href={`mailto:${settings.email}`}>{settings.email}</a>
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <p className="eyebrow">{nextSteps.eyebrow}</p>
+          <h2 className="section-title">{nextSteps.title}</h2>
+          <p className="section-lead">{nextSteps.lead}</p>
+          <div className="feature-grid" style={{ marginTop: 24 }}>
+            {nextSteps.cards.map((card) => (
+              <a className="feature-card" key={card.title} href={`/${locale}${card.href}`}>
+                <h3>{card.title}</h3>
+                <p>{card.desc}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
