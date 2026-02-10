@@ -2,7 +2,6 @@ import { getServices } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getServicesLabels } from "../../lib/site-copy";
 import { FeatureList } from "../../components/FeatureList";
-import { SubNav } from "../../components/SubNav";
 
 const productLogos: Record<string, string> = {
   ifleet: "/products/iFleet.svg",
@@ -60,11 +59,6 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
   const products = await getServices(locale);
   const labels = getServicesLabels(locale);
   const t = copy[locale];
-  const subnavItems = [
-    { label: "iFleet", href: "/servicii/ifleet" },
-    { label: "OptiFare", href: "/servicii/optifare" },
-    { label: "eXact", href: "/servicii/exact" }
-  ];
 
   return (
     <main>
@@ -75,8 +69,6 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
           <p className="section-lead">{labels.heroDescription}</p>
         </div>
       </section>
-      <SubNav items={subnavItems} />
-
       <div className="anchor-nav">
         <div className="container">
           <a href="#solutions">{locale === "ro" ? "Soluții" : "Solutions"}</a>
