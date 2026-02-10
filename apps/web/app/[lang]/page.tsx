@@ -309,6 +309,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </span>
             </div>
           </div>
+          <div style={{ marginTop: 20 }}>
+            <a className="secondary" href={`/${locale}/studii-de-caz`}>
+              {locale === "ro" ? "Vezi studiul de caz" : "View case study"}
+            </a>
+          </div>
         </div>
       </section>
 
