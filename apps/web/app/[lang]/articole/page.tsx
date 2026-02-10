@@ -10,14 +10,50 @@ const labels = {
     ctaTitle: "Request a tailored discussion",
     ctaBody: "Tell us about your project and we’ll come back with a clear proposal.",
     ctaPrimary: "Request a discussion",
-    ctaSecondary: "Book 45 min consult"
+    ctaSecondary: "Book 45 min consult",
+    meta: "Insights",
+    lead: "Thoughts on transport technology and urban mobility.",
+    highlights: [
+      {
+        title: "Operational reality",
+        desc: "What operators face every day, translated into technology."
+      },
+      {
+        title: "Passenger experience",
+        desc: "Design choices that improve journeys and trust."
+      },
+      {
+        title: "Future-ready systems",
+        desc: "Trends shaping the next generation of ITS."
+      }
+    ],
+    sideTitle: "Topics we cover",
+    sideItems: ["ITS", "E-ticketing", "Passenger info", "Fleet management"]
   },
   ro: {
     noArticles: "Nu există articole disponibile momentan.",
     ctaTitle: "Cere o ofertă personalizată",
     ctaBody: "Spune-ne despre proiectul tău și revenim cu o propunere clară, rapidă.",
     ctaPrimary: "Cere o ofertă",
-    ctaSecondary: "Consultanță 45 min"
+    ctaSecondary: "Consultanță 45 min",
+    meta: "Perspective",
+    lead: "Idei despre tehnologie pentru transporturi și mobilitate urbană.",
+    highlights: [
+      {
+        title: "Realitatea operațională",
+        desc: "Ce trăiesc operatorii zilnic, transpus în tehnologie."
+      },
+      {
+        title: "Experiența pasagerilor",
+        desc: "Decizii de design care cresc încrederea."
+      },
+      {
+        title: "Sisteme pregătite de viitor",
+        desc: "Tendințe care vor modela ITS-ul următor."
+      }
+    ],
+    sideTitle: "Subiecte",
+    sideItems: ["ITS", "E-ticketing", "Info pasageri", "Management flotă"]
   }
 };
 
@@ -65,6 +101,36 @@ export default async function ArticolePage({ params }: { params: Promise<{ lang:
 
       <section className="section-block">
         <div className="container">
+          <div className="editorial-grid" style={{ marginBottom: 28 }}>
+            <div>
+              <div className="editorial-meta">
+                {t.meta}
+                <span />
+                {t.lead}
+              </div>
+              <h2 className="section-title" style={{ marginTop: 16 }}>
+                {page.summary}
+              </h2>
+              <div className="editorial-highlights">
+                {t.highlights.map((item) => (
+                  <div className="editorial-highlight" key={item.title}>
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <aside className="editorial-side">
+              <div className="editorial-card">
+                <h4>{t.sideTitle}</h4>
+                <ul>
+                  {t.sideItems.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
+          </div>
           <div className="blog-cta">
             <div>
               <h2>{t.ctaTitle}</h2>
