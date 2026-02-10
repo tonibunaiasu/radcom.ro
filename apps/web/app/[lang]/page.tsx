@@ -7,21 +7,7 @@ import { getHomeLabels } from "../lib/site-copy";
 import { getMediaURL } from "../lib/media";
 import { HeroVideo } from "../components/HeroVideo";
 import { LinkedInFeed } from "../components/LinkedInFeed";
-import {
-  BarChart3,
-  Bus,
-  Cable,
-  Code2,
-  Cog,
-  Globe2,
-  HeartPulse,
-  Landmark,
-  Layout,
-  RadioTower,
-  ShieldCheck,
-  Smartphone,
-  Zap
-} from "lucide-react";
+import { FeatureIcon } from "../components/FeatureIcon";
 
 const productLogos: Record<string, string> = {
   ifleet: "/products/iFleet.svg",
@@ -37,28 +23,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const services = await getServices(locale);
   const partners = await getPartners();
   const labels = getHomeLabels(locale);
-  const industryIcons = [
-    <Bus key="bus" size={22} strokeWidth={1.6} />,
-    <HeartPulse key="medical" size={22} strokeWidth={1.6} />,
-    <RadioTower key="telecom" size={22} strokeWidth={1.6} />,
-    <Smartphone key="media" size={22} strokeWidth={1.6} />,
-    <Globe2 key="internet" size={22} strokeWidth={1.6} />,
-    <Landmark key="eu" size={22} strokeWidth={1.6} />
-  ];
-  const infrastructureIcons = [
-    <RadioTower key="net" size={22} strokeWidth={1.6} />,
-    <Zap key="power" size={22} strokeWidth={1.6} />,
-    <Cable key="fiber" size={22} strokeWidth={1.6} />,
-    <Landmark key="civil" size={22} strokeWidth={1.6} />,
-    <Cog key="scada" size={22} strokeWidth={1.6} />,
-    <Globe2 key="eu" size={22} strokeWidth={1.6} />
-  ];
-  const advantageIcons = [
-    <BarChart3 key="responsive" size={22} strokeWidth={1.6} />,
-    <Cog key="custom" size={22} strokeWidth={1.6} />,
-    <Layout key="ui" size={22} strokeWidth={1.6} />,
-    <Code2 key="code" size={22} strokeWidth={1.6} />
-  ];
+  const industryIcons = ["bus", "medical", "telecom", "media", "internet", "eu"] as const;
+  const infrastructureIcons = ["net", "power", "fiber", "civil", "scada", "eu"] as const;
+  const advantageIcons = ["responsive", "custom", "ui", "code"] as const;
   const linkedInCopy = {
     title: locale === "ro" ? "Noutăți LinkedIn" : "LinkedIn updates",
     lead:
@@ -161,7 +128,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <Reveal key={`${industry.title}-${index}`}>
                 <article className="feature-card has-icon">
                   <span className="feature-icon" aria-hidden="true">
-                    {industryIcons[index % industryIcons.length]}
+                    <FeatureIcon name={industryIcons[index % industryIcons.length]} />
                   </span>
                   <h3>{industry.title}</h3>
                   <p>{industry.desc}</p>
@@ -182,7 +149,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <Reveal key={`${item.title}-${index}`}>
                 <article className="feature-card has-icon">
                   <span className="feature-icon" aria-hidden="true">
-                    {infrastructureIcons[index % infrastructureIcons.length]}
+                    <FeatureIcon name={infrastructureIcons[index % infrastructureIcons.length]} />
                   </span>
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
@@ -203,7 +170,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <Reveal key={`${advantage.title}-${index}`}>
                 <article className="feature-card has-icon">
                   <span className="feature-icon" aria-hidden="true">
-                    {advantageIcons[index % advantageIcons.length]}
+                    <FeatureIcon name={advantageIcons[index % advantageIcons.length]} />
                   </span>
                   <h3>{advantage.title}</h3>
                   <p>{advantage.desc}</p>

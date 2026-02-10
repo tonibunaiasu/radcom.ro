@@ -1526,6 +1526,14 @@ form textarea {
   opacity: 1;
 }
 
+.feature-icon-placeholder {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(15, 33, 58, 0.12);
+}
+
 @keyframes partners-scroll {
   0% {
     transform: translateX(0);

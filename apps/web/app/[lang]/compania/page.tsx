@@ -9,7 +9,9 @@ const labels = {
     about: "About us",
     history: "History",
     certifications: "Certifications",
-    contact: "Quick contact",
+    contact: "Let’s talk",
+    contactCta: "Contact us",
+    contactDesc: "Tell us about your project and we’ll respond quickly.",
     explore: "Explore",
     aboutCard: "About",
     teamCard: "Team",
@@ -22,7 +24,9 @@ const labels = {
     about: "Despre noi",
     history: "Istoric",
     certifications: "Certificări",
-    contact: "Contact rapid",
+    contact: "Hai să discutăm",
+    contactCta: "Contactează-ne",
+    contactDesc: "Spune-ne despre proiectul tău și revenim rapid.",
     explore: "Explorează",
     aboutCard: "Despre",
     teamCard: "Echipă",
@@ -127,9 +131,10 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
           <h2 className="section-title">{t.contact}</h2>
           <div className="grid grid-3">
             <div className="card">
-              <p>{content.contact.address}</p>
-              <p>{content.contact.phone}</p>
-              <p>{content.contact.email}</p>
+              <p>{t.contactDesc}</p>
+              <a className="primary" href={`/${locale}/contact`}>
+                {t.contactCta}
+              </a>
             </div>
           </div>
         </div>
