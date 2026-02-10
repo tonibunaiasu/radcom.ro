@@ -189,7 +189,12 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
       <section className="section-block success">
         <div className="container">
           <div className="service-hero-logo service-hero-logo--optifare">
-            <img src="/products/OptiFare.svg" alt="RADCOM OptiFare logo" />
+            <img
+              src="/products/OptiFare.svg"
+              alt="RADCOM OptiFare logo"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <h1 className="section-title">{product.title}</h1>
           <p className="section-lead">{productPage.description}</p>

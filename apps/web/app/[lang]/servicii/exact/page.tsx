@@ -153,6 +153,8 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
             className="service-hero-logo"
             src="/products/eXact.svg"
             alt="RADCOM eXact logo"
+            loading="lazy"
+            decoding="async"
           />
           <h1 className="section-title">{product.title}</h1>
           <p className="section-lead">{productPage.description}</p>

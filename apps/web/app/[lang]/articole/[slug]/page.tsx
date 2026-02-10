@@ -147,7 +147,7 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
   return (
     <main>
       <section className="article-hero">
-        <img src={heroImage} alt={article.title} decoding="async" />
+        <img src={heroImage} alt={article.title} loading="lazy" decoding="async" />
         <div className="article-hero-overlay">
           <div className="container">
             <div className="blog-card-tags">

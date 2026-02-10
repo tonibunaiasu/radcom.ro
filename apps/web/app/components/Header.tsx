@@ -76,7 +76,7 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <a className="brand" href={withLocalePath("/", lang)}>
-          <img src="/logo-blue.png" alt="RADCOM" />
+          <img src="/logo-blue.png" alt="RADCOM" decoding="async" />
         </a>
         <nav className="nav">
           {menu.map((item) => (
