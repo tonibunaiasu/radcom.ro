@@ -28,6 +28,10 @@ const nextConfig = {
       '.js': ['.ts', '.tsx', '.js', '.jsx'],
       '.mjs': ['.mts', '.mjs'],
     }
+    webpackConfig.ignoreWarnings = [
+      ...(webpackConfig.ignoreWarnings || []),
+      { module: /payload\/dist\/utilities\/dynamicImport/ },
+    ]
 
     return webpackConfig
   },

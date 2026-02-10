@@ -1,0 +1,75 @@
+diff --git a/dist/payload/components/sign-up.js b/dist/payload/components/sign-up.js
+index 89d29c52d719bc925b120a2564132fbea999ac50..c1ec0d30d55a5a5082a0c7feb80f524ba40576c2 100644
+--- a/dist/payload/components/sign-up.js
++++ b/dist/payload/components/sign-up.js
+@@ -234,38 +234,43 @@ export function SignUp({ admin = false, apiRoute, userSlug, defaultAdminRole })
+                             ]
+                         }),
+                         /*#__PURE__*/ _jsxs(Button, {
+-                            type: "submit",
++                            type: "button",
+                             className: "w-full",
+                             disabled: loading,
+                             onClick: async ()=>{
+-                                if (password !== passwordConfirmation) {
+-                                    toast.error('Please ensure your password and confirm password match.');
+-                                    return;
+-                                }
+-                                const user = await authClient.signUp.email({
+-                                    email,
+-                                    password,
+-                                    role: admin ? 'admin' : 'user',
+-                                    name: `${firstName} ${lastName}`,
+-                                    callbackURL: admin ? '/admin' : '/dashboard',
+-                                    fetchOptions: {
+-                                        onResponse: ()=>{
+-                                            setLoading(false);
+-                                        },
+-                                        onRequest: ()=>{
+-                                            setLoading(true);
+-                                        },
+-                                        onError: (ctx)=>{
+-                                            toast.error(ctx.error.message);
+-                                        },
+-                                        onSuccess: async ()=>{
+-                                            router.push(admin ? '/admin' : '/dashboard');
++                                try {
++                                    if (password !== passwordConfirmation) {
++                                        toast.error('Please ensure your password and confirm password match.');
++                                        return;
++                                    }
++                                    const user = await authClient.signUp.email({
++                                        email,
++                                        password,
++                                        role: admin ? 'admin' : 'user',
++                                        name: `${firstName} ${lastName}`,
++                                        callbackURL: admin ? '/admin' : '/dashboard',
++                                        fetchOptions: {
++                                            onResponse: ()=>{
++                                                setLoading(false);
++                                            },
++                                            onRequest: ()=>{
++                                                setLoading(true);
++                                            },
++                                            onError: (ctx)=>{
++                                                toast.error(ctx.error.message);
++                                            },
++                                            onSuccess: async ()=>{
++                                                router.push(admin ? '/admin' : '/dashboard');
++                                            }
+                                         }
++                                    });
++                                    const userId = user.data?.user.id;
++                                    if (userId && admin) {
++                                        await addAdminRole(userId);
+                                     }
+-                                });
+-                                const userId = user.data?.user.id;
+-                                if (userId && admin) {
+-                                    await addAdminRole(userId);
++                                } catch (e) {
++                                    setLoading(false);
++                                    toast.error(e?.message ?? e?.error?.message ?? 'An error occurred. Check the console for details.');
+                                 }
+                             },
+                             children: [

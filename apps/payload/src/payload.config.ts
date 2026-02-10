@@ -23,17 +23,33 @@ const dirname = path.dirname(filename)
 const isProduction = process.env.NODE_ENV === 'production'
 const payloadServerURL = process.env.PAYLOAD_PUBLIC_SERVER_URL
 const frontendURL = process.env.FRONTEND_URL || 'https://dezign.institute'
-const baseURL =
-  process.env.BETTER_AUTH_URL || payloadServerURL || (isProduction ? '' : 'http://localhost:3001')
+const betterAuthBaseURL = process.env.BETTER_AUTH_URL
 const betterAuthSecret = process.env.BETTER_AUTH_SECRET
 const googleClientId = process.env.GOOGLE_CLIENT_ID
 const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET
+const linkedinClientId = process.env.LINKEDIN_CLIENT_ID
+const linkedinClientSecret = process.env.LINKEDIN_CLIENT_SECRET
 const socialProviders =
   googleClientId && googleClientSecret
     ? {
         google: {
           clientId: googleClientId,
           clientSecret: googleClientSecret,
+        },
+        ...(linkedinClientId && linkedinClientSecret
+          ? {
+              linkedin: {
+                clientId: linkedinClientId,
+                clientSecret: linkedinClientSecret,
+              },
+            }
+          : {}),
+      }
+    : linkedinClientId && linkedinClientSecret
+    ? {
+        linkedin: {
+          clientId: linkedinClientId,
+          clientSecret: linkedinClientSecret,
         },
       }
     : undefined
@@ -64,21 +80,28 @@ const allowedOrigins = [
   frontendURL,
   'https://www.dezign.institute',
 ]
+const trustedAuthOrigins = [
+  ...allowedOrigins,
+  'https://127.0.0.1:4443',
+  'https://localhost:4443',
+]
 
 const betterAuthPlugin = enableBetterAuth && betterAuthSecret
   ? payloadBetterAuth({
       users: {
         adminRoles: ['admin'],
-        roles: ['admin', 'editor'],
+        roles: ['admin', 'editor', 'user'],
       },
       betterAuthOptions: {
         appName: 'RADCOM',
-        baseURL,
+        ...(betterAuthBaseURL ? { baseURL: betterAuthBaseURL } : {}),
+        trustedProxyHeaders: true,
         secret: betterAuthSecret,
         emailAndPassword: {
           enabled: true,
         },
         socialProviders,
+        trustedOrigins: trustedAuthOrigins,
         plugins: [admin(), twoFactor({ issuer: 'RADCOM' })],
       },
     })
@@ -87,6 +110,7 @@ const betterAuthPlugin = enableBetterAuth && betterAuthSecret
 export default buildConfig({
   admin: {
     user: Users.slug,
+    css: [path.resolve(dirname, 'styles/better-auth-admin.css')],
     importMap: {
       baseDir: path.resolve(dirname),
     },

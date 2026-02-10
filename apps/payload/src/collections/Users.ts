@@ -1,6 +1,6 @@
 import type { Access, CollectionConfig } from 'payload'
 
-const isAdmin: Access = ({ req }) => Boolean(req.user?.roles?.includes('admin'))
+const isAdmin: Access = ({ req }) => req.user?.role === 'admin'
 const allowPublicSignup = process.env.ALLOW_PUBLIC_SIGNUP === 'true'
 
 const selfOnlyRead: Access = ({ req }) =>
@@ -27,24 +27,23 @@ export const Users: CollectionConfig = {
   auth: true,
   access: {
     read: (args) => (isAdmin(args) ? true : selfOnlyRead(args)),
-    create: ({ req }) => Boolean(req.user?.roles?.includes('admin')) || (allowPublicSignup && !req.user),
+    create: async ({ req }) => {
+      if (req.user?.role === 'admin') return true
+      if (allowPublicSignup && !req.user) return true
+      const total = await req.payload.count({
+        collection: 'users',
+        where: {
+          role: {
+            equals: 'admin',
+          },
+        },
+      })
+      return total.totalDocs === 0
+    },
     update: (args) => (isAdmin(args) ? true : selfOnly(args)),
     delete: isAdmin,
   },
   fields: [
     // Email added by default
-    {
-      name: 'roles',
-      type: 'select',
-      hasMany: true,
-      options: ['admin', 'editor', 'user'],
-      defaultValue: ['user'],
-      required: true,
-      saveToJWT: true,
-      access: {
-        create: isAdmin,
-        update: isAdmin,
-      },
-    },
   ],
 }
