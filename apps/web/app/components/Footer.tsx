@@ -36,7 +36,13 @@ export function Footer() {
         <div className="container footer-top-grid">
           <div className="footer-brand">
             <div className="footer-logo-wrap">
-              <img src="/logo-white.png" alt="RADCOM Logo" className="footer-logo" />
+              <img
+                src="/logo-white.png"
+                alt="RADCOM Logo"
+                className="footer-logo"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="footer-social-links footer-social-top">
               <p className="footer-social-title">{footer.followUs}</p>
@@ -136,14 +142,20 @@ export function Footer() {
               <img
                 src="/official-logos/eu-flag.jpg?v=ref2"
                 alt={lang === "ro" ? "Uniunea Europeană" : "European Union"}
+                loading="lazy"
+                decoding="async"
               />
               <img
                 src="/official-logos/guvernul-romaniei.jpg?v=ref2"
                 alt={lang === "ro" ? "Guvernul României" : "Government of Romania"}
+                loading="lazy"
+                decoding="async"
               />
               <img
                 src="/official-logos/fonduri-europene.png?v=ref2"
                 alt={lang === "ro" ? "Fonduri Europene" : "European Funds"}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
