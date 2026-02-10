@@ -20,7 +20,8 @@ const translations = {
     menu: {
       open: "Menu",
       close: "Close"
-    }
+    },
+    cta: "Request a discussion"
   },
   ro: {
     nav: {
@@ -37,7 +38,8 @@ const translations = {
     menu: {
       open: "Meniu",
       close: "Închide"
-    }
+    },
+    cta: "Solicită o discuție"
   }
 } as const;
 
@@ -83,6 +85,9 @@ export function Header() {
               {item.title}
             </a>
           ))}
+          <a className="nav-cta" href={withLocalePath("/contact", lang)}>
+            {t.cta}
+          </a>
           <a
             className="lang-toggle"
             href={withLocalePath(pathname, nextLang)}
@@ -111,6 +116,11 @@ export function Header() {
                 </a>
               </div>
             ))}
+            <div className="mobile-section">
+              <a className="nav-cta" href={withLocalePath("/contact", lang)}>
+                {t.cta}
+              </a>
+            </div>
             <a
               className="lang-toggle mobile-lang"
               href={withLocalePath(pathname, nextLang)}

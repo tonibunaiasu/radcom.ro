@@ -98,6 +98,23 @@ main {
   background: rgba(28, 63, 149, 0.1);
 }
 
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--radcom-gold);
+  color: var(--radcom-night);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 10px 18px rgba(209, 205, 77, 0.35);
+}
+
+.nav-cta:hover {
+  filter: saturate(1.05);
+}
+
 .subnav {
   background: #f6f8fb;
   border-bottom: 1px solid rgba(67, 72, 80, 0.12);
@@ -673,6 +690,56 @@ main {
 .hero-actions a.secondary {
   border: 1px solid rgba(255, 255, 255, 0.7);
   color: #ffffff;
+}
+
+.quick-steps {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 16px 30px rgba(15, 33, 58, 0.08);
+  border: 1px solid rgba(67, 72, 80, 0.1);
+}
+
+.quick-steps h3 {
+  margin: 6px 0 6px;
+  font-size: 22px;
+}
+
+.quick-steps p {
+  margin: 0;
+  color: #4a5a77;
+}
+
+.quick-steps-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.quick-steps-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.quick-steps-actions .primary {
+  background: var(--radcom-gold);
+  color: var(--radcom-night);
+}
+
+.quick-steps-actions .secondary {
+  border: 1px solid rgba(67, 72, 80, 0.2);
+}
+
+.quick-steps-actions .ghost {
+  border: 1px dashed rgba(28, 63, 149, 0.3);
+  color: var(--radcom-blue);
 }
 
 .hero-metrics {
