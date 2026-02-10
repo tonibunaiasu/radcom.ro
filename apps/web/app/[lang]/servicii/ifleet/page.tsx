@@ -3,6 +3,49 @@ import { getCopy } from "../../../lib/site-copy";
 import { SubNav } from "../../../components/SubNav";
 import { BarChart3, Cpu, Gauge, MapPin, ShieldCheck, Video } from "lucide-react";
 
+const editorialCopy = {
+  en: {
+    meta: "iFleet",
+    lead: "Integrated fleet intelligence for urban operators.",
+    highlights: [
+      {
+        title: "Operational visibility",
+        desc: "Real-time fleet data in one control view."
+      },
+      {
+        title: "Passenger confidence",
+        desc: "Reliable journeys built on accurate telemetry."
+      },
+      {
+        title: "Scalable rollout",
+        desc: "From pilot fleets to city-wide coverage."
+      }
+    ],
+    sideTitle: "Core outcomes",
+    sideItems: ["Reliability", "Optimization", "Safety", "Insights"]
+  },
+  ro: {
+    meta: "iFleet",
+    lead: "Inteligență integrată pentru flote urbane.",
+    highlights: [
+      {
+        title: "Vizibilitate operațională",
+        desc: "Date în timp real într-un singur centru de control."
+      },
+      {
+        title: "Încredere pentru pasageri",
+        desc: "Călătorii predictibile bazate pe date precise."
+      },
+      {
+        title: "Implementare scalabilă",
+        desc: "De la pilot la acoperire la nivel de oraș."
+      }
+    ],
+    sideTitle: "Rezultate",
+    sideItems: ["Fiabilitate", "Optimizare", "Siguranță", "Insight-uri"]
+  }
+};
+
 const cobSpecs = [
   { key: "processor", value: "Intel Atom QC x7 / E3950 (1.6~2.0GHz)" },
   { key: "memory", value: "DDR3L SO-DIMM până la 16 GB" },
@@ -75,6 +118,7 @@ export default async function IFleetPage({ params }: { params: Promise<{ lang: s
   const copy = getCopy(locale);
   const product = copy.products.ifleet;
   const productPage = copy.products.ifleetPage;
+  const e = editorialCopy[locale];
   const features = Object.entries(productPage.features)
     .filter(([key]) => !key.endsWith("Desc"))
     .map(([key, title]) => ({
@@ -113,6 +157,39 @@ export default async function IFleetPage({ params }: { params: Promise<{ lang: s
         </div>
       </section>
       <SubNav items={subnavItems} />
+
+      <section className="section-block alt">
+        <div className="container editorial-grid">
+          <div>
+            <div className="editorial-meta">
+              {e.meta}
+              <span />
+              {e.lead}
+            </div>
+            <h2 className="section-title" style={{ marginTop: 16 }}>
+              {product.subtitle}
+            </h2>
+            <div className="editorial-highlights">
+              {e.highlights.map((item) => (
+                <div className="editorial-highlight" key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <aside className="editorial-side">
+            <div className="editorial-card">
+              <h4>{e.sideTitle}</h4>
+              <ul>
+                {e.sideItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
 
       <section
         className="visual-strip"

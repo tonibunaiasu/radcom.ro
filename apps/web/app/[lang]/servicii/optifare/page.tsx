@@ -3,6 +3,49 @@ import { getCopy } from "../../../lib/site-copy";
 import { SubNav } from "../../../components/SubNav";
 import { CreditCard, Nfc, QrCode, ShieldCheck, Smartphone, Ticket } from "lucide-react";
 
+const editorialCopy = {
+  en: {
+    meta: "OptiFare",
+    lead: "Smart fare collection built for modern cities.",
+    highlights: [
+      {
+        title: "Faster boarding",
+        desc: "Contactless payments reduce dwell time."
+      },
+      {
+        title: "Revenue clarity",
+        desc: "Secure, auditable transactions and reporting."
+      },
+      {
+        title: "Flexible journeys",
+        desc: "Multiple payment methods in one system."
+      }
+    ],
+    sideTitle: "Core outcomes",
+    sideItems: ["Speed", "Security", "Compliance", "Interoperability"]
+  },
+  ro: {
+    meta: "OptiFare",
+    lead: "Taxare inteligentă pentru orașe moderne.",
+    highlights: [
+      {
+        title: "Îmbarcare rapidă",
+        desc: "Plățile contactless reduc timpul în stație."
+      },
+      {
+        title: "Claritate în venituri",
+        desc: "Tranzacții sigure și rapoarte auditabile."
+      },
+      {
+        title: "Călătorii flexibile",
+        desc: "Mai multe metode de plată într-un singur sistem."
+      }
+    ],
+    sideTitle: "Rezultate",
+    sideItems: ["Viteză", "Securitate", "Conformitate", "Interoperabilitate"]
+  }
+};
+
 const validatorSpecs = [
   { labelRo: "Ecran", labelEn: "Display", value: "7\" TFT LCD tactil capacitiv" },
   { labelRo: "Procesor", labelEn: "Processor", value: "Dual Core i.MX7 la 1GHz" },
@@ -85,6 +128,7 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
   const copy = getCopy(locale);
   const product = copy.products.optifare;
   const productPage = copy.products.optifarePage;
+  const e = editorialCopy[locale];
   const features = Object.entries(productPage.features)
     .filter(([key]) => !key.endsWith("Desc"))
     .map(([key, title]) => ({
@@ -150,6 +194,39 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
         </div>
       </section>
       <SubNav items={subnavItems} />
+
+      <section className="section-block alt">
+        <div className="container editorial-grid">
+          <div>
+            <div className="editorial-meta">
+              {e.meta}
+              <span />
+              {e.lead}
+            </div>
+            <h2 className="section-title" style={{ marginTop: 16 }}>
+              {product.subtitle}
+            </h2>
+            <div className="editorial-highlights">
+              {e.highlights.map((item) => (
+                <div className="editorial-highlight" key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <aside className="editorial-side">
+            <div className="editorial-card">
+              <h4>{e.sideTitle}</h4>
+              <ul>
+                {e.sideItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
 
       <section
         className="visual-strip"

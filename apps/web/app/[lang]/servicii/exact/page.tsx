@@ -3,6 +3,49 @@ import { getCopy } from "../../../lib/site-copy";
 import { SubNav } from "../../../components/SubNav";
 import { BellRing, Bus, MapPin, Monitor, Radar, Route } from "lucide-react";
 
+const editorialCopy = {
+  en: {
+    meta: "eXact",
+    lead: "Passenger information in real time.",
+    highlights: [
+      {
+        title: "Clarity for riders",
+        desc: "Accurate arrival data builds trust."
+      },
+      {
+        title: "Operational transparency",
+        desc: "Live insights for dispatch and planning."
+      },
+      {
+        title: "Multichannel reach",
+        desc: "Displays, audio, and digital feeds in sync."
+      }
+    ],
+    sideTitle: "Core outcomes",
+    sideItems: ["Visibility", "Consistency", "Trust", "Accessibility"]
+  },
+  ro: {
+    meta: "eXact",
+    lead: "Informare pasageri în timp real.",
+    highlights: [
+      {
+        title: "Claritate pentru pasageri",
+        desc: "Sosiri precise construiesc încredere."
+      },
+      {
+        title: "Transparență operațională",
+        desc: "Vizibilitate live pentru dispecerat."
+      },
+      {
+        title: "Comunicare multicanal",
+        desc: "Afișaje, audio și feed-uri digitale sincronizate."
+      }
+    ],
+    sideTitle: "Rezultate",
+    sideItems: ["Vizibilitate", "Consistență", "Încredere", "Accesibilitate"]
+  }
+};
+
 const benefits = {
   en: [
     {
@@ -41,6 +84,7 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
   const copy = getCopy(locale);
   const product = copy.products.exact;
   const productPage = copy.products.exactPage;
+  const e = editorialCopy[locale];
   const features = Object.entries(productPage.features)
     .filter(([key]) => !key.endsWith("Desc"))
     .map(([key, title]) => ({
@@ -113,6 +157,39 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
         </div>
       </section>
       <SubNav items={subnavItems} />
+
+      <section className="section-block alt">
+        <div className="container editorial-grid">
+          <div>
+            <div className="editorial-meta">
+              {e.meta}
+              <span />
+              {e.lead}
+            </div>
+            <h2 className="section-title" style={{ marginTop: 16 }}>
+              {product.subtitle}
+            </h2>
+            <div className="editorial-highlights">
+              {e.highlights.map((item) => (
+                <div className="editorial-highlight" key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <aside className="editorial-side">
+            <div className="editorial-card">
+              <h4>{e.sideTitle}</h4>
+              <ul>
+                {e.sideItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
 
       <section
         className="visual-strip"
