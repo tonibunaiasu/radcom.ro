@@ -144,6 +144,33 @@ main {
   border-color: transparent;
 }
 
+.anchor-nav {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(67, 72, 80, 0.12);
+}
+
+.anchor-nav .container {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+}
+
+.anchor-nav a {
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(67, 72, 80, 0.15);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--radcom-night);
+}
+
+.anchor-nav a:hover {
+  border-color: rgba(28, 63, 149, 0.4);
+  color: var(--radcom-blue);
+}
+
 .lang-toggle {
   width: 32px;
   height: 32px;

@@ -77,7 +77,15 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
       </section>
       <SubNav items={subnavItems} />
 
-      <section className="section-block alt">
+      <div className="anchor-nav">
+        <div className="container">
+          <a href="#solutions">{locale === "ro" ? "Soluții" : "Solutions"}</a>
+          <a href="#integration">{locale === "ro" ? "Integrare" : "Integration"}</a>
+          <a href="#cta">{locale === "ro" ? "Contact" : "Contact"}</a>
+        </div>
+      </div>
+
+      <section className="section-block alt" id="solutions">
         <div className="container editorial-grid">
           <div>
             <div className="editorial-meta">
@@ -137,7 +145,7 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block" id="integration">
         <div className="container">
           <h2 className="section-title">{labels.integrationTitle}</h2>
           <div className="grid">
@@ -152,7 +160,7 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
         </div>
       </section>
 
-      <section className="section-block primary">
+      <section className="section-block primary" id="cta">
         <div className="container cta">
           <h2 className="section-title">{labels.ctaTitle}</h2>
           <p className="section-lead">{labels.ctaLead}</p>

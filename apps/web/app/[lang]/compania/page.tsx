@@ -115,7 +115,15 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
       </section>
       <SubNav items={subnavItems} />
 
-      <section className="section-block">
+      <div className="anchor-nav">
+        <div className="container">
+          <a href="#overview">{locale === "ro" ? "Prezentare" : "Overview"}</a>
+          <a href="#story">{locale === "ro" ? "Poveste" : "Story"}</a>
+          <a href="#explore">{locale === "ro" ? "Explorează" : "Explore"}</a>
+        </div>
+      </div>
+
+      <section className="section-block" id="overview">
         <div className="container">
           <h2 className="section-title">{t.introTitle}</h2>
           <p className="section-lead">{t.introLead}</p>
@@ -145,7 +153,7 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
         </div>
       </section>
 
-      <section className="section-block alt">
+      <section className="section-block alt" id="story">
         <div className="container company-story-grid">
           <div className="company-story">
             <p className="eyebrow">{t.storyTitle}</p>
@@ -175,7 +183,7 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block" id="explore">
         <div className="container">
           <h2 className="section-title">{t.explore}</h2>
           <div className="feature-grid">
