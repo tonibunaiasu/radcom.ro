@@ -1,7 +1,16 @@
 import { getPage } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
-import { Compass, ShieldCheck, Sparkles, Users2, FileCheck2, Landmark } from "lucide-react";
+import {
+  Activity,
+  Compass,
+  Layers,
+  ShieldCheck,
+  Sparkles,
+  Users2,
+  FileCheck2,
+  Landmark
+} from "lucide-react";
 import type { Metadata } from "next";
 
 const labels = {
@@ -155,6 +164,11 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
   const fallback = getPageFallback("compania", locale);
   const page = (await getPage("compania", locale)) || fallback;
   const t = labels[locale];
+  const clientIcons = [
+    <Layers key="stack" size={22} strokeWidth={1.6} />,
+    <Activity key="ops" size={22} strokeWidth={1.6} />,
+    <ShieldCheck key="trust" size={22} strokeWidth={1.6} />
+  ];
   return (
     <main>
       <section
@@ -234,8 +248,11 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
           <p className="eyebrow">{t.clientTitle}</p>
           <h2 className="section-title">{t.clientLead}</h2>
           <div className="feature-grid" style={{ marginTop: 24 }}>
-            {t.clientPoints.map((item) => (
-              <div className="feature-card" key={item.title}>
+            {t.clientPoints.map((item, index) => (
+              <div className="feature-card has-icon" key={item.title}>
+                <span className="feature-icon" aria-hidden="true">
+                  {clientIcons[index % clientIcons.length]}
+                </span>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
