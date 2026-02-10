@@ -4,6 +4,18 @@ export function renderBody(text: string) {
     .map((block) => block.trim())
     .filter(Boolean);
 
+  const renderInlineBold = (value: string) => {
+    const parts = value.split("**");
+    if (parts.length === 1) return value;
+    return parts.map((part, index) =>
+      index % 2 === 1 ? (
+        <strong key={`b-${index}`}>{part}</strong>
+      ) : (
+        <span key={`t-${index}`}>{part}</span>
+      )
+    );
+  };
+
   return blocks.map((block, index) => {
     if (block.startsWith("### ")) {
       return (
@@ -21,7 +33,7 @@ export function renderBody(text: string) {
     }
     return (
       <p key={`p-${index}`} className="section-lead">
-        {block}
+        {renderInlineBold(block)}
       </p>
     );
   });
