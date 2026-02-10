@@ -120,6 +120,40 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       <section className="section-block">
         <div className="container">
+          <div className="usecase-strip">
+            <div>
+              <p className="eyebrow">{locale === "ro" ? "Pentru operatori" : "For operators"}</p>
+              <h3>{locale === "ro" ? "Operatori municipali" : "Municipal operators"}</h3>
+              <p>
+                {locale === "ro"
+                  ? "Sisteme integrate pentru flote mari și operațiuni zilnice."
+                  : "Integrated systems for large fleets and daily operations."}
+              </p>
+            </div>
+            <div>
+              <p className="eyebrow">{locale === "ro" ? "Pentru rețele" : "For networks"}</p>
+              <h3>{locale === "ro" ? "Metro & rail" : "Metro & rail"}</h3>
+              <p>
+                {locale === "ro"
+                  ? "Platforme robuste pentru transport critic și trafic intens."
+                  : "Robust platforms for critical transport and high traffic."}
+              </p>
+            </div>
+            <div>
+              <p className="eyebrow">{locale === "ro" ? "Pentru regiuni" : "For regions"}</p>
+              <h3>{locale === "ro" ? "Operatori regionali" : "Regional operators"}</h3>
+              <p>
+                {locale === "ro"
+                  ? "Implementări scalabile pentru conexiuni interurbane."
+                  : "Scalable deployments for intercity connections."}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
           <h2 className="section-title">
             <SectionIcon name="transport" /> {labels.developmentTitle}
           </h2>

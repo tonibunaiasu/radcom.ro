@@ -1075,6 +1075,26 @@ form textarea {
   padding: 72px 0;
 }
 
+.usecase-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 24px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 203, 71, 0.12), rgba(28, 63, 149, 0.08));
+  border: 1px solid rgba(28, 63, 149, 0.08);
+}
+
+.usecase-strip h3 {
+  margin: 6px 0 6px;
+  font-size: 20px;
+}
+
+.usecase-strip p {
+  margin: 0;
+  color: #4a5a77;
+}
+
 .visual-strip {
   background-size: cover;
   background-position: center;

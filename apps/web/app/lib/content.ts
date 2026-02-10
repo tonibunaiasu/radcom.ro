@@ -3,24 +3,24 @@ export const defaultLocale = "en";
 export const homeContentByLocale = {
   en: {
     hero: {
-      title: "Integrated hardware + software solutions",
+      title: "Integrated hardware + software for urban mobility",
       subtitle:
-        "We deliver end-to-end ICT services for Romanian industries and build integrated solutions that match real business needs.",
+        "RADCOM designs and delivers complete ITS stacks — onboard hardware, control software, and passenger systems — for public transport operators.",
       ctaPrimary: "Explore services",
       ctaSecondary: "Contact us"
     },
     stats: [
       {
-        value: "Top 3",
-        label: "largest technology companies in Romania"
+        value: "Dozens",
+        label: "cities with RADCOM systems in daily operation"
       },
       {
-        value: "ICT",
-        label: "full-service delivery for Romanian industries"
+        value: "Thousands",
+        label: "vehicles connected to our platforms"
       },
       {
-        value: "100%",
-        label: "fully integrated client solutions"
+        value: "End-to-end",
+        label: "hardware, software, and integration in one partner"
       }
     ],
     industries: [
@@ -105,24 +105,24 @@ export const homeContentByLocale = {
   },
   ro: {
     hero: {
-      title: "Soluții integrate hardware + software",
+      title: "Hardware + software integrat pentru mobilitate urbană",
       subtitle:
-        "Oferim servicii IT&C complete pentru industrii românești și răspundem cu soluții perfect integrate la nevoile de business ale clienților.",
+        "RADCOM proiectează și livrează sisteme ITS complete — hardware la bord, software de control și informare pasageri — pentru operatori de transport public.",
       ctaPrimary: "Descoperă serviciile",
       ctaSecondary: "Contactează-ne"
     },
     stats: [
       {
-        value: "Top 3",
-        label: "cele mai mari companii de tehnologie din România"
+        value: "Zeci",
+        label: "de orașe cu sisteme RADCOM în exploatare"
       },
       {
-        value: "IT&C",
-        label: "servicii complete pentru industrii românești"
+        value: "Mii",
+        label: "de vehicule conectate la platformele noastre"
       },
       {
-        value: "100%",
-        label: "soluții perfect integrate pentru clienți"
+        value: "End-to-end",
+        label: "hardware, software și integrare printr-un singur partener"
       }
     ],
     industries: [
