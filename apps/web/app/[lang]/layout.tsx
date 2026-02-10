@@ -32,7 +32,7 @@ export default function LangLayout({
     "@type": "Organization",
     name: "RADCOM",
     url: baseUrl,
-    logo: `${baseUrl}/logo-blue.png`,
+    logo: `${baseUrl}/logo-blue.webp`,
     sameAs: [
       "https://www.linkedin.com/company/radcom-romania/",
       "https://www.facebook.com/RadcomRomania",

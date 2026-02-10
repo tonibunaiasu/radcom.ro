@@ -159,7 +159,7 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
                 <div className={`product-header ${product.tone}`}>
                   <img
                     className="product-logo"
-                    src={productLogos[product.id] || "/logo-blue.png"}
+                    src={productLogos[product.id] || "/logo-blue.webp"}
                     alt={`${product.title} logo`}
                     loading="lazy"
                     decoding="async"

@@ -135,7 +135,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   <div className="product-content">
                     <div className="product-icon">
                       <img
-                        src={productLogos[service.id] || "/logo-blue.png"}
+                        src={productLogos[service.id] || "/logo-blue.webp"}
                         alt={`${service.title} logo`}
                         loading="lazy"
                         decoding="async"
@@ -286,7 +286,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div className="partners-marquee">
               <div className="partners-track">
                 {[...partners, ...partners].map((partner, index) => {
-                const logo = getMediaURL(partner.logo, "/logo-blue.png");
+                const logo = getMediaURL(partner.logo, "/logo-blue.webp");
 
                   return (
                     <div

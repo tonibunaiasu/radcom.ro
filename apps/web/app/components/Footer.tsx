@@ -37,7 +37,7 @@ export function Footer() {
           <div className="footer-brand">
             <div className="footer-logo-wrap">
               <img
-                src="/logo-white.png"
+                src="/logo-white.webp"
                 alt="RADCOM Logo"
                 className="footer-logo"
                 loading="lazy"
