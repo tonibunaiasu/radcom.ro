@@ -3,6 +3,49 @@ import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
 import { getContactLabels } from "../../lib/site-copy";
 
+const editorialCopy = {
+  en: {
+    meta: "Contact",
+    lead: "Let’s shape the next generation of urban mobility.",
+    highlights: [
+      {
+        title: "Fast response",
+        desc: "We reply quickly with clear next steps."
+      },
+      {
+        title: "Real stakeholders",
+        desc: "We speak with operators, not just inboxes."
+      },
+      {
+        title: "Project clarity",
+        desc: "We translate needs into measurable scope."
+      }
+    ],
+    sideTitle: "Talk to us about",
+    sideItems: ["ITS projects", "Fleet systems", "E-ticketing", "Passenger info"]
+  },
+  ro: {
+    meta: "Contact",
+    lead: "Construim împreună următoarea generație de mobilitate urbană.",
+    highlights: [
+      {
+        title: "Răspuns rapid",
+        desc: "Revenim cu pași clari și un plan."
+      },
+      {
+        title: "Dialog real",
+        desc: "Vorbim cu operatori, nu doar cu inboxuri."
+      },
+      {
+        title: "Claritate",
+        desc: "Transformăm nevoile în scopuri măsurabile."
+      }
+    ],
+    sideTitle: "Hai să vorbim despre",
+    sideItems: ["Proiecte ITS", "Sisteme flotă", "E-ticketing", "Info pasageri"]
+  }
+};
+
 const fallbackSettings = {
   companyName: "Radcom S.A.",
   email: "office@radcom.ro",
@@ -25,6 +68,7 @@ export default async function ContactPage({
   const page = (await getPage("contact", locale)) || fallbackPage;
   const settings = (await getSettings()) || fallbackSettings;
   const t = getContactLabels(locale);
+  const e = editorialCopy[locale];
   const sent = searchParams?.sent === "1";
   const error = searchParams?.error === "1";
 
@@ -44,6 +88,36 @@ export default async function ContactPage({
       </section>
 
       <section className="section-block">
+        <div className="container editorial-grid" style={{ marginBottom: 32 }}>
+          <div>
+            <div className="editorial-meta">
+              {e.meta}
+              <span />
+              {e.lead}
+            </div>
+            <h2 className="section-title" style={{ marginTop: 16 }}>
+              {page.summary}
+            </h2>
+            <div className="editorial-highlights">
+              {e.highlights.map((item) => (
+                <div className="editorial-highlight" key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <aside className="editorial-side">
+            <div className="editorial-card">
+              <h4>{e.sideTitle}</h4>
+              <ul>
+                {e.sideItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
         <div className="container two-col">
           <div>
             <h2 className="section-title">{t.formTitle}</h2>
