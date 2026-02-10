@@ -1081,6 +1081,22 @@ main {
   margin: 24px 0 0;
 }
 
+.micro-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 0;
+}
+
+.micro-benefits span {
+  background: rgba(28, 63, 149, 0.08);
+  color: var(--radcom-blue);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .editorial-highlight {
   border-left: 3px solid var(--radcom-gold);
   padding-left: 14px;

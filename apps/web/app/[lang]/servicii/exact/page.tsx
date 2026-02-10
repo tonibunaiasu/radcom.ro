@@ -7,6 +7,11 @@ const editorialCopy = {
   en: {
     meta: "eXact",
     lead: "Passenger information in real time.",
+    microBenefits: [
+      "Fewer passenger complaints",
+      "Better route adherence",
+      "Consistent rider updates"
+    ],
     highlights: [
       {
         title: "Clarity for riders",
@@ -27,6 +32,11 @@ const editorialCopy = {
   ro: {
     meta: "eXact",
     lead: "Informare pasageri în timp real.",
+    microBenefits: [
+      "Mai puține reclamații",
+      "Respectare mai bună a rutelor",
+      "Informare consecventă"
+    ],
     highlights: [
       {
         title: "Claritate pentru pasageri",
@@ -169,6 +179,11 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
             <h2 className="section-title" style={{ marginTop: 16 }}>
               {product.subtitle}
             </h2>
+            <div className="micro-benefits">
+              {e.microBenefits.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
             <div className="editorial-highlights">
               {e.highlights.map((item) => (
                 <div className="editorial-highlight" key={item.title}>

@@ -7,6 +7,11 @@ const editorialCopy = {
   en: {
     meta: "OptiFare",
     lead: "Smart fare collection built for modern cities.",
+    microBenefits: [
+      "Faster boarding",
+      "Lower cash handling costs",
+      "Secure revenue reporting"
+    ],
     highlights: [
       {
         title: "Faster boarding",
@@ -27,6 +32,11 @@ const editorialCopy = {
   ro: {
     meta: "OptiFare",
     lead: "Taxare inteligentă pentru orașe moderne.",
+    microBenefits: [
+      "Îmbarcare mai rapidă",
+      "Costuri mai mici cu numerarul",
+      "Raportare sigură a veniturilor"
+    ],
     highlights: [
       {
         title: "Îmbarcare rapidă",
@@ -206,6 +216,11 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
             <h2 className="section-title" style={{ marginTop: 16 }}>
               {product.subtitle}
             </h2>
+            <div className="micro-benefits">
+              {e.microBenefits.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
             <div className="editorial-highlights">
               {e.highlights.map((item) => (
                 <div className="editorial-highlight" key={item.title}>

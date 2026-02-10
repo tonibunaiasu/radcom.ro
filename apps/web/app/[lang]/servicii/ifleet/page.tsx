@@ -7,6 +7,11 @@ const editorialCopy = {
   en: {
     meta: "iFleet",
     lead: "Integrated fleet intelligence for urban operators.",
+    microBenefits: [
+      "Higher on-time performance",
+      "Lower fuel and idle costs",
+      "Clear incident response"
+    ],
     highlights: [
       {
         title: "Operational visibility",
@@ -27,6 +32,11 @@ const editorialCopy = {
   ro: {
     meta: "iFleet",
     lead: "Inteligență integrată pentru flote urbane.",
+    microBenefits: [
+      "Punctualitate mai bună",
+      "Costuri mai mici combustibil",
+      "Răspuns rapid la incidente"
+    ],
     highlights: [
       {
         title: "Vizibilitate operațională",
@@ -169,6 +179,11 @@ export default async function IFleetPage({ params }: { params: Promise<{ lang: s
             <h2 className="section-title" style={{ marginTop: 16 }}>
               {product.subtitle}
             </h2>
+            <div className="micro-benefits">
+              {e.microBenefits.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
             <div className="editorial-highlights">
               {e.highlights.map((item) => (
                 <div className="editorial-highlight" key={item.title}>
