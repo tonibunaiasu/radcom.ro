@@ -47,13 +47,49 @@ const labels = {
     why: "Why RADCOM?",
     jobs: "Open positions",
     empty: "No open positions at the moment. Send your CV to",
-    email: "careers@radcom.ro"
+    email: "careers@radcom.ro",
+    meta: "Careers",
+    lead: "Work on mobility technology that matters.",
+    highlights: [
+      {
+        title: "Mission-led work",
+        desc: "Projects that directly improve how cities move."
+      },
+      {
+        title: "Hands-on impact",
+        desc: "From hardware to software, you ship real outcomes."
+      },
+      {
+        title: "Growth mindset",
+        desc: "Continuous learning built into every team."
+      }
+    ],
+    sideTitle: "Roles we hire for",
+    sideItems: ["Engineering", "Operations", "Support", "Project delivery"]
   },
   ro: {
     why: "De ce RADCOM?",
     jobs: "Poziții disponibile",
     empty: "Nu există poziții disponibile momentan. Trimite CV-ul tău la",
-    email: "cariere@radcom.ro"
+    email: "cariere@radcom.ro",
+    meta: "Cariere",
+    lead: "Lucrează la tehnologii de mobilitate care contează.",
+    highlights: [
+      {
+        title: "Misiune clară",
+        desc: "Proiecte care îmbunătățesc direct transportul urban."
+      },
+      {
+        title: "Impact real",
+        desc: "De la hardware la software, livrezi rezultate vizibile."
+      },
+      {
+        title: "Mentalitate de creștere",
+        desc: "Învățare continuă în fiecare echipă."
+      }
+    ],
+    sideTitle: "Roluri căutate",
+    sideItems: ["Inginerie", "Operațiuni", "Suport", "Livrare proiecte"]
   }
 };
 
@@ -88,9 +124,38 @@ export default async function CarierePage({ params }: { params: Promise<{ lang: 
       </section>
 
       <section className="section-block alt">
-        <div className="container">
-          <h2 className="section-title">{t.why}</h2>
-          <p className="section-lead">{page.body}</p>
+        <div className="container editorial-grid">
+          <div>
+            <div className="editorial-meta">
+              {t.meta}
+              <span />
+              {t.lead}
+            </div>
+            <h2 className="section-title" style={{ marginTop: 16 }}>
+              {t.why}
+            </h2>
+            <p className="section-lead">{page.body}</p>
+            <div className="editorial-highlights">
+              {t.highlights.map((item) => (
+                <div className="editorial-highlight" key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <aside className="editorial-side">
+            <div className="editorial-card">
+              <h4>{t.sideTitle}</h4>
+              <ul>
+                {t.sideItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div className="container" style={{ marginTop: 32 }}>
           <div className="feature-grid">
             {benefits[locale].map((benefit, index) => (
               <article className="feature-card has-icon" key={`${benefit.title}-${index}`}>
