@@ -135,6 +135,30 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
             ))}
           </div>
         </div>
+        <div className="container" style={{ marginTop: 32 }}>
+          <div className="testimonial-grid">
+            <div className="testimonial-card">
+              <p>
+                {locale === "ro"
+                  ? "„Implementarea s-a făcut rapid, iar echipele noastre au avut suport constant.”"
+                  : "“Implementation was fast and the teams had consistent support.”"}
+              </p>
+              <span>
+                {locale === "ro" ? "Operator transport public" : "Public transport operator"}
+              </span>
+            </div>
+            <div className="testimonial-card">
+              <p>
+                {locale === "ro"
+                  ? "„Sistemele sunt stabile și scalabile, ceea ce ne-a permis extinderea ușoară.”"
+                  : "“Systems are stable and scalable, making expansion easy.”"}
+              </p>
+              <span>
+                {locale === "ro" ? "Operator regional" : "Regional operator"}
+              </span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="section-block" id="integration">

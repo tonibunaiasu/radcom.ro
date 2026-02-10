@@ -272,6 +272,46 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Ce spun partenerii" : "What partners say"}
+          </h2>
+          <div className="testimonial-grid">
+            <div className="testimonial-card">
+              <p>
+                {locale === "ro"
+                  ? "„Integrarea hardware + software a redus timpii de implementare și ne-a dat vizibilitate în timp real.”"
+                  : "“Hardware + software integration reduced rollout time and gave us real-time visibility.”"}
+              </p>
+              <span>
+                {locale === "ro" ? "Operator transport urban" : "Urban transport operator"}
+              </span>
+            </div>
+            <div className="testimonial-card">
+              <p>
+                {locale === "ro"
+                  ? "„Platforma RADCOM ne ajută să menținem punctualitatea și să informăm pasagerii consecvent.”"
+                  : "“The RADCOM platform helps us keep punctuality and inform passengers consistently.”"}
+              </p>
+              <span>
+                {locale === "ro" ? "Autoritate metropolitană" : "Metropolitan authority"}
+              </span>
+            </div>
+            <div className="testimonial-card">
+              <p>
+                {locale === "ro"
+                  ? "„Un singur partener pentru echipamente, software și suport — exact ce aveam nevoie.”"
+                  : "“One partner for equipment, software, and support — exactly what we needed.”"}
+              </p>
+              <span>
+                {locale === "ro" ? "Operator regional" : "Regional operator"}
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-block primary">
         <div className="container cta">
           <h2 className="section-title">{labels.ctaTitle}</h2>
