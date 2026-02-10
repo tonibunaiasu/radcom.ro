@@ -69,8 +69,7 @@ export function Header() {
     },
     { title: t.nav.services, href: "/servicii" },
     { title: t.nav.careers, href: "/cariere" },
-    { title: t.nav.articles, href: "/articole" },
-    { title: t.nav.contact, href: "/contact" }
+    { title: t.nav.articles, href: "/articole" }
   ];
 
   return (
