@@ -76,6 +76,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <HeroVideo
             className="hero-video"
             src="/modern-nightscape.mp4"
+            webmSrc="/modern-nightscape.webm"
             poster="/hero-transport.webp"
           />
           <div className="hero-media-overlay" />

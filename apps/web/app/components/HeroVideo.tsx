@@ -5,10 +5,11 @@ import { useEffect, useRef, useState } from "react";
 type HeroVideoProps = {
   className?: string;
   src: string;
+  webmSrc?: string;
   poster?: string;
 };
 
-export const HeroVideo = ({ className, src, poster }: HeroVideoProps) => {
+export const HeroVideo = ({ className, src, webmSrc, poster }: HeroVideoProps) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [canAutoPlay, setCanAutoPlay] = useState(false);
@@ -87,13 +88,15 @@ export const HeroVideo = ({ className, src, poster }: HeroVideoProps) => {
       <video
         ref={videoRef}
         className={className}
-        src={shouldLoad ? src : undefined}
         poster={poster}
         muted
         loop
         playsInline
         preload={shouldLoad ? "metadata" : "none"}
-      />
+      >
+        {shouldLoad && webmSrc && <source src={webmSrc} type="video/webm" />}
+        {shouldLoad && <source src={src} type="video/mp4" />}
+      </video>
       {!isPlaying && (
         <button
           className="hero-video-cta"
