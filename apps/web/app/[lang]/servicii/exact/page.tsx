@@ -203,7 +203,7 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
         className="visual-strip"
         style={{
           backgroundImage:
-            "linear-gradient(120deg, rgba(28,63,149,0.8), rgba(15,33,58,0.4)), url(https://images.unsplash.com/photo-I7Rj5wEGlUA?auto=format&fit=crop&w=1600&q=80)"
+            "linear-gradient(120deg, rgba(28,63,149,0.8), rgba(15,33,58,0.4)), url(/hero/company-stripe.webp)"
         }}
       >
         <div className="container">

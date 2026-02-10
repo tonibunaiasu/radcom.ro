@@ -201,7 +201,7 @@ export default async function IFleetPage({ params }: { params: Promise<{ lang: s
         className="visual-strip"
         style={{
           backgroundImage:
-            "linear-gradient(120deg, rgba(28,63,149,0.8), rgba(15,33,58,0.4)), url(https://images.unsplash.com/photo-T32G9zARSr4?auto=format&fit=crop&w=1600&q=80)"
+            "linear-gradient(120deg, rgba(28,63,149,0.8), rgba(15,33,58,0.4)), url(/hero/industries-stripe.webp)"
         }}
       >
         <div className="container">
