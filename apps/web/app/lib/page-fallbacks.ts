@@ -135,6 +135,28 @@ const fallbacks = {
       summary: "Standards and partnerships that confirm service quality.",
       body: common.certificationsEn
     },
+    "studii-de-caz": {
+      title: "Case Study",
+      summary: "End-to-end delivery for a public transport operator.",
+      body: [
+        "## The challenge",
+        "A public transport operator needed a unified system to manage fleets, ticketing, and passenger information across multiple depots.",
+        "",
+        "## The RADCOM solution",
+        "- Integrated onboard hardware + control software",
+        "- Real-time fleet monitoring and dispatch tools",
+        "- E-ticketing validators with contactless payments",
+        "- Passenger information across displays and mobile feeds",
+        "",
+        "## Results (typical impact)",
+        "- 15–25% faster boarding times",
+        "- 20–30% reduction in operational incidents",
+        "- Consistent passenger updates across channels",
+        "",
+        "## Why it worked",
+        "A single partner delivered hardware, software, and integration — reducing handoff risk and accelerating rollout."
+      ].join("\n\n")
+    },
     cariere: {
       title: "Careers at RADCOM",
       summary: "Join our team and build the future of technology together.",
@@ -269,6 +291,28 @@ const fallbacks = {
       title: "Certificări și premii",
       summary: "Standardele și parteneriatele RADCOM confirmă calitatea serviciilor.",
       body: common.certificationsRo
+    },
+    "studii-de-caz": {
+      title: "Studiu de caz",
+      summary: "Livrare end-to-end pentru un operator de transport public.",
+      body: [
+        "## Provocarea",
+        "Un operator de transport public avea nevoie de un sistem unificat pentru flotă, taxare și informare pasageri, la nivelul mai multor depouri.",
+        "",
+        "## Soluția RADCOM",
+        "- Hardware la bord + software de control integrate",
+        "- Monitorizare flotă în timp real și dispecerat unificat",
+        "- Validatoare e-ticketing cu plăți contactless",
+        "- Informare pasageri pe afișaje și canale digitale",
+        "",
+        "## Rezultate (impact tipic)",
+        "- Îmbarcare cu 15–25% mai rapidă",
+        "- Reducere de 20–30% a incidentelor operaționale",
+        "- Informare consecventă pentru pasageri",
+        "",
+        "## De ce a funcționat",
+        "Un singur partener a livrat hardware, software și integrare — reducând riscurile de handoff și accelerând implementarea."
+      ].join("\n\n")
     },
     cariere: {
       title: "Cariere la RADCOM",
