@@ -42,6 +42,8 @@ export function Footer() {
                 className="footer-logo"
                 loading="lazy"
                 decoding="async"
+                width={232}
+                height={66}
               />
             </div>
             <div className="footer-social-links footer-social-top">
@@ -144,18 +146,24 @@ export function Footer() {
                 alt={lang === "ro" ? "Uniunea Europeană" : "European Union"}
                 loading="lazy"
                 decoding="async"
+                width={112}
+                height={93}
               />
               <img
                 src="/official-logos/guvernul-romaniei.webp"
                 alt={lang === "ro" ? "Guvernul României" : "Government of Romania"}
                 loading="lazy"
                 decoding="async"
+                width={82}
+                height={83}
               />
               <img
                 src="/official-logos/fonduri-europene.webp"
                 alt={lang === "ro" ? "Fonduri Europene" : "European Funds"}
                 loading="lazy"
                 decoding="async"
+                width={110}
+                height={98}
               />
             </div>
           </div>
