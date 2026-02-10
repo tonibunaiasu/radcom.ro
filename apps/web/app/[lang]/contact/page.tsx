@@ -163,6 +163,10 @@ export default async function ContactPage({
             <h2 className="section-title">{t.infoTitle}</h2>
             <div className="card">
               <h3 style={{ marginTop: 0 }}>Radcom S.A.</h3>
+              <p>
+                {locale === "ro" ? "E-mail" : "Email"}:{" "}
+                <a href={`mailto:${settings.email}`}>{settings.email}</a>
+              </p>
               <p>{settings.address}</p>
               <p>
                 {locale === "ro" ? "CIF: RO3939511" : "VAT: RO3939511"}
