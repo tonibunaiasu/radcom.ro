@@ -1,7 +1,9 @@
 import {
   defaultLocale,
   homeContent,
+  homeContentByLocale,
   servicesContent,
+  servicesContentByLocale,
   solutionsContent,
   partnersContent,
   articlesContent
@@ -38,74 +40,206 @@ const pick = (
   return value?.[locale as "ro" | "en"] || value?.ro || value?.en || "";
 };
 
+const pickLocaleOnly = (
+  value: { ro?: string; en?: string } | string | undefined | null,
+  locale: string
+) => {
+  if (typeof value === "string") return value;
+  if (!value) return "";
+  return value?.[locale as "ro" | "en"] || "";
+};
+
+const allowCrossLocaleFallback = ["1", "true", "yes"].includes(
+  String(process.env.CROSS_LOCALE_FALLBACK || "").toLowerCase()
+);
+
+const pickLocalized = (
+  value: { ro?: string; en?: string } | string | undefined | null,
+  locale: string
+) => (allowCrossLocaleFallback ? pick(value, locale) : pickLocaleOnly(value, locale));
+
+const hasOtherLocaleValue = (
+  value: { ro?: string; en?: string } | string | undefined | null,
+  locale: string
+) => {
+  if (!value || typeof value === "string") return false;
+  return locale === "en" ? Boolean(value.ro) : Boolean(value.en);
+};
+
 export async function getHomeContent(locale = defaultLocale) {
   const data = await fetchJSON(`/api/globals/home?locale=${locale}`);
-  if (!data) return homeContent;
-  const fallback = homeContent;
+  const fallbackByLocale =
+    homeContentByLocale[locale as "ro" | "en"] || homeContent;
+  if (!data) return fallbackByLocale;
+  const fallback = fallbackByLocale;
+  const missingCounts: Record<string, number> = {
+    hero: 0,
+    stats: 0,
+    industries: 0,
+    infrastructure: 0,
+    advantages: 0,
+    partners: 0
+  };
 
-  return {
+  const result = {
     hero: {
-      title: pick(data.hero?.title, locale) || fallback.hero.title,
-      subtitle: pick(data.hero?.subtitle, locale) || fallback.hero.subtitle,
-      ctaPrimary: pick(data.hero?.ctaPrimary, locale) || fallback.hero.ctaPrimary,
-      ctaSecondary: pick(data.hero?.ctaSecondary, locale) || fallback.hero.ctaSecondary
+      title: pickLocalized(data.hero?.title, locale) || fallback.hero.title,
+      subtitle: pickLocalized(data.hero?.subtitle, locale) || fallback.hero.subtitle,
+      ctaPrimary:
+        pickLocalized(data.hero?.ctaPrimary, locale) || fallback.hero.ctaPrimary,
+      ctaSecondary:
+        pickLocalized(data.hero?.ctaSecondary, locale) || fallback.hero.ctaSecondary
     },
     stats: (data.stats && data.stats.length
       ? data.stats
       : fallback.stats
-    ).map((item: any) => ({
-      value: item.value,
-      label: pick(item.label, locale) || item.label
-    })),
+    ).map((item: any, index: number) => {
+      const fallbackItem = fallback.stats[index];
+      const label = pickLocalized(item.label, locale);
+      if (!label && hasOtherLocaleValue(item.label, locale)) missingCounts.stats += 1;
+      return {
+        value: item.value ?? fallbackItem?.value,
+        label: label || fallbackItem?.label || ""
+      };
+    }),
     industries: (data.industries && data.industries.length
       ? data.industries
       : fallback.industries
-    ).map((item: any) => ({
-      title: pick(item.title, locale) || item.title,
-      desc: pick(item.desc, locale) || item.desc
-    })),
+    ).map((item: any, index: number) => {
+      const fallbackItem = fallback.industries[index];
+      const title = pickLocalized(item.title, locale);
+      const desc = pickLocalized(item.desc, locale);
+      if ((!title && hasOtherLocaleValue(item.title, locale)) || (!desc && hasOtherLocaleValue(item.desc, locale))) {
+        missingCounts.industries += 1;
+      }
+      return {
+        title: title || fallbackItem?.title || "",
+        desc: desc || fallbackItem?.desc || ""
+      };
+    }),
     infrastructure: (data.infrastructure && data.infrastructure.length
       ? data.infrastructure
       : fallback.infrastructure
-    ).map((item: any) => ({
-      title: pick(item.title, locale) || item.title,
-      desc: pick(item.desc, locale) || item.desc
-    })),
+    ).map((item: any, index: number) => {
+      const fallbackItem = fallback.infrastructure[index];
+      const title = pickLocalized(item.title, locale);
+      const desc = pickLocalized(item.desc, locale);
+      if ((!title && hasOtherLocaleValue(item.title, locale)) || (!desc && hasOtherLocaleValue(item.desc, locale))) {
+        missingCounts.infrastructure += 1;
+      }
+      return {
+        title: title || fallbackItem?.title || "",
+        desc: desc || fallbackItem?.desc || ""
+      };
+    }),
     advantages: (data.advantages && data.advantages.length
       ? data.advantages
       : fallback.advantages
-    ).map((item: any) => ({
-      title: pick(item.title, locale) || item.title,
-      desc: pick(item.desc, locale) || item.desc
-    })),
+    ).map((item: any, index: number) => {
+      const fallbackItem = fallback.advantages[index];
+      const title = pickLocalized(item.title, locale);
+      const desc = pickLocalized(item.desc, locale);
+      if ((!title && hasOtherLocaleValue(item.title, locale)) || (!desc && hasOtherLocaleValue(item.desc, locale))) {
+        missingCounts.advantages += 1;
+      }
+      return {
+        title: title || fallbackItem?.title || "",
+        desc: desc || fallbackItem?.desc || ""
+      };
+    }),
     partners: {
-      title: pick(data.partners?.title, locale) || fallback.partners.title,
-      subtitle: pick(data.partners?.subtitle, locale) || fallback.partners.subtitle
+      title: pickLocalized(data.partners?.title, locale) || fallback.partners.title,
+      subtitle:
+        pickLocalized(data.partners?.subtitle, locale) || fallback.partners.subtitle
     }
   };
+
+  if (!allowCrossLocaleFallback) {
+    if (!pickLocaleOnly(data.hero?.title, locale) && hasOtherLocaleValue(data.hero?.title, locale)) missingCounts.hero += 1;
+    if (!pickLocaleOnly(data.hero?.subtitle, locale) && hasOtherLocaleValue(data.hero?.subtitle, locale)) missingCounts.hero += 1;
+    if (!pickLocaleOnly(data.hero?.ctaPrimary, locale) && hasOtherLocaleValue(data.hero?.ctaPrimary, locale)) missingCounts.hero += 1;
+    if (!pickLocaleOnly(data.hero?.ctaSecondary, locale) && hasOtherLocaleValue(data.hero?.ctaSecondary, locale)) missingCounts.hero += 1;
+    if (!pickLocaleOnly(data.partners?.title, locale) && hasOtherLocaleValue(data.partners?.title, locale)) missingCounts.partners += 1;
+    if (!pickLocaleOnly(data.partners?.subtitle, locale) && hasOtherLocaleValue(data.partners?.subtitle, locale)) missingCounts.partners += 1;
+
+    const totalMissing = Object.values(missingCounts).reduce((sum, value) => sum + value, 0);
+    if (totalMissing > 0) {
+      console.warn(
+        `[content] Missing locale "${locale}" in CMS home content:`,
+        JSON.stringify(missingCounts)
+      );
+    }
+  }
+
+  return result;
 }
 
 export async function getServices(locale = defaultLocale) {
   const data = await fetchJSON(`/api/services?limit=100&locale=${locale}`);
   const items = data?.docs || [];
-  if (!items.length) return servicesContent;
+  const fallbackByLocale =
+    servicesContentByLocale[locale as "ro" | "en"] || servicesContent;
+  if (!items.length) return fallbackByLocale;
 
-  return items.map((item: any) => ({
-    id: item.slug || item.id,
-    title: pick(item.title, locale),
-    subtitle: pick(item.subtitle, locale),
-    description: pick(item.description, locale),
-    features: (item.features || []).map((feature: any) =>
-      pick(feature.feature, locale)
-    ),
-    link: `/servicii/${item.slug || item.id}`,
-    tone:
-      item.slug === "ifleet"
-        ? "accent"
-        : item.slug === "optifare"
-        ? "success"
-        : "primary"
-  }));
+  const fallbackById = new Map(
+    fallbackByLocale.map((service) => [service.id, service])
+  );
+
+  const missingCounts: Record<string, number> = {
+    title: 0,
+    subtitle: 0,
+    description: 0,
+    features: 0
+  };
+
+  const services = items.map((item: any) => {
+    const id = item.slug || item.id;
+    const title = pickLocalized(item.title, locale);
+    const subtitle = pickLocalized(item.subtitle, locale);
+    const description = pickLocalized(item.description, locale);
+    const featuresFromCms = (item.features || [])
+      .map((feature: any) => pickLocalized(feature.feature, locale))
+      .filter(Boolean);
+
+    if (!allowCrossLocaleFallback) {
+      if (!title && hasOtherLocaleValue(item.title, locale)) missingCounts.title += 1;
+      if (!subtitle && hasOtherLocaleValue(item.subtitle, locale)) missingCounts.subtitle += 1;
+      if (!description && hasOtherLocaleValue(item.description, locale)) missingCounts.description += 1;
+      const hasOtherLocaleFeatures = (item.features || []).some((feature: any) =>
+        hasOtherLocaleValue(feature.feature, locale)
+      );
+      if (!featuresFromCms.length && hasOtherLocaleFeatures) missingCounts.features += 1;
+    }
+
+    return {
+      id,
+      title: title || fallbackById.get(id)?.title || "",
+      subtitle: subtitle || fallbackById.get(id)?.subtitle || "",
+      description: description || fallbackById.get(id)?.description || "",
+      features: featuresFromCms.length
+        ? featuresFromCms
+        : fallbackById.get(id)?.features || [],
+      link: `/servicii/${id}`,
+      tone:
+        item.slug === "ifleet"
+          ? "accent"
+          : item.slug === "optifare"
+          ? "success"
+          : "primary"
+    };
+  });
+
+  if (!allowCrossLocaleFallback) {
+    const totalMissing = Object.values(missingCounts).reduce((sum, value) => sum + value, 0);
+    if (totalMissing > 0) {
+      console.warn(
+        `[content] Missing locale "${locale}" in CMS services content:`,
+        JSON.stringify(missingCounts)
+      );
+    }
+  }
+
+  return services;
 }
 
 export async function getPage(slug: string, locale = defaultLocale) {

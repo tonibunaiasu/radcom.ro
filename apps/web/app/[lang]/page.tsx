@@ -5,6 +5,7 @@ import { Reveal } from "../components/Reveal";
 import { getLocale } from "../lib/locale";
 import { getHomeLabels } from "../lib/site-copy";
 import { getMediaURL } from "../lib/media";
+import { HeroVideo } from "../components/HeroVideo";
 import {
   BarChart3,
   Bus,
@@ -69,14 +70,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <main>
       <section className="hero">
         <div className="hero-media hero-media-full">
-          <video
+          <HeroVideo
             className="hero-video"
             src="/hero-transport.mp4"
             poster="/hero-transport.webp"
-            autoPlay
-            muted
-            loop
-            playsInline
           />
           <div className="hero-media-overlay" />
           <div className="hero-title-overlay">
@@ -272,6 +269,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               width="100%"
               height="420"
               style={{ border: "0", display: "block" }}
+              loading="lazy"
               scrolling="no"
             />
           </div>
