@@ -31,7 +31,7 @@ export async function generateMetadata({
     locale === "ro"
       ? "Hardware + software integrate pentru mobilitate urbană: flotă, e-ticketing și informare pasageri."
       : "Integrated hardware + software for urban mobility: fleet, e-ticketing, and passenger information.";
-  const image = "/hero/transport.webp";
+  const image = "/hero-transport.webp";
   return {
     title,
     description,

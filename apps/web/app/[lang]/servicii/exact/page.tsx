@@ -1,6 +1,5 @@
 import { getLocale } from "../../../lib/locale";
 import { getCopy } from "../../../lib/site-copy";
-import { SubNav } from "../../../components/SubNav";
 import { BellRing, Bus, MapPin, Monitor, Radar, Route } from "lucide-react";
 
 const editorialCopy = {
@@ -119,12 +118,6 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
     <Radar key="benefit2" size={22} strokeWidth={1.6} />,
     <Route key="benefit3" size={22} strokeWidth={1.6} />
   ];
-  const subnavItems = [
-    { label: "iFleet", href: "/servicii/ifleet" },
-    { label: "OptiFare", href: "/servicii/optifare" },
-    { label: "eXact", href: "/servicii/exact" }
-  ];
-
   const displayTypes = [
     {
       title: productPage.displayTypes.interior,
@@ -166,8 +159,6 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
           <p className="section-lead">{productPage.detailedDescription}</p>
         </div>
       </section>
-      <SubNav items={subnavItems} />
-
       <section className="section-block alt">
         <div className="container editorial-grid">
           <div>

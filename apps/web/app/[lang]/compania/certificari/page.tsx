@@ -1,7 +1,6 @@
 import { getPage } from "../../../lib/sanity-queries";
 import { getLocale } from "../../../lib/locale";
 import { getPageFallback } from "../../../lib/page-fallbacks";
-import { SubNav } from "../../../components/SubNav";
 import { companyContent } from "../../../lib/company-history";
 
 const labels = {
@@ -80,15 +79,6 @@ export default async function CertificariPage({ params }: { params: Promise<{ la
   const page = (await getPage("compania-certificari", locale)) || fallback;
   const t = labels[locale] || labels.ro;
   const content = companyContent[locale] || companyContent.ro;
-  const subnavItems = [
-    { label: locale === "ro" ? "Viziune" : "Vision", href: "/compania/viziune" },
-    { label: locale === "ro" ? "Misiune" : "Mission", href: "/compania/misiune" },
-    { label: locale === "ro" ? "Valori" : "Values", href: "/compania/valori" },
-    { label: locale === "ro" ? "Istoric" : "History", href: "/compania/istoric" },
-    { label: locale === "ro" ? "Echipă" : "Team", href: "/compania/echipa" },
-    { label: locale === "ro" ? "Certificări" : "Certifications", href: "/compania/certificari" }
-  ];
-
   return (
     <main>
       <section
@@ -103,8 +93,6 @@ export default async function CertificariPage({ params }: { params: Promise<{ la
           <p className="section-lead">{page.summary}</p>
         </div>
       </section>
-      <SubNav items={subnavItems} />
-
       <section className="section-block">
         <div className="container editorial-grid">
           <div>

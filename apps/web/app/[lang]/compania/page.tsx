@@ -1,7 +1,6 @@
 import { getPage } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
-import { SubNav } from "../../components/SubNav";
 import { Compass, ShieldCheck, Sparkles, Users2, FileCheck2, Landmark } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -156,15 +155,6 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
   const fallback = getPageFallback("compania", locale);
   const page = (await getPage("compania", locale)) || fallback;
   const t = labels[locale];
-  const subnavItems = [
-    { label: t.visionCard, href: "/compania/viziune" },
-    { label: t.missionCard, href: "/compania/misiune" },
-    { label: t.valuesCard, href: "/compania/valori" },
-    { label: t.aboutCard, href: "/compania/istoric" },
-    { label: t.teamCard, href: "/compania/echipa" },
-    { label: t.certificationsCard, href: "/compania/certificari" }
-  ];
-
   return (
     <main>
       <section
@@ -179,8 +169,6 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
           <p className="section-lead">{page.summary}</p>
         </div>
       </section>
-      <SubNav items={subnavItems} />
-
       <section className="section-block" id="overview">
         <div className="container">
           <h2 className="section-title">{t.introTitle}</h2>

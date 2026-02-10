@@ -1,6 +1,5 @@
 import { getLocale } from "../../../lib/locale";
 import { getCopy } from "../../../lib/site-copy";
-import { SubNav } from "../../../components/SubNav";
 import { CreditCard, Nfc, QrCode, ShieldCheck, Smartphone, Ticket } from "lucide-react";
 
 const editorialCopy = {
@@ -158,12 +157,6 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
     <CreditCard key="fast" size={22} strokeWidth={1.6} />,
     <Smartphone key="mobile" size={22} strokeWidth={1.6} />
   ];
-  const subnavItems = [
-    { label: "iFleet", href: "/servicii/ifleet" },
-    { label: "OptiFare", href: "/servicii/optifare" },
-    { label: "eXact", href: "/servicii/exact" }
-  ];
-
   const paymentMethods = [
     {
       title: productPage.paymentMethods.bankCards,
@@ -203,8 +196,6 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
           <p className="section-lead">{productPage.detailedDescription}</p>
         </div>
       </section>
-      <SubNav items={subnavItems} />
-
       <section className="section-block alt">
         <div className="container editorial-grid">
           <div>

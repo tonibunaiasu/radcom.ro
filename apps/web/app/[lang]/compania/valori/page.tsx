@@ -2,7 +2,6 @@ import { getPage } from "../../../lib/sanity-queries";
 import { getLocale } from "../../../lib/locale";
 import { getPageFallback } from "../../../lib/page-fallbacks";
 import { renderBody } from "../../../lib/render-body";
-import { SubNav } from "../../../components/SubNav";
 
 const copy = {
   en: {
@@ -81,15 +80,6 @@ export default async function ValoriPage({ params }: { params: Promise<{ lang: s
   const t = copy[locale];
   const bodyBlocks = splitBlocks(page.body);
   const { quote, blocks } = extractQuote(bodyBlocks);
-  const subnavItems = [
-    { label: locale === "ro" ? "Viziune" : "Vision", href: "/compania/viziune" },
-    { label: locale === "ro" ? "Misiune" : "Mission", href: "/compania/misiune" },
-    { label: locale === "ro" ? "Valori" : "Values", href: "/compania/valori" },
-    { label: locale === "ro" ? "Istoric" : "History", href: "/compania/istoric" },
-    { label: locale === "ro" ? "Echipă" : "Team", href: "/compania/echipa" },
-    { label: locale === "ro" ? "Certificări" : "Certifications", href: "/compania/certificari" }
-  ];
-
   return (
     <main>
       <section
@@ -104,8 +94,6 @@ export default async function ValoriPage({ params }: { params: Promise<{ lang: s
           <p className="section-lead">{page.summary}</p>
         </div>
       </section>
-      <SubNav items={subnavItems} />
-
       <section className="section-block">
         <div className="container editorial-grid">
           <div>
