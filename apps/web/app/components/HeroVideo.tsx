@@ -12,6 +12,8 @@ export const HeroVideo = ({ className, src, poster }: HeroVideoProps) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [canAutoPlay, setCanAutoPlay] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const [requestPlay, setRequestPlay] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -29,12 +31,11 @@ export const HeroVideo = ({ className, src, poster }: HeroVideoProps) => {
 
     if (prefersReducedMotion || saveData || isSlowConnection) return;
     setCanAutoPlay(true);
-
-    const playPromise = video.play();
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(() => {
-        // Ignore autoplay failures (browser policies)
-      });
+    const idle = typeof window !== "undefined" ? (window as any).requestIdleCallback : undefined;
+    if (idle) {
+      idle(() => setShouldLoad(true));
+    } else {
+      setTimeout(() => setShouldLoad(true), 800);
     }
   }, []);
 
@@ -56,15 +57,29 @@ export const HeroVideo = ({ className, src, poster }: HeroVideoProps) => {
     };
   }, []);
 
-  const handlePlay = () => {
+  useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || !shouldLoad) return;
+
+    video.load();
+    if (!requestPlay && !canAutoPlay) return;
     const playPromise = video.play();
     if (playPromise && typeof playPromise.catch === "function") {
       playPromise.catch(() => {
         // Ignore autoplay failures (browser policies)
       });
     }
+  }, [shouldLoad, requestPlay, canAutoPlay]);
+
+  const handlePlay = () => {
+    const video = videoRef.current;
+    if (!video) {
+      setShouldLoad(true);
+      setRequestPlay(true);
+      return;
+    }
+    setShouldLoad(true);
+    setRequestPlay(true);
   };
 
   return (
@@ -72,12 +87,12 @@ export const HeroVideo = ({ className, src, poster }: HeroVideoProps) => {
       <video
         ref={videoRef}
         className={className}
-        src={src}
+        src={shouldLoad ? src : undefined}
         poster={poster}
         muted
         loop
         playsInline
-        preload="metadata"
+        preload={shouldLoad ? "metadata" : "none"}
       />
       {!isPlaying && (
         <button
