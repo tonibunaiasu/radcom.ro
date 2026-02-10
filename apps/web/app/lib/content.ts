@@ -425,6 +425,51 @@ export const articlesContent = [
   }
 ];
 
+export const articlesContentByLocale = {
+  en: articlesContent,
+  ro: [
+    {
+      id: "transport-vision-2025",
+      slug: "transport-vision-2025",
+      title: "Transport public 2025: Operațiuni bazate pe date",
+      excerpt:
+        "Cum ajută platformele ITS integrate operatorii să îmbunătățească punctualitatea, să reducă costurile și să ofere o experiență mai bună pasagerilor.",
+      publishedAt: "2025-12-15T00:00:00.000Z",
+      author: "Echipa RADCOM",
+      tags: ["Transport Public", "ITS"],
+      image: "/blog/blog-1.jpg",
+      content:
+        "## Flote conectate, orașe mai inteligente\n\nTransportul public modern se bazează pe date în timp real, analiză predictivă și sisteme unificate. RADCOM integrează managementul flotei, e-ticketing și informarea pasagerilor într-o singură vedere operațională.\n\n### Ce câștigă operatorii\n\n- Regularitate și punctualitate mai bune\n- Răspuns mai rapid la incidente\n- Date precise despre fluxuri și venituri\n\n## Experiență centrată pe pasager\n\nCând datele operaționale sunt conectate, experiența pasagerilor devine măsurabilă și optimizabilă. Informații clare, orare fiabile și plăți fără fricțiune construiesc încredere.\n\n## Următorul pas\n\nRADCOM lucrează cu operatorii pentru a proiecta arhitecturi ITS scalabile, adaptate cerințelor locale."
+    },
+    {
+      id: "fare-collection-future",
+      slug: "fare-collection-future",
+      title: "Tendințe în e-ticketing: de la carduri la cloud",
+      excerpt:
+        "Un ghid scurt despre taxarea modernă, plățile contactless și de ce contează un back-office flexibil.",
+      publishedAt: "2025-11-28T00:00:00.000Z",
+      author: "Echipa RADCOM",
+      tags: ["E-ticketing", "Plăți"],
+      image: "/blog/blog-2.jpg",
+      content:
+        "## Contactless ca standard\n\nPasagerii se așteaptă la plăți rapide, sigure și transparente. Adopția contactless continuă să crească în transportul public.\n\n### Pilonii de bază\n\n- Echipamente de validare sigure\n- Procesare fiabilă a tranzacțiilor\n- Raportare transparentă pentru operatori\n\n## De ce contează back-office-ul\n\nUn back-office modern face ușoară introducerea de tarife noi, gestionarea parteneriatelor și oferirea de produse de călătorie flexibile."
+    },
+    {
+      id: "passenger-info-realtime",
+      slug: "passenger-info-realtime",
+      title: "Informarea pasagerilor în timp real, la scară",
+      excerpt:
+        "Cum livrăm timpi de sosire fiabili și actualizări în stații într-o rețea urbană.",
+      publishedAt: "2025-11-12T00:00:00.000Z",
+      author: "Echipa RADCOM",
+      tags: ["Informare Pasageri", "Operațiuni"],
+      image: "/blog/blog-3.jpg",
+      content:
+        "## Încredere prin date în timp real\n\nAfișajele și anunțurile în stații sunt utile doar atunci când datele sunt corecte și actualizate. Informația în timp real reduce incertitudinea și îmbunătățește experiența de călătorie.\n\n### Ce asigură acuratețea\n\n- Integrare directă cu vehiculele și dispeceratul\n- Actualizări automate la schimbări de traseu\n- Monitorizare continuă a calității datelor\n\n## De la infrastructură la experiență\n\nUn sistem de informare bine integrat transformă infrastructura în servicii predictibile, ușor de folosit, atât pentru pasageri, cât și pentru operatori."
+    }
+  ]
+};
+
 export const partnersContent = [
   { id: "2k-telecom", name: "2K Telecom", website: "https://2ktelecom.ro", logo: "/partners/2k-telecom.jpg" },
   { id: "imi-mobile", name: "IMI Mobile", website: "https://imimobile.com", logo: "/partners/imi-mobile.jpg" },

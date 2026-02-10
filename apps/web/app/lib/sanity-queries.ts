@@ -6,7 +6,8 @@ import {
   servicesContentByLocale,
   solutionsContent,
   partnersContent,
-  articlesContent
+  articlesContent,
+  articlesContentByLocale
 } from "./content";
 
 const baseURL =
@@ -291,7 +292,9 @@ export async function getSolutionBySlug(slug: string, locale = defaultLocale) {
 export async function getArticles(locale = defaultLocale) {
   const data = await fetchJSON(`/api/articles?limit=100&sort=-publishedAt&locale=${locale}`);
   const items = data?.docs || [];
-  if (!items.length) return articlesContent;
+  const fallbackByLocale =
+    articlesContentByLocale[locale as "ro" | "en"] || articlesContent;
+  if (!items.length) return fallbackByLocale;
 
   return items.map((item: any) => ({
     id: item.id,
@@ -311,7 +314,9 @@ export async function getArticleBySlug(slug: string, locale = defaultLocale) {
     `/api/articles?where[slug][equals]=${slug}&limit=1&locale=${locale}`
   );
   const item = data?.docs?.[0];
-  if (!item) return articlesContent.find((entry) => entry.slug === slug) || null;
+  const fallbackByLocale =
+    articlesContentByLocale[locale as "ro" | "en"] || articlesContent;
+  if (!item) return fallbackByLocale.find((entry) => entry.slug === slug) || null;
 
   return {
     id: item.id,
