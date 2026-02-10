@@ -2,6 +2,8 @@ import { getPage } from "../../../lib/sanity-queries";
 import { getLocale } from "../../../lib/locale";
 import { getPageFallback } from "../../../lib/page-fallbacks";
 import { companyContent } from "../../../lib/company-history";
+import { companyBreadcrumbs, companyLinks } from "../../../lib/company-nav";
+import Breadcrumbs from "../../../components/Breadcrumbs";
 
 const labels = {
   en: {
@@ -54,6 +56,9 @@ export default async function IstoricPage({ params }: { params: Promise<{ lang: 
   const page = (await getPage("compania-istoric", locale)) || fallback;
   const t = labels[locale] || labels.ro;
   const content = companyContent[locale] || companyContent.ro;
+  const currentPath = "/compania/istoric";
+  const breadcrumbs = companyBreadcrumbs(locale, locale === "ro" ? "Istoric" : "History");
+  const quickLinks = companyLinks[locale].filter((item) => item.href !== currentPath);
   return (
     <main>
       <section
@@ -64,12 +69,21 @@ export default async function IstoricPage({ params }: { params: Promise<{ lang: 
         }}
       >
         <div className="container">
+          <Breadcrumbs items={breadcrumbs} />
           <h1 className="section-title">{page.title}</h1>
           <p className="section-lead">{page.summary}</p>
         </div>
       </section>
       <section className="section-block alt">
-        <div className="container editorial-grid">
+        <div className="container">
+          <div className="inline-links">
+            {quickLinks.map((item) => (
+              <a key={item.href} href={`/${locale}${item.href}`}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <div className="editorial-grid">
           <div>
             <div className="editorial-meta">
               {t.meta}
@@ -98,6 +112,7 @@ export default async function IstoricPage({ params }: { params: Promise<{ lang: 
               </ul>
             </div>
           </aside>
+        </div>
         </div>
         <div className="container" style={{ marginTop: 32 }}>
           <div className="grid grid-3">

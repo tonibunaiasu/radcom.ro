@@ -1202,6 +1202,71 @@ form textarea {
   contain-intrinsic-size: 720px;
 }
 
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(23, 33, 61, 0.65);
+  margin-bottom: 18px;
+}
+
+.breadcrumbs a {
+  color: #1c3f95;
+  font-weight: 600;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb-sep {
+  opacity: 0.45;
+}
+
+.hero-banner .breadcrumbs {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.hero-banner .breadcrumbs a {
+  color: #ffffff;
+}
+
+.article-hero-overlay .breadcrumbs {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.article-hero-overlay .breadcrumbs a {
+  color: #ffffff;
+}
+
+.inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.inline-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(28, 63, 149, 0.18);
+  background: #ffffff;
+  font-weight: 600;
+  color: #1c3f95;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inline-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(28, 63, 149, 0.12);
+}
+
 .usecase-strip {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

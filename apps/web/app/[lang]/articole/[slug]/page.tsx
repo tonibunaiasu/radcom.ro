@@ -3,6 +3,7 @@ import { articlesContent } from "../../../lib/content";
 import { getLocale } from "../../../lib/locale";
 import { renderBody } from "../../../lib/render-body";
 import { getMediaURL } from "../../../lib/media";
+import Breadcrumbs from "../../../components/Breadcrumbs";
 import { ArrowRight, Calendar, Mail, Share2, User2 } from "lucide-react";
 
 export const dynamicParams = false;
@@ -105,6 +106,19 @@ const editorialCopy = {
   }
 };
 
+const articleLinks = {
+  en: [
+    { label: "All articles", href: "/articole" },
+    { label: "Case studies", href: "/studii-de-caz" },
+    { label: "Services", href: "/servicii" }
+  ],
+  ro: [
+    { label: "Toate articolele", href: "/articole" },
+    { label: "Studii de caz", href: "/studii-de-caz" },
+    { label: "Servicii", href: "/servicii" }
+  ]
+};
+
 export default async function ArticleDetailPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params;
 
@@ -143,6 +157,11 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
   const headings = extractHeadings(blocks);
   const t = editorialCopy[locale];
   const excerpt = article.excerpt || (locale === "ro" ? "Perspective din proiectele RADCOM." : "Insights from RADCOM projects.");
+  const breadcrumbs = [
+    { label: locale === "ro" ? "Acasă" : "Home", href: `/${locale}` },
+    { label: locale === "ro" ? "Articole" : "Articles", href: `/${locale}/articole` },
+    { label: article.title }
+  ];
 
   return (
     <main>
@@ -150,6 +169,7 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
         <img src={heroImage} alt={article.title} loading="lazy" decoding="async" />
         <div className="article-hero-overlay">
           <div className="container">
+            <Breadcrumbs items={breadcrumbs} />
             <div className="blog-card-tags">
               {tags.map((tag: string, index: number) => (
                 <span key={`${tag}-${index}`}>{tag}</span>
@@ -171,7 +191,15 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
       </section>
 
       <section className="section-block">
-        <div className="container editorial-grid" style={{ marginBottom: 32 }}>
+        <div className="container">
+          <div className="inline-links">
+            {articleLinks[locale].map((item) => (
+              <a key={item.href} href={`/${locale}${item.href}`}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <div className="editorial-grid" style={{ marginBottom: 32 }}>
           <div>
             <div className="editorial-meta">
               {t.meta}
@@ -200,6 +228,7 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
               </ul>
             </div>
           </aside>
+        </div>
         </div>
 
         <div className="container article-layout">

@@ -1,5 +1,7 @@
 import { getLocale } from "../../../lib/locale";
 import { getCopy } from "../../../lib/site-copy";
+import { servicesBreadcrumbs, servicesLinks } from "../../../lib/services-nav";
+import Breadcrumbs from "../../../components/Breadcrumbs";
 import { CreditCard, Nfc, QrCode, ShieldCheck, Smartphone, Ticket } from "lucide-react";
 
 const editorialCopy = {
@@ -226,11 +228,15 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
       desc: productPage.paymentMethods.paperTicketsDesc
     }
   ];
+  const currentPath = "/servicii/optifare";
+  const breadcrumbs = servicesBreadcrumbs(locale, "OptiFare");
+  const quickLinks = servicesLinks[locale].filter((item) => item.href !== currentPath);
 
   return (
     <main>
       <section className="section-block success">
         <div className="container">
+          <Breadcrumbs items={breadcrumbs} />
           <div className="service-hero-logo service-hero-logo--optifare">
             <img
               src="/products/OptiFare.svg"
@@ -245,7 +251,15 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
         </div>
       </section>
       <section className="section-block alt">
-        <div className="container editorial-grid">
+        <div className="container">
+          <div className="inline-links">
+            {quickLinks.map((item) => (
+              <a key={item.href} href={`/${locale}${item.href}`}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <div className="editorial-grid">
           <div>
             <div className="editorial-meta">
               {e.meta}
@@ -279,6 +293,7 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
               </ul>
             </div>
           </aside>
+        </div>
         </div>
       </section>
 

@@ -1,5 +1,7 @@
 import { getLocale } from "../../../lib/locale";
 import { getCopy } from "../../../lib/site-copy";
+import { servicesBreadcrumbs, servicesLinks } from "../../../lib/services-nav";
+import Breadcrumbs from "../../../components/Breadcrumbs";
 import { BellRing, Bus, MapPin, Monitor, Radar, Route } from "lucide-react";
 
 const editorialCopy = {
@@ -187,11 +189,15 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
       desc: productPage.displayTypes.advertisingDesc
     }
   ];
+  const currentPath = "/servicii/exact";
+  const breadcrumbs = servicesBreadcrumbs(locale, "eXact");
+  const quickLinks = servicesLinks[locale].filter((item) => item.href !== currentPath);
 
   return (
     <main>
       <section className="section-block neutral">
         <div className="container">
+          <Breadcrumbs items={breadcrumbs} />
           <img
             className="service-hero-logo"
             src="/products/eXact.svg"
@@ -205,7 +211,15 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
         </div>
       </section>
       <section className="section-block alt">
-        <div className="container editorial-grid">
+        <div className="container">
+          <div className="inline-links">
+            {quickLinks.map((item) => (
+              <a key={item.href} href={`/${locale}${item.href}`}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <div className="editorial-grid">
           <div>
             <div className="editorial-meta">
               {e.meta}
@@ -239,6 +253,7 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
               </ul>
             </div>
           </aside>
+        </div>
         </div>
       </section>
 

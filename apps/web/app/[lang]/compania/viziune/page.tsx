@@ -2,6 +2,8 @@ import { getPage } from "../../../lib/sanity-queries";
 import { getLocale } from "../../../lib/locale";
 import { getPageFallback } from "../../../lib/page-fallbacks";
 import { renderBody } from "../../../lib/render-body";
+import { companyBreadcrumbs, companyLinks } from "../../../lib/company-nav";
+import Breadcrumbs from "../../../components/Breadcrumbs";
 
 const copy = {
   en: {
@@ -68,6 +70,9 @@ export default async function ViziunePage({ params }: { params: Promise<{ lang: 
   const t = copy[locale];
   const bodyBlocks = splitBlocks(page.body);
   const { quote, blocks } = extractQuote(bodyBlocks);
+  const currentPath = "/compania/viziune";
+  const breadcrumbs = companyBreadcrumbs(locale, locale === "ro" ? "Viziune" : "Vision");
+  const quickLinks = companyLinks[locale].filter((item) => item.href !== currentPath);
   return (
     <main>
       <section
@@ -78,12 +83,21 @@ export default async function ViziunePage({ params }: { params: Promise<{ lang: 
         }}
       >
         <div className="container">
+          <Breadcrumbs items={breadcrumbs} />
           <h1 className="section-title">{page.title}</h1>
           <p className="section-lead">{page.summary}</p>
         </div>
       </section>
       <section className="section-block">
-        <div className="container editorial-grid">
+        <div className="container">
+          <div className="inline-links">
+            {quickLinks.map((item) => (
+              <a key={item.href} href={`/${locale}${item.href}`}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <div className="editorial-grid">
           <div>
             <div className="editorial-meta">
               {t.meta}
@@ -114,6 +128,7 @@ export default async function ViziunePage({ params }: { params: Promise<{ lang: 
               </ul>
             </div>
           </aside>
+        </div>
         </div>
       </section>
     </main>
