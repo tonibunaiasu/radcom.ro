@@ -94,6 +94,52 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
   const products = await getServices(locale);
   const labels = getServicesLabels(locale);
   const t = copy[locale];
+  const nextSteps = {
+    en: {
+      eyebrow: "Next steps",
+      title: "Keep exploring",
+      lead: "See who we are, browse insights, or request a discussion.",
+      cards: [
+        {
+          title: "About RADCOM",
+          desc: "The team, mission, and certifications behind the platform.",
+          href: "/compania"
+        },
+        {
+          title: "Articles",
+          desc: "Insights on technology and mobility trends.",
+          href: "/articole"
+        },
+        {
+          title: "Contact",
+          desc: "Talk to us about your deployment.",
+          href: "/contact"
+        }
+      ]
+    },
+    ro: {
+      eyebrow: "Pașii următori",
+      title: "Continuă explorarea",
+      lead: "Află cine suntem, citește articole sau cere o discuție.",
+      cards: [
+        {
+          title: "Despre RADCOM",
+          desc: "Echipa, misiunea și certificările care susțin platforma.",
+          href: "/compania"
+        },
+        {
+          title: "Articole",
+          desc: "Perspective despre tehnologie și mobilitate.",
+          href: "/articole"
+        },
+        {
+          title: "Contact",
+          desc: "Discutăm despre implementare.",
+          href: "/contact"
+        }
+      ]
+    }
+  }[locale];
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -232,6 +278,22 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
             <a className="primary" href={`/${locale}/contact`}>
               {labels.ctaButton}
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <p className="eyebrow">{nextSteps.eyebrow}</p>
+          <h2 className="section-title">{nextSteps.title}</h2>
+          <p className="section-lead">{nextSteps.lead}</p>
+          <div className="feature-grid" style={{ marginTop: 24 }}>
+            {nextSteps.cards.map((card) => (
+              <a className="feature-card" key={card.title} href={`/${locale}${card.href}`}>
+                <h3>{card.title}</h3>
+                <p>{card.desc}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>

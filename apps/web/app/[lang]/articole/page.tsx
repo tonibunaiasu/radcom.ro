@@ -113,6 +113,52 @@ export default async function ArticolePage({ params }: { params: Promise<{ lang:
   const page = (await getPage("articole", locale)) || fallback;
   const articles = await getArticles(locale);
   const t = labels[locale];
+  const nextSteps = {
+    en: {
+      eyebrow: "Keep exploring",
+      title: "Continue your journey",
+      lead: "Discover services, learn about RADCOM, or reach out.",
+      cards: [
+        {
+          title: "Services",
+          desc: "See the full RADCOM platform.",
+          href: "/servicii"
+        },
+        {
+          title: "About RADCOM",
+          desc: "Mission, team, and certifications.",
+          href: "/compania"
+        },
+        {
+          title: "Contact",
+          desc: "Talk to us about your project.",
+          href: "/contact"
+        }
+      ]
+    },
+    ro: {
+      eyebrow: "Continuă explorarea",
+      title: "Următorii pași",
+      lead: "Descoperă servicii, află despre RADCOM sau contactează-ne.",
+      cards: [
+        {
+          title: "Servicii",
+          desc: "Vezi platforma RADCOM.",
+          href: "/servicii"
+        },
+        {
+          title: "Despre RADCOM",
+          desc: "Misiune, echipă și certificări.",
+          href: "/compania"
+        },
+        {
+          title: "Contact",
+          desc: "Discutăm despre proiectul tău.",
+          href: "/contact"
+        }
+      ]
+    }
+  }[locale];
 
   const titleParts = page.title.trim().split(" ");
   const titleMain =
@@ -221,6 +267,22 @@ export default async function ArticolePage({ params }: { params: Promise<{ lang:
           ) : (
             <p className="section-lead">{t.noArticles}</p>
           )}
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <p className="eyebrow">{nextSteps.eyebrow}</p>
+          <h2 className="section-title">{nextSteps.title}</h2>
+          <p className="section-lead">{nextSteps.lead}</p>
+          <div className="feature-grid" style={{ marginTop: 24 }}>
+            {nextSteps.cards.map((card) => (
+              <a className="feature-card" key={card.title} href={`/${locale}${card.href}`}>
+                <h3>{card.title}</h3>
+                <p>{card.desc}</p>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </main>

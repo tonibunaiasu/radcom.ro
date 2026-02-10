@@ -164,6 +164,52 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
   const fallback = getPageFallback("compania", locale);
   const page = (await getPage("compania", locale)) || fallback;
   const t = labels[locale];
+  const nextSteps = {
+    en: {
+      eyebrow: "Next steps",
+      title: "Where to go next",
+      lead: "Explore solutions, see a case study, or start a conversation.",
+      cards: [
+        {
+          title: "Services",
+          desc: "Discover the full RADCOM stack for urban mobility.",
+          href: "/servicii"
+        },
+        {
+          title: "Case Study",
+          desc: "See how we deliver results for operators.",
+          href: "/studii-de-caz"
+        },
+        {
+          title: "Contact",
+          desc: "Tell us about your project and timelines.",
+          href: "/contact"
+        }
+      ]
+    },
+    ro: {
+      eyebrow: "Pașii următori",
+      title: "Unde mergi mai departe",
+      lead: "Explorează soluțiile, studiu de caz sau pornește o discuție.",
+      cards: [
+        {
+          title: "Servicii",
+          desc: "Descoperă stack‑ul RADCOM pentru mobilitate urbană.",
+          href: "/servicii"
+        },
+        {
+          title: "Studiu de caz",
+          desc: "Vezi rezultatele livrate pentru operatori.",
+          href: "/studii-de-caz"
+        },
+        {
+          title: "Contact",
+          desc: "Spune-ne despre proiect și termene.",
+          href: "/contact"
+        }
+      ]
+    }
+  }[locale];
   const clientIcons = [
     <Layers key="stack" size={22} strokeWidth={1.6} />,
     <Activity key="ops" size={22} strokeWidth={1.6} />,
@@ -286,6 +332,22 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
               <h3>{t.certificationsCard}</h3>
               <p>{t.certDesc}</p>
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <p className="eyebrow">{nextSteps.eyebrow}</p>
+          <h2 className="section-title">{nextSteps.title}</h2>
+          <p className="section-lead">{nextSteps.lead}</p>
+          <div className="feature-grid" style={{ marginTop: 24 }}>
+            {nextSteps.cards.map((card) => (
+              <a className="feature-card" key={card.title} href={`/${locale}${card.href}`}>
+                <h3>{card.title}</h3>
+                <p>{card.desc}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
