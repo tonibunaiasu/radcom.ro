@@ -6,10 +6,44 @@ import { companyContent } from "../../../lib/company-history";
 
 const labels = {
   en: {
-    history: "History"
+    meta: "History",
+    lead: "Milestones that shaped RADCOM.",
+    highlights: [
+      {
+        title: "Built to scale",
+        desc: "From first contracts to nationwide deployments."
+      },
+      {
+        title: "Trusted partner",
+        desc: "Long-term collaborations with operators and cities."
+      },
+      {
+        title: "Continuous innovation",
+        desc: "Evolving with transport technology cycles."
+      }
+    ],
+    sideTitle: "Milestone lenses",
+    sideItems: ["Operators", "Passengers", "Infrastructure", "Data"]
   },
   ro: {
-    history: "Istoric"
+    meta: "Istoric",
+    lead: "Reperele care au format RADCOM.",
+    highlights: [
+      {
+        title: "Construit pentru scalare",
+        desc: "De la primele contracte la implementări naționale."
+      },
+      {
+        title: "Partener de încredere",
+        desc: "Colaborări pe termen lung cu operatori și orașe."
+      },
+      {
+        title: "Inovație continuă",
+        desc: "Evoluăm odată cu ciclurile tehnologice din transport."
+      }
+    ],
+    sideTitle: "Repere cheie",
+    sideItems: ["Operatori", "Pasageri", "Infrastructură", "Date"]
   }
 };
 
@@ -47,8 +81,37 @@ export default async function IstoricPage({ params }: { params: Promise<{ lang: 
       <SubNav items={subnavItems} />
 
       <section className="section-block alt">
-        <div className="container">
-          <h2 className="section-title">{t.history}</h2>
+        <div className="container editorial-grid">
+          <div>
+            <div className="editorial-meta">
+              {t.meta}
+              <span />
+              {t.lead}
+            </div>
+            <h2 className="section-title" style={{ marginTop: 16 }}>
+              {page.summary}
+            </h2>
+            <div className="editorial-highlights">
+              {t.highlights.map((item) => (
+                <div className="editorial-highlight" key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <aside className="editorial-side">
+            <div className="editorial-card">
+              <h4>{t.sideTitle}</h4>
+              <ul>
+                {t.sideItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div className="container" style={{ marginTop: 32 }}>
           <div className="grid grid-3">
             {content.history.map((entry) => {
               const entryTextLength =

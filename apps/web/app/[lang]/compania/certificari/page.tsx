@@ -6,10 +6,44 @@ import { companyContent } from "../../../lib/company-history";
 
 const labels = {
   en: {
-    title: "Certifications"
+    meta: "Certifications",
+    lead: "Standards that support trust and quality.",
+    highlights: [
+      {
+        title: "Quality assured",
+        desc: "Operational excellence backed by ISO standards."
+      },
+      {
+        title: "Security first",
+        desc: "Information security validated through audits."
+      },
+      {
+        title: "Industry ready",
+        desc: "Professional certifications across teams."
+      }
+    ],
+    sideTitle: "Our commitment",
+    sideItems: ["Quality", "Security", "Compliance", "Continuous training"]
   },
   ro: {
-    title: "Certificări"
+    meta: "Certificări",
+    lead: "Standarde care susțin încrederea și calitatea.",
+    highlights: [
+      {
+        title: "Calitate garantată",
+        desc: "Excelență operațională certificată ISO."
+      },
+      {
+        title: "Securitate înainte de toate",
+        desc: "Securitate informațională validată prin audit."
+      },
+      {
+        title: "Echipă certificată",
+        desc: "Certificări profesionale la nivel de echipă."
+      }
+    ],
+    sideTitle: "Angajament",
+    sideItems: ["Calitate", "Securitate", "Conformitate", "Training continuu"]
   }
 };
 
@@ -72,8 +106,37 @@ export default async function CertificariPage({ params }: { params: Promise<{ la
       <SubNav items={subnavItems} />
 
       <section className="section-block">
-        <div className="container">
-          <h2 className="section-title">{t.title}</h2>
+        <div className="container editorial-grid">
+          <div>
+            <div className="editorial-meta">
+              {t.meta}
+              <span />
+              {t.lead}
+            </div>
+            <h2 className="section-title" style={{ marginTop: 16 }}>
+              {page.summary}
+            </h2>
+            <div className="editorial-highlights">
+              {t.highlights.map((item) => (
+                <div className="editorial-highlight" key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <aside className="editorial-side">
+            <div className="editorial-card">
+              <h4>{t.sideTitle}</h4>
+              <ul>
+                {t.sideItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div className="container" style={{ marginTop: 32 }}>
           <div className="grid grid-3">
             {content.certifications.map((certification) => (
               <div className="card" key={certification}>
