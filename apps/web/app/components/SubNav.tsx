@@ -1,7 +1,7 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { getLocaleFromPath, withLocalePath } from "../lib/locale";
+import { useParams, usePathname } from "next/navigation";
+import { getLocaleFromPath, normalizeLocale, withLocalePath } from "../lib/locale";
 
 type SubNavItem = {
   label: string;
@@ -10,7 +10,14 @@ type SubNavItem = {
 
 export function SubNav({ items }: { items: SubNavItem[] }) {
   const pathname = usePathname();
-  const lang = getLocaleFromPath(pathname);
+  const params = useParams();
+  const paramLang =
+    typeof params?.lang === "string"
+      ? params.lang
+      : Array.isArray(params?.lang)
+      ? params?.lang?.[0]
+      : undefined;
+  const lang = paramLang ? normalizeLocale(paramLang) : getLocaleFromPath(pathname);
 
   return (
     <div className="subnav">

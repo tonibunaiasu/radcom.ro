@@ -1,11 +1,37 @@
 import { getPage } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
-import { renderBody } from "../../lib/render-body";
 import { SubNav } from "../../components/SubNav";
+import { Compass, ShieldCheck, Sparkles, Users2, FileCheck2, Landmark } from "lucide-react";
 
 const labels = {
   en: {
+    introTitle: "RADCOM in one line",
+    introLead:
+      "We connect people in modern cities through integrated mobility technology built for reliability and scale.",
+    visionCard: "Vision",
+    missionCard: "Mission",
+    valuesCard: "Values",
+    visionDesc: "How we see the future of urban mobility.",
+    missionDesc: "What we build every day for operators and passengers.",
+    valuesDesc: "Principles that guide every technical decision.",
+    storyTitle: "Why we exist",
+    storyLead:
+      "RADCOM partners with cities and operators to make mobility dependable, connected, and human.",
+    highlights: [
+      {
+        title: "Integrated systems",
+        desc: "Hardware + software built to operate as one stack."
+      },
+      {
+        title: "Operational clarity",
+        desc: "Real-time insight for faster, safer decisions."
+      },
+      {
+        title: "Passenger-first design",
+        desc: "Reliable journeys that feel intuitive and predictable."
+      }
+    ],
     explore: "Explore",
     aboutCard: "History",
     teamCard: "Team",
@@ -15,6 +41,32 @@ const labels = {
     certDesc: "ISO standards and strategic partnerships."
   },
   ro: {
+    introTitle: "RADCOM, pe scurt",
+    introLead:
+      "Conectăm oamenii în orașe moderne prin tehnologii integrate de mobilitate, construite pentru fiabilitate și scalare.",
+    visionCard: "Viziune",
+    missionCard: "Misiune",
+    valuesCard: "Valori",
+    visionDesc: "Cum vedem viitorul mobilității urbane.",
+    missionDesc: "Ce construim în fiecare zi pentru operatori și pasageri.",
+    valuesDesc: "Principii care ghidează fiecare decizie tehnică.",
+    storyTitle: "De ce existăm",
+    storyLead:
+      "RADCOM colaborează cu orașe și operatori pentru o mobilitate sigură, conectată și umană.",
+    highlights: [
+      {
+        title: "Sisteme integrate",
+        desc: "Hardware + software gândite să funcționeze ca un singur ecosistem."
+      },
+      {
+        title: "Claritate operațională",
+        desc: "Date în timp real pentru decizii rapide și sigure."
+      },
+      {
+        title: "Design pentru pasageri",
+        desc: "Călătorii previzibile, simple și de încredere."
+      }
+    ],
     explore: "Explorează",
     aboutCard: "Istoric",
     teamCard: "Echipă",
@@ -39,6 +91,9 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
   const page = (await getPage("compania", locale)) || fallback;
   const t = labels[locale];
   const subnavItems = [
+    { label: t.visionCard, href: "/compania/viziune" },
+    { label: t.missionCard, href: "/compania/misiune" },
+    { label: t.valuesCard, href: "/compania/valori" },
     { label: t.aboutCard, href: "/compania/istoric" },
     { label: t.teamCard, href: "/compania/echipa" },
     { label: t.certificationsCard, href: "/compania/certificari" }
@@ -61,22 +116,87 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
       <SubNav items={subnavItems} />
 
       <section className="section-block">
-        <div className="container">{renderBody(page.body)}</div>
+        <div className="container">
+          <h2 className="section-title">{t.introTitle}</h2>
+          <p className="section-lead">{t.introLead}</p>
+          <div className="feature-grid" style={{ marginTop: 24 }}>
+            <a className="feature-card has-icon" href={`/${locale}/compania/viziune`}>
+              <span className="feature-icon" aria-hidden="true">
+                <Compass size={22} strokeWidth={1.6} />
+              </span>
+              <h3>{t.visionCard}</h3>
+              <p>{t.visionDesc}</p>
+            </a>
+            <a className="feature-card has-icon" href={`/${locale}/compania/misiune`}>
+              <span className="feature-icon" aria-hidden="true">
+                <Sparkles size={22} strokeWidth={1.6} />
+              </span>
+              <h3>{t.missionCard}</h3>
+              <p>{t.missionDesc}</p>
+            </a>
+            <a className="feature-card has-icon" href={`/${locale}/compania/valori`}>
+              <span className="feature-icon" aria-hidden="true">
+                <ShieldCheck size={22} strokeWidth={1.6} />
+              </span>
+              <h3>{t.valuesCard}</h3>
+              <p>{t.valuesDesc}</p>
+            </a>
+          </div>
+        </div>
       </section>
 
       <section className="section-block alt">
+        <div className="container company-story-grid">
+          <div className="company-story">
+            <p className="eyebrow">{t.storyTitle}</p>
+            <h2 className="section-title">{t.storyLead}</h2>
+            {paragraphize(page.body || "").map((line, index) =>
+              line.startsWith(">")
+                ? (
+                    <blockquote className="company-quote" key={`quote-${index}`}>
+                      {line.replace(/^>\s*/, "")}
+                    </blockquote>
+                  )
+                : (
+                    <p className="section-lead" key={`line-${index}`}>
+                      {line}
+                    </p>
+                  )
+            )}
+          </div>
+          <div className="company-highlights">
+            {t.highlights.map((item, index) => (
+              <div className="card company-highlight" key={`${item.title}-${index}`}>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
         <div className="container">
           <h2 className="section-title">{t.explore}</h2>
-          <div className="grid grid-3">
-            <a className="card" href={`/${locale}/compania/istoric`}>
+          <div className="feature-grid">
+            <a className="feature-card has-icon" href={`/${locale}/compania/istoric`}>
+              <span className="feature-icon" aria-hidden="true">
+                <Landmark size={22} strokeWidth={1.6} />
+              </span>
               <h3>{t.aboutCard}</h3>
               <p>{t.aboutDesc}</p>
             </a>
-            <a className="card" href={`/${locale}/compania/echipa`}>
+            <a className="feature-card has-icon" href={`/${locale}/compania/echipa`}>
+              <span className="feature-icon" aria-hidden="true">
+                <Users2 size={22} strokeWidth={1.6} />
+              </span>
               <h3>{t.teamCard}</h3>
               <p>{t.teamDesc}</p>
             </a>
-            <a className="card" href={`/${locale}/compania/certificari`}>
+            <a className="feature-card has-icon" href={`/${locale}/compania/certificari`}>
+              <span className="feature-icon" aria-hidden="true">
+                <FileCheck2 size={22} strokeWidth={1.6} />
+              </span>
               <h3>{t.certificationsCard}</h3>
               <p>{t.certDesc}</p>
             </a>

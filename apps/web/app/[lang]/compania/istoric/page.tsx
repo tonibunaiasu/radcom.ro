@@ -22,6 +22,9 @@ export default async function IstoricPage({ params }: { params: Promise<{ lang: 
   const t = labels[locale] || labels.ro;
   const content = companyContent[locale] || companyContent.ro;
   const subnavItems = [
+    { label: locale === "ro" ? "Viziune" : "Vision", href: "/compania/viziune" },
+    { label: locale === "ro" ? "Misiune" : "Mission", href: "/compania/misiune" },
+    { label: locale === "ro" ? "Valori" : "Values", href: "/compania/valori" },
     { label: locale === "ro" ? "Istoric" : "History", href: "/compania/istoric" },
     { label: locale === "ro" ? "Echipă" : "Team", href: "/compania/echipa" },
     { label: locale === "ro" ? "Certificări" : "Certifications", href: "/compania/certificari" }

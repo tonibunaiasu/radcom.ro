@@ -4,12 +4,12 @@ import { getPageFallback } from "../../../lib/page-fallbacks";
 import { renderBody } from "../../../lib/render-body";
 import { SubNav } from "../../../components/SubNav";
 
-export default async function EchipaPage({ params }: { params: Promise<{ lang: string }> }) {
+export default async function ViziunePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
   const locale = getLocale({ lang: lang });
-  const fallback = getPageFallback("compania-echipa", locale);
-  const page = (await getPage("compania-echipa", locale)) || fallback;
+  const fallback = getPageFallback("compania-viziune", locale);
+  const page = (await getPage("compania-viziune", locale)) || fallback;
   const subnavItems = [
     { label: locale === "ro" ? "Viziune" : "Vision", href: "/compania/viziune" },
     { label: locale === "ro" ? "Misiune" : "Mission", href: "/compania/misiune" },

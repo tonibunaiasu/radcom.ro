@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname } from "next/navigation";
-import { getLocaleFromPath, withLocalePath } from "../lib/locale";
+import { useParams, usePathname } from "next/navigation";
+import { getLocaleFromPath, normalizeLocale, withLocalePath } from "../lib/locale";
 
 const translations = {
   en: {
@@ -44,7 +44,14 @@ const translations = {
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const lang = getLocaleFromPath(pathname);
+  const params = useParams();
+  const paramLang =
+    typeof params?.lang === "string"
+      ? params.lang
+      : Array.isArray(params?.lang)
+      ? params?.lang?.[0]
+      : undefined;
+  const lang = paramLang ? normalizeLocale(paramLang) : getLocaleFromPath(pathname);
   const t = translations[lang];
   const nextLang = lang === "en" ? "ro" : "en";
 

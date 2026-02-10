@@ -1,11 +1,18 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { getLocaleFromPath } from "../lib/locale";
+import { useParams, usePathname } from "next/navigation";
+import { getLocaleFromPath, normalizeLocale } from "../lib/locale";
 
 export function NotFoundContent() {
   const pathname = usePathname();
-  const locale = getLocaleFromPath(pathname);
+  const params = useParams();
+  const paramLang =
+    typeof params?.lang === "string"
+      ? params.lang
+      : Array.isArray(params?.lang)
+      ? params?.lang?.[0]
+      : undefined;
+  const locale = paramLang ? normalizeLocale(paramLang) : getLocaleFromPath(pathname);
 
   const title = locale === "ro" ? "Pagina nu a fost găsită" : "Page not found";
   const lead =

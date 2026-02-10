@@ -1,12 +1,19 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { getLocaleFromPath, withLocalePath } from "../lib/locale";
+import { useParams, usePathname } from "next/navigation";
+import { getLocaleFromPath, normalizeLocale, withLocalePath } from "../lib/locale";
 import { getCopy } from "../lib/site-copy";
 
 export function Footer() {
   const pathname = usePathname();
-  const lang = getLocaleFromPath(pathname);
+  const params = useParams();
+  const paramLang =
+    typeof params?.lang === "string"
+      ? params.lang
+      : Array.isArray(params?.lang)
+      ? params?.lang?.[0]
+      : undefined;
+  const lang = paramLang ? normalizeLocale(paramLang) : getLocaleFromPath(pathname);
   const copy = getCopy(lang);
   const footer = copy.footer;
   const adminLoginURL = `${process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001"}/admin/login`;
