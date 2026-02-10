@@ -2,6 +2,7 @@ import { getServices } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getServicesLabels } from "../../lib/site-copy";
 import { FeatureList } from "../../components/FeatureList";
+import type { Metadata } from "next";
 
 const productLogos: Record<string, string> = {
   ifleet: "/products/iFleet.svg",
@@ -52,6 +53,40 @@ const copy = {
   }
 };
 
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = lang === "ro" ? "ro" : "en";
+  const title =
+    locale === "ro"
+      ? "Servicii RADCOM — Fleet, E-ticketing, Informare pasageri"
+      : "RADCOM Services — Fleet, E-ticketing, Passenger info";
+  const description =
+    locale === "ro"
+      ? "Soluții ITS complete: iFleet, OptiFare și eXact, plus integrare hardware + software."
+      : "Complete ITS solutions: iFleet, OptiFare, and eXact with hardware + software integration.";
+  const image = "/hero/company.webp";
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [image],
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image]
+    }
+  };
+}
+
 export default async function ServiciiPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -59,9 +94,25 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
   const products = await getServices(locale);
   const labels = getServicesLabels(locale);
   const t = copy[locale];
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: products.map((product, index) => ({
+      "@type": "Product",
+      position: index + 1,
+      name: product.title,
+      description: product.description,
+      brand: "RADCOM",
+      url: `/${locale}${product.link}`
+    }))
+  };
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <section className="section-block primary">
         <div className="container">
           <h1 className="section-title">{labels.heroTitle}</h1>

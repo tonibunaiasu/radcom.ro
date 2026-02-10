@@ -2,6 +2,7 @@ import { getJobs, getPage } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
 import { Award, Briefcase, Sparkles, GraduationCap, Users } from "lucide-react";
+import type { Metadata } from "next";
 
 const benefits = {
   en: [
@@ -92,6 +93,37 @@ const labels = {
     sideItems: ["Inginerie", "Operațiuni", "Suport", "Livrare proiecte"]
   }
 };
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = lang === "ro" ? "ro" : "en";
+  const title = locale === "ro" ? "Cariere RADCOM" : "RADCOM Careers";
+  const description =
+    locale === "ro"
+      ? "Alătură-te echipei RADCOM și construiește viitorul mobilității urbane."
+      : "Join RADCOM and build the future of urban mobility.";
+  const image = "/hero/careers.webp";
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [image],
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image]
+    }
+  };
+}
 
 export default async function CarierePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

@@ -8,12 +8,47 @@ import { getMediaURL } from "../lib/media";
 import { HeroVideo } from "../components/HeroVideo";
 import { LinkedInFeed } from "../components/LinkedInFeed";
 import { FeatureIcon } from "../components/FeatureIcon";
+import type { Metadata } from "next";
 
 const productLogos: Record<string, string> = {
   ifleet: "/products/iFleet.svg",
   optifare: "/products/OptiFare.svg",
   exact: "/products/eXact.svg"
 };
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = lang === "ro" ? "ro" : "en";
+  const title =
+    locale === "ro"
+      ? "RADCOM — Sisteme ITS pentru transport public"
+      : "RADCOM — ITS systems for public transport";
+  const description =
+    locale === "ro"
+      ? "Hardware + software integrate pentru mobilitate urbană: flotă, e-ticketing și informare pasageri."
+      : "Integrated hardware + software for urban mobility: fleet, e-ticketing, and passenger information.";
+  const image = "/hero/transport.webp";
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [image],
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image]
+    }
+  };
+}
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

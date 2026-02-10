@@ -2,6 +2,7 @@ import { getPage } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
 import { renderBody } from "../../lib/render-body";
+import type { Metadata } from "next";
 
 const editorialCopy = {
   en: {
@@ -45,6 +46,37 @@ const editorialCopy = {
     sideItems: ["Nevoi operator", "Impact pasageri", "Stack tehnologic", "Rezultate"]
   }
 };
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = lang === "ro" ? "ro" : "en";
+  const title = locale === "ro" ? "Studiu de caz RADCOM" : "RADCOM Case Study";
+  const description =
+    locale === "ro"
+      ? "Exemplu de livrare end-to-end pentru un operator de transport public."
+      : "Example of end-to-end delivery for a public transport operator.";
+  const image = "/hero/company.webp";
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [image],
+      type: "article"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image]
+    }
+  };
+}
 
 export default async function StudiiDeCazPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

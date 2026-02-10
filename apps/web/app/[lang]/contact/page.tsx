@@ -2,6 +2,7 @@ import { getPage, getSettings } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
 import { getContactLabels } from "../../lib/site-copy";
+import type { Metadata } from "next";
 
 const editorialCopy = {
   en: {
@@ -53,6 +54,37 @@ const fallbackSettings = {
   address:
     "Strada George Constantinescu, nr. 2C, Etaj 5 & 6, Cod: 20339, Sector 2, București, România"
 };
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = lang === "ro" ? "ro" : "en";
+  const title = locale === "ro" ? "Contact RADCOM" : "Contact RADCOM";
+  const description =
+    locale === "ro"
+      ? "Spune-ne despre proiectul tău. Revenim rapid cu pași clari."
+      : "Tell us about your project. We respond quickly with clear next steps.";
+  const image = "/hero/contact.webp";
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [image],
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image]
+    }
+  };
+}
 
 export default async function ContactPage({
   params,

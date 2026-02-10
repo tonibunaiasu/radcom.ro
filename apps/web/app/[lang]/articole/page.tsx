@@ -3,6 +3,7 @@ import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
 import { getMediaURL } from "../../lib/media";
 import { ArrowRight, Calendar, User2 } from "lucide-react";
+import type { Metadata } from "next";
 
 const labels = {
   en: {
@@ -72,6 +73,37 @@ const formatDate = (value?: string, locale?: string) => {
     year: "numeric"
   }).format(date);
 };
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = lang === "ro" ? "ro" : "en";
+  const title = locale === "ro" ? "Articole RADCOM" : "RADCOM Articles";
+  const description =
+    locale === "ro"
+      ? "Perspective despre mobilitate urbană, ITS și transformare digitală."
+      : "Insights on urban mobility, ITS, and digital transformation.";
+  const image = "/blog/blog-1.webp";
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [image],
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image]
+    }
+  };
+}
 
 export default async function ArticolePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

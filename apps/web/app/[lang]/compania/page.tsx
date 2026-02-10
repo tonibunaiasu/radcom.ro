@@ -3,6 +3,7 @@ import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
 import { SubNav } from "../../components/SubNav";
 import { Compass, ShieldCheck, Sparkles, Users2, FileCheck2, Landmark } from "lucide-react";
+import type { Metadata } from "next";
 
 const labels = {
   en: {
@@ -116,6 +117,37 @@ const paragraphize = (text: string) =>
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean);
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = lang === "ro" ? "ro" : "en";
+  const title = locale === "ro" ? "Despre RADCOM" : "About RADCOM";
+  const description =
+    locale === "ro"
+      ? "Partenerul tău pentru sisteme ITS integrate: hardware, software și suport."
+      : "Your partner for integrated ITS systems: hardware, software, and support.";
+  const image = "/hero/company.webp";
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [image],
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image]
+    }
+  };
+}
 
 export default async function CompaniaPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
