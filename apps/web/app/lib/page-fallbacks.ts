@@ -204,6 +204,11 @@ const fallbacks = {
       summary: "RADCOM history, profile, and certifications.",
       body: common.companyBodyEn
     },
+    "compania-istoric": {
+      title: "RADCOM History",
+      summary: "Key milestones and projects over the years.",
+      body: ""
+    },
     "compania-despre": {
       title: "About RADCOM",
       summary: "Company profile and key milestones.",
@@ -260,6 +265,11 @@ const fallbacks = {
       title: "Compania RADCOM",
       summary: "Istoric, profil și certificări RADCOM.",
       body: common.companyBodyRo
+    },
+    "compania-istoric": {
+      title: "Istoric RADCOM",
+      summary: "Repere și proiecte cheie de-a lungul anilor.",
+      body: ""
     },
     "compania-despre": {
       title: "Despre RADCOM",

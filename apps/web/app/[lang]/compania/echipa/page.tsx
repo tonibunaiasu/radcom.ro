@@ -11,7 +11,7 @@ export default async function EchipaPage({ params }: { params: Promise<{ lang: s
   const fallback = getPageFallback("compania-echipa", locale);
   const page = (await getPage("compania-echipa", locale)) || fallback;
   const subnavItems = [
-    { label: locale === "ro" ? "Despre" : "About", href: "/compania/despre" },
+    { label: locale === "ro" ? "Istoric" : "History", href: "/compania/istoric" },
     { label: locale === "ro" ? "Echipă" : "Team", href: "/compania/echipa" },
     { label: locale === "ro" ? "Certificări" : "Certifications", href: "/compania/certificari" }
   ];

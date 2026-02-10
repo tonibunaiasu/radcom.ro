@@ -1,37 +1,25 @@
 import { getPage } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
+import { renderBody } from "../../lib/render-body";
 import { SubNav } from "../../components/SubNav";
-import { companyContent } from "../../lib/company-history";
 
 const labels = {
   en: {
-    about: "About us",
-    history: "History",
-    certifications: "Certifications",
-    contact: "Let’s talk",
-    contactCta: "Contact us",
-    contactDesc: "Tell us about your project and we’ll respond quickly.",
     explore: "Explore",
-    aboutCard: "About",
+    aboutCard: "History",
     teamCard: "Team",
     certificationsCard: "Certifications",
-    aboutDesc: "RADCOM history and values.",
+    aboutDesc: "RADCOM history and milestones.",
     teamDesc: "The specialists delivering our projects.",
     certDesc: "ISO standards and strategic partnerships."
   },
   ro: {
-    about: "Despre noi",
-    history: "Istoric",
-    certifications: "Certificări",
-    contact: "Hai să discutăm",
-    contactCta: "Contactează-ne",
-    contactDesc: "Spune-ne despre proiectul tău și revenim rapid.",
     explore: "Explorează",
-    aboutCard: "Despre",
+    aboutCard: "Istoric",
     teamCard: "Echipă",
     certificationsCard: "Certificări",
-    aboutDesc: "Istoria și valorile RADCOM.",
+    aboutDesc: "Istoria și reperele RADCOM.",
     teamDesc: "Specialiștii care livrează proiectele.",
     certDesc: "ISO și parteneriate strategice."
   }
@@ -50,9 +38,8 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
   const fallback = getPageFallback("compania", locale);
   const page = (await getPage("compania", locale)) || fallback;
   const t = labels[locale];
-  const content = companyContent[locale] || companyContent.ro;
   const subnavItems = [
-    { label: t.aboutCard, href: "/compania/despre" },
+    { label: t.aboutCard, href: "/compania/istoric" },
     { label: t.teamCard, href: "/compania/echipa" },
     { label: t.certificationsCard, href: "/compania/certificari" }
   ];
@@ -74,77 +61,14 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
       <SubNav items={subnavItems} />
 
       <section className="section-block">
-        <div className="container">
-          <h2 className="section-title">{t.about}</h2>
-          {(content.overview.length ? content.overview : paragraphize(page.body)).map((paragraph) => (
-            <p className="section-lead" key={paragraph}>
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-block alt">
-        <div className="container">
-          <h2 className="section-title">{t.history}</h2>
-          <div className="grid grid-3">
-            {content.history.map((entry) => {
-              const entryTextLength =
-                entry.paragraphs.join(" ").length + (entry.bullets?.join(" ").length || 0);
-              const isWide = entryTextLength > 280;
-
-              return (
-                <div className={`card ${isWide ? "card-wide" : ""}`} key={entry.year}>
-                  <h3>{entry.year}</h3>
-                  {entry.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                  {entry.bullets && (
-                    <ul>
-                      {entry.bullets.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-block">
-        <div className="container">
-          <h2 className="section-title">{t.certifications}</h2>
-          <div className="grid grid-3">
-            {content.certifications.map((certification) => (
-              <div className="card" key={certification}>
-                <p>{certification}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-block alt">
-        <div className="container">
-          <h2 className="section-title">{t.contact}</h2>
-          <div className="grid grid-3">
-            <div className="card">
-              <p>{t.contactDesc}</p>
-              <a className="primary" href={`/${locale}/contact`}>
-                {t.contactCta}
-              </a>
-            </div>
-          </div>
-        </div>
+        <div className="container">{renderBody(page.body)}</div>
       </section>
 
       <section className="section-block alt">
         <div className="container">
           <h2 className="section-title">{t.explore}</h2>
           <div className="grid grid-3">
-            <a className="card" href={`/${locale}/compania/despre`}>
+            <a className="card" href={`/${locale}/compania/istoric`}>
               <h3>{t.aboutCard}</h3>
               <p>{t.aboutDesc}</p>
             </a>
