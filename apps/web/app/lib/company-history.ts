@@ -4,6 +4,12 @@ export const companyOverviewRo = [
   "RADCOM este distribuitor național de produse și servicii de telefonie fixă și mobilă."
 ];
 
+export const companyOverviewEn = [
+  "RADCOM is a private telecommunications company founded in 1993.",
+  "In 1998, RADCOM adopted the ISO 9001 quality standard.",
+  "RADCOM is a national distributor of fixed and mobile telephony products and services."
+];
+
 export const companyHistoryRo = [
   {
     year: "2015",
@@ -207,6 +213,209 @@ export const companyHistoryRo = [
   }
 ];
 
+export const companyHistoryEn = [
+  {
+    year: "2015",
+    paragraphs: [
+      "From 2015 until the end of March 2016, RADCOM’s Telecom Networks Division partnered with Ericsson Romania to implement the White Zone project for Orange Romania, with key responsibilities including lease negotiations and signing, site design, construction permitting, supplying and installing telecom masts, equipment installation and integration, and electrical connections for approximately 75 new sites.",
+      "RADCOM’s Telecom Networks Division executed the installation works for the Polona Street building (ground floor, mezzanine, and seven floors).",
+      "In 2015, RADCOM’s Telecom Networks Division was responsible for the following works within the WATMAN project – Integrated Water Management Information System – Phase I:"
+    ],
+    bullets: [
+      "Civil works for automated stations with flow-measurement sensors (snow layer, hydrometric stations, intakes and derivations) – 170 stations.",
+      "Fencing for automated sensor stations to increase dam safety – 75 dams."
+    ]
+  },
+  {
+    year: "2014",
+    paragraphs: [
+      "RADCOM launches an online e-commerce platform dedicated to small Romanian producers (www.deprinromania.ro)."
+    ]
+  },
+  {
+    year: "2013",
+    paragraphs: [
+      "From November 2013, RADCOM’s Telecom Networks Division became a contractor for RCS-RDS and made major contributions to implementing and developing more than 500 telecom sites."
+    ]
+  },
+  {
+    year: "2011-2013",
+    paragraphs: [
+      "RADCOM expanded its portfolio by implementing:"
+    ],
+    bullets: [
+      "The ePacient solution for the Bucharest Medical Diagnostic, Ambulatory Treatment and Preventive Medicine Center.",
+      "A medical record “as a service” solution with virtualization and call center for the ProVita Diagnostic and Treatment Center.",
+      "An e-ticketing system for streamlining and monitoring operational flows for transport operators."
+    ]
+  },
+  {
+    year: "2010",
+    paragraphs: [
+      "Continued execution of framework contracts for telecom network implementation with Orange Romania, Alcatel-Lucent, NEC, Huawei, Alvarion, ZTE, and Tadiran.",
+      "RADCOM’s Telecom Networks Division was responsible for “connections execution” under the project “Telecom site arrangement works,” part of the Schengen Facility program, beneficiary the Special Telecommunications Service.",
+      "The R&D Department launched its proprietary WEBShop product – an online store dedicated to GSM operators."
+    ]
+  },
+  {
+    year: "2009",
+    paragraphs: [
+      "RADCOM’s Telecom Networks Division was responsible for three projects within the Schengen Facility program, beneficiary the Special Telecommunications Service.",
+      "The R&D Department delivered an integrated SS7 and VoIP signaling services platform to Orange Romania."
+    ],
+    bullets: [
+      "Telecom site arrangement works.",
+      "Installation and commissioning of radio relay links.",
+      "Installation and commissioning of broadband radio access equipment."
+    ]
+  },
+  {
+    year: "2008",
+    paragraphs: [
+      "Partnership with Oradea Public Transport Authority to integrate a traffic management, dispatching, and passenger information system.",
+      "RADCOM certified to ISO 18001 for occupational health and safety management.",
+      "The Civil Works Department installed 75 lattice towers, 3 monopoles, a 70-meter backbone, and over 85 shelter equipment units for Orange Romania.",
+      "From December 2008, RADCOM’s Telecom Networks Division built and commissioned more than 100 new sites for Romtelecom’s CDMA 450 mobile network, together with ZTE.",
+      "Installed and tested NEC microwave equipment on more than 500 Orange Romania sites.",
+      "Participated in implementing the Vodafone 3G Romania network using Huawei equipment.",
+      "France Telecom re-certified RADCOM as an approved IT services supplier for the Orange Group."
+    ]
+  },
+  {
+    year: "2007",
+    paragraphs: [
+      "Contract with Bacău public transport company to supply a fleet monitoring, dispatching, and electronic ticketing system.",
+      "Timișoara Public Transport Authority became a business partner, using a RADCOM solution for fleet monitoring and management.",
+      "Contract with Brașov Public Transport Authority for fleet management, dispatching, and passenger information.",
+      "Contract for the National Agency for Land Improvements – SCADA automation system for water pumps at Hărman–Prejmer.",
+      "RADCOM became technical and content aggregator for Orange Moldova, covering video, non-video, and text content.",
+      "RADCOM obtained ISO 14001 certification.",
+      "Started RF survey and design works for Orange Romania.",
+      "Installed 30 towers, one high-capacity nodal site with tower, over 50 equipment containers, and 5 electric generators for Orange Romania.",
+      "Participated in implementing the Orange 3G Romania network using Huawei equipment."
+    ]
+  },
+  {
+    year: "2006",
+    paragraphs: [
+      "RADCOM’s Telecom Networks Division started civil works for Orange Romania sites, especially building new 3G sites in Bucharest and other major cities.",
+      "France Telecom listed RADCOM as an approved IT services supplier following a tender process.",
+      "Orange Romania extended the partnership contract for development, testing, and maintenance services.",
+      "RADCOM became technical and content aggregator for Orange Romania mobile video services.",
+      "RADCOM served as local contractor for Orange Romania and Alvarion in the WiMAX project (over 500 base stations and 5,000 CPE in major cities).",
+      "RADCOM implemented an Automated Weather Observation System (AWOS) for 13 airports in Romania for ROMATSA."
+    ]
+  },
+  {
+    year: "2005",
+    paragraphs: [
+      "RADCOM’s Telecom Networks Division participated in the inventory of Orange Romania sites (over 1,600).",
+      "RADCOM’s Telecom Networks Division performed the Alcatel-Lucent–Motorola swap for Orange Romania:"
+    ],
+    bullets: [
+      "All BTSs: 600 sites with 1–3 BTSs in 9 months.",
+      "3 FLM regions: Sibiu, Târgu Mureș, Oradea."
+    ]
+  },
+  {
+    year: "2004",
+    paragraphs: [
+      "Partnership with Orange Romania – commercial agreement for software analysis and development, integration, project management, web application development, licensing, and product delivery.",
+      "As a subcontractor, RADCOM installed over 1,000 ADSL/SDH sites and Romtelecom switches in multiple cities, commissioning more than 250 ADSL-SDH sites.",
+      "RADCOM installed and commissioned over 200 microwave links with NEC equipment for Telemobil, including maintenance.",
+      "RADCOM executed civil construction works for COSMOTE sites."
+    ]
+  },
+  {
+    year: "2003",
+    paragraphs: [
+      "RADCOM secured three contracts with local public transport companies (Siletina-Transport Local Târgu Mureș, RATUC Cluj-Napoca, and RATUC CTP Arad) for dispatching and monitoring systems.",
+      "RADCOM developed Orange Romania’s first WebCare & WebShop portal in collaboration with the French company NETONOMY.",
+      "Together with Alcatel, RADCOM commissioned the communications system for securing Romania’s Eastern Border.",
+      "RADCOM contributed to the development of a fixed telecommunications network for Transelectrica SA, together with Areva–Alstom France."
+    ]
+  },
+  {
+    year: "2002",
+    paragraphs: [
+      "The R&D Department developed the CRONOS SMS notification platform and became an approved supplier for Orange Romania.",
+      "The Telecom Networks Division commissioned a voice and data network for Orange Romania equipment."
+    ]
+  },
+  {
+    year: "2001",
+    paragraphs: [
+      "Contract with RATP Ploiești for fleet monitoring.",
+      "RADCOM’s Telecom Networks Division participated in the GSM project in Bulgaria (radiating systems installation, panel antennas, Motorola BTSs, electrical connections, and alarm systems).",
+      "RADCOM expanded services for Alcatel-Lucent in more than 20 countries across Southeast Europe, Asia, Africa, and South America.",
+      "RADCOM built and equipped over 600 sites for MobilRom.",
+      "The R&D Department developed Romania’s first WAP portal for MobilRom/Orange."
+    ]
+  },
+  {
+    year: "2000",
+    paragraphs: [
+      "RADCOM started the Automatic Vehicle Identification (AVI) project for Metrorex Bucharest, in collaboration with Dimetronic Spain (Amtech USA representative).",
+      "RADCOM’s Telecom Networks Division installed and commissioned equipment for over 300 COSMOROM sites (radiating systems, Ericsson and Siemens base stations, Ericsson and Alcatel microwave links).",
+      "The R&D Department developed ELICOM voice and SMS information services."
+    ]
+  },
+  {
+    year: "1999",
+    paragraphs: [
+      "RADCOM began commissioning the National Radio Frequency Spectrum Monitoring System as subcontractor for TADIRAN.",
+      "Reuters launched a financial information service for Constanța based on a mobile communications system designed and commissioned by RADCOM."
+    ]
+  },
+  {
+    year: "1998",
+    paragraphs: [
+      "RADCOM became a subcontractor for ALCATEL and Motorola for installation and commissioning of base stations and microwave equipment.",
+      "RADCOM obtained ISO 9001 certification."
+    ]
+  },
+  {
+    year: "1997-1998",
+    paragraphs: [
+      "RADCOM developed two additional business units: sales of Orange services and products, and a national service network for terminal repairs.",
+      "RADCOM built Romtel’s first nationwide paging network based on satellite links.",
+      "The R&D Department developed a SCADA project for RAJAC Constanța."
+    ]
+  },
+  {
+    year: "1997",
+    paragraphs: [
+      "RADCOM established the Telecom Networks Division and signed the contract for installing and commissioning telecom infrastructure with MobilRom (now Orange Romania).",
+      "RADCOM launched the R&D Department by creating the first digital distribution of a newspaper from editorial offices to print houses for “România Liberă”."
+    ]
+  },
+  {
+    year: "1996",
+    paragraphs: [
+      "RADCOM participated as a founding member of the MobilRom consortium alongside France Telecom, Alcatel, Tomen, and Media Group in the tender for GSM 900 MHz licenses."
+    ]
+  },
+  {
+    year: "1995-1996",
+    paragraphs: [
+      "RADCOM introduced the MPT 1327 trunking system in Romania, building a radio network in the UHF band."
+    ]
+  },
+  {
+    year: "1993-1995",
+    paragraphs: [
+      "RADCOM won public tenders organized by the Ministry of Communications for conventional repeater licenses in over 40 locations across Romania.",
+      "RADCOM began selling Maxon cellular phones in NMT technology and became an authorized service center for Romania under a contract with Telefonica Romania."
+    ]
+  },
+  {
+    year: "1993",
+    paragraphs: [
+      "RADCOM was founded and became the exclusive Maxon distributor for Romania, acting as a distributor and integrator in the telecommunications market."
+    ]
+  }
+];
+
 export const companyCertificationsRo = [
   "SR EN ISO 9001:2015",
   "SR EN ISO 14001:2015",
@@ -215,28 +424,31 @@ export const companyCertificationsRo = [
   "ISO/IEC 20000-1:2011"
 ];
 
+export const companyCertificationsEn = companyCertificationsRo;
+
 export const companyContactRo = {
   address: "Str. George Constantinescu nr. 2C, Etaj 5 & 6, Sector 2, București",
   phone: "021 232 1039",
   email: "office@radcom.ro"
 };
 
-const sharedOverview = companyOverviewRo;
-const sharedHistory = companyHistoryRo;
-const sharedCertifications = companyCertificationsRo;
-const sharedContact = companyContactRo;
+export const companyContactEn = {
+  address: "2C George Constantinescu St., Floors 5 & 6, District 2, Bucharest",
+  phone: "021 232 1039",
+  email: "office@radcom.ro"
+};
 
 export const companyContent = {
   ro: {
-    overview: sharedOverview,
-    history: sharedHistory,
-    certifications: sharedCertifications,
-    contact: sharedContact
+    overview: companyOverviewRo,
+    history: companyHistoryRo,
+    certifications: companyCertificationsRo,
+    contact: companyContactRo
   },
   en: {
-    overview: sharedOverview,
-    history: sharedHistory,
-    certifications: sharedCertifications,
-    contact: sharedContact
+    overview: companyOverviewEn,
+    history: companyHistoryEn,
+    certifications: companyCertificationsEn,
+    contact: companyContactEn
   }
 } as const;
