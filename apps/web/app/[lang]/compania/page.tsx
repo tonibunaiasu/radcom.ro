@@ -149,14 +149,6 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
       </section>
       <SubNav items={subnavItems} />
 
-      <div className="anchor-nav">
-        <div className="container">
-          <a href="#overview">{locale === "ro" ? "Prezentare" : "Overview"}</a>
-          <a href="#story">{locale === "ro" ? "Poveste" : "Story"}</a>
-          <a href="#explore">{locale === "ro" ? "Explorează" : "Explore"}</a>
-        </div>
-      </div>
-
       <section className="section-block" id="overview">
         <div className="container">
           <h2 className="section-title">{t.introTitle}</h2>
