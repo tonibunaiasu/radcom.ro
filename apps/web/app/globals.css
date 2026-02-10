@@ -1198,6 +1198,8 @@ form textarea {
 
 .section-block {
   padding: 72px 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 720px;
 }
 
 .usecase-strip {
