@@ -104,7 +104,12 @@ export function Footer() {
               {disclaimerParts ? (
                 <>
                   {disclaimerParts[0]}
-                  <a className="footer-cms-link-inline" href={adminLoginURL}>
+                  <a
+                    className="footer-cms-link-inline"
+                    href={adminLoginURL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {disclaimerMarker}
                   </a>
                   {disclaimerParts[1]}
