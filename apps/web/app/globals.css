@@ -567,6 +567,28 @@ main {
   display: block;
 }
 
+.hero-video-wrap {
+  position: relative;
+}
+
+.hero-video-cta {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  z-index: 3;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(12, 24, 48, 0.7);
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.hero-video-cta:hover {
+  background: rgba(12, 24, 48, 0.85);
+}
+
 .hero-media-overlay {
   position: absolute;
   inset: 0;
@@ -1461,12 +1483,24 @@ form textarea {
   min-height: 360px;
 }
 
+.linkedin-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 24px;
+}
+
 .partners-track {
   display: flex;
   gap: 28px;
   align-items: center;
   width: max-content;
   animation: partners-scroll 28s linear infinite;
+}
+
+.partners-marquee:hover .partners-track {
+  animation-play-state: paused;
 }
 
 .partner-logo {
@@ -1791,6 +1825,10 @@ form textarea {
 
   .blog-card-media img {
     height: 200px;
+  }
+
+  .partners-track {
+    animation-duration: 42s;
   }
 
   .grid-3 {

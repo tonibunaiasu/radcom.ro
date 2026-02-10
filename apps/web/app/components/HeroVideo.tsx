@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type HeroVideoProps = {
   className?: string;
@@ -10,6 +10,8 @@ type HeroVideoProps = {
 
 export const HeroVideo = ({ className, src, poster }: HeroVideoProps) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [canAutoPlay, setCanAutoPlay] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -26,6 +28,7 @@ export const HeroVideo = ({ className, src, poster }: HeroVideoProps) => {
     const isSlowConnection = effectiveType === "slow-2g" || effectiveType === "2g";
 
     if (prefersReducedMotion || saveData || isSlowConnection) return;
+    setCanAutoPlay(true);
 
     const playPromise = video.play();
     if (playPromise && typeof playPromise.catch === "function") {
@@ -35,16 +38,57 @@ export const HeroVideo = ({ className, src, poster }: HeroVideoProps) => {
     }
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const onPlay = () => setIsPlaying(true);
+    const onPause = () => setIsPlaying(false);
+
+    video.addEventListener("play", onPlay);
+    video.addEventListener("pause", onPause);
+    video.addEventListener("ended", onPause);
+
+    return () => {
+      video.removeEventListener("play", onPlay);
+      video.removeEventListener("pause", onPause);
+      video.removeEventListener("ended", onPause);
+    };
+  }, []);
+
+  const handlePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {
+        // Ignore autoplay failures (browser policies)
+      });
+    }
+  };
+
   return (
-    <video
-      ref={videoRef}
-      className={className}
-      src={src}
-      poster={poster}
-      muted
-      loop
-      playsInline
-      preload="metadata"
-    />
+    <div className="hero-video-wrap">
+      <video
+        ref={videoRef}
+        className={className}
+        src={src}
+        poster={poster}
+        muted
+        loop
+        playsInline
+        preload="metadata"
+      />
+      {!isPlaying && (
+        <button
+          className="hero-video-cta"
+          type="button"
+          onClick={handlePlay}
+          aria-label="Play hero video"
+        >
+          {canAutoPlay ? "Play video" : "Play preview"}
+        </button>
+      )}
+    </div>
   );
 };

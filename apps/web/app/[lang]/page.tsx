@@ -6,6 +6,7 @@ import { getLocale } from "../lib/locale";
 import { getHomeLabels } from "../lib/site-copy";
 import { getMediaURL } from "../lib/media";
 import { HeroVideo } from "../components/HeroVideo";
+import { LinkedInFeed } from "../components/LinkedInFeed";
 import {
   BarChart3,
   Bus,
@@ -263,15 +264,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <h2 className="section-title">{linkedInCopy.title}</h2>
           <p className="section-lead">{linkedInCopy.lead}</p>
           <div className="linkedin-feed">
-            <iframe
-              src="https://www.juicer.io/api/feeds/radcom-romania/iframe"
-              title="RADCOM LinkedIn feed"
-              width="100%"
-              height="420"
-              style={{ border: "0", display: "block" }}
-              loading="lazy"
-              scrolling="no"
-            />
+            <LinkedInFeed locale={locale} />
           </div>
         </div>
       </section>
