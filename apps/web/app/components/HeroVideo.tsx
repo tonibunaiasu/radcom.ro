@@ -24,13 +24,17 @@ export const HeroVideo = ({ className, src, webmSrc, poster }: HeroVideoProps) =
       typeof window !== "undefined" &&
       window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isSmallScreen =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(max-width: 768px)").matches;
 
     const connection = navigator.connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
     const saveData = Boolean(connection?.saveData);
     const effectiveType = String(connection?.effectiveType || "");
     const isSlowConnection = effectiveType === "slow-2g" || effectiveType === "2g";
 
-    if (prefersReducedMotion || saveData || isSlowConnection) return;
+    if (prefersReducedMotion || saveData || isSlowConnection || isSmallScreen) return;
     setCanAutoPlay(true);
     const idle = typeof window !== "undefined" ? (window as any).requestIdleCallback : undefined;
     if (idle) {
