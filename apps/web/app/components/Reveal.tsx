@@ -8,6 +8,15 @@ export function Reveal({ children, className = "" }: { children: React.ReactNode
   useEffect(() => {
     if (!ref.current) return;
     const node = ref.current;
+    if (typeof window !== "undefined") {
+      const reduceMotion =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion) {
+        node.classList.add("in-view");
+        return;
+      }
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

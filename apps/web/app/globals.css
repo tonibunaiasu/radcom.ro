@@ -2166,6 +2166,7 @@ form textarea {
 
   .partners-track {
     animation: none !important;
+    transform: none !important;
   }
 
   .reveal {
