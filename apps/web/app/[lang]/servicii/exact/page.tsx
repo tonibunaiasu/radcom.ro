@@ -131,6 +131,50 @@ const nextSteps = {
   }
 };
 
+const proofPoints = {
+  en: [
+    { label: "Display coverage", value: "Interior + station" },
+    { label: "Update latency", value: "< 10 sec" },
+    { label: "Multi-channel", value: "LED / Audio / API" }
+  ],
+  ro: [
+    { label: "Acoperire afișaje", value: "Interior + stații" },
+    { label: "Latență update", value: "< 10 sec" },
+    { label: "Multicanal", value: "LED / Audio / API" }
+  ]
+};
+
+const rolloutSteps = {
+  en: [
+    {
+      title: "Audit & mapping",
+      desc: "Define routes, stop infrastructure, and data sources."
+    },
+    {
+      title: "Install & connect",
+      desc: "Deploy displays, integrate feeds, and configure alerts."
+    },
+    {
+      title: "Go live & iterate",
+      desc: "Train teams, monitor accuracy, and improve passenger UX."
+    }
+  ],
+  ro: [
+    {
+      title: "Audit & mapare",
+      desc: "Definim rute, infrastructură în stații și surse de date."
+    },
+    {
+      title: "Instalare & conectare",
+      desc: "Montăm afișaje, integrăm feed‑uri și configurăm alerte."
+    },
+    {
+      title: "Lansare & optimizare",
+      desc: "Training echipe, monitorizare acuratețe și UX pasageri."
+    }
+  ]
+};
+
 export default async function ExactPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -323,6 +367,38 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
                 <h3>{benefit.title}</h3>
                 <p>{benefit.desc}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Indicatori cheie" : "Proof points"}
+          </h2>
+          <div className="grid">
+            {proofPoints[locale].map((item) => (
+              <div className="card" key={item.label}>
+                <h3>{item.value}</h3>
+                <p>{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Implementare în 3 pași" : "Implementation in 3 steps"}
+          </h2>
+          <div className="feature-grid">
+            {rolloutSteps[locale].map((step, index) => (
+              <div className="feature-card" key={`${step.title}-${index}`}>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
             ))}
           </div>
         </div>
