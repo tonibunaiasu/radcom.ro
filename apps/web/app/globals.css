@@ -1508,7 +1508,7 @@ form textarea {
 
 .feature-card::before {
   content: "";
-  display: block;
+  display: none;
   width: 48px;
   height: 48px;
   border-radius: 14px;
@@ -1518,6 +1518,10 @@ form textarea {
 
 .feature-card.has-icon::before {
   display: none;
+}
+
+.feature-card.has-placeholder::before {
+  display: block;
 }
 
 .feature-icon {
