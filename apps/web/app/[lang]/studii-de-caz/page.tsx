@@ -2,6 +2,7 @@ import { getPage } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
 import { renderBody } from "../../lib/render-body";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import type { Metadata } from "next";
 
 const editorialCopy = {
@@ -85,18 +86,37 @@ export default async function StudiiDeCazPage({ params }: { params: Promise<{ la
   const fallback = getPageFallback("studii-de-caz", locale);
   const page = (await getPage("studii-de-caz", locale)) || fallback;
   const t = editorialCopy[locale];
+  const breadcrumbs = [
+    { label: locale === "ro" ? "Acasă" : "Home", href: `/${locale}` },
+    { label: locale === "ro" ? "Studiu de caz" : "Case study" }
+  ];
+  const quickLinks = [
+    { label: locale === "ro" ? "Servicii" : "Services", href: "/servicii" },
+    { label: locale === "ro" ? "Articole" : "Articles", href: "/articole" },
+    { label: locale === "ro" ? "Despre RADCOM" : "About RADCOM", href: "/compania" },
+    { label: locale === "ro" ? "Contact" : "Contact", href: "/contact" }
+  ];
 
   return (
     <main>
       <section className="section-block primary hero-banner">
         <div className="container">
+          <Breadcrumbs items={breadcrumbs} />
           <h1 className="section-title">{page.title}</h1>
           <p className="section-lead">{page.summary}</p>
         </div>
       </section>
 
       <section className="section-block">
-        <div className="container editorial-grid">
+        <div className="container">
+          <div className="inline-links">
+            {quickLinks.map((item) => (
+              <a key={item.href} href={`/${locale}${item.href}`}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <div className="editorial-grid">
           <div>
             <div className="editorial-meta">
               {t.meta}
@@ -125,6 +145,7 @@ export default async function StudiiDeCazPage({ params }: { params: Promise<{ la
               </ul>
             </div>
           </aside>
+        </div>
         </div>
         <div className="container" style={{ marginTop: 32 }}>
           {renderBody(page.body)}

@@ -2,6 +2,7 @@ import { getArticles, getPage } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
 import { getMediaURL } from "../../lib/media";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import { ArrowRight, Calendar, User2 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -113,6 +114,16 @@ export default async function ArticolePage({ params }: { params: Promise<{ lang:
   const page = (await getPage("articole", locale)) || fallback;
   const articles = await getArticles(locale);
   const t = labels[locale];
+  const breadcrumbs = [
+    { label: locale === "ro" ? "Acasă" : "Home", href: `/${locale}` },
+    { label: locale === "ro" ? "Articole" : "Articles" }
+  ];
+  const quickLinks = [
+    { label: locale === "ro" ? "Servicii" : "Services", href: "/servicii" },
+    { label: locale === "ro" ? "Studii de caz" : "Case studies", href: "/studii-de-caz" },
+    { label: locale === "ro" ? "Despre RADCOM" : "About RADCOM", href: "/compania" },
+    { label: locale === "ro" ? "Contact" : "Contact", href: "/contact" }
+  ];
   const nextSteps = {
     en: {
       eyebrow: "Keep exploring",
@@ -169,6 +180,7 @@ export default async function ArticolePage({ params }: { params: Promise<{ lang:
     <main>
       <section className="blog-hero">
         <div className="container">
+          <Breadcrumbs items={breadcrumbs} />
           <p className="eyebrow">{locale === "ro" ? "Jurnal RADCOM" : "RADCOM Journal"}</p>
           <h1 className="blog-hero-title">
             {titleMain} {titleAccent ? <span>{titleAccent}</span> : null}
@@ -179,6 +191,13 @@ export default async function ArticolePage({ params }: { params: Promise<{ lang:
 
       <section className="section-block">
         <div className="container">
+          <div className="inline-links">
+            {quickLinks.map((item) => (
+              <a key={item.href} href={`/${locale}${item.href}`}>
+                {item.label}
+              </a>
+            ))}
+          </div>
           <div className="editorial-grid" style={{ marginBottom: 28 }}>
             <div>
               <div className="editorial-meta">

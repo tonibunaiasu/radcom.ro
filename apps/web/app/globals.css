@@ -1895,6 +1895,15 @@ form textarea {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.blog-hero .breadcrumbs {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 12px;
+}
+
+.blog-hero .breadcrumbs a {
+  color: #ffffff;
+}
+
 .blog-hero-title {
   font-size: 58px;
   margin: 12px 0 12px;

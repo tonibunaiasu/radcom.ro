@@ -1,6 +1,8 @@
 import { getPage } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
+import { companyLinks } from "../../lib/company-nav";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import {
   Activity,
   Compass,
@@ -164,6 +166,10 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
   const fallback = getPageFallback("compania", locale);
   const page = (await getPage("compania", locale)) || fallback;
   const t = labels[locale];
+  const breadcrumbs = [
+    { label: locale === "ro" ? "Acasă" : "Home", href: `/${locale}` },
+    { label: locale === "ro" ? "Compania" : "Company" }
+  ];
   const nextSteps = {
     en: {
       eyebrow: "Next steps",
@@ -215,6 +221,7 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
     <Activity key="ops" size={22} strokeWidth={1.6} />,
     <ShieldCheck key="trust" size={22} strokeWidth={1.6} />
   ];
+  const quickLinks = companyLinks[locale];
   return (
     <main>
       <section
@@ -225,12 +232,20 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
         }}
       >
         <div className="container">
+          <Breadcrumbs items={breadcrumbs} />
           <h1 className="section-title">{page.title}</h1>
           <p className="section-lead">{page.summary}</p>
         </div>
       </section>
       <section className="section-block" id="overview">
         <div className="container">
+          <div className="inline-links">
+            {quickLinks.map((item) => (
+              <a key={item.href} href={`/${locale}${item.href}`}>
+                {item.label}
+              </a>
+            ))}
+          </div>
           <h2 className="section-title">{t.introTitle}</h2>
           <p className="section-lead">{t.introLead}</p>
           <div className="feature-grid" style={{ marginTop: 24 }}>

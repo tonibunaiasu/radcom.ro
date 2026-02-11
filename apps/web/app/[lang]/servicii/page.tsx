@@ -2,6 +2,8 @@ import { getServices } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getServicesLabels } from "../../lib/site-copy";
 import { FeatureList } from "../../components/FeatureList";
+import { servicesLinks } from "../../lib/services-nav";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import type { Metadata } from "next";
 
 const productLogos: Record<string, string> = {
@@ -94,6 +96,10 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
   const products = await getServices(locale);
   const labels = getServicesLabels(locale);
   const t = copy[locale];
+  const breadcrumbs = [
+    { label: locale === "ro" ? "Acasă" : "Home", href: `/${locale}` },
+    { label: locale === "ro" ? "Servicii" : "Services" }
+  ];
   const nextSteps = {
     en: {
       eyebrow: "Next steps",
@@ -152,6 +158,7 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
       url: `/${locale}${product.link}`
     }))
   };
+  const quickLinks = servicesLinks[locale].filter((item) => item.href !== "/servicii");
 
   return (
     <main>
@@ -161,13 +168,22 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
       />
       <section className="section-block primary">
         <div className="container">
+          <Breadcrumbs items={breadcrumbs} />
           <h1 className="section-title">{labels.heroTitle}</h1>
           <p className="section-lead">{labels.heroSubtitle}</p>
           <p className="section-lead">{labels.heroDescription}</p>
         </div>
       </section>
       <section className="section-block alt" id="solutions">
-        <div className="container editorial-grid">
+        <div className="container">
+          <div className="inline-links">
+            {quickLinks.map((item) => (
+              <a key={item.href} href={`/${locale}${item.href}`}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <div className="editorial-grid">
           <div>
             <div className="editorial-meta">
               {t.meta}
@@ -197,6 +213,7 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
               </ul>
             </div>
           </aside>
+        </div>
         </div>
         <div className="container" style={{ marginTop: 32 }}>
           <div className="product-grid">

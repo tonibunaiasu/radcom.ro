@@ -2,6 +2,7 @@ import { getPage, getSettings } from "../../lib/sanity-queries";
 import { getLocale } from "../../lib/locale";
 import { getPageFallback } from "../../lib/page-fallbacks";
 import { getContactLabels } from "../../lib/site-copy";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import type { Metadata } from "next";
 
 const editorialCopy = {
@@ -103,6 +104,15 @@ export default async function ContactPage({
   const e = editorialCopy[locale];
   const sent = searchParams?.sent === "1";
   const error = searchParams?.error === "1";
+  const breadcrumbs = [
+    { label: locale === "ro" ? "Acasă" : "Home", href: `/${locale}` },
+    { label: locale === "ro" ? "Contact" : "Contact" }
+  ];
+  const quickLinks = [
+    { label: locale === "ro" ? "Servicii" : "Services", href: "/servicii" },
+    { label: locale === "ro" ? "Studii de caz" : "Case study", href: "/studii-de-caz" },
+    { label: locale === "ro" ? "Despre RADCOM" : "About RADCOM", href: "/compania" }
+  ];
   const nextSteps = {
     en: {
       eyebrow: "Next steps",
@@ -160,13 +170,22 @@ export default async function ContactPage({
         }}
       >
         <div className="container">
+          <Breadcrumbs items={breadcrumbs} />
           <h1 className="section-title">{page.title}</h1>
           <p className="section-lead">{page.summary}</p>
         </div>
       </section>
 
       <section className="section-block">
-        <div className="container editorial-grid" style={{ marginBottom: 32 }}>
+        <div className="container">
+          <div className="inline-links">
+            {quickLinks.map((item) => (
+              <a key={item.href} href={`/${locale}${item.href}`}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <div className="editorial-grid" style={{ marginBottom: 32 }}>
           <div>
             <div className="editorial-meta">
               {e.meta}
@@ -195,6 +214,7 @@ export default async function ContactPage({
               </ul>
             </div>
           </aside>
+        </div>
         </div>
         <div className="container two-col">
           <div>
