@@ -295,6 +295,9 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
             <a className="primary" href={`/${locale}/contact`}>
               {labels.ctaButton}
             </a>
+            <a className="secondary" href={`/${locale}/studii-de-caz`}>
+              {locale === "ro" ? "Vezi studiul de caz" : "View case study"}
+            </a>
           </div>
         </div>
       </section>

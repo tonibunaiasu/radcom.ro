@@ -170,6 +170,15 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
     { label: locale === "ro" ? "Acasă" : "Home", href: `/${locale}` },
     { label: locale === "ro" ? "Compania" : "Company" }
   ];
+  const cta = {
+    title: locale === "ro" ? "Hai să discutăm despre proiectul tău" : "Let’s discuss your project",
+    lead:
+      locale === "ro"
+        ? "Spune-ne despre obiective și revenim cu pașii următori."
+        : "Tell us about your goals and we’ll outline the next steps.",
+    primary: locale === "ro" ? "Solicită o discuție" : "Request a discussion",
+    secondary: locale === "ro" ? "Vezi serviciile" : "See services"
+  };
   const nextSteps = {
     en: {
       eyebrow: "Next steps",
@@ -346,6 +355,21 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
               </span>
               <h3>{t.certificationsCard}</h3>
               <p>{t.certDesc}</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block primary">
+        <div className="container cta">
+          <h2 className="section-title">{cta.title}</h2>
+          <p className="section-lead">{cta.lead}</p>
+          <div className="hero-actions">
+            <a className="primary" href={`/${locale}/contact`}>
+              {cta.primary}
+            </a>
+            <a className="secondary" href={`/${locale}/servicii`}>
+              {cta.secondary}
             </a>
           </div>
         </div>

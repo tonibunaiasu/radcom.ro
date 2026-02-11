@@ -124,6 +124,15 @@ export default async function ArticolePage({ params }: { params: Promise<{ lang:
     { label: locale === "ro" ? "Despre RADCOM" : "About RADCOM", href: "/compania" },
     { label: locale === "ro" ? "Contact" : "Contact", href: "/contact" }
   ];
+  const cta = {
+    title: locale === "ro" ? "Hai să discutăm despre proiectul tău" : "Let’s discuss your project",
+    lead:
+      locale === "ro"
+        ? "Spune-ne ce vrei să îmbunătățești și revenim cu pașii următori."
+        : "Tell us what you want to improve and we’ll outline the next steps.",
+    primary: locale === "ro" ? "Solicită o discuție" : "Request a discussion",
+    secondary: locale === "ro" ? "Vezi studiul de caz" : "View case study"
+  };
   const nextSteps = {
     en: {
       eyebrow: "Keep exploring",
@@ -286,6 +295,21 @@ export default async function ArticolePage({ params }: { params: Promise<{ lang:
           ) : (
             <p className="section-lead">{t.noArticles}</p>
           )}
+        </div>
+      </section>
+
+      <section className="section-block primary">
+        <div className="container cta">
+          <h2 className="section-title">{cta.title}</h2>
+          <p className="section-lead">{cta.lead}</p>
+          <div className="hero-actions">
+            <a className="primary" href={`/${locale}/contact`}>
+              {cta.primary}
+            </a>
+            <a className="secondary" href={`/${locale}/studii-de-caz`}>
+              {cta.secondary}
+            </a>
+          </div>
         </div>
       </section>
 

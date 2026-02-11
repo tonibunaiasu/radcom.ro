@@ -68,6 +68,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         ? "Ultimele postări RADCOM, direct din LinkedIn."
         : "Latest RADCOM posts, straight from LinkedIn."
   };
+  const heroCta = {
+    primary: locale === "ro" ? "Solicită o discuție" : "Request a discussion",
+    secondary: locale === "ro" ? "Vezi serviciile" : "See services"
+  };
 
   return (
     <main>
@@ -92,11 +96,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <div>
                 <p>{content.hero.subtitle}</p>
                 <div className="hero-actions">
-                  <a className="primary" href={`/${locale}/servicii`}>
-                    {content.hero.ctaPrimary}
+                  <a className="primary" href={`/${locale}/contact`}>
+                    {heroCta.primary}
                   </a>
-                  <a className="secondary" href={`/${locale}/contact`}>
-                    {content.hero.ctaSecondary}
+                  <a className="secondary" href={`/${locale}/servicii`}>
+                    {heroCta.secondary}
                   </a>
                 </div>
               </div>
