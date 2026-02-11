@@ -284,6 +284,9 @@ export default async function ContactPage({
                 <a href="tel:+40318244000">+40-31-824.40.00</a>
                 <br />
                 {locale === "ro" ? "Fax" : "Fax"}: +40-21-232.10.68
+                <br />
+                {locale === "ro" ? "E-mail" : "Email"}:{" "}
+                <a href={`mailto:${settings.email}`}>{settings.email}</a>
               </p>
             </div>
             <div className="contact-map">
