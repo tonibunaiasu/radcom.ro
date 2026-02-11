@@ -260,7 +260,7 @@ export default async function ContactPage({
           <div>
             <h2 className="section-title">{t.infoTitle}</h2>
             <div className="card">
-              <h3 style={{ marginTop: 0 }}>Radcom S.A.</h3>
+              <h3 style={{ marginTop: 0 }}>{settings.companyName || "RADCOM"}</h3>
               <p>
                 {locale === "ro" ? "E-mail" : "Email"}:{" "}
                 <a href={`mailto:${settings.email}`}>{settings.email}</a>
@@ -284,10 +284,15 @@ export default async function ContactPage({
                 <a href="tel:+40318244000">+40-31-824.40.00</a>
                 <br />
                 {locale === "ro" ? "Fax" : "Fax"}: +40-21-232.10.68
-                <br />
-                {locale === "ro" ? "E-mail" : "Email"}:{" "}
-                <a href={`mailto:${settings.email}`}>{settings.email}</a>
               </p>
+            </div>
+            <div className="contact-map">
+              <iframe
+                title={locale === "ro" ? "Sediu RADCOM" : "RADCOM HQ"}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Strada%20George%20Constantinescu%202C%20Bucuresti&output=embed"
+              />
             </div>
           </div>
         </div>
