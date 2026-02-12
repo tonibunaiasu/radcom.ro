@@ -146,6 +146,48 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
       ]
     }
   }[locale];
+  const proofPoints = {
+    en: [
+      { label: "Integrated products", value: "3 core systems" },
+      { label: "Deployment time", value: "8–16 weeks" },
+      { label: "Operational uptime", value: "99.5–99.9%" }
+    ],
+    ro: [
+      { label: "Produse integrate", value: "3 sisteme de bază" },
+      { label: "Timp implementare", value: "8–16 săptămâni" },
+      { label: "Disponibilitate operațională", value: "99,5–99,9%" }
+    ]
+  };
+  const rolloutSteps = {
+    en: [
+      {
+        title: "Assess & align",
+        desc: "Audit fleet, ticketing, and passenger info requirements."
+      },
+      {
+        title: "Deploy & integrate",
+        desc: "Install hardware, connect software, and train teams."
+      },
+      {
+        title: "Operate & scale",
+        desc: "Monitor KPIs, improve service quality, and expand."
+      }
+    ],
+    ro: [
+      {
+        title: "Analiză & aliniere",
+        desc: "Audit flotă, taxare și cerințe informare pasageri."
+      },
+      {
+        title: "Implementare & integrare",
+        desc: "Instalăm hardware, conectăm software și instruim echipele."
+      },
+      {
+        title: "Operare & scalare",
+        desc: "Monitorizăm KPI, creștem calitatea și extindem."
+      }
+    ]
+  };
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -284,6 +326,38 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
             ))}
           </div>
           <p className="section-lead">{labels.integrationLead}</p>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Indicatori cheie" : "Proof points"}
+          </h2>
+          <div className="grid">
+            {proofPoints[locale].map((item) => (
+              <div className="card" key={item.label}>
+                <h3>{item.value}</h3>
+                <p>{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Implementare în 3 pași" : "Implementation in 3 steps"}
+          </h2>
+          <div className="feature-grid">
+            {rolloutSteps[locale].map((step, index) => (
+              <div className="feature-card" key={`${step.title}-${index}`}>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

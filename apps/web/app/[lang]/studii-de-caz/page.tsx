@@ -99,6 +99,48 @@ export default async function StudiiDeCazPage({ params }: { params: Promise<{ la
     primary: locale === "ro" ? "Solicită o discuție" : "Request a discussion",
     secondary: locale === "ro" ? "Vezi serviciile" : "See services"
   };
+  const proofPoints = {
+    en: [
+      { label: "Delivery scope", value: "Fleet + ticketing" },
+      { label: "Rollout time", value: "10–16 weeks" },
+      { label: "Operational impact", value: "Higher punctuality" }
+    ],
+    ro: [
+      { label: "Domeniu livrare", value: "Flotă + taxare" },
+      { label: "Timp implementare", value: "10–16 săptămâni" },
+      { label: "Impact operațional", value: "Punctualitate mai bună" }
+    ]
+  };
+  const rolloutSteps = {
+    en: [
+      {
+        title: "Alignment",
+        desc: "Confirm objectives, data needs, and KPIs."
+      },
+      {
+        title: "Delivery",
+        desc: "Install hardware, integrate software, and validate."
+      },
+      {
+        title: "Operations",
+        desc: "Train teams and optimize service performance."
+      }
+    ],
+    ro: [
+      {
+        title: "Aliniere",
+        desc: "Confirmăm obiectivele, datele și KPI‑urile."
+      },
+      {
+        title: "Livrare",
+        desc: "Instalăm hardware, integrăm software și validăm."
+      },
+      {
+        title: "Operare",
+        desc: "Training echipe și optimizare performanță."
+      }
+    ]
+  };
   const quickLinks = [
     { label: locale === "ro" ? "Servicii" : "Services", href: "/servicii" },
     { label: locale === "ro" ? "Articole" : "Articles", href: "/articole" },
@@ -158,6 +200,38 @@ export default async function StudiiDeCazPage({ params }: { params: Promise<{ la
         </div>
         <div className="container" style={{ marginTop: 32 }}>
           {renderBody(page.body)}
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Indicatori cheie" : "Proof points"}
+          </h2>
+          <div className="grid">
+            {proofPoints[locale].map((item) => (
+              <div className="card" key={item.label}>
+                <h3>{item.value}</h3>
+                <p>{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Implementare în 3 pași" : "Implementation in 3 steps"}
+          </h2>
+          <div className="feature-grid">
+            {rolloutSteps[locale].map((step, index) => (
+              <div className="feature-card" key={`${step.title}-${index}`}>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

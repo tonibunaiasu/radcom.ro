@@ -179,6 +179,48 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
     primary: locale === "ro" ? "Solicită o discuție" : "Request a discussion",
     secondary: locale === "ro" ? "Vezi serviciile" : "See services"
   };
+  const proofPoints = {
+    en: [
+      { label: "Hardware + software", value: "1 integrated stack" },
+      { label: "Industry experience", value: "20+ years" },
+      { label: "Delivery footprint", value: "City + regional" }
+    ],
+    ro: [
+      { label: "Hardware + software", value: "1 stack integrat" },
+      { label: "Experiență în industrie", value: "20+ ani" },
+      { label: "Acoperire livrări", value: "Urban + regional" }
+    ]
+  };
+  const rolloutSteps = {
+    en: [
+      {
+        title: "Discovery",
+        desc: "Align on goals, constraints, and stakeholders."
+      },
+      {
+        title: "Delivery",
+        desc: "Build, integrate, and validate the end-to-end system."
+      },
+      {
+        title: "Long-term support",
+        desc: "Operate, maintain, and continuously optimize."
+      }
+    ],
+    ro: [
+      {
+        title: "Discovery",
+        desc: "Aliniem obiective, constrângeri și stakeholderi."
+      },
+      {
+        title: "Livrare",
+        desc: "Construim, integrăm și validăm sistemul end‑to‑end."
+      },
+      {
+        title: "Suport pe termen lung",
+        desc: "Operare, mentenanță și optimizare continuă."
+      }
+    ]
+  };
   const nextSteps = {
     en: {
       eyebrow: "Next steps",
@@ -356,6 +398,38 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
               <h3>{t.certificationsCard}</h3>
               <p>{t.certDesc}</p>
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Indicatori cheie" : "Proof points"}
+          </h2>
+          <div className="grid">
+            {proofPoints[locale].map((item) => (
+              <div className="card" key={item.label}>
+                <h3>{item.value}</h3>
+                <p>{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Implementare în 3 pași" : "Implementation in 3 steps"}
+          </h2>
+          <div className="feature-grid">
+            {rolloutSteps[locale].map((step, index) => (
+              <div className="feature-card" key={`${step.title}-${index}`}>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
