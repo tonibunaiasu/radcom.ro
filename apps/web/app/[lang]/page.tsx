@@ -72,6 +72,20 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     primary: locale === "ro" ? "Solicită o discuție" : "Request a discussion",
     secondary: locale === "ro" ? "Vezi serviciile" : "See services"
   };
+  const trustMetrics = {
+    en: [
+      { value: "20+ years", label: "Urban mobility experience" },
+      { value: "99.5–99.9%", label: "Operational uptime" },
+      { value: "3 core systems", label: "Fleet, ticketing, info" },
+      { value: "City + regional", label: "Deployment footprint" }
+    ],
+    ro: [
+      { value: "20+ ani", label: "Experiență în mobilitate urbană" },
+      { value: "99,5–99,9%", label: "Disponibilitate operațională" },
+      { value: "3 sisteme", label: "Flotă, taxare, informare" },
+      { value: "Urban + regional", label: "Acoperire livrări" }
+    ]
+  };
 
   return (
     <main>
@@ -208,6 +222,22 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   <p>{industry.desc}</p>
                 </article>
               </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Indicatori cheie" : "Proof points"}
+          </h2>
+          <div className="grid">
+            {trustMetrics[locale].map((item) => (
+              <div className="card" key={item.label}>
+                <h3>{item.value}</h3>
+                <p>{item.label}</p>
+              </div>
             ))}
           </div>
         </div>
