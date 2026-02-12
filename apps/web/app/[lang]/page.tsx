@@ -79,13 +79,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   };
   const trustMetrics = {
     en: [
-      { value: "20+ years", label: "Urban mobility experience" },
+      { value: "30+ years", label: "Urban mobility experience" },
       { value: "99.5–99.9%", label: "Operational uptime" },
       { value: "3 core systems", label: "Fleet, ticketing, info" },
       { value: "City + regional", label: "Deployment footprint" }
     ],
     ro: [
-      { value: "20+ ani", label: "Experiență în mobilitate urbană" },
+      { value: "30+ ani", label: "Experiență în mobilitate urbană" },
       { value: "99,5–99,9%", label: "Disponibilitate operațională" },
       { value: "3 sisteme", label: "Flotă, taxare, informare" },
       { value: "Urban + regional", label: "Acoperire livrări" }

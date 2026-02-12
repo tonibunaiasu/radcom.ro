@@ -182,12 +182,12 @@ export default async function CompaniaPage({ params }: { params: Promise<{ lang:
   const proofPoints = {
     en: [
       { label: "Hardware + software", value: "1 integrated stack" },
-      { label: "Industry experience", value: "20+ years" },
+      { label: "Industry experience", value: "30+ years" },
       { label: "Delivery footprint", value: "City + regional" }
     ],
     ro: [
       { label: "Hardware + software", value: "1 stack integrat" },
-      { label: "Experiență în industrie", value: "20+ ani" },
+      { label: "Experiență în industrie", value: "30+ ani" },
       { label: "Acoperire livrări", value: "Urban + regional" }
     ]
   };
