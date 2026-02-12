@@ -275,14 +275,16 @@ main {
   gap: 16px;
 }
 .footer-logo-wrap {
-  height: 72px;
-  overflow: hidden;
+  min-height: 72px;
+  height: auto;
+  overflow: visible;
   display: flex;
   align-items: center;
 }
 
 .footer-logo {
-  height: 72px;
+  max-height: 72px;
+  width: auto;
   margin-bottom: 0;
   display: block;
   object-fit: contain;
@@ -348,7 +350,7 @@ main {
 .footer-note,
 .footer-copyright {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--radcom-sky);
 }
 
@@ -380,14 +382,14 @@ main {
 }
 
 .footer-bottom-logos img {
-  height: 48px;
+  height: 56px;
   width: auto;
   opacity: 0.95;
 }
 
 .footer-brand-description {
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--radcom-sky);
   max-width: 320px;
@@ -396,7 +398,7 @@ main {
 
 .footer-eu-info {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
