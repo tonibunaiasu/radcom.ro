@@ -206,6 +206,37 @@ const faqs = {
   ]
 };
 
+const useCases = {
+  en: [
+    {
+      title: "Passenger guidance",
+      desc: "Accurate ETAs and platform updates reduce uncertainty."
+    },
+    {
+      title: "Disruption alerts",
+      desc: "Notify riders quickly when incidents occur."
+    },
+    {
+      title: "Multi-channel reach",
+      desc: "Keep web, mobile, and station displays in sync."
+    }
+  ],
+  ro: [
+    {
+      title: "Ghidare pasageri",
+      desc: "ETA-uri precise și actualizări în stații."
+    },
+    {
+      title: "Alerte întreruperi",
+      desc: "Informare rapidă în caz de incidente."
+    },
+    {
+      title: "Multicanal",
+      desc: "Site, mobil și afișaje sincronizate."
+    }
+  ]
+};
+
 export default async function ExactPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -443,6 +474,22 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
               <div className="card faq-card" key={item.q}>
                 <h3>{item.q}</h3>
                 <p>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Scenarii de utilizare" : "Use cases"}
+          </h2>
+          <div className="feature-grid">
+            {useCases[locale].map((item) => (
+              <div className="feature-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
               </div>
             ))}
           </div>

@@ -240,6 +240,37 @@ const faqs = {
   ]
 };
 
+const useCases = {
+  en: [
+    {
+      title: "Dispatch control",
+      desc: "Live dashboards show delays, incidents, and route adherence."
+    },
+    {
+      title: "Maintenance planning",
+      desc: "Use mileage and telemetry to plan service windows."
+    },
+    {
+      title: "Passenger assurance",
+      desc: "Predictable ETAs and fewer unexpected disruptions."
+    }
+  ],
+  ro: [
+    {
+      title: "Control dispecerat",
+      desc: "Dashboard-uri live pentru întârzieri, incidente și respectare rute."
+    },
+    {
+      title: "Planificare mentenanță",
+      desc: "Folosim kilometraj și telemetrie pentru programarea reviziilor."
+    },
+    {
+      title: "Încredere pasageri",
+      desc: "ETA-uri predictibile și mai puține întreruperi."
+    }
+  ]
+};
+
 export default async function IFleetPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -453,6 +484,22 @@ export default async function IFleetPage({ params }: { params: Promise<{ lang: s
               <div className="card faq-card" key={item.q}>
                 <h3>{item.q}</h3>
                 <p>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Scenarii de utilizare" : "Use cases"}
+          </h2>
+          <div className="feature-grid">
+            {useCases[locale].map((item) => (
+              <div className="feature-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
               </div>
             ))}
           </div>

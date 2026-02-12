@@ -250,6 +250,37 @@ const faqs = {
   ]
 };
 
+const useCases = {
+  en: [
+    {
+      title: "Fast boarding",
+      desc: "Reduce dwell times with contactless validation."
+    },
+    {
+      title: "Revenue control",
+      desc: "Track transactions and reconcile revenue automatically."
+    },
+    {
+      title: "Flexible fare rules",
+      desc: "Support zones, time-based fares, and multimodal passes."
+    }
+  ],
+  ro: [
+    {
+      title: "Îmbarcare rapidă",
+      desc: "Reducem timpul în stație prin validare contactless."
+    },
+    {
+      title: "Control venituri",
+      desc: "Monitorizare tranzacții și reconciliere automată."
+    },
+    {
+      title: "Reguli tarifare flexibile",
+      desc: "Suport pentru zone, timp și abonamente multimodale."
+    }
+  ]
+};
+
 export default async function OptiFarePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -504,6 +535,22 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
               <div className="card faq-card" key={item.q}>
                 <h3>{item.q}</h3>
                 <p>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Scenarii de utilizare" : "Use cases"}
+          </h2>
+          <div className="feature-grid">
+            {useCases[locale].map((item) => (
+              <div className="feature-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
               </div>
             ))}
           </div>
