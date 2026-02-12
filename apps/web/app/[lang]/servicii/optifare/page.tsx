@@ -405,6 +405,13 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
               decoding="async"
             />
           </div>
+          <img
+            className="service-hero-image"
+            src="/ref-assets/telecommunication.png"
+            alt="RADCOM OptiFare visual"
+            loading="lazy"
+            decoding="async"
+          />
           <h1 className="section-title">{product.title}</h1>
           <p className="section-lead">{productPage.description}</p>
           <p className="section-lead">{productPage.detailedDescription}</p>

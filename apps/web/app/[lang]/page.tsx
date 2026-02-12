@@ -61,6 +61,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const industryIcons = ["bus", "medical", "telecom", "media", "internet", "eu"] as const;
   const infrastructureIcons = ["net", "power", "fiber", "civil", "scada", "eu"] as const;
   const advantageIcons = ["responsive", "custom", "ui", "code"] as const;
+  const productVisuals: Record<string, string> = {
+    ifleet: "/ref-assets/bus.png",
+    optifare: "/ref-assets/telecommunication.png",
+    exact: "/ref-assets/world-grid.png"
+  };
   const linkedInCopy = {
     title: locale === "ro" ? "Noutăți LinkedIn" : "LinkedIn updates",
     lead:
@@ -159,6 +164,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                         decoding="async"
                       />
                     </div>
+                    <img
+                      className="product-visual"
+                      src={productVisuals[service.id] || "/ref-assets/world-grid.png"}
+                      alt={`${service.title} visual`}
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <p>{service.description}</p>
                     <FeatureList items={service.features} />
                     <a className="product-cta" href={`/${locale}${service.link}`}>

@@ -365,6 +365,13 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
             loading="lazy"
             decoding="async"
           />
+          <img
+            className="service-hero-image"
+            src="/ref-assets/LEDInformationDisplay.webp"
+            alt="RADCOM eXact visual"
+            loading="lazy"
+            decoding="async"
+          />
           <h1 className="section-title">{product.title}</h1>
           <p className="section-lead">{productPage.description}</p>
           <p className="section-lead">{productPage.detailedDescription}</p>

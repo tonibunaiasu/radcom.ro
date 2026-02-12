@@ -363,6 +363,13 @@ export default async function IFleetPage({ params }: { params: Promise<{ lang: s
           <div className="service-hero-logo">
             <img src="/products/iFleet.svg" alt="RADCOM iFleet logo" loading="lazy" decoding="async" />
           </div>
+          <img
+            className="service-hero-image"
+            src="/ref-assets/bus.png"
+            alt="RADCOM iFleet visual"
+            loading="lazy"
+            decoding="async"
+          />
           <h1 className="section-title">{product.title}</h1>
           <p className="section-lead">{productPage.description}</p>
           <p className="section-lead">{productPage.detailedDescription}</p>

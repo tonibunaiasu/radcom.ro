@@ -11,6 +11,11 @@ const productLogos: Record<string, string> = {
   optifare: "/products/OptiFare.svg",
   exact: "/products/eXact.svg"
 };
+const productVisuals: Record<string, string> = {
+  ifleet: "/ref-assets/bus.png",
+  optifare: "/ref-assets/telecommunication.png",
+  exact: "/ref-assets/world-grid.png"
+};
 
 const copy = {
   en: {
@@ -296,6 +301,13 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
                     className="product-logo"
                     src={productLogos[product.id] || "/logo-blue.webp"}
                     alt={`${product.title} logo`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    className="product-visual"
+                    src={productVisuals[product.id] || "/ref-assets/world-grid.png"}
+                    alt={`${product.title} visual`}
                     loading="lazy"
                     decoding="async"
                   />
