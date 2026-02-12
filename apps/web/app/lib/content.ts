@@ -25,76 +25,76 @@ export const homeContentByLocale = {
     ],
     industries: [
       {
-        title: "Transport",
-        desc: "Complete software and hardware solutions for public transport."
+        title: "Urban operators",
+        desc: "Integrated fleet, ticketing, and passenger info for city transport."
       },
       {
-        title: "Medical",
-        desc: "Electronic medical records, patient portals, and lab/imaging integrations."
+        title: "Regional networks",
+        desc: "Scalable deployments for intercity and regional lines."
       },
       {
-        title: "Telecom",
-        desc: "Voice, VoIP, SMS/MMS, USSD, SS7, call center, and IVR platforms."
+        title: "Metro & rail",
+        desc: "High-availability systems for dense passenger flows."
       },
       {
-        title: "Media & Mobile",
-        desc: "Mobile apps and multimedia content delivery platforms."
+        title: "Intermodal hubs",
+        desc: "Unified data and ticketing across multiple modes."
       },
       {
-        title: "Internet",
-        desc: "E-commerce, customer account, and identity management solutions."
+        title: "Passenger communication",
+        desc: "Real-time updates across displays, apps, and APIs."
       },
       {
-        title: "EU Programs",
-        desc: "EU funding consultancy and partnership opportunity development."
+        title: "Safety & compliance",
+        desc: "Monitoring, incident response, and secure reporting."
       }
     ],
     infrastructure: [
       {
-        title: "Telecom Networks",
-        desc: "Design, build, installation, and maintenance."
+        title: "Onboard hardware",
+        desc: "Computers, validators, and passenger displays."
       },
       {
-        title: "Electrical Works",
-        desc: "Connections and electrical installations."
+        title: "Control center",
+        desc: "Dispatch dashboards and operational visibility."
       },
       {
-        title: "Fiber Optic Networks",
-        desc: "Design, implementation, preventive and corrective maintenance."
+        title: "Fare collection",
+        desc: "Contactless payment, validation, and back-office."
       },
       {
-        title: "Civil Construction",
-        desc: "Technological and residential construction projects."
+        title: "Passenger info",
+        desc: "ETAs, alerts, and real-time route updates."
       },
       {
-        title: "Automation Systems / SCADA",
-        desc: "Solutions for wastewater and potable water systems."
+        title: "Data & analytics",
+        desc: "KPIs, reporting, and performance optimization."
       },
       {
-        title: "EU-funded Projects",
-        desc: "Developed by the RADCOM Telecom Networks Division."
+        title: "Support & maintenance",
+        desc: "Monitoring, upgrades, and long-term support."
       }
     ],
     advantages: [
       {
-        title: "Responsiveness",
+        title: "Integrated delivery",
         desc:
-          "We build digital and physical products that adapt to every device type."
+          "Hardware + software built to work as one system."
       },
       {
-        title: "Customization",
+        title: "Operational clarity",
         desc:
-          "We tailor communication solutions to each client’s operational needs."
+          "Real-time data to reduce delays and improve reliability."
       },
       {
-        title: "UI Essentials",
+        title: "Scalable rollout",
         desc:
-          "We focus on core UI elements: input, output, and user guidance."
+          "From pilots to city-wide deployments with predictable results."
       },
       {
-        title: "Clean Code",
+        title: "Local support",
         desc:
-          "We optimize code readability and documentation for maximum efficiency."
+          "Training, maintenance, and long-term partnership."
       }
     ],
     partners: {
@@ -127,76 +127,76 @@ export const homeContentByLocale = {
     ],
     industries: [
       {
-        title: "Transport",
-        desc: "Soluții software și hardware complete pentru industria transporturilor."
+        title: "Operatori urbani",
+        desc: "Flotă, taxare și informare pasageri pentru orașe."
       },
       {
-        title: "Medical",
-        desc: "Dosar medical electronic, portal pacienți, integrare analize și imagistică."
+        title: "Rețele regionale",
+        desc: "Implementări scalabile pentru linii interurbane."
       },
       {
-        title: "Telecom",
-        desc: "Platforme pentru voce, VoIP, SMS/MMS, USSD, SS7, call center, IVR."
+        title: "Metro & rail",
+        desc: "Sisteme fiabile pentru fluxuri mari de pasageri."
       },
       {
-        title: "Media & Mobile",
-        desc: "Aplicații mobile și platforme multimedia de livrare de conținut."
+        title: "Huburi intermodale",
+        desc: "Date și ticketing unificate între moduri."
       },
       {
-        title: "Internet",
-        desc: "Magazin online, contul meu, gestiune identitate utilizatori."
+        title: "Comunicare pasageri",
+        desc: "Actualizări în timp real în stații, aplicații și API."
       },
       {
-        title: "Programe europene",
-        desc: "Consultanță finanțare europeană, identificare oportunități parteneriate."
+        title: "Siguranță & conformitate",
+        desc: "Monitorizare, răspuns la incidente și raportare sigură."
       }
     ],
     infrastructure: [
       {
-        title: "Rețele de telecomunicații",
-        desc: "Proiectare, construire, instalare și mentenanță."
+        title: "Hardware la bord",
+        desc: "Computere, validatoare și afișaje pasageri."
       },
       {
-        title: "Lucrări electrice",
-        desc: "Branșamente și instalații electrice."
+        title: "Centru de control",
+        desc: "Dashboard-uri și vizibilitate operațională."
       },
       {
-        title: "Rețele de fibră optică",
-        desc: "Proiectare, implementare, mentenanță preventivă și corectivă."
+        title: "Taxare digitală",
+        desc: "Plăți contactless, validare și back-office."
       },
       {
-        title: "Construcții civile",
-        desc: "Construcții tehnologice și rezidențiale."
+        title: "Info pasageri",
+        desc: "ETA-uri, alerte și actualizări în timp real."
       },
       {
-        title: "Sisteme de automatizări / SCADA",
-        desc: "Soluții în domeniul apelor uzate și potabile."
+        title: "Date & analytics",
+        desc: "KPI, raportare și optimizare performanță."
       },
       {
-        title: "Proiecte cu fonduri europene",
-        desc: "Dezvoltate de Divizia de Rețele de Telecomunicații RADCOM."
+        title: "Suport & mentenanță",
+        desc: "Monitorizare, upgrade și suport pe termen lung."
       }
     ],
     advantages: [
       {
-        title: "Responsivitate",
+        title: "Livrare integrată",
         desc:
-          "Construim produse digitale și fizice care se autoadaptează pentru toate tipurile de dispozitive."
+          "Hardware + software gândite ca un singur sistem."
       },
       {
-        title: "Customizare",
+        title: "Claritate operațională",
         desc:
-          "Particularizăm soluțiile de comunicații pentru nevoile fiecărui client și flux operațional."
+          "Date în timp real pentru punctualitate și control."
       },
       {
-        title: "Elementele UI",
+        title: "Scalare sigură",
         desc:
-          "Ne concentrăm pe elementele UI esențiale: input, output și ajutor pentru utilizator."
+          "De la pilot la oraș întreg, fără surprize."
       },
       {
-        title: "Linii de cod curate",
+        title: "Suport local",
         desc:
-          "Optimizăm lizibilitatea codului și a documentației pentru eficiență maximă."
+          "Training, mentenanță și parteneriat pe termen lung."
       }
     ],
     partners: {
@@ -324,7 +324,7 @@ export const solutionsContent = [
   {
     id: "transport",
     slug: "transport",
-    title: "Transport",
+    title: "Transport urban",
     description:
       "Soluții complete pentru transport public: ticketing, management flotă și informare pasageri.",
     benefits: [
@@ -334,51 +334,27 @@ export const solutionsContent = [
     ]
   },
   {
-    id: "medical",
-    slug: "medical",
-    title: "Medical",
+    id: "regional",
+    slug: "regional",
+    title: "Transport regional",
     description:
-      "Dosar medical electronic, portal pacienți și integrare analize medicale.",
+      "Implementări scalabile pentru linii interurbane și conexiuni regionale.",
     benefits: [
-      "Fluxuri digitale sigure",
-      "Integrare imagistică",
-      "Acces rapid la date"
+      "Rute optimizate",
+      "Integrare multi‑depozit",
+      "Vizibilitate operațională"
     ]
   },
   {
-    id: "telecom",
-    slug: "telecom",
-    title: "Telecom",
+    id: "metro-rail",
+    slug: "metro-rail",
+    title: "Metro & rail",
     description:
-      "Platforme pentru servicii de voce, VoIP, SMS/MMS, USSD, SS7 și call center.",
+      "Sisteme fiabile pentru fluxuri mari de pasageri și operațiuni critice.",
     benefits: [
-      "Infrastructură scalabilă",
-      "Integrare cu servicii existente",
-      "Disponibilitate ridicată"
-    ]
-  },
-  {
-    id: "media-mobile",
-    slug: "media-mobile",
-    title: "Media & Mobile",
-    description:
-      "Aplicații mobile și platforme multimedia de livrare de conținut.",
-    benefits: [
-      "Experiențe digitale moderne",
-      "Distribuție eficientă de conținut",
-      "Analytics și monitorizare"
-    ]
-  },
-  {
-    id: "internet",
-    slug: "internet",
-    title: "Internet",
-    description:
-      "Soluții integrate de tip magazin online, contul meu, gestiune identitate utilizatori.",
-    benefits: [
-      "Fluxuri de vânzare optimizate",
-      "Securitate și SSO",
-      "Experiență omnichannel"
+      "Disponibilitate ridicată",
+      "Informare pasageri în timp real",
+      "Control centralizat"
     ]
   }
 ];

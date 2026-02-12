@@ -82,15 +82,15 @@ export function getHomeLabels(locale: Locale) {
   const data = getCopy(locale);
   return {
     keyMetrics: locale === "ro" ? "Indicatori cheie" : "Key metrics",
-    servicesTitle: locale === "ro" ? "Tehnologie pentru transporturi" : "Transport technology",
+    servicesTitle: locale === "ro" ? "Tehnologie pentru transport public" : "Public transport technology",
     servicesLead: locale === "ro"
-      ? "Soluții complete pentru transport public, integrare hardware + software și infrastructură critică."
-      : "Complete solutions for public transport, hardware + software integration, and critical infrastructure.",
+      ? "Soluții moderne pentru flotă, taxare și informare pasageri, integrate într-un singur stack."
+      : "Modern solutions for fleet, ticketing, and passenger information in one integrated stack.",
     serviceCta: locale === "ro" ? "Descoperă" : "Discover",
-    developmentTitle: locale === "ro" ? "Dezvoltare" : "Development",
-    infrastructureTitle: locale === "ro" ? "Infrastructură" : "Infrastructure",
+    developmentTitle: locale === "ro" ? "Domenii de utilizare" : "Use cases",
+    infrastructureTitle: locale === "ro" ? "Componente platformă" : "Platform components",
     advantagesTitle:
-      locale === "ro" ? "Avantajele soluțiilor noastre" : "Our solutions' advantages",
+      locale === "ro" ? "De ce RADCOM" : "Why RADCOM",
     partnersTitle: data.partners?.title || (locale === "ro" ? "Parteneri" : "Partners"),
     partnersSubtitle:
       data.partners?.subtitle ||
