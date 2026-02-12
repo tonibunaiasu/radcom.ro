@@ -1790,6 +1790,67 @@ form textarea {
   display: block;
 }
 
+.product-showcase {
+  display: grid;
+  gap: 20px;
+}
+
+.product-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.product-showcase-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(28, 63, 149, 0.08);
+  box-shadow: 0 14px 26px rgba(15, 33, 58, 0.12);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 32px rgba(15, 33, 58, 0.18);
+}
+
+.product-showcase-media {
+  background: linear-gradient(135deg, rgba(13, 36, 84, 0.08), rgba(209, 205, 77, 0.08));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  min-height: 180px;
+}
+
+.product-showcase-media img {
+  width: min(220px, 80%);
+  height: auto;
+  display: block;
+}
+
+.product-showcase-content {
+  padding: 18px 20px 22px;
+  display: grid;
+  gap: 8px;
+}
+
+.product-showcase-content h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--radcom-night);
+}
+
+.product-showcase-content p {
+  margin: 0;
+  color: #3b4a66;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .service-hero-image {
   width: min(240px, 70%);
   height: auto;

@@ -193,6 +193,80 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
       }
     ]
   };
+  const productShowcase = {
+    en: {
+      title: "Transport-ready hardware",
+      lead: "Field-proven equipment that connects to the RADCOM platform.",
+      items: [
+        {
+          title: "Ticket validators",
+          desc: "Fast contactless validation with secure hardware.",
+          image: "/ref-assets/ECheckValidator.webp"
+        },
+        {
+          title: "Driver console",
+          desc: "Operational control for schedules, messages, and status.",
+          image: "/ref-assets/DriverConsole.webp"
+        },
+        {
+          title: "Passenger displays",
+          desc: "High-visibility LED information for stops and stations.",
+          image: "/ref-assets/LEDInformationDisplay.webp"
+        },
+        {
+          title: "Audio control",
+          desc: "Clear announcements and synchronized onboard audio.",
+          image: "/ref-assets/AudioSmartMaster.webp"
+        },
+        {
+          title: "Vehicle tracking",
+          desc: "Onboard unit for telemetry, GPS, and diagnostics.",
+          image: "/ref-assets/ETrack.webp"
+        },
+        {
+          title: "Parking & mobility",
+          desc: "Meters and curbside equipment for smart mobility.",
+          image: "/ref-assets/EParkParkomerter.webp"
+        }
+      ]
+    },
+    ro: {
+      title: "Hardware pregătit pentru transport",
+      lead: "Echipamente testate în teren, conectate la platforma RADCOM.",
+      items: [
+        {
+          title: "Validatoare ticketing",
+          desc: "Validare contactless rapidă, cu hardware securizat.",
+          image: "/ref-assets/ECheckValidator.webp"
+        },
+        {
+          title: "Consolă șofer",
+          desc: "Control operațional pentru program, mesaje și status.",
+          image: "/ref-assets/DriverConsole.webp"
+        },
+        {
+          title: "Afișaje pasageri",
+          desc: "Informare LED de mare vizibilitate în stații și vehicule.",
+          image: "/ref-assets/LEDInformationDisplay.webp"
+        },
+        {
+          title: "Control audio",
+          desc: "Anunțuri clare și sincronizate la bord.",
+          image: "/ref-assets/AudioSmartMaster.webp"
+        },
+        {
+          title: "Tracking vehicule",
+          desc: "Unitate onboard pentru telemetrie, GPS și diagnoză.",
+          image: "/ref-assets/ETrack.webp"
+        },
+        {
+          title: "Parcare & mobilitate",
+          desc: "Echipamente curbside pentru ecosistemul urban.",
+          image: "/ref-assets/EParkParkomerter.webp"
+        }
+      ]
+    }
+  }[locale];
   const faqs = {
     en: [
       {
@@ -323,6 +397,30 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+        <div className="container" style={{ marginTop: 48 }}>
+          <div className="product-showcase">
+            <h2 className="section-title">{productShowcase.title}</h2>
+            <p className="section-lead">{productShowcase.lead}</p>
+            <div className="product-showcase-grid">
+              {productShowcase.items.map((item) => (
+                <article className="product-showcase-card" key={item.title}>
+                  <div className="product-showcase-media">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="product-showcase-content">
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
         <div className="container" style={{ marginTop: 32 }}>
