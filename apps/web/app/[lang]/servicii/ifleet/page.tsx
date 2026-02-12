@@ -271,6 +271,43 @@ const useCases = {
   ]
 };
 
+const relatedContent = {
+  en: [
+    {
+      title: "Complementary: OptiFare",
+      desc: "Add ticketing to complete the mobility stack.",
+      href: "/servicii/optifare"
+    },
+    {
+      title: "Article: Fare collection future",
+      desc: "How integrated payment systems boost adoption.",
+      href: "/articole/fare-collection-future"
+    },
+    {
+      title: "Case study",
+      desc: "A full-stack deployment for a public operator.",
+      href: "/studii-de-caz"
+    }
+  ],
+  ro: [
+    {
+      title: "Complementar: OptiFare",
+      desc: "Completează stack‑ul cu taxare modernă.",
+      href: "/servicii/optifare"
+    },
+    {
+      title: "Articol: Viitorul taxării",
+      desc: "Cum crește adopția plăților integrate.",
+      href: "/articole/fare-collection-future"
+    },
+    {
+      title: "Studiu de caz",
+      desc: "Implementare full‑stack pentru un operator public.",
+      href: "/studii-de-caz"
+    }
+  ]
+};
+
 export default async function IFleetPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -501,6 +538,22 @@ export default async function IFleetPage({ params }: { params: Promise<{ lang: s
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Conținut relevant" : "Related content"}
+          </h2>
+          <div className="feature-grid">
+            {relatedContent[locale].map((item) => (
+              <a className="feature-card" key={item.title} href={`/${locale}${item.href}`}>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </a>
             ))}
           </div>
         </div>
