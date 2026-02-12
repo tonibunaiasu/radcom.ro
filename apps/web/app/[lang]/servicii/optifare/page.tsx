@@ -219,6 +219,37 @@ const rolloutSteps = {
   ]
 };
 
+const faqs = {
+  en: [
+    {
+      q: "Which payment methods are supported?",
+      a: "Bank cards, mobile wallets, QR codes, and Mifare cards."
+    },
+    {
+      q: "How long does deployment take?",
+      a: "Most projects go live in 8–12 weeks depending on integrations."
+    },
+    {
+      q: "Is the system compliant?",
+      a: "Yes, with EMV standards and PCI DSS best practices."
+    }
+  ],
+  ro: [
+    {
+      q: "Ce metode de plată sunt suportate?",
+      a: "Carduri bancare, wallet-uri mobile, QR și carduri Mifare."
+    },
+    {
+      q: "Cât durează implementarea?",
+      a: "De regulă 8–12 săptămâni în funcție de integrări."
+    },
+    {
+      q: "Sistemul este compliant?",
+      a: "Da, conform standardelor EMV și PCI DSS."
+    }
+  ]
+};
+
 export default async function OptiFarePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -459,6 +490,20 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
               <div className="feature-card" key={`${step.title}-${index}`}>
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">{locale === "ro" ? "Întrebări frecvente" : "FAQ"}</h2>
+          <div className="faq-grid">
+            {faqs[locale].map((item) => (
+              <div className="card faq-card" key={item.q}>
+                <h3>{item.q}</h3>
+                <p>{item.a}</p>
               </div>
             ))}
           </div>

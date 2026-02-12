@@ -209,6 +209,37 @@ const rolloutSteps = {
   ]
 };
 
+const faqs = {
+  en: [
+    {
+      q: "How fast can iFleet go live?",
+      a: "Typical deployments take 8–14 weeks depending on fleet size and integrations."
+    },
+    {
+      q: "Does it integrate with existing hardware?",
+      a: "Yes. We support mixed fleets and can integrate with existing onboard devices."
+    },
+    {
+      q: "What data do operators get?",
+      a: "Real-time KPIs, route adherence, incident alerts, and operational reports."
+    }
+  ],
+  ro: [
+    {
+      q: "Cât de repede se poate implementa iFleet?",
+      a: "De obicei 8–14 săptămâni, în funcție de flotă și integrări."
+    },
+    {
+      q: "Se integrează cu hardware existent?",
+      a: "Da. Suportăm flote mixte și integrare cu echipamente existente."
+    },
+    {
+      q: "Ce date primesc operatorii?",
+      a: "KPI în timp real, respectare trasee, alerte și rapoarte."
+    }
+  ]
+};
+
 export default async function IFleetPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -408,6 +439,20 @@ export default async function IFleetPage({ params }: { params: Promise<{ lang: s
               <div className="feature-card" key={`${step.title}-${index}`}>
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">{locale === "ro" ? "Întrebări frecvente" : "FAQ"}</h2>
+          <div className="faq-grid">
+            {faqs[locale].map((item) => (
+              <div className="card faq-card" key={item.q}>
+                <h3>{item.q}</h3>
+                <p>{item.a}</p>
               </div>
             ))}
           </div>

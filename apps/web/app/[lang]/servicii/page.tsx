@@ -188,6 +188,36 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
       }
     ]
   };
+  const faqs = {
+    en: [
+      {
+        q: "Do you deliver hardware and software together?",
+        a: "Yes, RADCOM delivers an integrated stack for fleet, ticketing, and passenger info."
+      },
+      {
+        q: "How long does a full rollout take?",
+        a: "Typical projects go live in 8–16 weeks based on scope."
+      },
+      {
+        q: "Can we start with a pilot?",
+        a: "Yes, we can deploy a pilot fleet and scale afterward."
+      }
+    ],
+    ro: [
+      {
+        q: "Livrați hardware și software împreună?",
+        a: "Da, RADCOM livrează un stack integrat pentru flotă, taxare și informare."
+      },
+      {
+        q: "Cât durează o implementare completă?",
+        a: "De regulă 8–16 săptămâni, în funcție de scope."
+      },
+      {
+        q: "Putem începe cu un pilot?",
+        a: "Da, putem implementa un pilot și apoi scala."
+      }
+    ]
+  };
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -355,6 +385,20 @@ export default async function ServiciiPage({ params }: { params: Promise<{ lang:
               <div className="feature-card" key={`${step.title}-${index}`}>
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">{locale === "ro" ? "Întrebări frecvente" : "FAQ"}</h2>
+          <div className="faq-grid">
+            {faqs[locale].map((item) => (
+              <div className="card faq-card" key={item.q}>
+                <h3>{item.q}</h3>
+                <p>{item.a}</p>
               </div>
             ))}
           </div>

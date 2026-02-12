@@ -175,6 +175,37 @@ const rolloutSteps = {
   ]
 };
 
+const faqs = {
+  en: [
+    {
+      q: "How fast are passenger updates?",
+      a: "Updates typically propagate in under 10 seconds."
+    },
+    {
+      q: "Does it work with existing displays?",
+      a: "Yes, we integrate with most legacy LED and LCD systems."
+    },
+    {
+      q: "Can we expose data to third parties?",
+      a: "Yes, via secure APIs and controlled data feeds."
+    }
+  ],
+  ro: [
+    {
+      q: "Cât de rapid se actualizează informațiile?",
+      a: "În mod uzual sub 10 secunde."
+    },
+    {
+      q: "Funcționează cu afișaje existente?",
+      a: "Da, integrăm majoritatea sistemelor LED/LCD."
+    },
+    {
+      q: "Putem expune date către terți?",
+      a: "Da, prin API-uri și feed-uri controlate."
+    }
+  ]
+};
+
 export default async function ExactPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -398,6 +429,20 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
               <div className="feature-card" key={`${step.title}-${index}`}>
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container">
+          <h2 className="section-title">{locale === "ro" ? "Întrebări frecvente" : "FAQ"}</h2>
+          <div className="faq-grid">
+            {faqs[locale].map((item) => (
+              <div className="card faq-card" key={item.q}>
+                <h3>{item.q}</h3>
+                <p>{item.a}</p>
               </div>
             ))}
           </div>
