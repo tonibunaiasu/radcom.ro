@@ -2,6 +2,7 @@ import { getLocale } from "../../../lib/locale";
 import { getCopy } from "../../../lib/site-copy";
 import { servicesBreadcrumbs, servicesLinks } from "../../../lib/services-nav";
 import Breadcrumbs from "../../../components/Breadcrumbs";
+import { partnersContent } from "../../../lib/content";
 import { CreditCard, Nfc, QrCode, ShieldCheck, Smartphone, Ticket } from "lucide-react";
 
 const editorialCopy = {
@@ -371,6 +372,7 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
       desc: productPage.paymentMethods.paperTicketsDesc
     }
   ];
+  const partners = partnersContent.slice(0, 6);
   const currentPath = "/servicii/optifare";
   const breadcrumbs = servicesBreadcrumbs(locale, "OptiFare");
   const quickLinks = servicesLinks[locale].filter((item) => item.href !== currentPath);
@@ -606,6 +608,23 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
                 <p>{item.desc}</p>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Parteneri de încredere" : "Trusted partners"}
+          </h2>
+          <div className="partners-marquee">
+            <div className="partners-track">
+              {[...partners, ...partners].map((partner, index) => (
+                <div className="partner-logo" key={`${partner.id}-${index}`}>
+                  <img src={partner.logo} alt={partner.name} loading="lazy" decoding="async" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

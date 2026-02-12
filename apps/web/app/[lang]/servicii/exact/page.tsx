@@ -2,6 +2,7 @@ import { getLocale } from "../../../lib/locale";
 import { getCopy } from "../../../lib/site-copy";
 import { servicesBreadcrumbs, servicesLinks } from "../../../lib/services-nav";
 import Breadcrumbs from "../../../components/Breadcrumbs";
+import { partnersContent } from "../../../lib/content";
 import { BellRing, Bus, MapPin, Monitor, Radar, Route } from "lucide-react";
 
 const editorialCopy = {
@@ -332,6 +333,7 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
       desc: productPage.displayTypes.advertisingDesc
     }
   ];
+  const partners = partnersContent.slice(0, 6);
   const currentPath = "/servicii/exact";
   const breadcrumbs = servicesBreadcrumbs(locale, "eXact");
   const quickLinks = servicesLinks[locale].filter((item) => item.href !== currentPath);
@@ -545,6 +547,23 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
                 <p>{item.desc}</p>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block alt">
+        <div className="container">
+          <h2 className="section-title">
+            {locale === "ro" ? "Parteneri de încredere" : "Trusted partners"}
+          </h2>
+          <div className="partners-marquee">
+            <div className="partners-track">
+              {[...partners, ...partners].map((partner, index) => (
+                <div className="partner-logo" key={`${partner.id}-${index}`}>
+                  <img src={partner.logo} alt={partner.name} loading="lazy" decoding="async" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
