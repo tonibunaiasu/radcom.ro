@@ -319,6 +319,21 @@ const relatedContent = {
   ]
 };
 
+const miniCta = {
+  en: {
+    title: "Ready to modernize ticketing?",
+    lead: "Share your fare model and rollout targets. We’ll propose the next steps.",
+    primary: "Request a discussion",
+    secondary: "See all services"
+  },
+  ro: {
+    title: "Vrei să modernizezi taxarea?",
+    lead: "Spune-ne modelul tarifar și obiectivele. Revenim cu pașii următori.",
+    primary: "Solicită o discuție",
+    secondary: "Vezi toate serviciile"
+  }
+};
+
 export default async function OptiFarePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -608,6 +623,21 @@ export default async function OptiFarePage({ params }: { params: Promise<{ lang:
                 <p>{item.desc}</p>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container cta">
+          <h2 className="section-title">{miniCta[locale].title}</h2>
+          <p className="section-lead">{miniCta[locale].lead}</p>
+          <div className="hero-actions">
+            <a className="primary" href={`/${locale}/contact`}>
+              {miniCta[locale].primary}
+            </a>
+            <a className="secondary" href={`/${locale}/servicii`}>
+              {miniCta[locale].secondary}
+            </a>
           </div>
         </div>
       </section>

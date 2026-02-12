@@ -275,6 +275,21 @@ const relatedContent = {
   ]
 };
 
+const miniCta = {
+  en: {
+    title: "Want clearer passenger communication?",
+    lead: "Tell us your routes and touchpoints. We’ll propose the next steps.",
+    primary: "Request a discussion",
+    secondary: "See all services"
+  },
+  ro: {
+    title: "Vrei o comunicare mai clară cu pasagerii?",
+    lead: "Spune-ne rutele și punctele de contact. Revenim cu pașii următori.",
+    primary: "Solicită o discuție",
+    secondary: "Vezi toate serviciile"
+  }
+};
+
 export default async function ExactPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
 
@@ -547,6 +562,21 @@ export default async function ExactPage({ params }: { params: Promise<{ lang: st
                 <p>{item.desc}</p>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="container cta">
+          <h2 className="section-title">{miniCta[locale].title}</h2>
+          <p className="section-lead">{miniCta[locale].lead}</p>
+          <div className="hero-actions">
+            <a className="primary" href={`/${locale}/contact`}>
+              {miniCta[locale].primary}
+            </a>
+            <a className="secondary" href={`/${locale}/servicii`}>
+              {miniCta[locale].secondary}
+            </a>
           </div>
         </div>
       </section>
